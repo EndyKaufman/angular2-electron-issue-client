@@ -14,15 +14,34 @@ var task_svc_1 = require('../../../service/task/task.svc');
 var project_svc_1 = require('../../../service/project/project.svc');
 var TaskListCmp = (function () {
     function TaskListCmp(router, taskSvc, projectSvc) {
+        var _this = this;
         this.router = router;
         this.taskSvc = taskSvc;
         this.projectSvc = projectSvc;
+        projectSvc.itemSelected$.subscribe(function (item) { return _this.onProjectSelected(item); });
     }
     TaskListCmp.prototype.getList = function () {
         var _this = this;
-        this.taskSvc.getList().then(function (items) { return _this.items = items; });
+        var query = {};
+        if (this.projectSvc.selectedItem) {
+            query = {
+                project_id: this.projectSvc.selectedItem.id
+            };
+        }
+        else {
+            query = {
+                project_id: -1
+            };
+        }
+        this.taskSvc.itemsLoaded = false;
+        this.taskSvc.getList(query).then(function (items) { return _this.items = items; });
     };
+    ;
     TaskListCmp.prototype.ngOnInit = function () {
+        this.getList();
+    };
+    ;
+    TaskListCmp.prototype.onProjectSelected = function (project) {
         this.getList();
     };
     TaskListCmp = __decorate([

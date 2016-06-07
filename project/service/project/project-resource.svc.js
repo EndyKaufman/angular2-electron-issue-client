@@ -8,7 +8,7 @@ var resource_svc_1 = require('../resource.svc');
 var ProjectResourceSvc = (function (_super) {
     __extends(ProjectResourceSvc, _super);
     function ProjectResourceSvc(http) {
-        _super.call(this);
+        _super.call(this, http);
         this.http = http;
         this.resourceUrl = 'app/project'; // URL to web api
     }
@@ -18,12 +18,16 @@ var ProjectResourceSvc = (function (_super) {
     ProjectResourceSvc.prototype.put = function (item) {
         return _super.prototype.put.call(this, item);
     };
+    ProjectResourceSvc.prototype.save = function (item) {
+        return _super.prototype.put.call(this, item);
+    };
+    ;
     ;
     ProjectResourceSvc.prototype.delete = function (item) {
         return _super.prototype.delete.call(this, item);
     };
-    ProjectResourceSvc.prototype.getList = function () {
-        return _super.prototype.getList.call(this);
+    ProjectResourceSvc.prototype.getList = function (query) {
+        return _super.prototype.getList.call(this, query);
     };
     return ProjectResourceSvc;
 }(resource_svc_1.ResourceSvc));

@@ -26,8 +26,8 @@ var TaskSvc = (function (_super) {
         this.resource = new task_resource_svc_1.TaskResourceSvc(http);
     }
     ;
-    TaskSvc.prototype.getList = function () {
-        return _super.prototype.getList.call(this);
+    TaskSvc.prototype.getList = function (query) {
+        return _super.prototype.getList.call(this, query);
     };
     TaskSvc = __decorate([
         core_1.Injectable(), 

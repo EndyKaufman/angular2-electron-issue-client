@@ -6,23 +6,27 @@ import { Task } from './task';
 export class TaskResourceSvc extends ResourceSvc {
     private resourceUrl = 'app/task';  // URL to web api
 
-    private post(item: Task): Promise<Task> {
+    post(item: Task): Promise<Task> {
         return super.post(item);
     }
     
-    private put(item: Task) {
+    put(item: Task) {
         return super.put(item);
     }
 
+    save(item: Task): Promise<Task> {
+        return super.put(item);
+    };
+    
     constructor(private http: Http) {
-        super();
+        super(http);
     };
 
     delete(item: Task) {
         return super.delete(item);
-    }
+    };
     
-    getList(): Promise<Task[]> {
-        return super.getList();
-    }
+    getList(query:any): Promise<Task[]> {
+        return super.getList(query);
+    };
 }

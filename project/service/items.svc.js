@@ -1,24 +1,27 @@
 "use strict";
+var core_1 = require('@angular/core');
 require('rxjs/add/operator/toPromise');
 var ItemsSvc = (function () {
     function ItemsSvc(http) {
         this.http = http;
         this.itemsLoaded = false;
+        this.itemSelected$ = new core_1.EventEmitter();
     }
     ;
     ItemsSvc.prototype.onSelect = function (item) {
         console.log(item);
         this.selectedItem = item;
+        this.itemSelected$.emit(this.selectedItem);
     };
     ;
-    ItemsSvc.prototype.getList = function () {
+    ItemsSvc.prototype.getList = function (query) {
         var $this = this;
         return new Promise(function (resolve) {
             if ($this.itemsLoaded) {
                 resolve($this.items);
             }
             else {
-                $this.resource.getList().then(function (items) {
+                $this.resource.getList(query).then(function (items) {
                     $this.items = items;
                     $this.itemsLoaded = true;
                     if (items.length > 0)
@@ -28,6 +31,7 @@ var ItemsSvc = (function () {
             }
         });
     };
+    ;
     return ItemsSvc;
 }());
 exports.ItemsSvc = ItemsSvc;

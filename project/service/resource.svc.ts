@@ -1,5 +1,5 @@
 import { Injectable }    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -11,7 +11,7 @@ export class ResourceSvc {
         return Promise.reject(error.message || error);
     }
     // Add new any
-    private post(item: any): Promise<any> {
+    post(item: any): Promise<any> {
         let headers = new Headers({
             'Content-Type': 'application/json'
         });
@@ -23,7 +23,7 @@ export class ResourceSvc {
             .catch(this.handleError);
     }
     // Update existing any
-    private put(item: any) {
+    put(item: any) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
 
@@ -55,14 +55,21 @@ export class ResourceSvc {
         }
         return this.post(item);
     }
-    getList(): Promise<any[]> {
-        return this.http.get(this.resourceUrl)
+    getList(query: any): Promise<any[]> {
+        let params: URLSearchParams = new URLSearchParams();
+
+        for (let key in query) {
+            params.set(key, query[key]);
+        }
+        return this.http.get(this.resourceUrl, {
+            search: params
+        })
             .toPromise()
             .then(response => response.json().data)
             .catch(this.handleError);
     }
     getItem(id: number) {
-        return this.getList()
+        return this.getList({})
             .then(items => items.filter(item => item.id === id)[0]);
     }
 }

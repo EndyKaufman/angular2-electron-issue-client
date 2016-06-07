@@ -26,8 +26,8 @@ var ProjectSvc = (function (_super) {
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
     }
     ;
-    ProjectSvc.prototype.getList = function () {
-        return _super.prototype.getList.call(this);
+    ProjectSvc.prototype.getList = function (query) {
+        return _super.prototype.getList.call(this, query);
     };
     ProjectSvc = __decorate([
         core_1.Injectable(), 

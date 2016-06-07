@@ -18,7 +18,7 @@ export class WorkSvc extends ItemsSvc {
         this.resource = new WorkResourceSvc(http);
     };
 
-    getList(): Promise<Work[]> {
-        return super.getList();
+    getList(query:Work): Promise<Work[]> {
+        return super.getList(query);
     }
 }

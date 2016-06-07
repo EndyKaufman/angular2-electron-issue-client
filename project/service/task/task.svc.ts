@@ -18,7 +18,7 @@ export class TaskSvc extends ItemsSvc {
         this.resource = new TaskResourceSvc(http);
     };
 
-    getList(): Promise<Task[]> {
-        return super.getList();
+    getList(query: any): Promise<Task[]> {
+        return super.getList(query);
     }
 }

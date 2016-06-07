@@ -6,23 +6,27 @@ import { Project } from './project';
 export class ProjectResourceSvc extends ResourceSvc {
     private resourceUrl = 'app/project';  // URL to web api
 
-    private post(item: Project): Promise<Project> {
+    post(item: Project): Promise<Project> {
         return super.post(item);
     }
     
-    private put(item: Project) {
+    put(item: Project) {
         return super.put(item);
     }
 
+    save(item: Project): Promise<Project> {
+        return super.put(item);
+    };
+    
     constructor(private http: Http) {
-        super();
+        super(http);
     };
 
     delete(item: Project) {
         return super.delete(item);
     }
     
-    getList(): Promise<Project[]> {
-        return super.getList();
+    getList(query:any): Promise<Project[]> {
+        return super.getList(query);
     }
 }

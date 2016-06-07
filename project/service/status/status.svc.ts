@@ -10,24 +10,24 @@ import { Status } from './status';
 export class StatusSvc extends ResourceSvc {
     private resourceUrl = 'app/status';  // URL to web api
 
-    private post(item: Status): Promise<Status> {
+    post(item: Status): Promise<Status> {
         return super.post(item);
     }
-    
-    private put(item: Status) {
+
+    put(item: Status) {
         return super.put(item);
-    }
+    }   
 
     constructor(private http: Http) {
-        super();
+        super(http);
     };
 
     delete(item: Status) {
         return super.delete(item);
     }
-    
-    getList(): Promise<Status[]> {
-        return super.getList();
+
+    getList(query: any): Promise<Status[]> {
+        return super.getList(query);
 
     }
 }

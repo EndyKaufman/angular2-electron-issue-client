@@ -18,7 +18,7 @@ export class ProjectSvc extends ItemsSvc {
         this.resource = new ProjectResourceSvc(http);
     };
 
-    getList(): Promise<Project[]> {
-        return super.getList();
+    getList(query: any): Promise<Project[]> {
+        return super.getList(query);
     }
 }

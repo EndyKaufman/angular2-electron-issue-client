@@ -47,14 +47,20 @@ var ResourceSvc = (function () {
         }
         return this.post(item);
     };
-    ResourceSvc.prototype.getList = function () {
-        return this.http.get(this.resourceUrl)
+    ResourceSvc.prototype.getList = function (query) {
+        var params = new http_1.URLSearchParams();
+        for (var key in query) {
+            params.set(key, query[key]);
+        }
+        return this.http.get(this.resourceUrl, {
+            search: params
+        })
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
     };
     ResourceSvc.prototype.getItem = function (id) {
-        return this.getList()
+        return this.getList({})
             .then(function (items) { return items.filter(function (item) { return item.id === id; })[0]; });
     };
     return ResourceSvc;
