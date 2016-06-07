@@ -21,20 +21,11 @@ var TaskListCmp = (function () {
         projectSvc.itemSelected$.subscribe(function (item) { return _this.onProjectSelected(item); });
     }
     TaskListCmp.prototype.getList = function () {
-        var _this = this;
-        var query = {};
-        if (this.projectSvc.selectedItem) {
-            query = {
-                project_id: this.projectSvc.selectedItem.id
-            };
-        }
-        else {
-            query = {
-                project_id: -1
-            };
-        }
+        var query = {
+            project_id: this.projectSvc.selectedItem.id
+        };
         this.taskSvc.itemsLoaded = false;
-        this.taskSvc.getList(query).then(function (items) { return _this.items = items; });
+        this.taskSvc.getList(query);
     };
     TaskListCmp.prototype.ngOnInit = function () {
         this.getList();

@@ -9,15 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var task_svc_1 = require('../../../service/task/task.svc');
 var WorkHeaderCmp = (function () {
-    function WorkHeaderCmp() {
+    function WorkHeaderCmp(router, taskSvc) {
+        this.router = router;
+        this.taskSvc = taskSvc;
     }
     WorkHeaderCmp = __decorate([
         core_1.Component({
             selector: 'work-header',
             templateUrl: 'project/app/work/header/work-header.cmp.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, task_svc_1.TaskSvc])
     ], WorkHeaderCmp);
     return WorkHeaderCmp;
 }());

@@ -17,8 +17,7 @@ var ProjectButtonsCmp = (function () {
         this.projectSvc = projectSvc;
     }
     ProjectButtonsCmp.prototype.getList = function () {
-        var _this = this;
-        this.projectSvc.getList({}).then(function (items) { return _this.items = items; });
+        this.projectSvc.getList({});
     };
     ProjectButtonsCmp.prototype.ngOnInit = function () {
         this.getList();

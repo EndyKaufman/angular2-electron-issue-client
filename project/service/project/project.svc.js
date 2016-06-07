@@ -18,11 +18,13 @@ var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../items.svc');
 var project_resource_svc_1 = require('./project-resource.svc');
+var project_1 = require('./project');
 var ProjectSvc = (function (_super) {
     __extends(ProjectSvc, _super);
     function ProjectSvc(http) {
         _super.call(this, http);
         this.http = http;
+        this.selectedItem = new project_1.Project();
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
     }
     ProjectSvc.prototype.getList = function (query) {

@@ -17,24 +17,24 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../items.svc');
-var task_resource_svc_1 = require('./task-resource.svc');
-var task_1 = require('./task');
-var TaskSvc = (function (_super) {
-    __extends(TaskSvc, _super);
-    function TaskSvc(http) {
+var work_resource_svc_1 = require('./work-resource.svc');
+var work_1 = require('./work');
+var WorkSvc = (function (_super) {
+    __extends(WorkSvc, _super);
+    function WorkSvc(http) {
         _super.call(this, http);
         this.http = http;
-        this.selectedItem = new task_1.Task();
-        this.resource = new task_resource_svc_1.TaskResourceSvc(http);
+        this.selectedItem = new work_1.Work();
+        this.resource = new work_resource_svc_1.WorkResourceSvc(http);
     }
-    TaskSvc.prototype.getList = function (query) {
+    WorkSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
-    TaskSvc = __decorate([
+    WorkSvc = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], TaskSvc);
-    return TaskSvc;
+    ], WorkSvc);
+    return WorkSvc;
 }(items_svc_1.ItemsSvc));
-exports.TaskSvc = TaskSvc;
-//# sourceMappingURL=task.svc.js.map
+exports.WorkSvc = WorkSvc;
+//# sourceMappingURL=work.svc.js.map

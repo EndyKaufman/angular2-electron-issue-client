@@ -12,12 +12,16 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var project_svc_1 = require('../service/project/project.svc');
 var task_svc_1 = require('../service/task/task.svc');
+var work_svc_1 = require('../service/work/work.svc');
 var header_cmp_1 = require('./header/header.cmp');
 var project_buttons_cmp_1 = require('./project/buttons/project-buttons.cmp');
 var task_cmp_1 = require('./task/task.cmp');
 var work_cmp_1 = require('./work/work.cmp');
 var AppCmp = (function () {
-    function AppCmp() {
+    function AppCmp(projectSvc, taskSvc, workSvc) {
+        this.projectSvc = projectSvc;
+        this.taskSvc = taskSvc;
+        this.workSvc = workSvc;
     }
     AppCmp = __decorate([
         core_1.Component({
@@ -27,10 +31,11 @@ var AppCmp = (function () {
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
                 project_svc_1.ProjectSvc,
-                task_svc_1.TaskSvc
+                task_svc_1.TaskSvc,
+                work_svc_1.WorkSvc
             ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc])
     ], AppCmp);
     return AppCmp;
 }());

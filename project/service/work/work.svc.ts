@@ -15,10 +15,11 @@ export class WorkSvc extends ItemsSvc {
 
     constructor(private http: Http) {
         super(http)
+        this.selectedItem = new Work()
         this.resource = new WorkResourceSvc(http)
     }
 
-    getList(query:Work): Promise<Work[]> {
+    getList(query: any): Promise<Work[]> {
         return super.getList(query)
     }
 }

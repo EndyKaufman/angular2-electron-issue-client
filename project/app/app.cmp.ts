@@ -3,6 +3,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 import { ProjectSvc} from '../service/project/project.svc'
 import { TaskSvc} from '../service/task/task.svc'
+import { WorkSvc} from '../service/work/work.svc'
 
 import { HeaderCmp }     from './header/header.cmp'
 import { ProjectButtonsCmp } from './project/buttons/project-buttons.cmp'
@@ -16,8 +17,11 @@ import { WorkCmp }     from './work/work.cmp'
   providers: [
     ROUTER_PROVIDERS,
     ProjectSvc,
-    TaskSvc
+    TaskSvc,
+    WorkSvc
   ]
 })
 export class AppCmp {
+  constructor(private projectSvc: ProjectSvc, private taskSvc: TaskSvc, private workSvc: WorkSvc) {
+  }
 }

@@ -1,3 +1,3 @@
-<a *ngFor="let item of items" class="item" [class.active]="item === projectSvc.selectedItem" (click)="projectSvc.onSelect(item)">
+<a *ngFor="let item of projectSvc.items" class="item" [class.active]="item === projectSvc.selectedItem" (click)="projectSvc.onSelect(item)">
     <i class="cube icon"></i> {{item.title}}
 </a>

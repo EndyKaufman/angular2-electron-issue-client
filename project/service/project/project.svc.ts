@@ -15,6 +15,7 @@ export class ProjectSvc extends ItemsSvc {
 
     constructor(private http: Http) {
         super(http)
+        this.selectedItem = new Project();
         this.resource = new ProjectResourceSvc(http)
     }
 

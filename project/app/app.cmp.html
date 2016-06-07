@@ -6,7 +6,7 @@
     <div class="pusher">
         <task></task>
     </div>
-    <div class="ui visible right vertical sidebar">
+    <div class="ui right vertical sidebar" [class.visible]="taskSvc.items && taskSvc.items.length>0">
         <work></work>
     </div>
 </div>

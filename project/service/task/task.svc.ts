@@ -15,6 +15,7 @@ export class TaskSvc extends ItemsSvc {
 
     constructor(private http: Http) {
         super(http)
+        this.selectedItem = new Task();
         this.resource = new TaskResourceSvc(http)
     }
 

@@ -26,13 +26,19 @@ export class ItemsSvc {
         let $this = this
         return new Promise(resolve => {
             if ($this.itemsLoaded) {
+                if ($this.items.length > 0)
+                    $this.onSelect($this.items[0])
+                else
+                    $this.onSelect({})
                 resolve($this.items)
             } else {
                 $this.resource.getList(query).then(function (items) {
                     $this.items = items
                     $this.itemsLoaded = true
-                    if (items.length > 0)
+                    if ($this.items.length > 0)
                         $this.onSelect($this.items[0])
+                    else
+                        $this.onSelect({})
                     resolve($this.items)
                 })
             }

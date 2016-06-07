@@ -1,5 +1,5 @@
 <div class="ui items basic segment">
-    <div class="item" *ngFor="let item of items" class="item" [class.active]="item === taskSvc.selectedItem" (click)="onSelect(item)">
+    <div class="item" *ngFor="let item of taskSvc.items" class="item" [class.active]="item === taskSvc.selectedItem" (click)="taskSvc.onSelect(item)">
         <div class="content">
             <a class="header">#{{item.id}} {{item.title}}</a>
             <div class="meta">
