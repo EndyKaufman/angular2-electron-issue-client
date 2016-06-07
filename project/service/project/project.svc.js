@@ -25,7 +25,6 @@ var ProjectSvc = (function (_super) {
         this.http = http;
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
     }
-    ;
     ProjectSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };

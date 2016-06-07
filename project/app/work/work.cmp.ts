@@ -1,7 +1,7 @@
-import { Component }       from '@angular/core';
+import { Component }       from '@angular/core'
 
-import { WorkHeaderCmp } from './header/work-header.cmp';
-import { WorkListCmp } from './list/work-list.cmp';
+import { WorkHeaderCmp } from './header/work-header.cmp'
+import { WorkListCmp } from './list/work-list.cmp'
 
 @Component({
   selector: 'work',

@@ -1,7 +1,7 @@
-import { Component }       from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { Component }       from '@angular/core'
+import { Router } from '@angular/router-deprecated'
 
-import {ProjectSvc} from '../../../service/project/project.svc';
+import {ProjectSvc} from '../../../service/project/project.svc'
 
 @Component({
   selector: 'task-header',

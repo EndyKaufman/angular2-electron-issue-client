@@ -1,32 +1,32 @@
-import { Headers, Http } from '@angular/http';
+import { Headers, Http } from '@angular/http'
 
-import { ResourceSvc } from '../resource.svc';
-import { Task } from './task';
+import { ResourceSvc } from '../resource.svc'
+import { Task } from './task'
 
 export class TaskResourceSvc extends ResourceSvc {
-    private resourceUrl = 'app/task';  // URL to web api
+    private resourceUrl = 'app/task'
 
     post(item: Task): Promise<Task> {
-        return super.post(item);
+        return super.post(item)
     }
     
     put(item: Task) {
-        return super.put(item);
+        return super.put(item)
     }
 
     save(item: Task): Promise<Task> {
-        return super.put(item);
-    };
+        return super.put(item)
+    }
     
     constructor(private http: Http) {
-        super(http);
-    };
+        super(http)
+    }
 
     delete(item: Task) {
-        return super.delete(item);
-    };
+        return super.delete(item)
+    }
     
     getList(query:any): Promise<Task[]> {
-        return super.getList(query);
-    };
+        return super.getList(query)
+    }
 }

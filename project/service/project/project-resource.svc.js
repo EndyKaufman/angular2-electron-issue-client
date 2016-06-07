@@ -10,7 +10,7 @@ var ProjectResourceSvc = (function (_super) {
     function ProjectResourceSvc(http) {
         _super.call(this, http);
         this.http = http;
-        this.resourceUrl = 'app/project'; // URL to web api
+        this.resourceUrl = 'app/project';
     }
     ProjectResourceSvc.prototype.post = function (item) {
         return _super.prototype.post.call(this, item);
@@ -21,8 +21,6 @@ var ProjectResourceSvc = (function (_super) {
     ProjectResourceSvc.prototype.save = function (item) {
         return _super.prototype.put.call(this, item);
     };
-    ;
-    ;
     ProjectResourceSvc.prototype.delete = function (item) {
         return _super.prototype.delete.call(this, item);
     };

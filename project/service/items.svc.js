@@ -7,13 +7,11 @@ var ItemsSvc = (function () {
         this.itemsLoaded = false;
         this.itemSelected$ = new core_1.EventEmitter();
     }
-    ;
     ItemsSvc.prototype.onSelect = function (item) {
         console.log(item);
         this.selectedItem = item;
         this.itemSelected$.emit(this.selectedItem);
     };
-    ;
     ItemsSvc.prototype.getList = function (query) {
         var $this = this;
         return new Promise(function (resolve) {
@@ -31,7 +29,6 @@ var ItemsSvc = (function () {
             }
         });
     };
-    ;
     return ItemsSvc;
 }());
 exports.ItemsSvc = ItemsSvc;

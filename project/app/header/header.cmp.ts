@@ -1,6 +1,6 @@
-import { Component }       from '@angular/core';
+import { Component }       from '@angular/core'
 
-import { HeaderLogoCmp } from './logo/header-logo.cmp';
+import { HeaderLogoCmp } from './logo/header-logo.cmp'
 
 @Component({
   selector: 'header',
@@ -8,5 +8,5 @@ import { HeaderLogoCmp } from './logo/header-logo.cmp';
   directives: [HeaderLogoCmp]
 })
 export class HeaderCmp {
-  title = 'Tasks';
+  title = 'Tasks'
 }

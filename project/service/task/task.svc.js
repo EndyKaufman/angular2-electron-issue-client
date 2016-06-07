@@ -25,7 +25,6 @@ var TaskSvc = (function (_super) {
         this.http = http;
         this.resource = new task_resource_svc_1.TaskResourceSvc(http);
     }
-    ;
     TaskSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };

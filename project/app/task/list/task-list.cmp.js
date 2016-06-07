@@ -36,11 +36,9 @@ var TaskListCmp = (function () {
         this.taskSvc.itemsLoaded = false;
         this.taskSvc.getList(query).then(function (items) { return _this.items = items; });
     };
-    ;
     TaskListCmp.prototype.ngOnInit = function () {
         this.getList();
     };
-    ;
     TaskListCmp.prototype.onProjectSelected = function (project) {
         this.getList();
     };

@@ -1,6 +1,6 @@
 export class Project {
-    id: number;
-    title: string;
-    description: string;
-    status: number[];
+    id: number
+    title: string
+    description: string
+    status: number[]
 }
