@@ -1,26 +1,13 @@
 <div class="ui items basic segment">
-    <div class="item">
+    <div class="item" *ngFor="let item of items" class="item" [class.active]="item === taskSvc.selectedItem" (click)="onSelect(item)">
         <div class="content">
-            <a class="header">#1001 Create all templates for project</a>
+            <a class="header">#{{item.id}} {{item.title}}</a>
             <div class="meta">
-                <span>Create all need template with mock routing</span>
+                <span>Status: {{item.status_id}}</span>
+                <span>Author: </span>
             </div>
             <div class="description">
-                <p></p>
-            </div>
-            <div class="extra">
-                Additional Details
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="content">
-            <a class="header">#1002 Create all mock data and use it with http service</a>
-            <div class="meta">
-                <span>Use restfull api</span>
-            </div>
-            <div class="description">
-                <p></p>
+                <p>{{item.description}}</p>
             </div>
             <div class="extra">
                 Additional Details

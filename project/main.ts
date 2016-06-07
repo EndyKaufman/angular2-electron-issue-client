@@ -3,7 +3,7 @@ import { provide }    from '@angular/core';
 import { XHRBackend } from '@angular/http';
 
 import { InMemoryBackendService, SEED_DATA } from 'angular2-in-memory-web-api';
-import { MockSvc }               from './mock.svc';
+import { MockSvc }               from './mock/mock.svc';
 
 import { bootstrap }    from '@angular/platform-browser-dynamic';
 import { HTTP_PROVIDERS } from '@angular/http';

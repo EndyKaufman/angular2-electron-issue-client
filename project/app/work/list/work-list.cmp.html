@@ -1,26 +1,12 @@
 <div class="ui items basic segment">
-    <div class="item">
+    <div class="item" *ngFor="let item of items" class="item" [class.active]="item === taskSvc.selectedItem" (click)="onSelect(item)">
         <div class="content">
-            <a class="header">Work 1</a>
+            <a class="header">{{item.spent_on}}</a>
             <div class="meta">
-                <span>Description of work</span>
+                <span>{{item.hours}}</span>
             </div>
             <div class="description">
-                <p></p>
-            </div>
-            <div class="extra">
-                Additional Details
-            </div>
-        </div>
-    </div>
-    <div class="item">
-        <div class="content">
-            <a class="header">Work 2</a>
-            <div class="meta">
-                <span>Description of work</span>
-            </div>
-            <div class="description">
-                <p></p>
+                <p>{{item.spent_on}}</p>
             </div>
             <div class="extra">
                 Additional Details

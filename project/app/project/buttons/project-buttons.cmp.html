@@ -1,9 +1,3 @@
-<a class="item">
-  <i class="home icon"></i> Project 1
-</a>
-<a class="item">
-  <i class="home icon"></i> Project 2
-</a>
-<a class="item">
-  <i class="home icon"></i> Project 3
+<a *ngFor="let item of items" class="item" [class.active]="item === projectSvc.selectedItem" (click)="projectSvc.onSelect(item)">
+    <i class="cube icon"></i> {{item.title}}
 </a>

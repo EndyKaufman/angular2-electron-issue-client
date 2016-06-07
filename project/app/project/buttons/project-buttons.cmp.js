@@ -9,15 +9,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_deprecated_1 = require('@angular/router-deprecated');
+var project_svc_1 = require('../../../service/project/project.svc');
 var ProjectButtonsCmp = (function () {
-    function ProjectButtonsCmp() {
+    function ProjectButtonsCmp(router, projectSvc) {
+        this.router = router;
+        this.projectSvc = projectSvc;
     }
+    ProjectButtonsCmp.prototype.getList = function () {
+        var _this = this;
+        this.projectSvc.getList().then(function (items) { return _this.items = items; });
+    };
+    ProjectButtonsCmp.prototype.ngOnInit = function () {
+        this.getList();
+    };
     ProjectButtonsCmp = __decorate([
         core_1.Component({
             selector: 'project-buttons',
             templateUrl: 'project/app/project/buttons/project-buttons.cmp.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, project_svc_1.ProjectSvc])
     ], ProjectButtonsCmp);
     return ProjectButtonsCmp;
 }());
