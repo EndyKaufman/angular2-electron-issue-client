@@ -22,18 +22,38 @@ var project_1 = require('./project');
 var ProjectSvc = (function (_super) {
     __extends(ProjectSvc, _super);
     function ProjectSvc(http) {
+        var _this = this;
         _super.call(this, http);
         this.http = http;
+        this.items = [];
+        this.checkedProjectsStatusIds = [];
         this.selectedItem = new project_1.Project();
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
+        this.itemSelected$.subscribe(function (item) {
+            _this.updateCheckedProjectsTitle();
+            _this.updateCheckedProjectsStatusIds();
+        });
+        this.itemChecked$.subscribe(function (items) {
+            _this.updateCheckedProjectsTitle();
+            _this.updateCheckedProjectsStatusIds();
+        });
     }
+    ProjectSvc.prototype.updateCheckedProjectsTitle = function () {
+        this.checkedProjectsTitle = this.selectedItem.title ? this.selectedItem.title : this.checkedItems.map(function (item) { return item.title; }).join(', ');
+    };
+    ProjectSvc.prototype.updateCheckedProjectsStatusIds = function () {
+        var projectsStatusList = this.selectedItem.id ? this.selectedItem.status : this.checkedItems.map(function (item) { return item.status; });
+        var checkedProjectStatusIds = [];
+        for (var _i = 0, projectsStatusList_1 = projectsStatusList; _i < projectsStatusList_1.length; _i++) {
+            var status_1 = projectsStatusList_1[_i];
+            checkedProjectStatusIds = checkedProjectStatusIds.concat(status_1);
+        }
+        this.checkedProjectsStatusIds = checkedProjectStatusIds.filter(function (item, pos, self) {
+            return self.indexOf(item) == pos;
+        });
+    };
     ProjectSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
-    };
-    ProjectSvc.prototype.getCheckedItemsTitles = function () {
-        if (this.checkedItems)
-            return this.checkedItems.map(function (item) { return item.title; });
-        return [];
     };
     ProjectSvc = __decorate([
         core_1.Injectable(), 

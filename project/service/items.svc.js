@@ -4,7 +4,9 @@ require('rxjs/add/operator/toPromise');
 var ItemsSvc = (function () {
     function ItemsSvc(http) {
         this.http = http;
+        this.items = [];
         this.itemsIndexById = {};
+        this.checkedItems = [];
         this.loaded = false;
         this.itemSelected$ = new core_1.EventEmitter();
         this.itemChecked$ = new core_1.EventEmitter();

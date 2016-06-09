@@ -1,6 +1,15 @@
 <div class="ui segment basic">
     <div class="ui segment" [class.blue]="projectSvc.selectedItem.id" [class.green]="!projectSvc.selectedItem.id">
-        <task-header></task-header>
+        <div class="ui grid">
+            <div class="two column row">
+                <div class="left floated column">
+                    <task-header></task-header>
+                </div>
+                <div class="right floated right aligned column">
+                    <task-header-buttons></task-header-buttons>
+                </div>
+            </div>
+        </div>
         <div class="ui clearing divider"></div>
         <task-list></task-list>
     </div>

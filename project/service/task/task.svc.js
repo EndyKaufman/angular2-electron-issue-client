@@ -24,11 +24,30 @@ var TaskSvc = (function (_super) {
     function TaskSvc(http) {
         _super.call(this, http);
         this.http = http;
+        this.items = [];
+        this.filteredStatus = [];
         this.selectedItem = new task_1.Task();
         this.resource = new task_resource_svc_1.TaskResourceSvc(http);
     }
+    TaskSvc.prototype.getTitle = function (item) {
+        return '#' + item.title;
+    };
     TaskSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
+    };
+    TaskSvc.prototype.getItemsFilteredByStatus = function () {
+        var _this = this;
+        return this.items.filter(function (item) { return item && _this.isFilterStatus(item.status_id); });
+    };
+    TaskSvc.prototype.isFilterStatus = function (status_id) {
+        return this.filteredStatus && this.filteredStatus.indexOf(status_id) != -1;
+    };
+    TaskSvc.prototype.onFilterStatus = function (status_id) {
+        var index = this.filteredStatus.indexOf(status_id);
+        if (index == -1)
+            this.filteredStatus.push(status_id);
+        else
+            this.filteredStatus.splice(index, 1);
     };
     TaskSvc = __decorate([
         core_1.Injectable(), 

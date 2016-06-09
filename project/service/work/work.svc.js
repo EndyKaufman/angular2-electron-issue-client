@@ -24,6 +24,7 @@ var WorkSvc = (function (_super) {
     function WorkSvc(http) {
         _super.call(this, http);
         this.http = http;
+        this.items = [];
         this.selectedItem = new work_1.Work();
         this.resource = new work_resource_svc_1.WorkResourceSvc(http);
     }

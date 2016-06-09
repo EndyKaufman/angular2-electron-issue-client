@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var project_svc_1 = require('../../service/project/project.svc');
 var task_header_cmp_1 = require('./header/task-header.cmp');
+var task_header_buttons_cmp_1 = require('./header/buttons/task-header-buttons.cmp');
 var task_list_cmp_1 = require('./list/task-list.cmp');
 var TaskCmp = (function () {
     function TaskCmp(router, projectSvc) {
@@ -22,7 +23,7 @@ var TaskCmp = (function () {
         core_1.Component({
             selector: 'task',
             templateUrl: 'project/app/task/task.cmp.html',
-            directives: [task_header_cmp_1.TaskHeaderCmp, task_list_cmp_1.TaskListCmp]
+            directives: [task_header_cmp_1.TaskHeaderCmp, task_list_cmp_1.TaskListCmp, task_header_buttons_cmp_1.TaskHeaderButtonsCmp]
         }), 
         __metadata('design:paramtypes', [router_deprecated_1.Router, project_svc_1.ProjectSvc])
     ], TaskCmp);

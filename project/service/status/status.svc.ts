@@ -9,7 +9,7 @@ import { Status } from './status'
 
 @Injectable()
 export class StatusSvc extends ItemsSvc {
-    items: Status[]
+    items: Status[] = []
     selectedItem: Status
     resource: StatusResourceSvc
 

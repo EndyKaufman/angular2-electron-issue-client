@@ -4,10 +4,10 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 export class ItemsSvc {
-    items: any[]
+    items: any[] = []
     itemsIndexById: any = {}
     selectedItem: any
-    checkedItems: any[]
+    checkedItems: any[] = []
     resource: any
 
     loaded: boolean = false

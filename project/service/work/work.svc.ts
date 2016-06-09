@@ -9,7 +9,7 @@ import { Work } from './work'
 
 @Injectable()
 export class WorkSvc extends ItemsSvc {
-    items: Work[]
+    items: Work[] = []
     selectedItem: Work
     resource: WorkResourceSvc
 

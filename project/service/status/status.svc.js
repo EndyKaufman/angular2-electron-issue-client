@@ -24,6 +24,7 @@ var StatusSvc = (function (_super) {
     function StatusSvc(http) {
         _super.call(this, http);
         this.http = http;
+        this.items = [];
         this.selectedItem = new status_1.Status();
         this.resource = new status_resource_svc_1.StatusResourceSvc(http);
     }
