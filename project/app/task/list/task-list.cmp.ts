@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router-deprecated'
 
+import {StatusSvc} from '../../../service/status/status.svc'
 import {TaskSvc} from '../../../service/task/task.svc'
 import {ProjectSvc} from '../../../service/project/project.svc'
 
@@ -10,23 +11,37 @@ import {ProjectSvc} from '../../../service/project/project.svc'
 })
 export class TaskListCmp implements OnInit {
 
-  constructor(private router: Router, private taskSvc: TaskSvc, private projectSvc: ProjectSvc) {
+  constructor(private router: Router, private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private statusSvc: StatusSvc) {
     projectSvc.itemSelected$.subscribe(item => this.onProjectSelected(item))
+    projectSvc.itemChecked$.subscribe(items => this.onProjectChecked(items))
   }
 
   getList() {
-    let query = {
-      project_id: this.projectSvc.selectedItem.id
+    let query = {}
+    let checkedIds = this.projectSvc.getCheckedItemsIds()
+    if (this.projectSvc.selectedItem.id) {
+      query = {
+        project_id: this.projectSvc.selectedItem.id
+      }
+    } else {
+      if (checkedIds.length)
+        query = { project_id: checkedIds.join('|') }
+      else
+        query = { project_id: -1 }
     }
-    this.taskSvc.itemsLoaded = false
+    this.taskSvc.loaded = false
     this.taskSvc.getList(query)
   }
 
   ngOnInit() {
+    //this.getList()
+  }
+
+  onProjectSelected(item: any) {
     this.getList()
   }
 
-  onProjectSelected(project: any) {
+  onProjectChecked(item: any[]) {
     this.getList()
   }
 }

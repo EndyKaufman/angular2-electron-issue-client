@@ -9,7 +9,8 @@ import {ProjectSvc} from '../../../service/project/project.svc'
 })
 export class ProjectButtonsCmp implements OnInit {
 
-  constructor(private router: Router, private projectSvc: ProjectSvc) { }
+  constructor(private router: Router, private projectSvc: ProjectSvc) { 
+  }
 
   getList() {
     this.projectSvc.getList({})

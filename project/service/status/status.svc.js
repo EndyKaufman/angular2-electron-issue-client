@@ -17,29 +17,24 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../items.svc');
-var project_resource_svc_1 = require('./project-resource.svc');
-var project_1 = require('./project');
-var ProjectSvc = (function (_super) {
-    __extends(ProjectSvc, _super);
-    function ProjectSvc(http) {
+var status_resource_svc_1 = require('./status-resource.svc');
+var status_1 = require('./status');
+var StatusSvc = (function (_super) {
+    __extends(StatusSvc, _super);
+    function StatusSvc(http) {
         _super.call(this, http);
         this.http = http;
-        this.selectedItem = new project_1.Project();
-        this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
+        this.selectedItem = new status_1.Status();
+        this.resource = new status_resource_svc_1.StatusResourceSvc(http);
     }
-    ProjectSvc.prototype.getList = function (query) {
+    StatusSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
-    ProjectSvc.prototype.getCheckedItemsTitles = function () {
-        if (this.checkedItems)
-            return this.checkedItems.map(function (item) { return item.title; });
-        return [];
-    };
-    ProjectSvc = __decorate([
+    StatusSvc = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ProjectSvc);
-    return ProjectSvc;
+    ], StatusSvc);
+    return StatusSvc;
 }(items_svc_1.ItemsSvc));
-exports.ProjectSvc = ProjectSvc;
-//# sourceMappingURL=project.svc.js.map
+exports.StatusSvc = StatusSvc;
+//# sourceMappingURL=status.svc.js.map

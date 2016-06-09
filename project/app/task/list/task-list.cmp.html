@@ -1,17 +1,28 @@
-<div class="ui items basic segment">
-    <div class="item" *ngFor="let item of taskSvc.items" class="item" [class.active]="item === taskSvc.selectedItem" (click)="taskSvc.onSelect(item)">
+<div class="ui middle aligned relaxed divided list">
+    <div class="item" *ngFor="let item of taskSvc.items" [class.active]="item === taskSvc.selectedItem">
+        <div class="right floated content">
+            <div class="ui left labeled button">
+                <a class="ui basic right pointing label {{statusSvc.getItemById(item.status_id).color}}">
+                    Status
+                </a>
+                <div class="ui button {{statusSvc.getItemById(item.status_id).color}}">
+                    {{statusSvc.getItemById(item.status_id).title}}
+                </div>
+            </div>
+            <div class="ui left labeled button">
+                <a class="ui basic right pointing label" [class.blue]="item === taskSvc.selectedItem" [class.green]="taskSvc.checkedItems.indexOf(item)!=-1" (click)="taskSvc.onSelect(item)">
+                    Select
+                </a>
+                <div class="ui button" [class.blue]="item === taskSvc.selectedItem" [class.green]="taskSvc.checkedItems.indexOf(item)!=-1" (click)="taskSvc.onCheck(item)">
+                    <i class="Checkmark icon"></i>
+                </div>
+            </div>
+        </div>
         <div class="content">
-            <a class="header">#{{item.id}} {{item.title}}</a>
-            <div class="meta">
-                <span>Status: {{item.status_id}}</span>
-                <span>Author: </span>
-            </div>
-            <div class="description">
-                <p>{{item.description}}</p>
-            </div>
-            <div class="extra">
-                Additional Details
-            </div>
+            #{{item.id}} {{item.title}}
+        </div>
+        <div class="description">
+            {{item.description}}
         </div>
     </div>
 </div>

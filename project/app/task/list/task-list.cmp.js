@@ -10,27 +10,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
+var status_svc_1 = require('../../../service/status/status.svc');
 var task_svc_1 = require('../../../service/task/task.svc');
 var project_svc_1 = require('../../../service/project/project.svc');
 var TaskListCmp = (function () {
-    function TaskListCmp(router, taskSvc, projectSvc) {
+    function TaskListCmp(router, taskSvc, projectSvc, statusSvc) {
         var _this = this;
         this.router = router;
         this.taskSvc = taskSvc;
         this.projectSvc = projectSvc;
+        this.statusSvc = statusSvc;
         projectSvc.itemSelected$.subscribe(function (item) { return _this.onProjectSelected(item); });
+        projectSvc.itemChecked$.subscribe(function (items) { return _this.onProjectChecked(items); });
     }
     TaskListCmp.prototype.getList = function () {
-        var query = {
-            project_id: this.projectSvc.selectedItem.id
-        };
-        this.taskSvc.itemsLoaded = false;
+        var query = {};
+        var checkedIds = this.projectSvc.getCheckedItemsIds();
+        if (this.projectSvc.selectedItem.id) {
+            query = {
+                project_id: this.projectSvc.selectedItem.id
+            };
+        }
+        else {
+            if (checkedIds.length)
+                query = { project_id: checkedIds.join('|') };
+            else
+                query = { project_id: -1 };
+        }
+        this.taskSvc.loaded = false;
         this.taskSvc.getList(query);
     };
     TaskListCmp.prototype.ngOnInit = function () {
+        //this.getList()
+    };
+    TaskListCmp.prototype.onProjectSelected = function (item) {
         this.getList();
     };
-    TaskListCmp.prototype.onProjectSelected = function (project) {
+    TaskListCmp.prototype.onProjectChecked = function (item) {
         this.getList();
     };
     TaskListCmp = __decorate([
@@ -38,7 +54,7 @@ var TaskListCmp = (function () {
             selector: 'task-list',
             templateUrl: 'project/app/task/list/task-list.cmp.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, task_svc_1.TaskSvc, project_svc_1.ProjectSvc])
+        __metadata('design:paramtypes', [router_deprecated_1.Router, task_svc_1.TaskSvc, project_svc_1.ProjectSvc, status_svc_1.StatusSvc])
     ], TaskListCmp);
     return TaskListCmp;
 }());

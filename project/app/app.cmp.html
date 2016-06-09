@@ -1,12 +1,16 @@
-<div class="ui bottom attached pushable">
-    <div class="ui visible left vertical sidebar menu">
-        <header></header>
-        <project-buttons></project-buttons>
-    </div>
-    <div class="pusher">
-        <task></task>
-    </div>
-    <div class="ui right vertical sidebar" [class.visible]="taskSvc.items && taskSvc.items.length>0">
-        <work></work>
+<div class="ui grid">
+    <div class="two column row">
+        <div class="left floated column">
+            <div class="ui basic segment">
+                <header-logo></header-logo>
+            </div>
+        </div>
+        <div class="right floated right aligned column">
+            <div class="ui basic segment">
+                <project-buttons></project-buttons>
+            </div>
+        </div>
     </div>
 </div>
+<task></task>
+<work></work>

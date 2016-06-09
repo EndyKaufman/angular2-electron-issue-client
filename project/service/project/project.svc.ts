@@ -21,5 +21,11 @@ export class ProjectSvc extends ItemsSvc {
 
     getList(query: any): Promise<Project[]> {
         return super.getList(query)
+    }    
+    
+    getCheckedItemsTitles() {
+        if (this.checkedItems)
+            return  this.checkedItems.map(item=>item.title)
+        return []
     }
 }

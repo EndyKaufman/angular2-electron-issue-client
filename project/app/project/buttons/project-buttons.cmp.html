@@ -1,3 +1,14 @@
-<a *ngFor="let item of projectSvc.items" class="item" [class.active]="item === projectSvc.selectedItem" (click)="projectSvc.onSelect(item)">
-    <i class="cube icon"></i> {{item.title}}
-</a>
+<div *ngFor="let item of projectSvc.items" class="ui left labeled button" tabindex="0">
+    <a class="ui basic right pointing label" 
+    [class.blue]="item === projectSvc.selectedItem" 
+    [class.green]="projectSvc.checkedItems.indexOf(item)!=-1" 
+    (click)="projectSvc.onSelect(item)">
+    {{item.title}}
+  </a>
+    <div class="ui button" 
+    [class.blue]="item === projectSvc.selectedItem" 
+    [class.green]="projectSvc.checkedItems.indexOf(item)!=-1" 
+    (click)="projectSvc.onCheck(item)">
+        <i class="Checkmark icon"></i>
+    </div>
+</div>

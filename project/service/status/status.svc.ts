@@ -1,33 +1,25 @@
 import { Injectable }    from '@angular/core'
-import { Headers, Http } from '@angular/http'
+import { Http } from '@angular/http'
 
 import 'rxjs/add/operator/toPromise'
 
-import { ResourceSvc } from '../resource.svc'
+import { ItemsSvc } from '../items.svc'
+import { StatusResourceSvc } from './status-resource.svc'
 import { Status } from './status'
 
 @Injectable()
-export class StatusSvc extends ResourceSvc {
-    private resourceUrl = 'app/status'  // URL to web api
-
-    post(item: Status): Promise<Status> {
-        return super.post(item)
-    }
-
-    put(item: Status) {
-        return super.put(item)
-    }   
+export class StatusSvc extends ItemsSvc {
+    items: Status[]
+    selectedItem: Status
+    resource: StatusResourceSvc
 
     constructor(private http: Http) {
         super(http)
-    }
-
-    delete(item: Status) {
-        return super.delete(item)
+        this.selectedItem = new Status();
+        this.resource = new StatusResourceSvc(http)
     }
 
     getList(query: any): Promise<Status[]> {
         return super.getList(query)
-
     }
 }

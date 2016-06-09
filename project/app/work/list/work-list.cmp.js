@@ -24,7 +24,7 @@ var WorkListCmp = (function () {
         var query = {
             task_id: this.taskSvc.selectedItem.id
         };
-        this.workSvc.itemsLoaded = false;
+        this.workSvc.loaded = false;
         this.workSvc.getList(query);
     };
     WorkListCmp.prototype.ngOnInit = function () {
