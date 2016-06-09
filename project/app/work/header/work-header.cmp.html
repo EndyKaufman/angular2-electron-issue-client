@@ -1,7 +1,7 @@
-<h2 class="ui header basic segment">
-  <i class="pointing right icon"></i>
+<h4 class="ui header" *ngIf="taskSvc.selectedItem" [class.blue]="taskSvc.selectedItem.id" [class.green]="!taskSvc.selectedItem.id">
+  <i class="check icon"></i>
   <div class="content">
-    #{{taskSvc.selectedItem.title}}
-    <div class="sub header">{{taskSvc.selectedItem.status_id}}</div>
+    {{taskSvc.checkedsTitle}}
+    <div class="sub header">{{taskSvc.selectedItem.description}}</div>
   </div>
-</h2>
+</h4>

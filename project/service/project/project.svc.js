@@ -26,29 +26,29 @@ var ProjectSvc = (function (_super) {
         _super.call(this, http);
         this.http = http;
         this.items = [];
-        this.checkedProjectsStatusIds = [];
+        this.checkedsStatusIds = [];
         this.selectedItem = new project_1.Project();
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
         this.itemSelected$.subscribe(function (item) {
-            _this.updateCheckedProjectsTitle();
-            _this.updateCheckedProjectsStatusIds();
+            _this.updateCheckedsTitle();
+            _this.updateCheckedsStatusIds();
         });
         this.itemChecked$.subscribe(function (items) {
-            _this.updateCheckedProjectsTitle();
-            _this.updateCheckedProjectsStatusIds();
+            _this.updateCheckedsTitle();
+            _this.updateCheckedsStatusIds();
         });
     }
-    ProjectSvc.prototype.updateCheckedProjectsTitle = function () {
-        this.checkedProjectsTitle = this.selectedItem.title ? this.selectedItem.title : this.checkedItems.map(function (item) { return item.title; }).join(', ');
+    ProjectSvc.prototype.updateCheckedsTitle = function () {
+        this.checkedsTitle = this.selectedItem.title ? this.selectedItem.title : this.checkedItems.map(function (item) { return item.title; }).join(', ');
     };
-    ProjectSvc.prototype.updateCheckedProjectsStatusIds = function () {
+    ProjectSvc.prototype.updateCheckedsStatusIds = function () {
         var projectsStatusList = this.selectedItem.id ? this.selectedItem.status : this.checkedItems.map(function (item) { return item.status; });
         var checkedProjectStatusIds = [];
         for (var _i = 0, projectsStatusList_1 = projectsStatusList; _i < projectsStatusList_1.length; _i++) {
             var status_1 = projectsStatusList_1[_i];
             checkedProjectStatusIds = checkedProjectStatusIds.concat(status_1);
         }
-        this.checkedProjectsStatusIds = checkedProjectStatusIds.filter(function (item, pos, self) {
+        this.checkedsStatusIds = checkedProjectStatusIds.filter(function (item, pos, self) {
             return self.indexOf(item) == pos;
         });
     };

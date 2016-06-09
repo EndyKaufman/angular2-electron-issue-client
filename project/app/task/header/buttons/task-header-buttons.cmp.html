@@ -1,5 +1,5 @@
 <div class="ui button {{taskSvc.isFilterStatus(status_id)?statusSvc.getItemById(status_id).color:'basic'}}" 
-    *ngFor="let status_id of projectSvc.checkedProjectsStatusIds" (click)="taskSvc.onFilterStatus(status_id)" 
+    *ngFor="let status_id of projectSvc.checkedsStatusIds" (click)="taskSvc.onFilterStatus(status_id)" 
     [class.blue]="projectSvc.selectedItem.id && !taskSvc.isFilterStatus(status_id)"
     [class.green]="!projectSvc.selectedItem.id && !taskSvc.isFilterStatus(status_id)">
     {{statusSvc.getItemById(status_id).title}}

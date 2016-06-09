@@ -18,7 +18,7 @@ export class TaskHeaderButtonsCmp {
     if (!this.firstUpdateFilteredStatus)
       return
     this.firstUpdateFilteredStatus = false
-    for (let status_id of this.projectSvc.checkedProjectsStatusIds) {
+    for (let status_id of this.projectSvc.checkedsStatusIds) {
       this.taskSvc.onFilterStatus(status_id)
     }
   }

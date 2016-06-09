@@ -22,13 +22,24 @@ var task_1 = require('./task');
 var TaskSvc = (function (_super) {
     __extends(TaskSvc, _super);
     function TaskSvc(http) {
+        var _this = this;
         _super.call(this, http);
         this.http = http;
         this.items = [];
         this.filteredStatus = [];
         this.selectedItem = new task_1.Task();
         this.resource = new task_resource_svc_1.TaskResourceSvc(http);
+        this.itemSelected$.subscribe(function (item) {
+            _this.updateCheckedsTitle();
+        });
+        this.itemChecked$.subscribe(function (items) {
+            _this.updateCheckedsTitle();
+        });
     }
+    TaskSvc.prototype.updateCheckedsTitle = function () {
+        var _this = this;
+        this.checkedsTitle = this.selectedItem.title ? this.getTitle(this.selectedItem) : this.checkedItems.map(function (item) { return _this.getTitle(item); }).join(', ');
+    };
     TaskSvc.prototype.getTitle = function (item) {
         return '#' + item.title;
     };

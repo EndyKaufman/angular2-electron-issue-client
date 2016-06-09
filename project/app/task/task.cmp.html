@@ -1,5 +1,5 @@
 <div class="ui segment basic">
-    <div class="ui segment" [class.blue]="projectSvc.selectedItem.id" [class.green]="!projectSvc.selectedItem.id">
+    <div class="ui segment" [class.blue]="projectSvc.selectedItem && projectSvc.selectedItem.id" [class.green]="projectSvc.selectedItem && !projectSvc.selectedItem.id">
         <div class="ui grid">
             <div class="two column row">
                 <div class="left floated column">

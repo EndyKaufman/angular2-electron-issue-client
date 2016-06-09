@@ -26,7 +26,7 @@ var TaskHeaderButtonsCmp = (function () {
         if (!this.firstUpdateFilteredStatus)
             return;
         this.firstUpdateFilteredStatus = false;
-        for (var _i = 0, _a = this.projectSvc.checkedProjectsStatusIds; _i < _a.length; _i++) {
+        for (var _i = 0, _a = this.projectSvc.checkedsStatusIds; _i < _a.length; _i++) {
             var status_id = _a[_i];
             this.taskSvc.onFilterStatus(status_id);
         }

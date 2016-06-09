@@ -12,6 +12,7 @@ export class TaskSvc extends ItemsSvc {
     items: Task[] = []
     selectedItem: Task
     resource: TaskResourceSvc
+    checkedsTitle: string
 
     filteredStatus: number[] = []
 
@@ -19,8 +20,19 @@ export class TaskSvc extends ItemsSvc {
         super(http)
         this.selectedItem = new Task();
         this.resource = new TaskResourceSvc(http)
+        
+        this.itemSelected$.subscribe(item => {
+            this.updateCheckedsTitle()
+        })
+        this.itemChecked$.subscribe(items => {
+            this.updateCheckedsTitle()
+        })
     }
 
+    updateCheckedsTitle() {
+        this.checkedsTitle = this.selectedItem.title ? this.getTitle(this.selectedItem) : this.checkedItems.map(item => this.getTitle(item)).join(', ')
+    }
+    
     getTitle(item: Task) {
         return '#' + item.title
     }

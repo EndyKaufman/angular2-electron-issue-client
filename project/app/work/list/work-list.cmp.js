@@ -17,16 +17,27 @@ var WorkListCmp = (function () {
         this.workSvc = workSvc;
         this.taskSvc = taskSvc;
         taskSvc.itemSelected$.subscribe(function (item) { return _this.onTaskSelected(item); });
+        taskSvc.itemChecked$.subscribe(function (items) { return _this.onTaskSelected(items); });
     }
     WorkListCmp.prototype.getList = function () {
-        var query = {
-            task_id: this.taskSvc.selectedItem.id
-        };
+        var query = {};
+        var checkedIds = this.taskSvc.getCheckedItemsIds();
+        if (this.taskSvc.selectedItem.id) {
+            query = {
+                task_id: this.taskSvc.selectedItem.id
+            };
+        }
+        else {
+            if (checkedIds.length)
+                query = { task_id: checkedIds.join('|') };
+            else
+                query = { task_id: -1 };
+        }
         this.workSvc.loaded = false;
         this.workSvc.getList(query);
     };
     WorkListCmp.prototype.ngOnInit = function () {
-        this.getList();
+        //this.getList()
     };
     WorkListCmp.prototype.onTaskSelected = function (project) {
         this.getList();
