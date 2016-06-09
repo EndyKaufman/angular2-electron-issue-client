@@ -1,5 +1,4 @@
 import { Component }       from '@angular/core'
-import { Router } from '@angular/router-deprecated'
 
 import {ProjectSvc} from '../../../service/project/project.svc'
 import {Status} from '../../../service/status/status'
@@ -9,6 +8,6 @@ import {Status} from '../../../service/status/status'
   templateUrl: 'project/app/task/header/task-header.cmp.html'
 })
 export class TaskHeaderCmp {
-  constructor(private router: Router, private projectSvc: ProjectSvc) { 
+  constructor(private projectSvc: ProjectSvc) { 
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router-deprecated'
 
 import {WorkSvc} from '../../../service/work/work.svc'
 import {TaskSvc} from '../../../service/task/task.svc'
@@ -10,7 +9,7 @@ import {TaskSvc} from '../../../service/task/task.svc'
 })
 export class WorkListCmp implements OnInit {
 
-  constructor(private router: Router, private workSvc: WorkSvc, private taskSvc: TaskSvc) {
+  constructor(private workSvc: WorkSvc, private taskSvc: TaskSvc) {
     taskSvc.itemSelected$.subscribe(item => this.onTaskSelected(item))
   }
 

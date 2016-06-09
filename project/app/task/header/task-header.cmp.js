@@ -9,11 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var project_svc_1 = require('../../../service/project/project.svc');
 var TaskHeaderCmp = (function () {
-    function TaskHeaderCmp(router, projectSvc) {
-        this.router = router;
+    function TaskHeaderCmp(projectSvc) {
         this.projectSvc = projectSvc;
     }
     TaskHeaderCmp = __decorate([
@@ -21,7 +19,7 @@ var TaskHeaderCmp = (function () {
             selector: 'task-header',
             templateUrl: 'project/app/task/header/task-header.cmp.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, project_svc_1.ProjectSvc])
+        __metadata('design:paramtypes', [project_svc_1.ProjectSvc])
     ], TaskHeaderCmp);
     return TaskHeaderCmp;
 }());

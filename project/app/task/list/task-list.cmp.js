@@ -9,14 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var status_svc_1 = require('../../../service/status/status.svc');
 var task_svc_1 = require('../../../service/task/task.svc');
 var project_svc_1 = require('../../../service/project/project.svc');
 var TaskListCmp = (function () {
-    function TaskListCmp(router, taskSvc, projectSvc, statusSvc) {
+    function TaskListCmp(taskSvc, projectSvc, statusSvc) {
         var _this = this;
-        this.router = router;
         this.taskSvc = taskSvc;
         this.projectSvc = projectSvc;
         this.statusSvc = statusSvc;
@@ -54,7 +52,7 @@ var TaskListCmp = (function () {
             selector: 'task-list',
             templateUrl: 'project/app/task/list/task-list.cmp.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, task_svc_1.TaskSvc, project_svc_1.ProjectSvc, status_svc_1.StatusSvc])
+        __metadata('design:paramtypes', [task_svc_1.TaskSvc, project_svc_1.ProjectSvc, status_svc_1.StatusSvc])
     ], TaskListCmp);
     return TaskListCmp;
 }());

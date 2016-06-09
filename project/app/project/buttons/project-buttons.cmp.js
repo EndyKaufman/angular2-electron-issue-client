@@ -9,11 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var router_deprecated_1 = require('@angular/router-deprecated');
 var project_svc_1 = require('../../../service/project/project.svc');
 var ProjectButtonsCmp = (function () {
-    function ProjectButtonsCmp(router, projectSvc) {
-        this.router = router;
+    function ProjectButtonsCmp(projectSvc) {
         this.projectSvc = projectSvc;
     }
     ProjectButtonsCmp.prototype.getList = function () {
@@ -27,7 +25,7 @@ var ProjectButtonsCmp = (function () {
             selector: 'project-buttons',
             templateUrl: 'project/app/project/buttons/project-buttons.cmp.html'
         }), 
-        __metadata('design:paramtypes', [router_deprecated_1.Router, project_svc_1.ProjectSvc])
+        __metadata('design:paramtypes', [project_svc_1.ProjectSvc])
     ], ProjectButtonsCmp);
     return ProjectButtonsCmp;
 }());

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router-deprecated'
 
 import {ProjectSvc} from '../../../service/project/project.svc'
 
@@ -9,7 +8,7 @@ import {ProjectSvc} from '../../../service/project/project.svc'
 })
 export class ProjectButtonsCmp implements OnInit {
 
-  constructor(private router: Router, private projectSvc: ProjectSvc) { 
+  constructor(private projectSvc: ProjectSvc) { 
   }
 
   getList() {

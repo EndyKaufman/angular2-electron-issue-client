@@ -1,5 +1,4 @@
 import { Component }       from '@angular/core'
-import { Router } from '@angular/router-deprecated'
 
 import {ProjectSvc} from '../../service/project/project.svc'
 import { TaskHeaderCmp } from './header/task-header.cmp'
@@ -12,7 +11,7 @@ import { TaskListCmp } from './list/task-list.cmp'
   directives: [TaskHeaderCmp, TaskListCmp, TaskHeaderButtonsCmp]
 })
 export class TaskCmp {
-  constructor(private router: Router, private projectSvc: ProjectSvc) {
+  constructor(private projectSvc: ProjectSvc) {
     
   }
 }

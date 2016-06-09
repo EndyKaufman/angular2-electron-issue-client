@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { Router } from '@angular/router-deprecated'
 
 import {StatusSvc} from '../../../service/status/status.svc'
 import {TaskSvc} from '../../../service/task/task.svc'
@@ -11,7 +10,7 @@ import {ProjectSvc} from '../../../service/project/project.svc'
 })
 export class TaskListCmp implements OnInit {
 
-  constructor(private router: Router, private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private statusSvc: StatusSvc) {
+  constructor(private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private statusSvc: StatusSvc) {
     projectSvc.itemSelected$.subscribe(item => this.onProjectSelected(item))
     projectSvc.itemChecked$.subscribe(items => this.onProjectChecked(items))
   }
