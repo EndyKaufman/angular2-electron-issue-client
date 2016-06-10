@@ -1,20 +1,20 @@
 import { Headers, Http } from '@angular/http'
 
 import { ResourceSvc } from '../resource.svc'
-import { Task } from './task'
+import { WorkType } from './work-type'
 
-export class TaskResourceSvc extends ResourceSvc {
-    resourceUrl = 'app/task'
+export class WorkTypeResourceSvc extends ResourceSvc {
+    resourceUrl = 'app/work_type'
 
-    post(item: Task): Promise<Task> {
+    post(item: WorkType): Promise<WorkType> {
         return super.post(item)
     }
     
-    put(item: Task) {
+    put(item: WorkType) {
         return super.put(item)
     }
 
-    save(item: Task): Promise<Task> {
+    save(item: WorkType): Promise<WorkType> {
         return super.put(item)
     }
     
@@ -22,11 +22,11 @@ export class TaskResourceSvc extends ResourceSvc {
         super(http)
     }
 
-    delete(item: Task) {
+    delete(item: WorkType) {
         return super.delete(item)
     }
     
-    getList(query:any): Promise<Task[]> {
+    getList(query:any): Promise<WorkType[]> {
         return super.getList(query)
     }
 }

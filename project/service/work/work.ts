@@ -4,5 +4,5 @@ export class Work {
     spent_on: Date
     hours: number
     task_id: number
-    type_id: number
+    work_type_id: number
 }

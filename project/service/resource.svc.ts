@@ -4,9 +4,9 @@ import { Headers, Http, URLSearchParams } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 export class ResourceSvc {
-    private resourceUrl = ''  // URL to web api
+    resourceUrl = ''  // URL to web api
 
-    private handleError(error: any) {
+    handleError(error: any) {
         console.error('An error occurred', error)
         return Promise.reject(error.message || error)
     }
@@ -36,7 +36,7 @@ export class ResourceSvc {
             .catch(this.handleError)
     }
 
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     delete(item: any) {
         let headers = new Headers()

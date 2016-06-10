@@ -13,7 +13,7 @@ export class WorkSvc extends ItemsSvc {
     selectedItem: Work
     resource: WorkResourceSvc
 
-    constructor(private http: Http) {
+    constructor(public http: Http) {
         super(http)
         this.selectedItem = new Work()
         this.resource = new WorkResourceSvc(http)

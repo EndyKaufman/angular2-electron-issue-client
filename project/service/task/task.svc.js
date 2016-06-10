@@ -57,8 +57,14 @@ var TaskSvc = (function (_super) {
         var index = this.filteredStatus.indexOf(status_id);
         if (index == -1)
             this.filteredStatus.push(status_id);
-        else
+        else {
             this.filteredStatus.splice(index, 1);
+            for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
+                var item = _a[_i];
+                if (item.status_id == status_id)
+                    this.unCheckIfChecked(item);
+            }
+        }
     };
     TaskSvc = __decorate([
         core_1.Injectable(), 

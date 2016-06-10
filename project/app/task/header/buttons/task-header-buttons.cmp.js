@@ -31,6 +31,14 @@ var TaskHeaderButtonsCmp = (function () {
             this.taskSvc.onFilterStatus(status_id);
         }
     };
+    TaskHeaderButtonsCmp.prototype.getStatusButtonColor = function (status_id) {
+        var color = this.taskSvc.isFilterStatus(status_id) ? this.statusSvc.getItemById(status_id).color : 'basic';
+        if (color != 'blue' && this.projectSvc.selectedItem.id && !this.taskSvc.isFilterStatus(status_id))
+            color += ' blue';
+        else if (color != 'green' && !this.projectSvc.selectedItem.id && !this.taskSvc.isFilterStatus(status_id))
+            color += ' green';
+        return color;
+    };
     TaskHeaderButtonsCmp = __decorate([
         core_1.Component({
             selector: 'task-header-buttons',

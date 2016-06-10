@@ -3,6 +3,7 @@ var project_mock_svc_1 = require('./project-mock.svc');
 var status_mock_svc_1 = require('./status-mock.svc');
 var task_mock_svc_1 = require('./task-mock.svc');
 var work_mock_svc_1 = require('./work-mock.svc');
+var work_type_mock_svc_1 = require('./work-type-mock.svc');
 var MockSvc = (function () {
     function MockSvc() {
     }
@@ -11,7 +12,8 @@ var MockSvc = (function () {
         var status = new status_mock_svc_1.StatusMockSvc().getList();
         var task = new task_mock_svc_1.TaskMockSvc().getList();
         var work = new work_mock_svc_1.WorkMockSvc().getList();
-        return { project: project, status: status, task: task, work: work };
+        var work_type = new work_type_mock_svc_1.WorkTypeMockSvc().getList();
+        return { project: project, status: status, task: task, work: work, work_type: work_type };
     };
     return MockSvc;
 }());

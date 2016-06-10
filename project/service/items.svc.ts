@@ -16,7 +16,7 @@ export class ItemsSvc {
     itemChecked$: EventEmitter<any>
     itemsLoaded$: EventEmitter<any>
 
-    constructor(private http: Http) {
+    constructor(public http: Http) {
         this.itemSelected$ = new EventEmitter()
         this.itemChecked$ = new EventEmitter()
         this.itemsLoaded$ = new EventEmitter()
@@ -44,6 +44,14 @@ export class ItemsSvc {
             this.selectedItem = {}
             this.itemChecked$.emit(this.checkedItems)
         }
+    }
+
+    unCheckIfChecked(item: any) {
+        let index = this.checkedItems.indexOf(item)
+        if (index == -1) {
+            this.checkedItems.push(item)
+        }
+        this.onCheck(item)
     }
 
     getCheckedItemsIds() {

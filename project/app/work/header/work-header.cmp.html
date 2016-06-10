@@ -1,4 +1,4 @@
-<h4 class="ui header" *ngIf="taskSvc.selectedItem" [class.blue]="taskSvc.selectedItem.id" [class.green]="!taskSvc.selectedItem.id">
+<h4 class="ui header" [class.blue]="taskSvc.selectedItem.id" [class.green]="!taskSvc.selectedItem.id">
   <i class="check icon"></i>
   <div class="content">
     {{taskSvc.checkedsTitle}}

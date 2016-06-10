@@ -34,6 +34,13 @@ var ItemsSvc = (function () {
             this.itemChecked$.emit(this.checkedItems);
         }
     };
+    ItemsSvc.prototype.unCheckIfChecked = function (item) {
+        var index = this.checkedItems.indexOf(item);
+        if (index == -1) {
+            this.checkedItems.push(item);
+        }
+        this.onCheck(item);
+    };
     ItemsSvc.prototype.getCheckedItemsIds = function () {
         if (this.checkedItems)
             return this.checkedItems.map(function (item) { return item.id; });

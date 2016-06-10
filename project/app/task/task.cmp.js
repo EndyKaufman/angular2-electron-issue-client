@@ -9,15 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var work_svc_1 = require('../../service/work/work.svc');
 var task_svc_1 = require('../../service/task/task.svc');
 var project_svc_1 = require('../../service/project/project.svc');
 var task_header_cmp_1 = require('./header/task-header.cmp');
 var task_header_buttons_cmp_1 = require('./header/buttons/task-header-buttons.cmp');
 var task_list_cmp_1 = require('./list/task-list.cmp');
 var TaskCmp = (function () {
-    function TaskCmp(projectSvc, taskSvc) {
+    function TaskCmp(projectSvc, taskSvc, workSvc) {
         this.projectSvc = projectSvc;
         this.taskSvc = taskSvc;
+        this.workSvc = workSvc;
     }
     TaskCmp = __decorate([
         core_1.Component({
@@ -25,7 +27,7 @@ var TaskCmp = (function () {
             templateUrl: 'project/app/task/task.cmp.html',
             directives: [task_header_cmp_1.TaskHeaderCmp, task_list_cmp_1.TaskListCmp, task_header_buttons_cmp_1.TaskHeaderButtonsCmp]
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc])
+        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc])
     ], TaskCmp);
     return TaskCmp;
 }());

@@ -22,4 +22,13 @@ export class TaskHeaderButtonsCmp {
       this.taskSvc.onFilterStatus(status_id)
     }
   }
+  getStatusButtonColor(status_id) {
+    let color = this.taskSvc.isFilterStatus(status_id) ? this.statusSvc.getItemById(status_id).color : 'basic'
+    if (color != 'blue' && this.projectSvc.selectedItem.id && !this.taskSvc.isFilterStatus(status_id))
+      color += ' blue'
+    else
+      if (color != 'green' && !this.projectSvc.selectedItem.id && !this.taskSvc.isFilterStatus(status_id))
+        color += ' green'
+    return color
+  }
 }

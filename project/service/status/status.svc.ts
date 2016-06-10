@@ -13,7 +13,7 @@ export class StatusSvc extends ItemsSvc {
     selectedItem: Status
     resource: StatusResourceSvc
 
-    constructor(private http: Http) {
+    constructor(public http: Http) {
         super(http)
         this.selectedItem = new Status();
         this.resource = new StatusResourceSvc(http)

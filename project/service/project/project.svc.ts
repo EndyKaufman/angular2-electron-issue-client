@@ -15,7 +15,7 @@ export class ProjectSvc extends ItemsSvc {
     checkedsTitle: string
     checkedsStatusIds: number[] = []
 
-    constructor(private http: Http) {
+    constructor(public http: Http) {
         super(http)
         this.selectedItem = new Project();
         this.resource = new ProjectResourceSvc(http)

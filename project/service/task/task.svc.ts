@@ -16,11 +16,11 @@ export class TaskSvc extends ItemsSvc {
 
     filteredStatus: number[] = []
 
-    constructor(private http: Http) {
+    constructor(public http: Http) {
         super(http)
         this.selectedItem = new Task();
         this.resource = new TaskResourceSvc(http)
-        
+
         this.itemSelected$.subscribe(item => {
             this.updateCheckedsTitle()
         })
@@ -32,7 +32,7 @@ export class TaskSvc extends ItemsSvc {
     updateCheckedsTitle() {
         this.checkedsTitle = this.selectedItem.title ? this.getTitle(this.selectedItem) : this.checkedItems.map(item => this.getTitle(item)).join(', ')
     }
-    
+
     getTitle(item: Task) {
         return '#' + item.title
     }
@@ -53,7 +53,12 @@ export class TaskSvc extends ItemsSvc {
         let index = this.filteredStatus.indexOf(status_id)
         if (index == -1)
             this.filteredStatus.push(status_id)
-        else
+        else {
             this.filteredStatus.splice(index, 1)
+            for (let item of this.items) {
+                if (item.status_id == status_id)
+                    this.unCheckIfChecked(item)
+            }
+        }
     }
 }

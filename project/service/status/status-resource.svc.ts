@@ -4,7 +4,7 @@ import { ResourceSvc } from '../resource.svc'
 import { Status } from './status'
 
 export class StatusResourceSvc extends ResourceSvc {
-    private resourceUrl = 'app/status'
+    resourceUrl = 'app/status'
 
     post(item: Status): Promise<Status> {
         return super.post(item)
@@ -18,7 +18,7 @@ export class StatusResourceSvc extends ResourceSvc {
         return super.put(item)
     }
     
-    constructor(private http: Http) {
+    constructor(public http: Http) {
         super(http)
     }
 

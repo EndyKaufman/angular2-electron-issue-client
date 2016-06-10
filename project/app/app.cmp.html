@@ -13,4 +13,4 @@
     </div>
 </div>
 <task></task>
-<work></work>
+<work *ngIf="taskSvc.getItemsFilteredByStatus().length"></work>
