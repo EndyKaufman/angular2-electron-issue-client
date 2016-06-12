@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'
 
+import { UiSvc }     from '../service/ui.svc'
 
 import { StatusSvc }     from '../service/status/status.svc'
 import { WorkTypeSvc }     from '../service/work-type/work-type.svc'
@@ -21,6 +22,8 @@ import { WorkCmp }     from './work/work.cmp'
   providers: [
     ROUTER_PROVIDERS,
     
+    UiSvc,
+    
     StatusSvc,
     WorkTypeSvc,
     
@@ -31,7 +34,7 @@ import { WorkCmp }     from './work/work.cmp'
 })
 export class AppCmp implements OnInit {
 
-  constructor(private projectSvc: ProjectSvc, private taskSvc: TaskSvc, private workSvc: WorkSvc, private statusSvc: StatusSvc, private workTypeSvc: WorkTypeSvc) {
+  constructor(private taskSvc: TaskSvc, private statusSvc: StatusSvc, private workTypeSvc: WorkTypeSvc) {
 
   }
 

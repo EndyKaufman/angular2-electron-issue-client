@@ -11,7 +11,19 @@ var ItemsSvc = (function () {
         this.itemSelected$ = new core_1.EventEmitter();
         this.itemChecked$ = new core_1.EventEmitter();
         this.itemsLoaded$ = new core_1.EventEmitter();
+        this.onCreate$ = new core_1.EventEmitter();
+        this.onEdit$ = new core_1.EventEmitter();
+        this.onDelete$ = new core_1.EventEmitter();
     }
+    ItemsSvc.prototype.onCreate = function () {
+        this.onCreate$.emit(true);
+    };
+    ItemsSvc.prototype.onEdit = function (item) {
+        this.onEdit$.emit(item);
+    };
+    ItemsSvc.prototype.onDelete = function (item) {
+        this.onDelete$.emit(item);
+    };
     ItemsSvc.prototype.onSelect = function (item) {
         this.checkedItems = [];
         this.selectedItem = item;

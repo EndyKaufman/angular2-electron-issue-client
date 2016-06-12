@@ -15,11 +15,29 @@ export class ItemsSvc {
     itemSelected$: EventEmitter<any>
     itemChecked$: EventEmitter<any>
     itemsLoaded$: EventEmitter<any>
+    onCreate$: EventEmitter<any>
+    onEdit$: EventEmitter<any>
+    onDelete$: EventEmitter<any>
 
     constructor(public http: Http) {
         this.itemSelected$ = new EventEmitter()
         this.itemChecked$ = new EventEmitter()
         this.itemsLoaded$ = new EventEmitter()
+        this.onCreate$ = new EventEmitter()
+        this.onEdit$ = new EventEmitter()
+        this.onDelete$ = new EventEmitter()
+    }
+
+    onCreate() {
+        this.onCreate$.emit(true)
+    }
+
+    onEdit(item: any) {
+        this.onEdit$.emit(item)
+    }
+
+    onDelete(item: any) {
+        this.onDelete$.emit(item)
     }
 
     onSelect(item: any) {

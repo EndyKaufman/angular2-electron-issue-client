@@ -9,24 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var task_svc_1 = require('../../service/task/task.svc');
-var work_header_cmp_1 = require('./header/work-header.cmp');
-var work_header_buttons_cmp_1 = require('./header/buttons/work-header-buttons.cmp');
-var work_list_cmp_1 = require('./list/work-list.cmp');
-var work_modal_cmp_1 = require('./modal/work-modal.cmp');
-var WorkCmp = (function () {
-    function WorkCmp(taskSvc) {
-        this.taskSvc = taskSvc;
+var work_svc_1 = require('../../../service/work/work.svc');
+var work_modal_create_cmp_1 = require('./create/work-modal-create.cmp');
+var WorkModalCmp = (function () {
+    function WorkModalCmp(workSvc) {
+        this.workSvc = workSvc;
     }
-    WorkCmp = __decorate([
+    WorkModalCmp = __decorate([
         core_1.Component({
-            selector: 'work',
-            templateUrl: 'project/app/work/work.cmp.html',
-            directives: [work_header_cmp_1.WorkHeaderCmp, work_list_cmp_1.WorkListCmp, work_header_buttons_cmp_1.WorkHeaderButtonsCmp, work_modal_cmp_1.WorkModalCmp]
+            selector: 'work-modal',
+            templateUrl: 'project/app/work/modal/work-modal.cmp.html',
+            directives: [work_modal_create_cmp_1.WorkModalCreateCmp]
         }), 
-        __metadata('design:paramtypes', [task_svc_1.TaskSvc])
-    ], WorkCmp);
-    return WorkCmp;
+        __metadata('design:paramtypes', [work_svc_1.WorkSvc])
+    ], WorkModalCmp);
+    return WorkModalCmp;
 }());
-exports.WorkCmp = WorkCmp;
-//# sourceMappingURL=work.cmp.js.map
+exports.WorkModalCmp = WorkModalCmp;
+//# sourceMappingURL=work-modal.cmp.js.map
