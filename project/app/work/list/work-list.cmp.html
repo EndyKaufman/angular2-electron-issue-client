@@ -1,11 +1,13 @@
 <div class="ui middle aligned relaxed divided list">
-    <div class="item" *ngFor="let item of workSvc.items" [class.active]="item === taskSvc.selectedItem">
+   
+    <div class="item" *ngFor="let item of workSvc.getItemsFilteredByWorkType()" [class.active]="item === taskSvc.selectedItem">
         <div class="three column row">
             <div class="left floated two column">
                 <div class="content">
                     <div class="meta">
-                        <span>{{item.hours}}</span>
-                        <span>{{item.spent_on}}</span>
+                        <span>Hours: {{item.hours}}</span>
+                        <span>Date: {{workSvc.getSpentOn(item)}}</span>
+                        <span>{{(!taskSvc.selectedItem.title?[' (',taskSvc.getTitle(taskSvc.getItemById(item.task_id)),')'].join(''):'')}}</span>
                     </div>
                     <div class="description">
                         <p>{{item.comment}}</p>

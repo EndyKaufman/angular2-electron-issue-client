@@ -14,7 +14,7 @@ export class WorkSvc extends ItemsSvc {
     resource: WorkResourceSvc
 
     filteredWorkType: number[] = []
-    
+
     constructor(public http: Http) {
         super(http)
         this.selectedItem = new Work()
@@ -31,6 +31,14 @@ export class WorkSvc extends ItemsSvc {
 
     isFilterWorkType(work_type_id: number) {
         return this.filteredWorkType && this.filteredWorkType.indexOf(work_type_id) != -1
+    }
+
+    getSpentOn(item: Work) {
+        let d = new Date(item.spent_on)
+        let curr_date = d.getDate();
+        let curr_month = d.getMonth() + 1;
+        let curr_year = d.getFullYear();
+        return curr_date + '.' + curr_month + '.' + curr_year;
     }
 
     onFilterWorkType(work_type_id: number) {

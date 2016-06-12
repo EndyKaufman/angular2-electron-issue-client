@@ -39,6 +39,13 @@ var WorkSvc = (function (_super) {
     WorkSvc.prototype.isFilterWorkType = function (work_type_id) {
         return this.filteredWorkType && this.filteredWorkType.indexOf(work_type_id) != -1;
     };
+    WorkSvc.prototype.getSpentOn = function (item) {
+        var d = new Date(item.spent_on);
+        var curr_date = d.getDate();
+        var curr_month = d.getMonth() + 1;
+        var curr_year = d.getFullYear();
+        return curr_date + '.' + curr_month + '.' + curr_year;
+    };
     WorkSvc.prototype.onFilterWorkType = function (work_type_id) {
         var index = this.filteredWorkType.indexOf(work_type_id);
         if (index == -1)
