@@ -3,7 +3,12 @@
         <div class="three column row">
             <div class="left floated two column">
                 <div class="content">
-                    {{taskSvc.getTitle(item)+(!projectSvc.selectedItem.title?[' (',projectSvc.getItemById(item.project_id).title,')'].join(''):'')}}
+                    <a class="ui label basic" [class.blue]="item === taskSvc.selectedItem" [class.green]="taskSvc.checkedItems.indexOf(item)!=-1">
+                        {{taskSvc.getTitle(item)}}
+                    </a>
+                    <span *ngIf="!projectSvc.selectedItem.title">
+                        <a class="ui label basic">{{projectSvc.getItemById(item.project_id).title}}</a>
+                    </span>
                 </div>
                 <div class="description">
                     {{item.description}}
