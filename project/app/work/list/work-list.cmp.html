@@ -1,18 +1,17 @@
 <div class="ui middle aligned relaxed divided list">
-
     <div class="item" *ngFor="let item of workSvc.getItemsFilteredByWorkType()" [class.active]="item === taskSvc.selectedItem">
         <div class="three column row">
             <div class="left floated two column">
                 <div class="content">
                     <div class="meta">
-                        <a class="ui label basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1">
+                        <a class="ui label mini basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1">
                             <i class="clock icon"></i> {{item.hours}} h.
                         </a>
-                        <a class="ui label basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1">
+                        <a class="ui label mini basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1">
                             <i class="calendar icon"></i> {{workSvc.getSpentOn(item)}}
                         </a>
                         <span *ngIf="!taskSvc.selectedItem.title">
-                            <a class="ui label basic">
+                            <a class="ui label mini basic">
                                 {{taskSvc.getTitle(taskSvc.getItemById(item.task_id))}}
                             </a>
                         </span>
@@ -23,10 +22,13 @@
                 </div>
             </div>
             <div class="right floated right aligned one column">
+                <div class="ui mini button">
+                    <i class="edit icon"></i> Edit
+                </div>
                 <div class="ui left labeled mini button">
                     <a class="ui basic right pointing label">
-                    Type
-                </a>
+                        Type
+                    </a>
                     <div class="ui mini button">
                         {{workTypeSvc.getItemById(item.work_type_id).title}}
                     </div>
@@ -42,4 +44,8 @@
             </div>
         </div>
     </div>
+</div>
+<div class="ui clearing divider"></div>
+<div class="ui mini button">
+    <i class="plus icon"></i> Create
 </div>

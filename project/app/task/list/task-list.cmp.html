@@ -3,11 +3,11 @@
         <div class="three column row">
             <div class="left floated two column">
                 <div class="content">
-                    <a class="ui label basic" [class.blue]="item === taskSvc.selectedItem" [class.green]="taskSvc.checkedItems.indexOf(item)!=-1">
+                    <a class="ui small label basic" [class.blue]="item === taskSvc.selectedItem" [class.green]="taskSvc.checkedItems.indexOf(item)!=-1">
                         {{taskSvc.getTitle(item)}}
                     </a>
                     <span *ngIf="!projectSvc.selectedItem.title">
-                        <a class="ui label basic">{{projectSvc.getItemById(item.project_id).title}}</a>
+                        <a class="ui small label basic">{{projectSvc.getItemById(item.project_id).title}}</a>
                     </span>
                 </div>
                 <div class="description">
@@ -15,10 +15,13 @@
                 </div>
             </div>
             <div class="right floated right aligned one column">
+                <div class="ui small button">
+                    <i class="edit icon"></i> Edit
+                </div>
                 <div class="ui left labeled small button">
                     <a class="ui basic right pointing label {{statusSvc.getItemById(item.status_id).color}}">
-                    Status
-                </a>
+                        Status
+                    </a>
                     <div class="ui small button {{statusSvc.getItemById(item.status_id).color}}">
                         {{statusSvc.getItemById(item.status_id).title}}
                     </div>
@@ -34,4 +37,8 @@
             </div>
         </div>
     </div>
+</div>
+<div class="ui clearing divider"></div>
+<div class="ui small button">
+    <i class="plus icon"></i> Create
 </div>
