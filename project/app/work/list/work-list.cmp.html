@@ -13,6 +13,22 @@
                 </div>
             </div>
             <div class="right floated right aligned one column">
+                <div class="ui left labeled mini button">
+                    <a class="ui basic right pointing label">
+                    Type
+                </a>
+                    <div class="ui mini button">
+                        {{workTypeSvc.getItemById(item.work_type_id).title}}
+                    </div>
+                </div>
+                <div class="ui left labeled mini button">
+                    <a class="ui basic right pointing label" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1" (click)="workSvc.onSelect(item)">
+                        Select
+                    </a>
+                    <div class="ui mini button" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1" (click)="workSvc.onCheck(item)">
+                        <i class="Checkmark icon"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

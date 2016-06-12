@@ -25,11 +25,32 @@ var WorkSvc = (function (_super) {
         _super.call(this, http);
         this.http = http;
         this.items = [];
+        this.filteredWorkType = [];
         this.selectedItem = new work_1.Work();
         this.resource = new work_resource_svc_1.WorkResourceSvc(http);
     }
     WorkSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
+    };
+    WorkSvc.prototype.getItemsFilteredByWorkType = function () {
+        var _this = this;
+        return this.items.filter(function (item) { return item && _this.isFilterWorkType(item.work_type_id); });
+    };
+    WorkSvc.prototype.isFilterWorkType = function (work_type_id) {
+        return this.filteredWorkType && this.filteredWorkType.indexOf(work_type_id) != -1;
+    };
+    WorkSvc.prototype.onFilterWorkType = function (work_type_id) {
+        var index = this.filteredWorkType.indexOf(work_type_id);
+        if (index == -1)
+            this.filteredWorkType.push(work_type_id);
+        else {
+            this.filteredWorkType.splice(index, 1);
+            for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
+                var item = _a[_i];
+                if (item.work_type_id == work_type_id)
+                    this.unCheckIfChecked(item);
+            }
+        }
     };
     WorkSvc = __decorate([
         core_1.Injectable(), 

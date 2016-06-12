@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 
-import {WorkSvc} from '../../../service/work/work.svc'
-import {TaskSvc} from '../../../service/task/task.svc'
+import { WorkSvc } from '../../../service/work/work.svc'
+import { TaskSvc } from '../../../service/task/task.svc'
+import { WorkTypeSvc } from '../../../service/work-type/work-type.svc'
 
 @Component({
   selector: 'work-list',
@@ -9,7 +10,7 @@ import {TaskSvc} from '../../../service/task/task.svc'
 })
 export class WorkListCmp implements OnInit {
 
-  constructor(private workSvc: WorkSvc, private taskSvc: TaskSvc) {
+  constructor(private workSvc: WorkSvc, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc) {
     taskSvc.itemSelected$.subscribe(item => this.onTaskSelected(item))
     taskSvc.itemChecked$.subscribe(items => this.onTaskSelected(items))
   }

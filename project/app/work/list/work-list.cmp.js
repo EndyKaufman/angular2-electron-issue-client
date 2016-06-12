@@ -11,11 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var work_svc_1 = require('../../../service/work/work.svc');
 var task_svc_1 = require('../../../service/task/task.svc');
+var work_type_svc_1 = require('../../../service/work-type/work-type.svc');
 var WorkListCmp = (function () {
-    function WorkListCmp(workSvc, taskSvc) {
+    function WorkListCmp(workSvc, taskSvc, workTypeSvc) {
         var _this = this;
         this.workSvc = workSvc;
         this.taskSvc = taskSvc;
+        this.workTypeSvc = workTypeSvc;
         taskSvc.itemSelected$.subscribe(function (item) { return _this.onTaskSelected(item); });
         taskSvc.itemChecked$.subscribe(function (items) { return _this.onTaskSelected(items); });
     }
@@ -47,7 +49,7 @@ var WorkListCmp = (function () {
             selector: 'work-list',
             templateUrl: 'project/app/work/list/work-list.cmp.html'
         }), 
-        __metadata('design:paramtypes', [work_svc_1.WorkSvc, task_svc_1.TaskSvc])
+        __metadata('design:paramtypes', [work_svc_1.WorkSvc, task_svc_1.TaskSvc, work_type_svc_1.WorkTypeSvc])
     ], WorkListCmp);
     return WorkListCmp;
 }());

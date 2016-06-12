@@ -13,6 +13,8 @@ export class WorkSvc extends ItemsSvc {
     selectedItem: Work
     resource: WorkResourceSvc
 
+    filteredWorkType: number[] = []
+    
     constructor(public http: Http) {
         super(http)
         this.selectedItem = new Work()
@@ -21,5 +23,26 @@ export class WorkSvc extends ItemsSvc {
 
     getList(query: any): Promise<Work[]> {
         return super.getList(query)
+    }
+
+    getItemsFilteredByWorkType() {
+        return this.items.filter(item => item && this.isFilterWorkType(item.work_type_id))
+    }
+
+    isFilterWorkType(work_type_id: number) {
+        return this.filteredWorkType && this.filteredWorkType.indexOf(work_type_id) != -1
+    }
+
+    onFilterWorkType(work_type_id: number) {
+        let index = this.filteredWorkType.indexOf(work_type_id)
+        if (index == -1)
+            this.filteredWorkType.push(work_type_id)
+        else {
+            this.filteredWorkType.splice(index, 1)
+            for (let item of this.items) {
+                if (item.work_type_id == work_type_id)
+                    this.unCheckIfChecked(item)
+            }
+        }
     }
 }

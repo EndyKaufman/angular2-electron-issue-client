@@ -1,0 +1,4 @@
+<div class="ui button mini {{getWorkTypeButtonColor(work_type_id)}}" *ngFor="let work_type_id of projectSvc.checkedsWorkTypeIds" 
+    (click)="workSvc.onFilterWorkType(work_type_id)">
+    {{workTypeSvc.getItemById(work_type_id).title}}
+</div>

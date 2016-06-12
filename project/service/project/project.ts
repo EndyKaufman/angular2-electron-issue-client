@@ -3,4 +3,5 @@ export class Project {
     title: string
     description: string
     status: number[]
+    work_type: number[]
 }

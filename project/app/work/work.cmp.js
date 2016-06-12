@@ -10,21 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var task_svc_1 = require('../../service/task/task.svc');
-var work_svc_1 = require('../../service/work/work.svc');
 var work_header_cmp_1 = require('./header/work-header.cmp');
+var work_header_buttons_cmp_1 = require('./header/buttons/work-header-buttons.cmp');
 var work_list_cmp_1 = require('./list/work-list.cmp');
 var WorkCmp = (function () {
-    function WorkCmp(taskSvc, workSvc) {
+    function WorkCmp(taskSvc) {
         this.taskSvc = taskSvc;
-        this.workSvc = workSvc;
     }
     WorkCmp = __decorate([
         core_1.Component({
             selector: 'work',
             templateUrl: 'project/app/work/work.cmp.html',
-            directives: [work_header_cmp_1.WorkHeaderCmp, work_list_cmp_1.WorkListCmp]
+            directives: [work_header_cmp_1.WorkHeaderCmp, work_list_cmp_1.WorkListCmp, work_header_buttons_cmp_1.WorkHeaderButtonsCmp]
         }), 
-        __metadata('design:paramtypes', [task_svc_1.TaskSvc, work_svc_1.WorkSvc])
+        __metadata('design:paramtypes', [task_svc_1.TaskSvc])
     ], WorkCmp);
     return WorkCmp;
 }());

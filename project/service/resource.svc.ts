@@ -1,9 +1,10 @@
 import { Injectable }    from '@angular/core'
 import { Headers, Http, URLSearchParams } from '@angular/http'
+import {IResourceSvc} from '../interfaces/i.resource.svc'
 
 import 'rxjs/add/operator/toPromise'
 
-export class ResourceSvc {
+export class ResourceSvc implements IResourceSvc{
     resourceUrl = ''  // URL to web api
 
     handleError(error: any) {
