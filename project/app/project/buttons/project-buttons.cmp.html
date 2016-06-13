@@ -12,6 +12,6 @@
         <i class="Checkmark icon"></i>
     </div>
 </div>
-<div class="ui button">
+<div class="ui button" [class.green]="projectSvc.selectedItem.id" [class.blue]="!projectSvc.selectedItem.id">
     <i class="plus icon"></i> Create
 </div>

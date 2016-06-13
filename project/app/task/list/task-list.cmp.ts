@@ -20,13 +20,13 @@ export class TaskListCmp implements OnInit {
     let checkedIds = this.projectSvc.getCheckedItemsIds()
     if (this.projectSvc.selectedItem.id) {
       query = {
-        project_id: this.projectSvc.selectedItem.id
+        project_id: '0|' + this.projectSvc.selectedItem.id
       }
     } else {
       if (checkedIds.length)
-        query = { project_id: checkedIds.join('|') }
+        query = { project_id: '0|' + checkedIds.join('|') }
       else
-        query = { project_id: -1 }
+        query = { project_id: '0' }
     }
     this.taskSvc.loaded = false
     this.taskSvc.getList(query)

@@ -34,7 +34,7 @@ export class TaskSvc extends ItemsSvc {
     }
 
     getTitle(item: Task) {
-        return '#' + item.title
+        return '#' + item.id
     }
 
     getList(query: any): Promise<Task[]> {
@@ -46,7 +46,7 @@ export class TaskSvc extends ItemsSvc {
     }
 
     isFilterStatus(status_id: number) {
-        return this.filteredStatus && this.filteredStatus.indexOf(status_id) != -1
+        return this.filteredStatus && (this.filteredStatus.indexOf(status_id) != -1 || status_id == 0)
     }
 
     onFilterStatus(status_id: number) {

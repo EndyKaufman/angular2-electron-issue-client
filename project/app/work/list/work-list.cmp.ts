@@ -13,6 +13,7 @@ export class WorkListCmp implements OnInit {
   constructor(private workSvc: WorkSvc, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc) {
     taskSvc.itemSelected$.subscribe(item => this.onTaskSelected(item))
     taskSvc.itemChecked$.subscribe(items => this.onTaskSelected(items))
+    workSvc.create$.subscribe(items => this.onTaskSelected(items))
   }
 
   getList() {
@@ -20,13 +21,13 @@ export class WorkListCmp implements OnInit {
     let checkedIds = this.taskSvc.getCheckedItemsIds()
     if (this.taskSvc.selectedItem.id) {
       query = {
-        task_id: this.taskSvc.selectedItem.id
+        task_id: '0|' + this.taskSvc.selectedItem.id
       }
     } else {
       if (checkedIds.length)
-        query = { task_id: checkedIds.join('|') }
+        query = { task_id: '0|' + checkedIds.join('|') }
       else
-        query = { task_id: -1 }
+        query = { task_id: '0' }
     }
     this.workSvc.loaded = false
     this.workSvc.getList(query)

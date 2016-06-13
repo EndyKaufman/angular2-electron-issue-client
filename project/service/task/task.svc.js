@@ -41,7 +41,7 @@ var TaskSvc = (function (_super) {
         this.checkedsTitle = this.selectedItem.title ? this.getTitle(this.selectedItem) : this.checkedItems.map(function (item) { return _this.getTitle(item); }).join(', ');
     };
     TaskSvc.prototype.getTitle = function (item) {
-        return '#' + item.title;
+        return '#' + item.id;
     };
     TaskSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
@@ -51,7 +51,7 @@ var TaskSvc = (function (_super) {
         return this.items.filter(function (item) { return item && _this.isFilterStatus(item.status_id); });
     };
     TaskSvc.prototype.isFilterStatus = function (status_id) {
-        return this.filteredStatus && this.filteredStatus.indexOf(status_id) != -1;
+        return this.filteredStatus && (this.filteredStatus.indexOf(status_id) != -1 || status_id == 0);
     };
     TaskSvc.prototype.onFilterStatus = function (status_id) {
         var index = this.filteredStatus.indexOf(status_id);

@@ -14,6 +14,9 @@ var ItemsSvc = (function () {
         this.onCreate$ = new core_1.EventEmitter();
         this.onEdit$ = new core_1.EventEmitter();
         this.onDelete$ = new core_1.EventEmitter();
+        this.create$ = new core_1.EventEmitter();
+        this.edit$ = new core_1.EventEmitter();
+        this.delete$ = new core_1.EventEmitter();
     }
     ItemsSvc.prototype.onCreate = function () {
         this.onCreate$.emit(true);
@@ -23,6 +26,18 @@ var ItemsSvc = (function () {
     };
     ItemsSvc.prototype.onDelete = function (item) {
         this.onDelete$.emit(item);
+    };
+    ItemsSvc.prototype.create = function (item) {
+        var $this = this;
+        $this.resource.post(item).then(function (item) { console.log(item); $this.create$.emit(item); });
+    };
+    ItemsSvc.prototype.edit = function (item) {
+        var $this = this;
+        $this.resource.put(item).then(function (item) { return $this.edit$.emit(item); });
+    };
+    ItemsSvc.prototype.delete = function (item) {
+        var $this = this;
+        $this.resource.delete(item).then(function (item) { return $this.delete$.emit(item); });
     };
     ItemsSvc.prototype.onSelect = function (item) {
         this.checkedItems = [];

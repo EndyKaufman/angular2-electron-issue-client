@@ -37,7 +37,7 @@ var WorkSvc = (function (_super) {
         return this.items.filter(function (item) { return item && _this.isFilterWorkType(item.work_type_id); });
     };
     WorkSvc.prototype.isFilterWorkType = function (work_type_id) {
-        return this.filteredWorkType && this.filteredWorkType.indexOf(work_type_id) != -1;
+        return this.filteredWorkType && (this.filteredWorkType.indexOf(work_type_id) != -1 || work_type_id == 0);
     };
     WorkSvc.prototype.getSpentOn = function (item) {
         var d = new Date(item.spent_on);
@@ -58,6 +58,25 @@ var WorkSvc = (function (_super) {
                     this.unCheckIfChecked(item);
             }
         }
+    };
+    WorkSvc.prototype.onCreate = function () {
+        this.editItem = new work_1.Work();
+        _super.prototype.onCreate.call(this);
+    };
+    WorkSvc.prototype.create = function (item) {
+        if (item.project_id)
+            item.project_id = parseInt(item.project_id);
+        else
+            item.project_id = 0;
+        if (item.task_id)
+            item.task_id = parseInt(item.task_id);
+        else
+            item.task_id = 0;
+        if (item.work_type_id)
+            item.work_type_id = parseInt(item.work_type_id);
+        else
+            item.work_type_id = 0;
+        _super.prototype.create.call(this, item);
     };
     WorkSvc = __decorate([
         core_1.Injectable(), 

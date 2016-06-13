@@ -9,11 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+require('rxjs/add/operator/toPromise');
 var UiSvc = (function () {
     function UiSvc() {
     }
     UiSvc.prototype.showModal = function (componentName) {
-        $(componentName + '>.ui.modal').modal({ detachable: false }).modal('show');
+        var modal = $(componentName + '>.ui.modal');
+        return new Promise(function (resolve, reject) {
+            modal.modal({
+                detachable: false,
+                onApprove: resolve,
+                onDeny: reject
+            }).modal('show');
+        });
     };
     UiSvc = __decorate([
         core_1.Injectable(), 

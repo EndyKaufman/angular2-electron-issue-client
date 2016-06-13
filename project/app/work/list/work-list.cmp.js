@@ -20,20 +20,21 @@ var WorkListCmp = (function () {
         this.workTypeSvc = workTypeSvc;
         taskSvc.itemSelected$.subscribe(function (item) { return _this.onTaskSelected(item); });
         taskSvc.itemChecked$.subscribe(function (items) { return _this.onTaskSelected(items); });
+        workSvc.create$.subscribe(function (items) { return _this.onTaskSelected(items); });
     }
     WorkListCmp.prototype.getList = function () {
         var query = {};
         var checkedIds = this.taskSvc.getCheckedItemsIds();
         if (this.taskSvc.selectedItem.id) {
             query = {
-                task_id: this.taskSvc.selectedItem.id
+                task_id: '0|' + this.taskSvc.selectedItem.id
             };
         }
         else {
             if (checkedIds.length)
-                query = { task_id: checkedIds.join('|') };
+                query = { task_id: '0|' + checkedIds.join('|') };
             else
-                query = { task_id: -1 };
+                query = { task_id: '0' };
         }
         this.workSvc.loaded = false;
         this.workSvc.getList(query);

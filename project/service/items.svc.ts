@@ -18,6 +18,9 @@ export class ItemsSvc {
     onCreate$: EventEmitter<any>
     onEdit$: EventEmitter<any>
     onDelete$: EventEmitter<any>
+    create$: EventEmitter<any>
+    edit$: EventEmitter<any>
+    delete$: EventEmitter<any>
 
     constructor(public http: Http) {
         this.itemSelected$ = new EventEmitter()
@@ -26,6 +29,9 @@ export class ItemsSvc {
         this.onCreate$ = new EventEmitter()
         this.onEdit$ = new EventEmitter()
         this.onDelete$ = new EventEmitter()
+        this.create$ = new EventEmitter()
+        this.edit$ = new EventEmitter()
+        this.delete$ = new EventEmitter()
     }
 
     onCreate() {
@@ -38,6 +44,21 @@ export class ItemsSvc {
 
     onDelete(item: any) {
         this.onDelete$.emit(item)
+    }
+
+    create(item: any) {
+        let $this = this
+        $this.resource.post(item).then(item => {console.log(item);$this.create$.emit(item)})
+    }
+
+    edit(item: any) {
+        let $this = this
+        $this.resource.put(item).then(item => $this.edit$.emit(item))
+    }
+
+    delete(item: any) {
+        let $this = this
+        $this.resource.delete(item).then(item => $this.delete$.emit(item))
     }
 
     onSelect(item: any) {
