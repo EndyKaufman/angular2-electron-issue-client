@@ -34,7 +34,9 @@ export class TaskSvc extends ItemsSvc {
     }
 
     getTitle(item: Task) {
-        return '#' + item.id
+        if (item)
+            return '#' + item.id
+        return 'No task'
     }
 
     getList(query: any): Promise<Task[]> {

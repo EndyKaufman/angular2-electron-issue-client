@@ -41,7 +41,9 @@ var TaskSvc = (function (_super) {
         this.checkedsTitle = this.selectedItem.title ? this.getTitle(this.selectedItem) : this.checkedItems.map(function (item) { return _this.getTitle(item); }).join(', ');
     };
     TaskSvc.prototype.getTitle = function (item) {
-        return '#' + item.id;
+        if (item)
+            return '#' + item.id;
+        return 'No task';
     };
     TaskSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
