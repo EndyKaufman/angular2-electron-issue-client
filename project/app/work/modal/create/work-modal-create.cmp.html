@@ -4,48 +4,9 @@
         Create new work
     </div>
     <div class="content">
-
         <div class="ui form" *ngIf="workSvc.editItem">
-
-            <div class="fields">
-                <div class="eight wide field" *ngIf="projectSvc.items">
-                    <label>Project</label>
-                    <select [(ngModel)]="workSvc.editItem.project_id" (change)="onChangeProject()">
-                        <option value="{{project.id}}" *ngFor="let project of projectSvc.items">{{project.title}}</option>
-                    </select>
-                </div>
-                <div class="eight wide field" *ngIf="tasksByProject" (change)="onChangeTask()">
-                    <label>Task</label>
-                    <select [(ngModel)]="workSvc.editItem.task_id">
-                        <option value="0"></option>
-                        <option value="{{task.id}}" *ngFor="let task of tasksByProject[workSvc.editItem.project_id]">{{task.title}}</option>
-                    </select>
-                </div>
-            </div>
-            <div class="fields">
-                <div class="ten wide field" *ngIf="tasksByProject">
-                    <label>Work</label>
-                    <select [(ngModel)]="workSvc.editItem.work_type_id">
-                        <option value="{{work_type.id}}" *ngFor="let work_type of workTypesByProject[workSvc.editItem.project_id]">{{work_type.title}}</option>
-                    </select>
-                </div>
-                <div class="three wide field">
-                    <label>Hours</label>
-                    <input type="number" [(ngModel)]="workSvc.editItem.hours">
-                </div>
-                <div class="three wide field">
-                    <label>Date</label>
-                    <input type="date" [(ngModel)]="workSvc.editItem.spent_on">
-                </div>
-            </div>
-            <div class="fields">
-                <div class="sixteen wide field">
-                    <label>Comment</label>
-                    <textarea [(ngModel)]="workSvc.editItem.comment"></textarea>
-                </div>
-            </div>
+            <work-inputs [projects]="projectSvc.items" [tasksByProject]="tasksByProject" [workTypesByProject]="workTypesByProject"></work-inputs>
         </div>
-
     </div>
     <div class="actions">
         <div class="ui deny button">

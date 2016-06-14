@@ -6,9 +6,12 @@ import {ProjectSvc} from '../../../../service/project/project.svc'
 import {TaskSvc} from '../../../../service/task/task.svc'
 import {WorkSvc} from '../../../../service/work/work.svc'
 
+import {WorkInputsCmp} from '../../inputs/work-inputs.cmp'
+
 @Component({
   selector: 'work-modal-create',
-  templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html'
+  templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html',
+  directives: [WorkInputsCmp]
 })
 export class WorkModalCreateCmp {
 
@@ -25,29 +28,30 @@ export class WorkModalCreateCmp {
     for (let project of this.projectSvc.items) {
       this.tasksByProject[project.id] = this.taskSvc.items.filter(item => item.project_id == project.id)
       this.workTypesByProject[project.id] = this.workTypeSvc.items.filter(item => project.work_type.indexOf(item.id) != -1)
-      if (!this.workSvc.editItem.project_id) {
-        this.workSvc.editItem.project_id = project.id
-        if (this.tasksByProject[project.id][0])
-          this.workSvc.editItem.task_id = this.tasksByProject[project.id][0].id
-        else
-          this.workSvc.editItem.task_id = 0
-        if (this.workTypesByProject[project.id][0])
-          this.workSvc.editItem.work_type_id = this.workTypesByProject[project.id][0].id
-        else
-          this.workSvc.editItem.work_type_id = 0
-      }
     }
+
+    if (this.projectSvc.items.length && !this.workSvc.editItem.project_id) {
+      let project = this.projectSvc.items[0]
+      this.workSvc.editItem.project_id = project.id
+      if (this.tasksByProject[project.id][0])
+        this.workSvc.editItem.task_id = this.tasksByProject[project.id][0].id
+      else
+        this.workSvc.editItem.task_id = 0
+      if (this.workTypesByProject[project.id][0])
+        this.workSvc.editItem.work_type_id = this.workTypesByProject[project.id][0].id
+      else
+        this.workSvc.editItem.work_type_id = 0
+    }
+
+    if (this.projectSvc.selectedItem.id)
+      this.workSvc.editItem.project_id = this.projectSvc.selectedItem.id
+    if (this.taskSvc.selectedItem.id)
+      this.workSvc.editItem.task_id = this.taskSvc.selectedItem.id
+    if (this.workSvc.filteredWorkType.length)
+      this.workSvc.editItem.work_type_id = this.workSvc.filteredWorkType[0]
+
     this.uiSvc.showModal('work-modal-create').then(el => {
       this.workSvc.create(this.workSvc.editItem)
     })
-  }
-
-  onChangeProject() {
-    this.workSvc.editItem.task_id = 0
-    this.workSvc.editItem.work_type_id = this.workTypesByProject[this.workSvc.editItem.project_id][0].id
-  }
-
-  onChangeTask() {
-    this.workSvc.editItem.work_type_id = this.workTypesByProject[this.workSvc.editItem.project_id][0].id
   }
 }

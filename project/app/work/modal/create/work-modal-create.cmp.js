@@ -14,6 +14,7 @@ var work_type_svc_1 = require('../../../../service/work-type/work-type.svc');
 var project_svc_1 = require('../../../../service/project/project.svc');
 var task_svc_1 = require('../../../../service/task/task.svc');
 var work_svc_1 = require('../../../../service/work/work.svc');
+var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
 var WorkModalCreateCmp = (function () {
     function WorkModalCreateCmp(projectSvc, taskSvc, workSvc, workTypeSvc, uiSvc) {
         var _this = this;
@@ -31,38 +32,39 @@ var WorkModalCreateCmp = (function () {
         var _loop_1 = function(project) {
             this_1.tasksByProject[project.id] = this_1.taskSvc.items.filter(function (item) { return item.project_id == project.id; });
             this_1.workTypesByProject[project.id] = this_1.workTypeSvc.items.filter(function (item) { return project.work_type.indexOf(item.id) != -1; });
-            if (!this_1.workSvc.editItem.project_id) {
-                this_1.workSvc.editItem.project_id = project.id;
-                if (this_1.tasksByProject[project.id][0])
-                    this_1.workSvc.editItem.task_id = this_1.tasksByProject[project.id][0].id;
-                else
-                    this_1.workSvc.editItem.task_id = 0;
-                if (this_1.workTypesByProject[project.id][0])
-                    this_1.workSvc.editItem.work_type_id = this_1.workTypesByProject[project.id][0].id;
-                else
-                    this_1.workSvc.editItem.work_type_id = 0;
-            }
         };
         var this_1 = this;
         for (var _i = 0, _a = this.projectSvc.items; _i < _a.length; _i++) {
             var project = _a[_i];
             _loop_1(project);
         }
+        if (this.projectSvc.items.length && !this.workSvc.editItem.project_id) {
+            var project = this.projectSvc.items[0];
+            this.workSvc.editItem.project_id = project.id;
+            if (this.tasksByProject[project.id][0])
+                this.workSvc.editItem.task_id = this.tasksByProject[project.id][0].id;
+            else
+                this.workSvc.editItem.task_id = 0;
+            if (this.workTypesByProject[project.id][0])
+                this.workSvc.editItem.work_type_id = this.workTypesByProject[project.id][0].id;
+            else
+                this.workSvc.editItem.work_type_id = 0;
+        }
+        if (this.projectSvc.selectedItem.id)
+            this.workSvc.editItem.project_id = this.projectSvc.selectedItem.id;
+        if (this.taskSvc.selectedItem.id)
+            this.workSvc.editItem.task_id = this.taskSvc.selectedItem.id;
+        if (this.workSvc.filteredWorkType.length)
+            this.workSvc.editItem.work_type_id = this.workSvc.filteredWorkType[0];
         this.uiSvc.showModal('work-modal-create').then(function (el) {
             _this.workSvc.create(_this.workSvc.editItem);
         });
     };
-    WorkModalCreateCmp.prototype.onChangeProject = function () {
-        this.workSvc.editItem.task_id = 0;
-        this.workSvc.editItem.work_type_id = this.workTypesByProject[this.workSvc.editItem.project_id][0].id;
-    };
-    WorkModalCreateCmp.prototype.onChangeTask = function () {
-        this.workSvc.editItem.work_type_id = this.workTypesByProject[this.workSvc.editItem.project_id][0].id;
-    };
     WorkModalCreateCmp = __decorate([
         core_1.Component({
             selector: 'work-modal-create',
-            templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html'
+            templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html',
+            directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
         __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, work_type_svc_1.WorkTypeSvc, ui_svc_1.UiSvc])
     ], WorkModalCreateCmp);
