@@ -40,6 +40,7 @@ export class WorkListCmp implements OnInit {
         query.project_id = '0'
     }
     this.workSvc.loaded = false
+    console.log(query)
     this.workSvc.getList(query)
   }
 
