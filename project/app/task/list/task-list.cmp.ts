@@ -11,13 +11,15 @@ import {ProjectSvc} from '../../../service/project/project.svc'
 export class TaskListCmp {
 
   private firstLoad: boolean = true
+  
   constructor(private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private statusSvc: StatusSvc) {
-    projectSvc.itemSelected$.subscribe(item => this.getList())
-    projectSvc.itemChecked$.subscribe(items => this.getList())
+    projectSvc.itemSelected$.subscribe(item => { this.firstLoad = true; this.getList() })
+    projectSvc.itemChecked$.subscribe(items => { this.firstLoad = true; this.getList() })
     taskSvc.onFiltered$.subscribe(items => this.getList())
   }
 
   getList() {
+    console.log('TaskListCmp:getList')
     let query = {}
     let checkedIds = this.projectSvc.getCheckedItemsIds()
     if (this.projectSvc.selectedItem.id) {

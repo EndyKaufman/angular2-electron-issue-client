@@ -1,5 +1,5 @@
 <div class="ui middle aligned relaxed divided list">
-    <div class="item" *ngFor="let item of workSvc.getItemsFilteredByWorkType()" [class.active]="item === taskSvc.selectedItem">
+    <div class="item" *ngFor="let item of workSvc.items" [class.active]="item === taskSvc.selectedItem">
         <div class="three column row">
             <div class="left floated two column">
                 <div class="content">

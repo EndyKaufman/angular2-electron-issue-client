@@ -11,13 +11,17 @@ import { WorkTypeSvc } from '../../../service/work-type/work-type.svc'
 })
 export class WorkListCmp {
 
+  private firstLoad: boolean = true
+
   constructor(private workSvc: WorkSvc, private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private workTypeSvc: WorkTypeSvc) {
-    taskSvc.itemSelected$.subscribe(item => this.getList())
-    taskSvc.itemChecked$.subscribe(items => this.getList())
+    taskSvc.itemSelected$.subscribe(item => { this.firstLoad = true; this.getList() })
+    taskSvc.itemChecked$.subscribe(items => { this.firstLoad = true; this.getList() })
+    workSvc.onFiltered$.subscribe(items => this.getList())
     workSvc.onCreated$.subscribe(items => this.getList())
   }
 
   getList() {
+    console.log('WorkListCmp:getList')
     let query = {}
     let checkedIds = this.taskSvc.getCheckedItemsIds()
     if (this.taskSvc.selectedItem.id) {
@@ -39,6 +43,18 @@ export class WorkListCmp {
       else
         query.project_id = '0'
     }
+
+    if (this.firstLoad) {
+      this.workSvc.filteredWorkType = this.projectSvc.getCheckedsWorkTypeIds()
+      this.firstLoad = false
+    }
+    
+    if (this.workSvc.filteredWorkType.length)
+      query.work_type_id = this.workSvc.filteredWorkType.join('|')
+    else
+      query.work_type_id = '0'
+      
+     console.log(query)
     this.workSvc.loaded = false    
     this.workSvc.getList(query)
   }

@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise'
 
 export class ItemsSvc {
     items: any[] = []
+    lastQuery: any
     itemsIndexById: any = {}
     selectedItem: any
     checkedItems: any[] = []
@@ -15,12 +16,12 @@ export class ItemsSvc {
     itemSelected$: EventEmitter<any>
     itemChecked$: EventEmitter<any>
     itemsLoaded$: EventEmitter<any>
-    
+
     onFiltered$: EventEmitter<any>
     onCreate$: EventEmitter<any>
     onEdit$: EventEmitter<any>
     onDelete$: EventEmitter<any>
-    
+
     onCreated$: EventEmitter<any>
     onEdited$: EventEmitter<any>
     onDeleted$: EventEmitter<any>
@@ -29,17 +30,17 @@ export class ItemsSvc {
         this.itemSelected$ = new EventEmitter()
         this.itemChecked$ = new EventEmitter()
         this.itemsLoaded$ = new EventEmitter()
-        
-        
+
+
         this.onFiltered$ = new EventEmitter()
         this.onCreate$ = new EventEmitter()
         this.onEdit$ = new EventEmitter()
         this.onDelete$ = new EventEmitter()
-        
+
         this.onCreated$ = new EventEmitter()
         this.onEdited$ = new EventEmitter()
         this.onDeleted$ = new EventEmitter()
-    }    
+    }
 
     create(item: any) {
         let $this = this
@@ -100,6 +101,7 @@ export class ItemsSvc {
 
     getList(query: any): Promise<any[]> {
         let $this = this
+        $this.lastQuery = query
         return new Promise(resolve => {
             if ($this.loaded) {
                 if ($this.items.length > 0)
@@ -109,6 +111,7 @@ export class ItemsSvc {
                 resolve($this.items)
             } else {
                 $this.resource.getList(query).then(function (items) {
+                    console.log($this, items)
                     $this.items = items
                     $this.loaded = true
                     $this.itemsLoaded$.emit($this.items)

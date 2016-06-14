@@ -32,10 +32,6 @@ var WorkSvc = (function (_super) {
     WorkSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
-    WorkSvc.prototype.getItemsFilteredByWorkType = function () {
-        var _this = this;
-        return this.items.filter(function (item) { return item && _this.isFilterWorkType(item.work_type_id); });
-    };
     WorkSvc.prototype.isFilterWorkType = function (work_type_id) {
         return this.filteredWorkType && (this.filteredWorkType.indexOf(work_type_id) != -1 || work_type_id == 0);
     };
@@ -52,12 +48,8 @@ var WorkSvc = (function (_super) {
             this.filteredWorkType.push(work_type_id);
         else {
             this.filteredWorkType.splice(index, 1);
-            for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
-                var item = _a[_i];
-                if (item.work_type_id == work_type_id)
-                    this.unCheckIfChecked(item);
-            }
         }
+        this.onFiltered$.emit(true);
     };
     WorkSvc.prototype.onCreate = function () {
         this.editItem = new work_1.Work();

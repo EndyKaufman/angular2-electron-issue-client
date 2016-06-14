@@ -23,13 +23,13 @@ export class ProjectSvc extends ItemsSvc {
 
         this.itemSelected$.subscribe(item => {
             this.checkedsStatusIds=this.getCheckedsStatusIds()
+            this.checkedsWorkTypeIds=this.getCheckedsWorkTypeIds()
             this.updateCheckedsTitle()
-            this.updateCheckedsWorkTypeIds()
         })
         this.itemChecked$.subscribe(items => {
             this.checkedsStatusIds=this.getCheckedsStatusIds()
+            this.checkedsWorkTypeIds=this.getCheckedsWorkTypeIds()
             this.updateCheckedsTitle()
-            this.updateCheckedsWorkTypeIds()
         })
     }
 
@@ -48,12 +48,13 @@ export class ProjectSvc extends ItemsSvc {
         })
     }
 
-    updateCheckedsWorkTypeIds() {
+    getCheckedsWorkTypeIds() {
         let projectsWorkTypeList = this.selectedItem.id ? this.selectedItem.work_type : this.checkedItems.map(item => item.work_type)
         let checkedProjectWorkTypeIds = []
         for (let work_type of projectsWorkTypeList)
             checkedProjectWorkTypeIds = checkedProjectWorkTypeIds.concat(work_type)
-        this.checkedsWorkTypeIds = checkedProjectWorkTypeIds.filter(function (item, pos, self) {
+        console.log('getCheckedsWorkTypeIds', checkedProjectWorkTypeIds)
+        return checkedProjectWorkTypeIds.filter(function (item, pos, self) {
             return self.indexOf(item) == pos;
         })
     }

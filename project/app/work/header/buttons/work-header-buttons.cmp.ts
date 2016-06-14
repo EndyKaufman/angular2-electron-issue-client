@@ -10,18 +10,7 @@ import {WorkSvc} from '../../../../service/work/work.svc'
   templateUrl: 'project/app/work/header/buttons/work-header-buttons.cmp.html'
 })
 export class WorkHeaderButtonsCmp {
-  firstUpdateFilteredWorkType: boolean = true
   constructor(private projectSvc: ProjectSvc, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc, private workSvc: WorkSvc) {
-    this.taskSvc.itemSelected$.subscribe(item => this.updateFilteredWorkType())
-    this.taskSvc.itemChecked$.subscribe(items => this.updateFilteredWorkType())
-  }
-  updateFilteredWorkType() {
-    if (!this.firstUpdateFilteredWorkType)
-      return
-    this.firstUpdateFilteredWorkType = false
-    for (let work_type_id of this.projectSvc.checkedsWorkTypeIds) {
-      this.workSvc.onFilterWorkType(work_type_id)
-    }
   }
   getWorkTypeButtonColor(work_type_id) {
     let color = this.workSvc.isFilterWorkType(work_type_id) ? '' : 'basic'

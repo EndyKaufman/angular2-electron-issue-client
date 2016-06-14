@@ -20,11 +20,14 @@ var WorkListCmp = (function () {
         this.taskSvc = taskSvc;
         this.projectSvc = projectSvc;
         this.workTypeSvc = workTypeSvc;
-        taskSvc.itemSelected$.subscribe(function (item) { return _this.getList(); });
-        taskSvc.itemChecked$.subscribe(function (items) { return _this.getList(); });
+        this.firstLoad = true;
+        taskSvc.itemSelected$.subscribe(function (item) { _this.firstLoad = true; _this.getList(); });
+        taskSvc.itemChecked$.subscribe(function (items) { _this.firstLoad = true; _this.getList(); });
+        workSvc.onFiltered$.subscribe(function (items) { return _this.getList(); });
         workSvc.onCreated$.subscribe(function (items) { return _this.getList(); });
     }
     WorkListCmp.prototype.getList = function () {
+        console.log('WorkListCmp:getList');
         var query = {};
         var checkedIds = this.taskSvc.getCheckedItemsIds();
         if (this.taskSvc.selectedItem.id) {
@@ -48,6 +51,15 @@ var WorkListCmp = (function () {
             else
                 query.project_id = '0';
         }
+        if (this.firstLoad) {
+            this.workSvc.filteredWorkType = this.projectSvc.getCheckedsWorkTypeIds();
+            this.firstLoad = false;
+        }
+        if (this.workSvc.filteredWorkType.length)
+            query.work_type_id = this.workSvc.filteredWorkType.join('|');
+        else
+            query.work_type_id = '0';
+        console.log(query);
         this.workSvc.loaded = false;
         this.workSvc.getList(query);
     };

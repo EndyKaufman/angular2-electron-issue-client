@@ -33,8 +33,14 @@ var WorkModalCreateCmp = (function () {
             this_1.workTypesByProject[project.id] = this_1.workTypeSvc.items.filter(function (item) { return project.work_type.indexOf(item.id) != -1; });
             if (!this_1.workSvc.editItem.project_id) {
                 this_1.workSvc.editItem.project_id = project.id;
-                this_1.workSvc.editItem.task_id = this_1.tasksByProject[project.id][0].id;
-                this_1.workSvc.editItem.work_type_id = this_1.workTypesByProject[project.id][0].id;
+                if (this_1.tasksByProject[project.id][0])
+                    this_1.workSvc.editItem.task_id = this_1.tasksByProject[project.id][0].id;
+                else
+                    this_1.workSvc.editItem.task_id = 0;
+                if (this_1.workTypesByProject[project.id][0])
+                    this_1.workSvc.editItem.work_type_id = this_1.workTypesByProject[project.id][0].id;
+                else
+                    this_1.workSvc.editItem.work_type_id = 0;
             }
         };
         var this_1 = this;

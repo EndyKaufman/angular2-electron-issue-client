@@ -15,24 +15,11 @@ var task_svc_1 = require('../../../../service/task/task.svc');
 var work_svc_1 = require('../../../../service/work/work.svc');
 var WorkHeaderButtonsCmp = (function () {
     function WorkHeaderButtonsCmp(projectSvc, taskSvc, workTypeSvc, workSvc) {
-        var _this = this;
         this.projectSvc = projectSvc;
         this.taskSvc = taskSvc;
         this.workTypeSvc = workTypeSvc;
         this.workSvc = workSvc;
-        this.firstUpdateFilteredWorkType = true;
-        this.taskSvc.itemSelected$.subscribe(function (item) { return _this.updateFilteredWorkType(); });
-        this.taskSvc.itemChecked$.subscribe(function (items) { return _this.updateFilteredWorkType(); });
     }
-    WorkHeaderButtonsCmp.prototype.updateFilteredWorkType = function () {
-        if (!this.firstUpdateFilteredWorkType)
-            return;
-        this.firstUpdateFilteredWorkType = false;
-        for (var _i = 0, _a = this.projectSvc.checkedsWorkTypeIds; _i < _a.length; _i++) {
-            var work_type_id = _a[_i];
-            this.workSvc.onFilterWorkType(work_type_id);
-        }
-    };
     WorkHeaderButtonsCmp.prototype.getWorkTypeButtonColor = function (work_type_id) {
         var color = this.workSvc.isFilterWorkType(work_type_id) ? '' : 'basic';
         if (this.taskSvc.selectedItem.id)

@@ -32,13 +32,13 @@ var ProjectSvc = (function (_super) {
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
         this.itemSelected$.subscribe(function (item) {
             _this.checkedsStatusIds = _this.getCheckedsStatusIds();
+            _this.checkedsWorkTypeIds = _this.getCheckedsWorkTypeIds();
             _this.updateCheckedsTitle();
-            _this.updateCheckedsWorkTypeIds();
         });
         this.itemChecked$.subscribe(function (items) {
             _this.checkedsStatusIds = _this.getCheckedsStatusIds();
+            _this.checkedsWorkTypeIds = _this.getCheckedsWorkTypeIds();
             _this.updateCheckedsTitle();
-            _this.updateCheckedsWorkTypeIds();
         });
     }
     ProjectSvc.prototype.updateCheckedsTitle = function () {
@@ -56,14 +56,15 @@ var ProjectSvc = (function (_super) {
             return self.indexOf(item) == pos;
         });
     };
-    ProjectSvc.prototype.updateCheckedsWorkTypeIds = function () {
+    ProjectSvc.prototype.getCheckedsWorkTypeIds = function () {
         var projectsWorkTypeList = this.selectedItem.id ? this.selectedItem.work_type : this.checkedItems.map(function (item) { return item.work_type; });
         var checkedProjectWorkTypeIds = [];
         for (var _i = 0, projectsWorkTypeList_1 = projectsWorkTypeList; _i < projectsWorkTypeList_1.length; _i++) {
             var work_type = projectsWorkTypeList_1[_i];
             checkedProjectWorkTypeIds = checkedProjectWorkTypeIds.concat(work_type);
         }
-        this.checkedsWorkTypeIds = checkedProjectWorkTypeIds.filter(function (item, pos, self) {
+        console.log('getCheckedsWorkTypeIds', checkedProjectWorkTypeIds);
+        return checkedProjectWorkTypeIds.filter(function (item, pos, self) {
             return self.indexOf(item) == pos;
         });
     };

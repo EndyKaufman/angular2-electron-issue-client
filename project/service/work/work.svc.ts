@@ -26,10 +26,6 @@ export class WorkSvc extends ItemsSvc {
         return super.getList(query)
     }
 
-    getItemsFilteredByWorkType() {
-        return this.items.filter(item => item && this.isFilterWorkType(item.work_type_id))
-    }
-
     isFilterWorkType(work_type_id: number) {
         return this.filteredWorkType && (this.filteredWorkType.indexOf(work_type_id) != -1 || work_type_id == 0)
     }
@@ -48,11 +44,8 @@ export class WorkSvc extends ItemsSvc {
             this.filteredWorkType.push(work_type_id)
         else {
             this.filteredWorkType.splice(index, 1)
-            for (let item of this.items) {
-                if (item.work_type_id == work_type_id)
-                    this.unCheckIfChecked(item)
-            }
         }
+        this.onFiltered$.emit(true)
     }
 
     onCreate() {

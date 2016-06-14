@@ -70,6 +70,7 @@ var ItemsSvc = (function () {
     };
     ItemsSvc.prototype.getList = function (query) {
         var $this = this;
+        $this.lastQuery = query;
         return new Promise(function (resolve) {
             if ($this.loaded) {
                 if ($this.items.length > 0)
@@ -80,6 +81,7 @@ var ItemsSvc = (function () {
             }
             else {
                 $this.resource.getList(query).then(function (items) {
+                    console.log($this, items);
                     $this.items = items;
                     $this.loaded = true;
                     $this.itemsLoaded$.emit($this.items);

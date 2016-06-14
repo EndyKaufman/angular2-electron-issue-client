@@ -19,11 +19,12 @@ var TaskListCmp = (function () {
         this.projectSvc = projectSvc;
         this.statusSvc = statusSvc;
         this.firstLoad = true;
-        projectSvc.itemSelected$.subscribe(function (item) { return _this.getList(); });
-        projectSvc.itemChecked$.subscribe(function (items) { return _this.getList(); });
+        projectSvc.itemSelected$.subscribe(function (item) { _this.firstLoad = true; _this.getList(); });
+        projectSvc.itemChecked$.subscribe(function (items) { _this.firstLoad = true; _this.getList(); });
         taskSvc.onFiltered$.subscribe(function (items) { return _this.getList(); });
     }
     TaskListCmp.prototype.getList = function () {
+        console.log('TaskListCmp:getList');
         var query = {};
         var checkedIds = this.projectSvc.getCheckedItemsIds();
         if (this.projectSvc.selectedItem.id) {
