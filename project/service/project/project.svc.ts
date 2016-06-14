@@ -13,8 +13,8 @@ export class ProjectSvc extends ItemsSvc {
     selectedItem: Project
     resource: ProjectResourceSvc
     checkedsTitle: string
-    checkedsStatusIds: number[] = []
     checkedsWorkTypeIds: number[] = []
+    checkedsStatusIds: number[]=[]
 
     constructor(public http: Http) {
         super(http)
@@ -22,16 +22,14 @@ export class ProjectSvc extends ItemsSvc {
         this.resource = new ProjectResourceSvc(http)
 
         this.itemSelected$.subscribe(item => {
+            this.checkedsStatusIds=this.getCheckedsStatusIds()
             this.updateCheckedsTitle()
-            this.updateCheckedsStatusIds()
             this.updateCheckedsWorkTypeIds()
-                        console.log(1,this.checkedsWorkTypeIds)
         })
         this.itemChecked$.subscribe(items => {
+            this.checkedsStatusIds=this.getCheckedsStatusIds()
             this.updateCheckedsTitle()
-            this.updateCheckedsStatusIds()
             this.updateCheckedsWorkTypeIds()
-                        console.log(2,this.checkedsWorkTypeIds)
         })
     }
 
@@ -39,12 +37,13 @@ export class ProjectSvc extends ItemsSvc {
         this.checkedsTitle = this.selectedItem.title ? this.selectedItem.title : this.checkedItems.map(item => item.title).join(', ')
     }
 
-    updateCheckedsStatusIds() {
+    getCheckedsStatusIds() {
+        console.log('getCheckedsStatusIds')
         let projectsStatusList = this.selectedItem.id ? this.selectedItem.status : this.checkedItems.map(item => item.status)
         let checkedProjectStatusIds = []
         for (let status of projectsStatusList)
             checkedProjectStatusIds = checkedProjectStatusIds.concat(status)
-        this.checkedsStatusIds = checkedProjectStatusIds.filter(function (item, pos, self) {
+        return checkedProjectStatusIds.filter(function (item, pos, self) {
             return self.indexOf(item) == pos;
         })
     }

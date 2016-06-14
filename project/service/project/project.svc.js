@@ -26,34 +26,33 @@ var ProjectSvc = (function (_super) {
         _super.call(this, http);
         this.http = http;
         this.items = [];
-        this.checkedsStatusIds = [];
         this.checkedsWorkTypeIds = [];
+        this.checkedsStatusIds = [];
         this.selectedItem = new project_1.Project();
         this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
         this.itemSelected$.subscribe(function (item) {
+            _this.checkedsStatusIds = _this.getCheckedsStatusIds();
             _this.updateCheckedsTitle();
-            _this.updateCheckedsStatusIds();
             _this.updateCheckedsWorkTypeIds();
-            console.log(1, _this.checkedsWorkTypeIds);
         });
         this.itemChecked$.subscribe(function (items) {
+            _this.checkedsStatusIds = _this.getCheckedsStatusIds();
             _this.updateCheckedsTitle();
-            _this.updateCheckedsStatusIds();
             _this.updateCheckedsWorkTypeIds();
-            console.log(2, _this.checkedsWorkTypeIds);
         });
     }
     ProjectSvc.prototype.updateCheckedsTitle = function () {
         this.checkedsTitle = this.selectedItem.title ? this.selectedItem.title : this.checkedItems.map(function (item) { return item.title; }).join(', ');
     };
-    ProjectSvc.prototype.updateCheckedsStatusIds = function () {
+    ProjectSvc.prototype.getCheckedsStatusIds = function () {
+        console.log('getCheckedsStatusIds');
         var projectsStatusList = this.selectedItem.id ? this.selectedItem.status : this.checkedItems.map(function (item) { return item.status; });
         var checkedProjectStatusIds = [];
         for (var _i = 0, projectsStatusList_1 = projectsStatusList; _i < projectsStatusList_1.length; _i++) {
             var status_1 = projectsStatusList_1[_i];
             checkedProjectStatusIds = checkedProjectStatusIds.concat(status_1);
         }
-        this.checkedsStatusIds = checkedProjectStatusIds.filter(function (item, pos, self) {
+        return checkedProjectStatusIds.filter(function (item, pos, self) {
             return self.indexOf(item) == pos;
         });
     };

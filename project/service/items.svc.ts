@@ -15,50 +15,45 @@ export class ItemsSvc {
     itemSelected$: EventEmitter<any>
     itemChecked$: EventEmitter<any>
     itemsLoaded$: EventEmitter<any>
+    
+    onFiltered$: EventEmitter<any>
     onCreate$: EventEmitter<any>
     onEdit$: EventEmitter<any>
     onDelete$: EventEmitter<any>
-    create$: EventEmitter<any>
-    edit$: EventEmitter<any>
-    delete$: EventEmitter<any>
+    
+    onCreated$: EventEmitter<any>
+    onEdited$: EventEmitter<any>
+    onDeleted$: EventEmitter<any>
 
     constructor(public http: Http) {
         this.itemSelected$ = new EventEmitter()
         this.itemChecked$ = new EventEmitter()
         this.itemsLoaded$ = new EventEmitter()
+        
+        
+        this.onFiltered$ = new EventEmitter()
         this.onCreate$ = new EventEmitter()
         this.onEdit$ = new EventEmitter()
         this.onDelete$ = new EventEmitter()
-        this.create$ = new EventEmitter()
-        this.edit$ = new EventEmitter()
-        this.delete$ = new EventEmitter()
-    }
-
-    onCreate() {
-        this.onCreate$.emit(true)
-    }
-
-    onEdit(item: any) {
-        this.onEdit$.emit(item)
-    }
-
-    onDelete(item: any) {
-        this.onDelete$.emit(item)
-    }
+        
+        this.onCreated$ = new EventEmitter()
+        this.onEdited$ = new EventEmitter()
+        this.onDeleted$ = new EventEmitter()
+    }    
 
     create(item: any) {
         let $this = this
-        $this.resource.post(item).then(item => {console.log(item);$this.create$.emit(item)})
+        $this.resource.post(item).then(item => $this.onCreated$.emit(item))
     }
 
     edit(item: any) {
         let $this = this
-        $this.resource.put(item).then(item => $this.edit$.emit(item))
+        $this.resource.put(item).then(item => $this.onEdited$.emit(item))
     }
 
     delete(item: any) {
         let $this = this
-        $this.resource.delete(item).then(item => $this.delete$.emit(item))
+        $this.resource.delete(item).then(item => $this.onDeleted$.emit(item))
     }
 
     onSelect(item: any) {

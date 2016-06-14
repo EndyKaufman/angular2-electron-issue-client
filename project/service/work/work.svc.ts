@@ -31,7 +31,7 @@ export class WorkSvc extends ItemsSvc {
     }
 
     isFilterWorkType(work_type_id: number) {
-        return this.filteredWorkType && (this.filteredWorkType.indexOf(work_type_id) != -1 || work_type_id==0)
+        return this.filteredWorkType && (this.filteredWorkType.indexOf(work_type_id) != -1 || work_type_id == 0)
     }
 
     getSpentOn(item: Work) {
@@ -57,20 +57,20 @@ export class WorkSvc extends ItemsSvc {
 
     onCreate() {
         this.editItem = new Work()
-        super.onCreate()
+        this.onCreate$.emit(true)
     }
 
     create(item: Work) {
         if (item.project_id)
-            item.project_id = parseInt(item.project_id)
+            item.project_id = +item.project_id
         else
             item.project_id = 0
         if (item.task_id)
-            item.task_id = parseInt(item.task_id)
+            item.task_id = +item.task_id
         else
             item.task_id = 0
         if (item.work_type_id)
-            item.work_type_id = parseInt(item.work_type_id)
+            item.work_type_id = +item.work_type_id
         else
             item.work_type_id = 0
         super.create(item)

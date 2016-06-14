@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 import {StatusSvc} from '../../../service/status/status.svc'
 import {TaskSvc} from '../../../service/task/task.svc'
@@ -8,11 +8,13 @@ import {ProjectSvc} from '../../../service/project/project.svc'
   selector: 'task-list',
   templateUrl: 'project/app/task/list/task-list.cmp.html'
 })
-export class TaskListCmp implements OnInit {
+export class TaskListCmp {
 
+  private firstLoad: boolean = true
   constructor(private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private statusSvc: StatusSvc) {
-    projectSvc.itemSelected$.subscribe(item => this.onProjectSelected(item))
-    projectSvc.itemChecked$.subscribe(items => this.onProjectChecked(items))
+    projectSvc.itemSelected$.subscribe(item => this.getList())
+    projectSvc.itemChecked$.subscribe(items => this.getList())
+    taskSvc.onFiltered$.subscribe(items => this.getList())
   }
 
   getList() {
@@ -28,19 +30,19 @@ export class TaskListCmp implements OnInit {
       else
         query = { project_id: '0' }
     }
+
+    if (this.firstLoad) {
+      this.taskSvc.filteredStatus = this.projectSvc.getCheckedsStatusIds()
+      this.firstLoad = false
+    }
+
+    if (this.taskSvc.filteredStatus.length)
+      query.status_id = this.taskSvc.filteredStatus.join('|')
+    else
+      query.status_id = '0'
+
     this.taskSvc.loaded = false
     this.taskSvc.getList(query)
   }
 
-  ngOnInit() {
-    //this.getList()
-  }
-
-  onProjectSelected(item: any) {
-    this.getList()
-  }
-
-  onProjectChecked(item: any[]) {
-    this.getList()
-  }
 }

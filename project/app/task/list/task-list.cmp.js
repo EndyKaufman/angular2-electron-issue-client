@@ -18,8 +18,10 @@ var TaskListCmp = (function () {
         this.taskSvc = taskSvc;
         this.projectSvc = projectSvc;
         this.statusSvc = statusSvc;
-        projectSvc.itemSelected$.subscribe(function (item) { return _this.onProjectSelected(item); });
-        projectSvc.itemChecked$.subscribe(function (items) { return _this.onProjectChecked(items); });
+        this.firstLoad = true;
+        projectSvc.itemSelected$.subscribe(function (item) { return _this.getList(); });
+        projectSvc.itemChecked$.subscribe(function (items) { return _this.getList(); });
+        taskSvc.onFiltered$.subscribe(function (items) { return _this.getList(); });
     }
     TaskListCmp.prototype.getList = function () {
         var query = {};
@@ -35,17 +37,16 @@ var TaskListCmp = (function () {
             else
                 query = { project_id: '0' };
         }
+        if (this.firstLoad) {
+            this.taskSvc.filteredStatus = this.projectSvc.getCheckedsStatusIds();
+            this.firstLoad = false;
+        }
+        if (this.taskSvc.filteredStatus.length)
+            query.status_id = this.taskSvc.filteredStatus.join('|');
+        else
+            query.status_id = '0';
         this.taskSvc.loaded = false;
         this.taskSvc.getList(query);
-    };
-    TaskListCmp.prototype.ngOnInit = function () {
-        //this.getList()
-    };
-    TaskListCmp.prototype.onProjectSelected = function (item) {
-        this.getList();
-    };
-    TaskListCmp.prototype.onProjectChecked = function (item) {
-        this.getList();
     };
     TaskListCmp = __decorate([
         core_1.Component({

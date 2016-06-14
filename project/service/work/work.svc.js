@@ -61,19 +61,19 @@ var WorkSvc = (function (_super) {
     };
     WorkSvc.prototype.onCreate = function () {
         this.editItem = new work_1.Work();
-        _super.prototype.onCreate.call(this);
+        this.onCreate$.emit(true);
     };
     WorkSvc.prototype.create = function (item) {
         if (item.project_id)
-            item.project_id = parseInt(item.project_id);
+            item.project_id = +item.project_id;
         else
             item.project_id = 0;
         if (item.task_id)
-            item.task_id = parseInt(item.task_id);
+            item.task_id = +item.task_id;
         else
             item.task_id = 0;
         if (item.work_type_id)
-            item.work_type_id = parseInt(item.work_type_id);
+            item.work_type_id = +item.work_type_id;
         else
             item.work_type_id = 0;
         _super.prototype.create.call(this, item);

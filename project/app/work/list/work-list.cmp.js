@@ -20,9 +20,9 @@ var WorkListCmp = (function () {
         this.taskSvc = taskSvc;
         this.projectSvc = projectSvc;
         this.workTypeSvc = workTypeSvc;
-        taskSvc.itemSelected$.subscribe(function (item) { return _this.onTaskSelected(item); });
-        taskSvc.itemChecked$.subscribe(function (items) { return _this.onTaskSelected(items); });
-        workSvc.create$.subscribe(function (items) { return _this.onTaskSelected(items); });
+        taskSvc.itemSelected$.subscribe(function (item) { return _this.getList(); });
+        taskSvc.itemChecked$.subscribe(function (items) { return _this.getList(); });
+        workSvc.onCreated$.subscribe(function (items) { return _this.getList(); });
     }
     WorkListCmp.prototype.getList = function () {
         var query = {};
@@ -49,14 +49,7 @@ var WorkListCmp = (function () {
                 query.project_id = '0';
         }
         this.workSvc.loaded = false;
-        console.log(query);
         this.workSvc.getList(query);
-    };
-    WorkListCmp.prototype.ngOnInit = function () {
-        //this.getList()
-    };
-    WorkListCmp.prototype.onTaskSelected = function (project) {
-        this.getList();
     };
     WorkListCmp = __decorate([
         core_1.Component({

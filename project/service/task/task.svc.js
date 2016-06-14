@@ -48,10 +48,6 @@ var TaskSvc = (function (_super) {
     TaskSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
-    TaskSvc.prototype.getItemsFilteredByStatus = function () {
-        var _this = this;
-        return this.items.filter(function (item) { return item && _this.isFilterStatus(item.status_id); });
-    };
     TaskSvc.prototype.isFilterStatus = function (status_id) {
         return this.filteredStatus && (this.filteredStatus.indexOf(status_id) != -1 || status_id == 0);
     };
@@ -61,12 +57,8 @@ var TaskSvc = (function (_super) {
             this.filteredStatus.push(status_id);
         else {
             this.filteredStatus.splice(index, 1);
-            for (var _i = 0, _a = this.items; _i < _a.length; _i++) {
-                var item = _a[_i];
-                if (item.status_id == status_id)
-                    this.unCheckIfChecked(item);
-            }
         }
+        this.onFiltered$.emit(true);
     };
     TaskSvc = __decorate([
         core_1.Injectable(), 

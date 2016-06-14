@@ -14,23 +14,10 @@ var project_svc_1 = require('../../../../service/project/project.svc');
 var task_svc_1 = require('../../../../service/task/task.svc');
 var TaskHeaderButtonsCmp = (function () {
     function TaskHeaderButtonsCmp(projectSvc, statusSvc, taskSvc) {
-        var _this = this;
         this.projectSvc = projectSvc;
         this.statusSvc = statusSvc;
         this.taskSvc = taskSvc;
-        this.firstUpdateFilteredStatus = true;
-        this.projectSvc.itemSelected$.subscribe(function (item) { return _this.updateFilteredStatus(); });
-        this.projectSvc.itemChecked$.subscribe(function (items) { return _this.updateFilteredStatus(); });
     }
-    TaskHeaderButtonsCmp.prototype.updateFilteredStatus = function () {
-        if (!this.firstUpdateFilteredStatus)
-            return;
-        this.firstUpdateFilteredStatus = false;
-        for (var _i = 0, _a = this.projectSvc.checkedsStatusIds; _i < _a.length; _i++) {
-            var status_id = _a[_i];
-            this.taskSvc.onFilterStatus(status_id);
-        }
-    };
     TaskHeaderButtonsCmp.prototype.getStatusButtonColor = function (status_id) {
         var color = this.taskSvc.isFilterStatus(status_id) ? this.statusSvc.getItemById(status_id).color : 'basic';
         if (color != 'blue' && this.projectSvc.selectedItem.id && !this.taskSvc.isFilterStatus(status_id))

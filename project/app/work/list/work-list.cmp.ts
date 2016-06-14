@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 
 import { ProjectSvc } from '../../../service/project/project.svc'
 import { WorkSvc } from '../../../service/work/work.svc'
@@ -9,12 +9,12 @@ import { WorkTypeSvc } from '../../../service/work-type/work-type.svc'
   selector: 'work-list',
   templateUrl: 'project/app/work/list/work-list.cmp.html'
 })
-export class WorkListCmp implements OnInit {
+export class WorkListCmp {
 
   constructor(private workSvc: WorkSvc, private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private workTypeSvc: WorkTypeSvc) {
-    taskSvc.itemSelected$.subscribe(item => this.onTaskSelected(item))
-    taskSvc.itemChecked$.subscribe(items => this.onTaskSelected(items))
-    workSvc.create$.subscribe(items => this.onTaskSelected(items))
+    taskSvc.itemSelected$.subscribe(item => this.getList())
+    taskSvc.itemChecked$.subscribe(items => this.getList())
+    workSvc.onCreated$.subscribe(items => this.getList())
   }
 
   getList() {
@@ -39,16 +39,7 @@ export class WorkListCmp implements OnInit {
       else
         query.project_id = '0'
     }
-    this.workSvc.loaded = false
-    console.log(query)
+    this.workSvc.loaded = false    
     this.workSvc.getList(query)
-  }
-
-  ngOnInit() {
-    //this.getList()
-  }
-
-  onTaskSelected(project: any) {
-    this.getList()
   }
 }
