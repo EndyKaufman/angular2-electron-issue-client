@@ -1,7 +1,7 @@
 <div class="ui modal">
     <i class="close icon"></i>
     <div class="header">
-        Create new work
+        Edit work
     </div>
     <div class="content">
         <div class="ui form" *ngIf="workSvc.editItem">
@@ -9,12 +9,16 @@
         </div>
     </div>
     <div class="actions">
+        <div class="ui left floated deny red right labeled icon button" data-action="delete">
+            Delete
+            <i class="trash icon"></i>
+        </div>
         <div class="ui deny button">
             Cancel
         </div>
         <div class="ui positive green right labeled icon button">
-            Create
-            <i class="checkmark icon"></i>
+            Save
+            <i class="save icon"></i>
         </div>
     </div>
 </div>

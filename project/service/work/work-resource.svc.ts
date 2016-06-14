@@ -14,10 +14,6 @@ export class WorkResourceSvc extends ResourceSvc {
         return super.put(item)
     }
 
-    save(item: Work): Promise<Work> {
-        return super.put(item)
-    }
-
     constructor(public http: Http) {
         super(http)
     }

@@ -15,40 +15,36 @@ var work_svc_1 = require('../../../../service/work/work.svc');
 var project_svc_1 = require('../../../../service/project/project.svc');
 var task_svc_1 = require('../../../../service/task/task.svc');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
-var WorkModalCreateCmp = (function () {
-    function WorkModalCreateCmp(projectSvc, taskSvc, workSvc, uiSvc, workInputsSvc) {
+var WorkModalEditCmp = (function () {
+    function WorkModalEditCmp(projectSvc, taskSvc, workSvc, uiSvc, workInputsSvc) {
         var _this = this;
         this.projectSvc = projectSvc;
         this.taskSvc = taskSvc;
         this.workSvc = workSvc;
         this.uiSvc = uiSvc;
         this.workInputsSvc = workInputsSvc;
-        workSvc.onCreate$.subscribe(function (active) { return _this.onCreate(); });
+        workSvc.onEdit$.subscribe(function (item) { return _this.onEdit(item); });
     }
-    WorkModalCreateCmp.prototype.onCreate = function () {
+    WorkModalEditCmp.prototype.onEdit = function (item) {
         var _this = this;
         this.workInputsSvc.onInit();
-        if (this.projectSvc.selectedItem.id)
-            this.workSvc.editItem.project_id = this.projectSvc.selectedItem.id;
-        if (this.taskSvc.selectedItem.id)
-            this.workSvc.editItem.task_id = this.taskSvc.selectedItem.id;
-        if (this.workSvc.filteredWorkType.length)
-            this.workSvc.editItem.work_type_id = this.workSvc.filteredWorkType[0];
-        this.workInputsSvc.spent_on_for_input = '';
-        this.uiSvc.showModal('work-modal-create').then(function (el) {
+        this.workSvc.editItem = item;
+        this.workInputsSvc.spent_on_for_input = this.workSvc.getSpentOnForInput(item.spent_on);
+        this.uiSvc.showModal('work-modal-edit').then(function (el) {
+            console.log(_this.workInputsSvc.spent_on_for_input);
             _this.workSvc.editItem.spent_on = _this.workSvc.getSpentOnFromInput(_this.workInputsSvc.spent_on_for_input);
-            _this.workSvc.create(_this.workSvc.editItem);
+            _this.workSvc.edit(_this.workSvc.editItem);
         });
     };
-    WorkModalCreateCmp = __decorate([
+    WorkModalEditCmp = __decorate([
         core_1.Component({
-            selector: 'work-modal-create',
-            templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html',
+            selector: 'work-modal-edit',
+            templateUrl: 'project/app/work/modal/edit/work-modal-edit.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
         __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, ui_svc_1.UiSvc, work_inputs_svc_1.WorkInputsSvc])
-    ], WorkModalCreateCmp);
-    return WorkModalCreateCmp;
+    ], WorkModalEditCmp);
+    return WorkModalEditCmp;
 }());
-exports.WorkModalCreateCmp = WorkModalCreateCmp;
-//# sourceMappingURL=work-modal-create.cmp.js.map
+exports.WorkModalEditCmp = WorkModalEditCmp;
+//# sourceMappingURL=work-modal-edit.cmp.js.map

@@ -18,9 +18,6 @@ var ProjectResourceSvc = (function (_super) {
     ProjectResourceSvc.prototype.put = function (item) {
         return _super.prototype.put.call(this, item);
     };
-    ProjectResourceSvc.prototype.save = function (item) {
-        return _super.prototype.put.call(this, item);
-    };
     ProjectResourceSvc.prototype.delete = function (item) {
         return _super.prototype.delete.call(this, item);
     };

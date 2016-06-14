@@ -8,7 +8,7 @@
                     </a>
                     <a class="ui label mini basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1"
                         *ngIf="item.spent_on">
-                        <i class="calendar icon"></i> {{workSvc.getSpentOn(item)}}
+                        <i class="calendar icon"></i> {{workSvc.getSpentOnAsString(item.spent_on)}}
                     </a>
                     <a class="ui label mini basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1"
                         *ngIf="item.hours">
@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="right floated right aligned one column">
-                <div class="ui mini button">
+                <div class="ui mini button" (click)="workSvc.onEdit(item)">
                     <i class="edit icon"></i> Edit
                 </div>
                 <div class="ui left labeled mini button">

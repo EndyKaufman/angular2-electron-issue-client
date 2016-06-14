@@ -13,10 +13,6 @@ export class StatusResourceSvc extends ResourceSvc {
     put(item: Status) {
         return super.put(item)
     }
-
-    save(item: Status): Promise<Status> {
-        return super.put(item)
-    }
     
     constructor(public http: Http) {
         super(http)

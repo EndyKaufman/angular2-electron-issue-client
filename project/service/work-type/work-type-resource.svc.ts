@@ -13,10 +13,6 @@ export class WorkTypeResourceSvc extends ResourceSvc {
     put(item: WorkType) {
         return super.put(item)
     }
-
-    save(item: WorkType): Promise<WorkType> {
-        return super.put(item)
-    }
     
     constructor(public http: Http) {
         super(http)

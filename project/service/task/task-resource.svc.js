@@ -18,9 +18,6 @@ var TaskResourceSvc = (function (_super) {
     TaskResourceSvc.prototype.put = function (item) {
         return _super.prototype.put.call(this, item);
     };
-    TaskResourceSvc.prototype.save = function (item) {
-        return _super.prototype.put.call(this, item);
-    };
     TaskResourceSvc.prototype.delete = function (item) {
         return _super.prototype.delete.call(this, item);
     };

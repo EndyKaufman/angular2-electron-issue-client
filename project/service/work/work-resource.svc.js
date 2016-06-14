@@ -18,9 +18,6 @@ var WorkResourceSvc = (function (_super) {
     WorkResourceSvc.prototype.put = function (item) {
         return _super.prototype.put.call(this, item);
     };
-    WorkResourceSvc.prototype.save = function (item) {
-        return _super.prototype.put.call(this, item);
-    };
     WorkResourceSvc.prototype.delete = function (item) {
         return _super.prototype.delete.call(this, item);
     };

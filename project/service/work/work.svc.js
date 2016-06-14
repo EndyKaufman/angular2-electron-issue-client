@@ -35,12 +35,30 @@ var WorkSvc = (function (_super) {
     WorkSvc.prototype.isFilterWorkType = function (work_type_id) {
         return this.filteredWorkType && (this.filteredWorkType.indexOf(work_type_id) != -1 || work_type_id == 0);
     };
-    WorkSvc.prototype.getSpentOn = function (item) {
-        var d = new Date(item.spent_on);
+    WorkSvc.prototype.getSpentOnAsString = function (spent_on) {
+        if (spent_on == '')
+            return spent_on;
+        var d = new Date(spent_on);
         var curr_date = d.getDate();
         var curr_month = d.getMonth() + 1;
         var curr_year = d.getFullYear();
-        return curr_date + '.' + curr_month + '.' + curr_year;
+        return (curr_date < 10 ? '0' : '') + curr_date + '.' + (curr_month < 10 ? '0' : '') + curr_month + '.' + curr_year;
+    };
+    WorkSvc.prototype.getSpentOnForInput = function (spent_on) {
+        if (spent_on == '')
+            return spent_on;
+        var d = new Date(spent_on);
+        var curr_date = d.getDate();
+        var curr_month = d.getMonth() + 1;
+        var curr_year = d.getFullYear();
+        return curr_year + '-' + (curr_month < 10 ? '0' : '') + curr_month + '-' + (curr_date < 10 ? '0' : '') + curr_date;
+    };
+    WorkSvc.prototype.getSpentOnFromInput = function (spent_on) {
+        if (spent_on == '')
+            return spent_on;
+        var parts = spent_on.split("-");
+        var d = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+        return d.toString();
     };
     WorkSvc.prototype.onFilterWorkType = function (work_type_id) {
         var index = this.filteredWorkType.indexOf(work_type_id);
@@ -50,6 +68,25 @@ var WorkSvc = (function (_super) {
             this.filteredWorkType.splice(index, 1);
         }
         this.onFiltered$.emit(true);
+    };
+    WorkSvc.prototype.onEdit = function (item) {
+        this.editItem = item;
+        this.onEdit$.emit(item);
+    };
+    WorkSvc.prototype.edit = function (item) {
+        if (item.project_id)
+            item.project_id = +item.project_id;
+        else
+            item.project_id = 0;
+        if (item.task_id)
+            item.task_id = +item.task_id;
+        else
+            item.task_id = 0;
+        if (item.work_type_id)
+            item.work_type_id = +item.work_type_id;
+        else
+            item.work_type_id = 0;
+        _super.prototype.edit.call(this, item);
     };
     WorkSvc.prototype.onCreate = function () {
         this.editItem = new work_1.Work();

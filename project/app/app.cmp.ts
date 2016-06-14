@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'
 
 import { UiSvc }     from '../service/ui.svc'
+import { WorkInputsSvc} from '../service/work/work-inputs.svc'
 
 import { StatusSvc }     from '../service/status/status.svc'
 import { WorkTypeSvc }     from '../service/work-type/work-type.svc'
@@ -23,6 +24,7 @@ import { WorkCmp }     from './work/work.cmp'
     ROUTER_PROVIDERS,
     
     UiSvc,
+    WorkInputsSvc,
     
     StatusSvc,
     WorkTypeSvc,

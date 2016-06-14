@@ -18,9 +18,6 @@ var StatusResourceSvc = (function (_super) {
     StatusResourceSvc.prototype.put = function (item) {
         return _super.prototype.put.call(this, item);
     };
-    StatusResourceSvc.prototype.save = function (item) {
-        return _super.prototype.put.call(this, item);
-    };
     StatusResourceSvc.prototype.delete = function (item) {
         return _super.prototype.delete.call(this, item);
     };
