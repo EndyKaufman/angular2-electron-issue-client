@@ -16,40 +16,41 @@ var UiSvc = (function () {
     UiSvc.prototype.showModal = function (componentName, otherAction) {
         var modal = $(componentName + '>.ui.modal');
         return new Promise(function (resolve, reject) {
-            modal.modal({
-                //blurring: true
-                detachable: false,
-                allowMultiple: true,
-                onApprove: function (el) {
-                    var result = true;
-                    console.log('ok');
-                    var action = $(el).data('action');
-                    if (!action)
-                        action = 'ok';
-                    if (action != 'ok' && otherAction) {
-                        result = otherAction(action);
+            window.setTimeout(function () {
+                modal.modal({
+                    //blurring: true
+                    detachable: false,
+                    allowMultiple: true,
+                    observeChanges: true,
+                    onApprove: function (el) {
+                        var result = true;
+                        console.log('ok');
+                        var action = $(el).data('action');
+                        if (!action)
+                            action = 'ok';
+                        if (action != 'ok' && otherAction)
+                            result = otherAction(action);
                         resolve(action);
                         return result;
-                    }
-                },
-                onDeny: function (el) {
-                    var result = true;
-                    console.log('cancel');
-                    var action = $(el).data('action');
-                    if (!action)
-                        action = 'cancel';
-                    if (action != 'cancel' && otherAction) {
-                        result = otherAction(action);
-                        resolve(action);
+                    },
+                    onDeny: function (el) {
+                        var result = true;
+                        console.log('cancel');
+                        var action = $(el).data('action');
+                        if (!action)
+                            action = 'cancel';
+                        if (action != 'cancel' && otherAction)
+                            result = otherAction(action);
+                        reject(action);
                         return result;
+                    },
+                    onHidden: function () {
+                        console.log('cancel');
+                        var action = 'cancel';
+                        reject(action);
                     }
-                },
-                onHidden: function () {
-                    console.log('cancel');
-                    var action = 'cancel';
-                    reject(action);
-                }
-            }).modal('show');
+                }).modal('show');
+            }, 100);
         });
     };
     UiSvc.prototype.hideModal = function (componentName) {
