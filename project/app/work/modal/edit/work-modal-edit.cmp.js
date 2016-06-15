@@ -10,32 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ui_svc_1 = require('../../../../service/ui.svc');
-var work_inputs_svc_1 = require('../../../../service/work/work-inputs.svc');
 var work_svc_1 = require('../../../../service/work/work.svc');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
 var WorkModalEditCmp = (function () {
-    function WorkModalEditCmp(workSvc, uiSvc, workInputsSvc) {
+    function WorkModalEditCmp(workSvc, uiSvc) {
         var _this = this;
         this.workSvc = workSvc;
         this.uiSvc = uiSvc;
-        this.workInputsSvc = workInputsSvc;
         workSvc.onEdit$.subscribe(function (item) { return _this.onEdit(item); });
         workSvc.onDeleted$.subscribe(function (item) { return _this.uiSvc.hideModal('work-modal-edit'); });
     }
     WorkModalEditCmp.prototype.onEdit = function (item) {
         var _this = this;
-        this.workInputsSvc.onInit();
-        this.workSvc.editItem = item;
-        this.workInputsSvc.spent_on_for_input = this.workSvc.getSpentOnForInput(item.spent_on);
+        this.item = item;
+        this.item.spent_on_for_input = this.workSvc.getSpentOnForInput(item.spent_on);
         this.uiSvc.showModal('work-modal-edit', function (action) {
             if (action == 'delete') {
-                _this.workSvc.onDelete(_this.workSvc.editItem);
+                _this.workSvc.onDelete(_this.item);
                 return false;
             }
             return true;
         }).then(function (action) {
-            _this.workSvc.editItem.spent_on = _this.workSvc.getSpentOnFromInput(_this.workInputsSvc.spent_on_for_input);
-            _this.workSvc.edit(_this.workSvc.editItem);
+            _this.item.spent_on = _this.workSvc.getSpentOnFromInput(_this.item.spent_on_for_input);
+            _this.workSvc.edit(_this.item);
         }, function (action) { });
     };
     WorkModalEditCmp = __decorate([
@@ -44,7 +41,7 @@ var WorkModalEditCmp = (function () {
             templateUrl: 'project/app/work/modal/edit/work-modal-edit.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
-        __metadata('design:paramtypes', [work_svc_1.WorkSvc, ui_svc_1.UiSvc, work_inputs_svc_1.WorkInputsSvc])
+        __metadata('design:paramtypes', [work_svc_1.WorkSvc, ui_svc_1.UiSvc])
     ], WorkModalEditCmp);
     return WorkModalEditCmp;
 }());

@@ -12,7 +12,6 @@ export class WorkSvc extends ItemsSvc {
     items: Work[] = []
     selectedItem: Work
     resource: WorkResourceSvc
-    editItem: Work
 
     filteredWorkType: number[] = []
 
@@ -69,12 +68,10 @@ export class WorkSvc extends ItemsSvc {
     }
 
     onDelete(item: Work) {
-        this.editItem = item
         this.onDelete$.emit(item)
     }
     
     onEdit(item: Work) {
-        this.editItem = item
         this.onEdit$.emit(item)
     }
 
@@ -95,8 +92,7 @@ export class WorkSvc extends ItemsSvc {
     }
 
     onCreate() {
-        this.editItem = new Work()
-        this.onCreate$.emit(true)
+        this.onCreate$.emit(new Work())
     }
 
     create(item: Work) {

@@ -1,7 +1,6 @@
 import { Component, EventEmitter }       from '@angular/core'
 
 import {UiSvc} from '../../../../service/ui.svc'
-import {WorkInputsSvc} from '../../../../service/work/work-inputs.svc'
 
 import {Work} from '../../../../service/work/work'
 
@@ -16,18 +15,16 @@ import {WorkInputsCmp} from '../../inputs/work-inputs.cmp'
 })
 export class WorkModalDeleteCmp {
 
-  constructor(private workSvc: WorkSvc, private uiSvc: UiSvc, private workInputsSvc: WorkInputsSvc) {
+  constructor(private workSvc: WorkSvc, private uiSvc: UiSvc) {
     workSvc.onDelete$.subscribe(item => this.onDelete(item))
   }
 
   onDelete(item: Work) {
-    this.workInputsSvc.onInit()
-
-    this.workSvc.editItem = item
+    this.item = item
 
     this.uiSvc.showModal('work-modal-delete').then(
       action => {
-        this.workSvc.delete(this.workSvc.editItem)
+        this.workSvc.delete(this.item)
       }, action => { })
   }
 }

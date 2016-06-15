@@ -7,6 +7,11 @@ import { ItemsSvc } from '../items.svc'
 import { ProjectResourceSvc } from './project-resource.svc'
 import { Project } from './project'
 
+
+import {WorkTypeSvc} from '../work-type/work-type.svc'
+import {TaskSvc} from '../task/task.svc'
+
+
 @Injectable()
 export class ProjectSvc extends ItemsSvc {
     items: Project[] = []
@@ -14,21 +19,21 @@ export class ProjectSvc extends ItemsSvc {
     resource: ProjectResourceSvc
     checkedsTitle: string
     checkedsWorkTypeIds: number[] = []
-    checkedsStatusIds: number[]=[]
+    checkedsStatusIds: number[] = []
 
-    constructor(public http: Http) {
+    constructor(public http: Http, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc) {
         super(http)
         this.selectedItem = new Project();
         this.resource = new ProjectResourceSvc(http)
 
         this.itemSelected$.subscribe(item => {
-            this.checkedsStatusIds=this.getCheckedsStatusIds()
-            this.checkedsWorkTypeIds=this.getCheckedsWorkTypeIds()
+            this.checkedsStatusIds = this.getCheckedsStatusIds()
+            this.checkedsWorkTypeIds = this.getCheckedsWorkTypeIds()
             this.updateCheckedsTitle()
         })
         this.itemChecked$.subscribe(items => {
-            this.checkedsStatusIds=this.getCheckedsStatusIds()
-            this.checkedsWorkTypeIds=this.getCheckedsWorkTypeIds()
+            this.checkedsStatusIds = this.getCheckedsStatusIds()
+            this.checkedsWorkTypeIds = this.getCheckedsWorkTypeIds()
             this.updateCheckedsTitle()
         })
     }
@@ -61,5 +66,13 @@ export class ProjectSvc extends ItemsSvc {
 
     getList(query: any): Promise<Project[]> {
         return super.getList(query)
+    }
+
+    getWorkTypesByProjectId(project_id: number) {
+        return this.workTypeSvc.items.filter(item => this.getItemById(project_id).work_type.indexOf(item.id) != -1)
+    }
+    
+    getTasksByProjectId(project_id: number) {
+        return this.taskSvc.items.filter(item => item.project_id == project_id)
     }
 }

@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var ui_svc_1 = require('../service/ui.svc');
-var work_inputs_svc_1 = require('../service/work/work-inputs.svc');
 var status_svc_1 = require('../service/status/status.svc');
 var work_type_svc_1 = require('../service/work-type/work-type.svc');
 var project_svc_1 = require('../service/project/project.svc');
@@ -47,7 +46,6 @@ var AppCmp = (function () {
             providers: [
                 router_deprecated_1.ROUTER_PROVIDERS,
                 ui_svc_1.UiSvc,
-                work_inputs_svc_1.WorkInputsSvc,
                 status_svc_1.StatusSvc,
                 work_type_svc_1.WorkTypeSvc,
                 project_svc_1.ProjectSvc,

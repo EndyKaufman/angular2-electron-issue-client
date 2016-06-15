@@ -9,32 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var work_inputs_svc_1 = require('../../../service/work/work-inputs.svc');
 var work_type_svc_1 = require('../../../service/work-type/work-type.svc');
 var project_svc_1 = require('../../../service/project/project.svc');
 var task_svc_1 = require('../../../service/task/task.svc');
 var work_svc_1 = require('../../../service/work/work.svc');
+var work_1 = require('../../../service/work/work');
 var WorkInputsCmp = (function () {
-    function WorkInputsCmp(projectSvc, taskSvc, workSvc, workTypeSvc, workInputsSvc) {
+    function WorkInputsCmp(projectSvc, taskSvc, workSvc, workTypeSvc) {
         this.projectSvc = projectSvc;
         this.taskSvc = taskSvc;
         this.workSvc = workSvc;
         this.workTypeSvc = workTypeSvc;
-        this.workInputsSvc = workInputsSvc;
     }
     WorkInputsCmp.prototype.onChangeProject = function () {
-        this.workSvc.editItem.task_id = 0;
-        this.workSvc.editItem.work_type_id = this.workInputsSvc.workTypesByProject[this.workSvc.editItem.project_id][0].id;
+        this.item.task_id = 0;
+        this.onChangeTask();
     };
     WorkInputsCmp.prototype.onChangeTask = function () {
-        this.workSvc.editItem.work_type_id = this.workInputsSvc.workTypesByProject[this.workSvc.editItem.project_id][0].id;
+        var work_types = this.projectSvc.getWorkTypesByProjectId(this.item.project_id);
+        if (work_types && work_types.length)
+            this.item.work_type_id = work_types[0].id;
+        else
+            this.item.work_type_id = 0;
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', work_1.Work)
+    ], WorkInputsCmp.prototype, "item", void 0);
     WorkInputsCmp = __decorate([
         core_1.Component({
             selector: 'work-inputs',
             templateUrl: 'project/app/work/inputs/work-inputs.cmp.html'
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, work_type_svc_1.WorkTypeSvc, work_inputs_svc_1.WorkInputsSvc])
+        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, work_type_svc_1.WorkTypeSvc])
     ], WorkInputsCmp);
     return WorkInputsCmp;
 }());

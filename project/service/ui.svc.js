@@ -17,6 +17,7 @@ var UiSvc = (function () {
         var modal = $(componentName + '>.ui.modal');
         return new Promise(function (resolve, reject) {
             modal.modal({
+                //blurring: true
                 detachable: false,
                 allowMultiple: true,
                 onApprove: function (el) {
@@ -25,10 +26,11 @@ var UiSvc = (function () {
                     var action = $(el).data('action');
                     if (!action)
                         action = 'ok';
-                    if (action != 'ok' && otherAction)
+                    if (action != 'ok' && otherAction) {
                         result = otherAction(action);
-                    resolve(action);
-                    return result;
+                        resolve(action);
+                        return result;
+                    }
                 },
                 onDeny: function (el) {
                     var result = true;
@@ -36,10 +38,11 @@ var UiSvc = (function () {
                     var action = $(el).data('action');
                     if (!action)
                         action = 'cancel';
-                    if (action != 'cancel' && otherAction)
+                    if (action != 'cancel' && otherAction) {
                         result = otherAction(action);
-                    reject(action);
-                    return result;
+                        resolve(action);
+                        return result;
+                    }
                 },
                 onHidden: function () {
                     console.log('cancel');

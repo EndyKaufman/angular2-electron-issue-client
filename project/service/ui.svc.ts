@@ -7,6 +7,7 @@ export class UiSvc {
         let modal = $(componentName + '>.ui.modal')
         return new Promise((resolve, reject) => {
             modal.modal({
+                //blurring: true
                 detachable: false,
                 allowMultiple: true,
                 onApprove: (el) => {
@@ -15,10 +16,11 @@ export class UiSvc {
                     let action = $(el).data('action')
                     if (!action)
                         action = 'ok'
-                    if (action != 'ok' && otherAction)
+                    if (action != 'ok' && otherAction){
                         result = otherAction(action)
-                    resolve(action)
-                    return result
+                        resolve(action)
+                        return result
+                    }
                 },
                 onDeny: (el) => {
                     let result = true
@@ -26,10 +28,11 @@ export class UiSvc {
                     let action = $(el).data('action')
                     if (!action)
                         action = 'cancel'
-                    if (action != 'cancel' && otherAction)
+                    if (action != 'cancel' && otherAction){
                         result = otherAction(action)
-                    reject(action)
-                    return result
+                        resolve(action)
+                        return result
+                    }
                 },
                 onHidden: () => {
                     console.log('cancel')

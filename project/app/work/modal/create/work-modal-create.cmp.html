@@ -4,8 +4,8 @@
         Create new work
     </div>
     <div class="content">
-        <div class="ui form" *ngIf="workSvc.editItem">
-            <work-inputs></work-inputs>
+        <div class="ui form" *ngIf="item">
+            <work-inputs [item]="item"></work-inputs>
         </div>
     </div>
     <div class="actions">

@@ -4,8 +4,8 @@
         Edit work
     </div>
     <div class="content">
-        <div class="ui form" *ngIf="workSvc.editItem">
-            <work-inputs></work-inputs>
+        <div class="ui form" *ngIf="item">
+            <work-inputs [item]="item"></work-inputs>
         </div>
     </div>
     <div class="actions">
@@ -15,7 +15,7 @@
         </div>
         <div class="ui cancel button">
             Cancel
-        </div>
+        </div>        
         <div class="ui ok green right labeled icon button">
             Save
             <i class="save icon"></i>

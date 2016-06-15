@@ -70,11 +70,9 @@ var WorkSvc = (function (_super) {
         this.onFiltered$.emit(true);
     };
     WorkSvc.prototype.onDelete = function (item) {
-        this.editItem = item;
         this.onDelete$.emit(item);
     };
     WorkSvc.prototype.onEdit = function (item) {
-        this.editItem = item;
         this.onEdit$.emit(item);
     };
     WorkSvc.prototype.edit = function (item) {
@@ -93,8 +91,7 @@ var WorkSvc = (function (_super) {
         _super.prototype.edit.call(this, item);
     };
     WorkSvc.prototype.onCreate = function () {
-        this.editItem = new work_1.Work();
-        this.onCreate$.emit(true);
+        this.onCreate$.emit(new work_1.Work());
     };
     WorkSvc.prototype.create = function (item) {
         if (item.project_id)

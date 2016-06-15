@@ -1,37 +1,37 @@
 <div class="fields">
-    <div class="eight wide field" *ngIf="workInputsSvc.projects">
+    <div class="eight wide field" *ngIf="projectSvc.items">
         <label>Project</label>
-        <select [(ngModel)]="workSvc.editItem.project_id" (change)="onChangeProject()">
-            <option value="{{project.id}}" *ngFor="let project of workInputsSvc.projects">{{project.title}}</option>
+        <select [(ngModel)]="item.project_id" (change)="onChangeProject()">
+            <option value="{{project.id}}" *ngFor="let project of projectSvc.items">{{project.title}}</option>
         </select>
     </div>
-    <div class="eight wide field" *ngIf="workInputsSvc.tasksByProject" (change)="onChangeTask()">
+    <div class="eight wide field" *ngIf="projectSvc.getTasksByProjectId(item.project_id)" (change)="onChangeTask()">
         <label>Task</label>
-        <select [(ngModel)]="workSvc.editItem.task_id">
+        <select [(ngModel)]="item.task_id">
                         <option value="0"></option>
-                        <option value="{{task.id}}" *ngFor="let task of workInputsSvc.tasksByProject[workSvc.editItem.project_id]">{{task.title}}</option>
+                        <option value="{{task.id}}" *ngFor="let task of projectSvc.getTasksByProjectId(item.project_id)">{{task.title}}</option>
                     </select>
     </div>
 </div>
 <div class="fields">
-    <div class="ten wide field" *ngIf="workInputsSvc.tasksByProject">
+    <div class="ten wide field" *ngIf="projectSvc.getTasksByProjectId(item.project_id)">
         <label>Work</label>
-        <select [(ngModel)]="workSvc.editItem.work_type_id">
-                        <option value="{{work_type.id}}" *ngFor="let work_type of workInputsSvc.workTypesByProject[workSvc.editItem.project_id]">{{work_type.title}}</option>
+        <select [(ngModel)]="item.work_type_id">
+                        <option value="{{work_type.id}}" *ngFor="let work_type of projectSvc.getWorkTypesByProjectId(item.project_id)">{{work_type.title}}</option>
                     </select>
     </div>
     <div class="three wide field">
         <label>Hours</label>
-        <input type="number" [(ngModel)]="workSvc.editItem.hours">
+        <input type="number" [(ngModel)]="item.hours">
     </div>
     <div class="three wide field">
         <label>Date</label>
-        <input type="date" [(ngModel)]="workInputsSvc.spent_on_for_input">
+        <input type="date" [(ngModel)]="item.spent_on_for_input">
     </div>
 </div>
 <div class="fields">
     <div class="sixteen wide field">
         <label>Comment</label>
-        <textarea [(ngModel)]="workSvc.editItem.comment"></textarea>
+        <textarea [(ngModel)]="item.comment"></textarea>
     </div>
 </div>

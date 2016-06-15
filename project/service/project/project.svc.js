@@ -19,12 +19,16 @@ require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../items.svc');
 var project_resource_svc_1 = require('./project-resource.svc');
 var project_1 = require('./project');
+var work_type_svc_1 = require('../work-type/work-type.svc');
+var task_svc_1 = require('../task/task.svc');
 var ProjectSvc = (function (_super) {
     __extends(ProjectSvc, _super);
-    function ProjectSvc(http) {
+    function ProjectSvc(http, taskSvc, workTypeSvc) {
         var _this = this;
         _super.call(this, http);
         this.http = http;
+        this.taskSvc = taskSvc;
+        this.workTypeSvc = workTypeSvc;
         this.items = [];
         this.checkedsWorkTypeIds = [];
         this.checkedsStatusIds = [];
@@ -71,9 +75,16 @@ var ProjectSvc = (function (_super) {
     ProjectSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
+    ProjectSvc.prototype.getWorkTypesByProjectId = function (project_id) {
+        var _this = this;
+        return this.workTypeSvc.items.filter(function (item) { return _this.getItemById(project_id).work_type.indexOf(item.id) != -1; });
+    };
+    ProjectSvc.prototype.getTasksByProjectId = function (project_id) {
+        return this.taskSvc.items.filter(function (item) { return item.project_id == project_id; });
+    };
     ProjectSvc = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, task_svc_1.TaskSvc, work_type_svc_1.WorkTypeSvc])
     ], ProjectSvc);
     return ProjectSvc;
 }(items_svc_1.ItemsSvc));
