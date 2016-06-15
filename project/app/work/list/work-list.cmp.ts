@@ -18,6 +18,8 @@ export class WorkListCmp {
     taskSvc.itemChecked$.subscribe(items => { this.firstLoad = true; this.getList() })
     workSvc.onFiltered$.subscribe(items => this.getList())
     workSvc.onCreated$.subscribe(items => this.getList())
+    workSvc.onEdited$.subscribe(items => this.getList())
+    workSvc.onDeleted$.subscribe(items => this.getList())
   }
 
   getList() {
@@ -54,7 +56,6 @@ export class WorkListCmp {
     else
       query.work_type_id = '0'
       
-     console.log(query)
     this.workSvc.loaded = false    
     this.workSvc.getList(query)
   }

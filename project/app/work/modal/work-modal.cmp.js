@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var work_svc_1 = require('../../../service/work/work.svc');
 var work_modal_create_cmp_1 = require('./create/work-modal-create.cmp');
 var work_modal_edit_cmp_1 = require('./edit/work-modal-edit.cmp');
+var work_modal_delete_cmp_1 = require('./delete/work-modal-delete.cmp');
 var WorkModalCmp = (function () {
     function WorkModalCmp(workSvc) {
         this.workSvc = workSvc;
@@ -20,7 +21,7 @@ var WorkModalCmp = (function () {
         core_1.Component({
             selector: 'work-modal',
             templateUrl: 'project/app/work/modal/work-modal.cmp.html',
-            directives: [work_modal_create_cmp_1.WorkModalCreateCmp, work_modal_edit_cmp_1.WorkModalEditCmp]
+            directives: [work_modal_create_cmp_1.WorkModalCreateCmp, work_modal_edit_cmp_1.WorkModalEditCmp, work_modal_delete_cmp_1.WorkModalDeleteCmp]
         }), 
         __metadata('design:paramtypes', [work_svc_1.WorkSvc])
     ], WorkModalCmp);

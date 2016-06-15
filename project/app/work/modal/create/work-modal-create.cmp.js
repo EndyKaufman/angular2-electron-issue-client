@@ -35,10 +35,10 @@ var WorkModalCreateCmp = (function () {
         if (this.workSvc.filteredWorkType.length)
             this.workSvc.editItem.work_type_id = this.workSvc.filteredWorkType[0];
         this.workInputsSvc.spent_on_for_input = '';
-        this.uiSvc.showModal('work-modal-create').then(function (el) {
+        this.uiSvc.showModal('work-modal-create').then(function (action) {
             _this.workSvc.editItem.spent_on = _this.workSvc.getSpentOnFromInput(_this.workInputsSvc.spent_on_for_input);
             _this.workSvc.create(_this.workSvc.editItem);
-        });
+        }, function (action) { });
     };
     WorkModalCreateCmp = __decorate([
         core_1.Component({

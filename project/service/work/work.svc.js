@@ -69,6 +69,10 @@ var WorkSvc = (function (_super) {
         }
         this.onFiltered$.emit(true);
     };
+    WorkSvc.prototype.onDelete = function (item) {
+        this.editItem = item;
+        this.onDelete$.emit(item);
+    };
     WorkSvc.prototype.onEdit = function (item) {
         this.editItem = item;
         this.onEdit$.emit(item);

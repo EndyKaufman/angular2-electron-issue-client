@@ -68,6 +68,11 @@ export class WorkSvc extends ItemsSvc {
         this.onFiltered$.emit(true)
     }
 
+    onDelete(item: Work) {
+        this.editItem = item
+        this.onDelete$.emit(item)
+    }
+    
     onEdit(item: Work) {
         this.editItem = item
         this.onEdit$.emit(item)

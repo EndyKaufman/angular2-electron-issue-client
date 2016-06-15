@@ -31,9 +31,9 @@ export class WorkModalCreateCmp {
       this.workSvc.editItem.work_type_id = this.workSvc.filteredWorkType[0]
     this.workInputsSvc.spent_on_for_input = ''
 
-    this.uiSvc.showModal('work-modal-create').then(el => {
+    this.uiSvc.showModal('work-modal-create').then(action => {
       this.workSvc.editItem.spent_on = this.workSvc.getSpentOnFromInput(this.workInputsSvc.spent_on_for_input)
       this.workSvc.create(this.workSvc.editItem)
-    })
+    }, action => { })
   }
 }

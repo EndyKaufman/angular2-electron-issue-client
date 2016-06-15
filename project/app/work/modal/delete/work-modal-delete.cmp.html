@@ -1,23 +1,19 @@
-<div class="ui modal">
+<div class="ui modal small">
     <i class="close icon"></i>
     <div class="header">
-        Edit work
+        Delete work
     </div>
     <div class="content">
         <div class="ui form" *ngIf="workSvc.editItem">
-            <work-inputs></work-inputs>
+            Are you sure you want to delete work?
         </div>
     </div>
     <div class="actions">
-        <div class="ui left floated cancel red right labeled icon button" data-action="delete">
-            Delete
-            <i class="trash icon"></i>
-        </div>
         <div class="ui cancel button">
-            Cancel
+            No
         </div>
         <div class="ui ok green right labeled icon button">
-            Save
+            Yes
             <i class="save icon"></i>
         </div>
     </div>

@@ -13,40 +13,31 @@ var ui_svc_1 = require('../../../../service/ui.svc');
 var work_inputs_svc_1 = require('../../../../service/work/work-inputs.svc');
 var work_svc_1 = require('../../../../service/work/work.svc');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
-var WorkModalEditCmp = (function () {
-    function WorkModalEditCmp(workSvc, uiSvc, workInputsSvc) {
+var WorkModalDeleteCmp = (function () {
+    function WorkModalDeleteCmp(workSvc, uiSvc, workInputsSvc) {
         var _this = this;
         this.workSvc = workSvc;
         this.uiSvc = uiSvc;
         this.workInputsSvc = workInputsSvc;
-        workSvc.onEdit$.subscribe(function (item) { return _this.onEdit(item); });
-        workSvc.onDeleted$.subscribe(function (item) { return _this.uiSvc.hideModal('work-modal-edit'); });
+        workSvc.onDelete$.subscribe(function (item) { return _this.onDelete(item); });
     }
-    WorkModalEditCmp.prototype.onEdit = function (item) {
+    WorkModalDeleteCmp.prototype.onDelete = function (item) {
         var _this = this;
         this.workInputsSvc.onInit();
         this.workSvc.editItem = item;
-        this.workInputsSvc.spent_on_for_input = this.workSvc.getSpentOnForInput(item.spent_on);
-        this.uiSvc.showModal('work-modal-edit', function (action) {
-            if (action == 'delete') {
-                _this.workSvc.onDelete(_this.workSvc.editItem);
-                return false;
-            }
-            return true;
-        }).then(function (action) {
-            _this.workSvc.editItem.spent_on = _this.workSvc.getSpentOnFromInput(_this.workInputsSvc.spent_on_for_input);
-            _this.workSvc.edit(_this.workSvc.editItem);
+        this.uiSvc.showModal('work-modal-delete').then(function (action) {
+            _this.workSvc.delete(_this.workSvc.editItem);
         }, function (action) { });
     };
-    WorkModalEditCmp = __decorate([
+    WorkModalDeleteCmp = __decorate([
         core_1.Component({
-            selector: 'work-modal-edit',
-            templateUrl: 'project/app/work/modal/edit/work-modal-edit.cmp.html',
+            selector: 'work-modal-delete',
+            templateUrl: 'project/app/work/modal/delete/work-modal-delete.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
         __metadata('design:paramtypes', [work_svc_1.WorkSvc, ui_svc_1.UiSvc, work_inputs_svc_1.WorkInputsSvc])
-    ], WorkModalEditCmp);
-    return WorkModalEditCmp;
+    ], WorkModalDeleteCmp);
+    return WorkModalDeleteCmp;
 }());
-exports.WorkModalEditCmp = WorkModalEditCmp;
-//# sourceMappingURL=work-modal-edit.cmp.js.map
+exports.WorkModalDeleteCmp = WorkModalDeleteCmp;
+//# sourceMappingURL=work-modal-delete.cmp.js.map

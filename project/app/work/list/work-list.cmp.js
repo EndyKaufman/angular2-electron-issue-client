@@ -25,6 +25,8 @@ var WorkListCmp = (function () {
         taskSvc.itemChecked$.subscribe(function (items) { _this.firstLoad = true; _this.getList(); });
         workSvc.onFiltered$.subscribe(function (items) { return _this.getList(); });
         workSvc.onCreated$.subscribe(function (items) { return _this.getList(); });
+        workSvc.onEdited$.subscribe(function (items) { return _this.getList(); });
+        workSvc.onDeleted$.subscribe(function (items) { return _this.getList(); });
     }
     WorkListCmp.prototype.getList = function () {
         console.log('WorkListCmp:getList');
@@ -59,7 +61,6 @@ var WorkListCmp = (function () {
             query.work_type_id = this.workSvc.filteredWorkType.join('|');
         else
             query.work_type_id = '0';
-        console.log(query);
         this.workSvc.loaded = false;
         this.workSvc.getList(query);
     };
