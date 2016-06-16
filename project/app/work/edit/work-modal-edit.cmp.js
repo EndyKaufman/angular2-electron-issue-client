@@ -41,9 +41,10 @@ var WorkModalEditCmp = (function () {
             templateUrl: 'project/app/work/modal/edit/work-modal-edit.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
-        __metadata('design:paramtypes', [work_svc_1.WorkSvc, ui_svc_1.UiSvc])
+        __metadata('design:paramtypes', [(typeof (_a = typeof work_svc_1.WorkSvc !== 'undefined' && work_svc_1.WorkSvc) === 'function' && _a) || Object, (typeof (_b = typeof ui_svc_1.UiSvc !== 'undefined' && ui_svc_1.UiSvc) === 'function' && _b) || Object])
     ], WorkModalEditCmp);
     return WorkModalEditCmp;
+    var _a, _b;
 }());
 exports.WorkModalEditCmp = WorkModalEditCmp;
 //# sourceMappingURL=work-modal-edit.cmp.js.map
