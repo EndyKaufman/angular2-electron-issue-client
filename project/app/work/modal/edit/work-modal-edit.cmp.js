@@ -9,22 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ui_svc_1 = require('../../../../service/ui.svc');
+var semantic_ui_1 = require('../../../../ui/semantic-ui');
 var work_svc_1 = require('../../../../service/work/work.svc');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
 var WorkModalEditCmp = (function () {
-    function WorkModalEditCmp(workSvc, uiSvc) {
+    function WorkModalEditCmp(workSvc, modal) {
         var _this = this;
         this.workSvc = workSvc;
-        this.uiSvc = uiSvc;
+        this.modal = modal;
         workSvc.onEdit$.subscribe(function (item) { return _this.onEdit(item); });
-        workSvc.onDeleted$.subscribe(function (item) { return _this.uiSvc.hideModal('work-modal-edit'); });
+        workSvc.onDeleted$.subscribe(function (item) { return _this.modal.hide('work-modal-edit'); });
     }
     WorkModalEditCmp.prototype.onEdit = function (item) {
         var _this = this;
         this.item = item;
         this.item.spent_on_for_input = this.workSvc.getSpentOnForInput(item.spent_on);
-        this.uiSvc.showModal('work-modal-edit', function (action) {
+        this.modal.show('work-modal-edit', function (action) {
             if (action == 'delete') {
                 _this.workSvc.onDelete(_this.item);
                 return false;
@@ -41,7 +41,7 @@ var WorkModalEditCmp = (function () {
             templateUrl: 'project/app/work/modal/edit/work-modal-edit.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
-        __metadata('design:paramtypes', [work_svc_1.WorkSvc, ui_svc_1.UiSvc])
+        __metadata('design:paramtypes', [work_svc_1.WorkSvc, semantic_ui_1.SemanticUiModal])
     ], WorkModalEditCmp);
     return WorkModalEditCmp;
 }());

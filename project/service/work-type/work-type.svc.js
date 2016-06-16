@@ -16,17 +16,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var items_svc_1 = require('../items.svc');
-var work_type_resource_svc_1 = require('./work-type-resource.svc');
+var items_svc_1 = require('../../class/items.svc');
+var work_type_resource_http_svc_1 = require('./work-type-resource-http.svc');
 var work_type_1 = require('./work-type');
 var WorkTypeSvc = (function (_super) {
     __extends(WorkTypeSvc, _super);
+    //resource: WorkTypeResourceHttpSvc
     function WorkTypeSvc(http) {
         _super.call(this, http);
         this.http = http;
         this.items = [];
         this.selectedItem = new work_type_1.WorkType();
-        this.resource = new work_type_resource_svc_1.WorkTypeResourceSvc(http);
+        this.resource = new work_type_resource_http_svc_1.WorkTypeResourceHttpSvc(http);
     }
     WorkTypeSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);

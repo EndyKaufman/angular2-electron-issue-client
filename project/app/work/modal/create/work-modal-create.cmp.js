@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ui_svc_1 = require('../../../../service/ui.svc');
+var semantic_ui_1 = require('../../../../ui/semantic-ui');
 var work_svc_1 = require('../../../../service/work/work.svc');
 var project_svc_1 = require('../../../../service/project/project.svc');
 var task_svc_1 = require('../../../../service/task/task.svc');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
 var WorkModalCreateCmp = (function () {
-    function WorkModalCreateCmp(projectSvc, taskSvc, workSvc, uiSvc) {
+    function WorkModalCreateCmp(projectSvc, taskSvc, workSvc, modal) {
         var _this = this;
         this.projectSvc = projectSvc;
         this.taskSvc = taskSvc;
         this.workSvc = workSvc;
-        this.uiSvc = uiSvc;
+        this.modal = modal;
         workSvc.onCreate$.subscribe(function (item) { return _this.onCreate(item); });
     }
     WorkModalCreateCmp.prototype.onCreate = function (item) {
@@ -33,7 +33,7 @@ var WorkModalCreateCmp = (function () {
             item.work_type_id = this.workSvc.filteredWorkType[0];
         this.item = item;
         this.item.spent_on_for_input = '';
-        this.uiSvc.showModal('work-modal-create').then(function (action) {
+        this.modal.show('work-modal-create').then(function (action) {
             item.spent_on = _this.workSvc.getSpentOnFromInput(_this.item.spent_on_for_input);
             _this.workSvc.create(_this.item);
         }, function (action) { });
@@ -44,7 +44,7 @@ var WorkModalCreateCmp = (function () {
             templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, ui_svc_1.UiSvc])
+        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, semantic_ui_1.SemanticUiModal])
     ], WorkModalCreateCmp);
     return WorkModalCreateCmp;
 }());

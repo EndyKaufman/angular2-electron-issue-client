@@ -33,15 +33,13 @@ var WorkListCmp = (function () {
         var query = {};
         var checkedIds = this.taskSvc.getCheckedItemsIds();
         if (this.taskSvc.selectedItem.id) {
-            query = {
-                task_id: '0|' + this.taskSvc.selectedItem.id
-            };
+            query.task_id = '0|' + this.taskSvc.selectedItem.id;
         }
         else {
             if (checkedIds.length)
-                query = { task_id: '0|' + checkedIds.join('|') };
+                query.task_id = '0|' + checkedIds.join('|');
             else
-                query = { task_id: '0' };
+                query.task_id = '0';
         }
         checkedIds = this.projectSvc.getCheckedItemsIds();
         if (this.projectSvc.selectedItem.id) {

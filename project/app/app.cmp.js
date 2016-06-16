@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
-var ui_svc_1 = require('../service/ui.svc');
+var semantic_ui_1 = require('../ui/semantic-ui');
 var status_svc_1 = require('../service/status/status.svc');
 var work_type_svc_1 = require('../service/work-type/work-type.svc');
 var project_svc_1 = require('../service/project/project.svc');
@@ -44,8 +44,8 @@ var AppCmp = (function () {
             templateUrl: 'project/app/app.cmp.html',
             directives: [header_logo_cmp_1.HeaderLogoCmp, project_buttons_cmp_1.ProjectButtonsCmp, task_cmp_1.TaskCmp, work_cmp_1.WorkCmp, router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
+                semantic_ui_1.SEMANTIC_UI_PROVIDERS,
                 router_deprecated_1.ROUTER_PROVIDERS,
-                ui_svc_1.UiSvc,
                 status_svc_1.StatusSvc,
                 work_type_svc_1.WorkTypeSvc,
                 project_svc_1.ProjectSvc,

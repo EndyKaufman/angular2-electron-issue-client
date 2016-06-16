@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 
+import { InWorkListQuery } from '../../../interface/in-work-list-query'
+
 import { ProjectSvc } from '../../../service/project/project.svc'
 import { WorkSvc } from '../../../service/work/work.svc'
 import { TaskSvc } from '../../../service/task/task.svc'
@@ -24,17 +26,15 @@ export class WorkListCmp {
 
   getList() {
     console.log('WorkListCmp:getList')
-    let query = {}
+    let query: InWorkListQuery = {}
     let checkedIds = this.taskSvc.getCheckedItemsIds()
     if (this.taskSvc.selectedItem.id) {
-      query = {
-        task_id: '0|' + this.taskSvc.selectedItem.id
-      }
+      query.task_id = '0|' + this.taskSvc.selectedItem.id
     } else {
       if (checkedIds.length)
-        query = { task_id: '0|' + checkedIds.join('|') }
+        query.task_id = '0|' + checkedIds.join('|')
       else
-        query = { task_id: '0' }
+        query.task_id = '0'
     }
     checkedIds = this.projectSvc.getCheckedItemsIds()
     if (this.projectSvc.selectedItem.id) {
@@ -50,13 +50,13 @@ export class WorkListCmp {
       this.workSvc.filteredWorkType = this.projectSvc.getCheckedsWorkTypeIds()
       this.firstLoad = false
     }
-    
+
     if (this.workSvc.filteredWorkType.length)
       query.work_type_id = this.workSvc.filteredWorkType.join('|')
     else
       query.work_type_id = '0'
-      
-    this.workSvc.loaded = false    
+
+    this.workSvc.loaded = false
     this.workSvc.getList(query)
   }
 }

@@ -16,8 +16,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var items_svc_1 = require('../items.svc');
-var task_resource_svc_1 = require('./task-resource.svc');
+var items_svc_1 = require('../../class/items.svc');
+var task_resource_http_svc_1 = require('./task-resource-http.svc');
 var task_1 = require('./task');
 var TaskSvc = (function (_super) {
     __extends(TaskSvc, _super);
@@ -28,7 +28,7 @@ var TaskSvc = (function (_super) {
         this.items = [];
         this.filteredStatus = [];
         this.selectedItem = new task_1.Task();
-        this.resource = new task_resource_svc_1.TaskResourceSvc(http);
+        this.resource = new task_resource_http_svc_1.TaskResourceHttpSvc(http);
         this.itemSelected$.subscribe(function (item) {
             _this.updateCheckedsTitle();
         });

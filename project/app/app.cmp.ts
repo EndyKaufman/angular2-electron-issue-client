@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'
 
-import { UiSvc }     from '../service/ui.svc'
+import { SemanticUiModal, SEMANTIC_UI_PROVIDERS } from '../ui/semantic-ui'
 
 import { StatusSvc }     from '../service/status/status.svc'
 import { WorkTypeSvc }     from '../service/work-type/work-type.svc'
@@ -20,8 +20,8 @@ import { WorkCmp }     from './work/work.cmp'
   templateUrl: 'project/app/app.cmp.html',
   directives: [HeaderLogoCmp, ProjectButtonsCmp, TaskCmp, WorkCmp, ROUTER_DIRECTIVES],
   providers: [
-    ROUTER_PROVIDERS,    
-    UiSvc,    
+    SEMANTIC_UI_PROVIDERS,
+    ROUTER_PROVIDERS,     
     StatusSvc,
     WorkTypeSvc,   
     ProjectSvc,

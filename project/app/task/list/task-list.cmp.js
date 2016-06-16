@@ -28,15 +28,13 @@ var TaskListCmp = (function () {
         var query = {};
         var checkedIds = this.projectSvc.getCheckedItemsIds();
         if (this.projectSvc.selectedItem.id) {
-            query = {
-                project_id: '0|' + this.projectSvc.selectedItem.id
-            };
+            query.project_id = '0|' + this.projectSvc.selectedItem.id;
         }
         else {
             if (checkedIds.length)
-                query = { project_id: '0|' + checkedIds.join('|') };
+                query.project_id = '0|' + checkedIds.join('|');
             else
-                query = { project_id: '0' };
+                query.project_id = '0';
         }
         if (this.firstLoad) {
             this.taskSvc.filteredStatus = this.projectSvc.getCheckedsStatusIds();

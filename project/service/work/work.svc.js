@@ -16,8 +16,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var items_svc_1 = require('../items.svc');
-var work_resource_svc_1 = require('./work-resource.svc');
+var items_svc_1 = require('../../class/items.svc');
+var work_resource_http_svc_1 = require('./work-resource-http.svc');
 var work_1 = require('./work');
 var WorkSvc = (function (_super) {
     __extends(WorkSvc, _super);
@@ -25,9 +25,10 @@ var WorkSvc = (function (_super) {
         _super.call(this, http);
         this.http = http;
         this.items = [];
+        //resource: WorkResourceHttpSvc
         this.filteredWorkType = [];
         this.selectedItem = new work_1.Work();
-        this.resource = new work_resource_svc_1.WorkResourceSvc(http);
+        this.resource = new work_resource_http_svc_1.WorkResourceHttpSvc(http);
     }
     WorkSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);

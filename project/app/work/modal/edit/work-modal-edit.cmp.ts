@@ -1,6 +1,6 @@
 import { Component, EventEmitter }       from '@angular/core'
 
-import {UiSvc} from '../../../../service/ui.svc'
+import { SemanticUiModal } from '../../../../ui/semantic-ui'
 
 import {Work} from '../../../../service/work/work'
 import {WorkSvc} from '../../../../service/work/work.svc'
@@ -15,15 +15,15 @@ export class WorkModalEditCmp {
   private item: Work
   private spent_on_for_input: string
 
-  constructor(private workSvc: WorkSvc, private uiSvc: UiSvc) {
+  constructor(private workSvc: WorkSvc, private modal: SemanticUiModal) {
     workSvc.onEdit$.subscribe(item => this.onEdit(item))
-    workSvc.onDeleted$.subscribe(item => this.uiSvc.hideModal('work-modal-edit'))
+    workSvc.onDeleted$.subscribe(item => this.modal.hide('work-modal-edit'))
   }
 
   onEdit(item: Work) {
     this.item = item
     this.item.spent_on_for_input = this.workSvc.getSpentOnForInput(item.spent_on)
-    this.uiSvc.showModal('work-modal-edit', (action) => {
+    this.modal.show('work-modal-edit', (action) => {
       if (action == 'delete') {
         this.workSvc.onDelete(this.item)
         return false

@@ -3,15 +3,15 @@ import { Http } from '@angular/http'
 
 import 'rxjs/add/operator/toPromise'
 
-import { ItemsSvc } from '../items.svc'
-import { TaskResourceSvc } from './task-resource.svc'
+import { ItemsSvc } from '../../class/items.svc'
+import { TaskResourceHttpSvc } from './task-resource-http.svc'
 import { Task } from './task'
 
 @Injectable()
 export class TaskSvc extends ItemsSvc {
     items: Task[] = []
     selectedItem: Task
-    resource: TaskResourceSvc
+    //resource: TaskResourceHttpSvc
     checkedsTitle: string
 
     filteredStatus: number[] = []
@@ -19,7 +19,7 @@ export class TaskSvc extends ItemsSvc {
     constructor(public http: Http) {
         super(http)
         this.selectedItem = new Task();
-        this.resource = new TaskResourceSvc(http)
+        this.resource = new TaskResourceHttpSvc(http)
 
         this.itemSelected$.subscribe(item => {
             this.updateCheckedsTitle()

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 
+import {InTaskListQuery} from '../../../interface/in-task-list-query'
+
 import {StatusSvc} from '../../../service/status/status.svc'
 import {TaskSvc} from '../../../service/task/task.svc'
 import {ProjectSvc} from '../../../service/project/project.svc'
@@ -11,7 +13,6 @@ import {ProjectSvc} from '../../../service/project/project.svc'
 export class TaskListCmp {
 
   private firstLoad: boolean = true
-  
   constructor(private taskSvc: TaskSvc, private projectSvc: ProjectSvc, private statusSvc: StatusSvc) {
     projectSvc.itemSelected$.subscribe(item => { this.firstLoad = true; this.getList() })
     projectSvc.itemChecked$.subscribe(items => { this.firstLoad = true; this.getList() })
@@ -20,17 +21,15 @@ export class TaskListCmp {
 
   getList() {
     console.log('TaskListCmp:getList')
-    let query = {}
+    let query: InTaskListQuery={}
     let checkedIds = this.projectSvc.getCheckedItemsIds()
     if (this.projectSvc.selectedItem.id) {
-      query = {
-        project_id: '0|' + this.projectSvc.selectedItem.id
-      }
+      query.project_id='0|' + this.projectSvc.selectedItem.id
     } else {
       if (checkedIds.length)
-        query = { project_id: '0|' + checkedIds.join('|') }
+        query.project_id= '0|' + checkedIds.join('|') 
       else
-        query = { project_id: '0' }
+        query.project_id= '0' 
     }
 
     if (this.firstLoad) {

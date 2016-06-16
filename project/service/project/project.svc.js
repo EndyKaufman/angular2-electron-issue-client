@@ -16,8 +16,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var items_svc_1 = require('../items.svc');
-var project_resource_svc_1 = require('./project-resource.svc');
+var items_svc_1 = require('../../class/items.svc');
+var project_resource_http_svc_1 = require('./project-resource-http.svc');
 var project_1 = require('./project');
 var work_type_svc_1 = require('../work-type/work-type.svc');
 var task_svc_1 = require('../task/task.svc');
@@ -33,7 +33,7 @@ var ProjectSvc = (function (_super) {
         this.checkedsWorkTypeIds = [];
         this.checkedsStatusIds = [];
         this.selectedItem = new project_1.Project();
-        this.resource = new project_resource_svc_1.ProjectResourceSvc(http);
+        this.resource = new project_resource_http_svc_1.ProjectResourceHttpSvc(http);
         this.itemSelected$.subscribe(function (item) {
             _this.checkedsStatusIds = _this.getCheckedsStatusIds();
             _this.checkedsWorkTypeIds = _this.getCheckedsWorkTypeIds();

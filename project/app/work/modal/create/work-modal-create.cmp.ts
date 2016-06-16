@@ -1,6 +1,6 @@
 import { Component, EventEmitter }       from '@angular/core'
 
-import {UiSvc} from '../../../../service/ui.svc'
+import { SemanticUiModal } from '../../../../ui/semantic-ui'
 
 import {WorkSvc} from '../../../../service/work/work.svc'
 import {Work} from '../../../../service/work/work'
@@ -18,7 +18,7 @@ export class WorkModalCreateCmp {
   private item: Work
   private spent_on_for_input: string
 
-  constructor(private projectSvc: ProjectSvc, private taskSvc: TaskSvc, private workSvc: WorkSvc, private uiSvc: UiSvc) {
+  constructor(private projectSvc: ProjectSvc, private taskSvc: TaskSvc, private workSvc: WorkSvc, private modal: SemanticUiModal) {
     workSvc.onCreate$.subscribe(item => this.onCreate(item))
   }
 
@@ -31,7 +31,7 @@ export class WorkModalCreateCmp {
       item.work_type_id = this.workSvc.filteredWorkType[0]
     this.item = item
     this.item.spent_on_for_input = ''
-    this.uiSvc.showModal('work-modal-create').then(action => {
+    this.modal.show('work-modal-create').then(action => {
       item.spent_on = this.workSvc.getSpentOnFromInput(this.item.spent_on_for_input)
       this.workSvc.create(this.item)
     }, action => { })

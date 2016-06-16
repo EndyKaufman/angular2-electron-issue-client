@@ -16,17 +16,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
-var items_svc_1 = require('../items.svc');
-var status_resource_svc_1 = require('./status-resource.svc');
+var items_svc_1 = require('../../class/items.svc');
+var status_resource_http_svc_1 = require('./status-resource-http.svc');
 var status_1 = require('./status');
 var StatusSvc = (function (_super) {
     __extends(StatusSvc, _super);
+    //resource: StatusResourceHttpSvc
     function StatusSvc(http) {
         _super.call(this, http);
         this.http = http;
         this.items = [];
         this.selectedItem = new status_1.Status();
-        this.resource = new status_resource_svc_1.StatusResourceSvc(http);
+        this.resource = new status_resource_http_svc_1.StatusResourceHttpSvc(http);
     }
     StatusSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
