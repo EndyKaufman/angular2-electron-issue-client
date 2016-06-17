@@ -1,16 +1,16 @@
 import { Headers, Http } from '@angular/http'
 
 import { ResourceHttpSvc } from '../../class/resource-http.svc'
-import { Status } from './status'
+import { Project } from '../../service/project/project'
 
-export class StatusResourceHttpSvc extends ResourceHttpSvc {
-    resourceUrl = 'app/status'
+export class ProjectResourceHttpSvc extends ResourceHttpSvc {
+    resourceUrl = 'app/project'
 
-    post(item: Status): Promise<Status> {
+    post(item: Project): Promise<Project> {
         return super.post(item)
     }
     
-    put(item: Status) {
+    put(item: Project) {
         return super.put(item)
     }
     
@@ -18,11 +18,11 @@ export class StatusResourceHttpSvc extends ResourceHttpSvc {
         super(http)
     }
 
-    delete(item: Status) {
+    delete(item: Project) {
         return super.delete(item)
     }
     
-    getList(query:any): Promise<Status[]> {
+    getList(query:any): Promise<Project[]> {
         return super.getList(query)
     }
 }

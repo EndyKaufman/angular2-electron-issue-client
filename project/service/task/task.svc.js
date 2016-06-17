@@ -17,7 +17,7 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../../class/items.svc');
-var task_resource_http_svc_1 = require('./task-resource-http.svc');
+var task_resource_http_svc_1 = require('../../resource/http/task-resource-http.svc');
 var task_1 = require('./task');
 var TaskSvc = (function (_super) {
     __extends(TaskSvc, _super);

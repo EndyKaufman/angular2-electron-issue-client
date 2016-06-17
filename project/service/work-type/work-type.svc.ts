@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { WorkTypeResourceHttpSvc } from './work-type-resource-http.svc'
+import { WorkTypeResourceHttpSvc } from '../../resource/http/work-type-resource-http.svc'
 import { WorkType } from './work-type'
 
 @Injectable()

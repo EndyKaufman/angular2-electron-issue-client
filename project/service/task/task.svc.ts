@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { TaskResourceHttpSvc } from './task-resource-http.svc'
+import { TaskResourceHttpSvc } from '../../resource/http/task-resource-http.svc'
 import { Task } from './task'
 
 @Injectable()

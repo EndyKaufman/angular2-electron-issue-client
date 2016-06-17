@@ -17,7 +17,7 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../../class/items.svc');
-var project_resource_http_svc_1 = require('./project-resource-http.svc');
+var project_resource_http_svc_1 = require('../../resource/http/project-resource-http.svc');
 var project_1 = require('./project');
 var work_type_svc_1 = require('../work-type/work-type.svc');
 var task_svc_1 = require('../task/task.svc');

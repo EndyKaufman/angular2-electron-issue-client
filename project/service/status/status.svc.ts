@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { StatusResourceHttpSvc } from './status-resource-http.svc'
+import { StatusResourceHttpSvc } from '../../resource/http/status-resource-http.svc'
 import { Status } from './status'
 
 @Injectable()

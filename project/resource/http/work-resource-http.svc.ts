@@ -1,28 +1,28 @@
 import { Headers, Http } from '@angular/http'
 
 import { ResourceHttpSvc } from '../../class/resource-http.svc'
-import { WorkType } from './work-type'
+import { Work } from '../../service/work/work'
 
-export class WorkTypeResourceHttpSvc extends ResourceHttpSvc {
-    resourceUrl = 'app/work_type'
+export class WorkResourceHttpSvc extends ResourceHttpSvc {
+    resourceUrl = 'app/work'
 
-    post(item: WorkType): Promise<WorkType> {
+    post(item: Work): Promise<Work> {
         return super.post(item)
     }
-    
-    put(item: WorkType) {
+
+    put(item: Work) {
         return super.put(item)
     }
-    
+
     constructor(public http: Http) {
         super(http)
     }
 
-    delete(item: WorkType) {
+    delete(item: Work) {
         return super.delete(item)
     }
-    
-    getList(query:any): Promise<WorkType[]> {
+
+    getList(query: any): Promise<Work[]> {
         return super.getList(query)
     }
 }

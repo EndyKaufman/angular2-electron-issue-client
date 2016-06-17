@@ -17,7 +17,7 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../../class/items.svc');
-var status_resource_http_svc_1 = require('./status-resource-http.svc');
+var status_resource_http_svc_1 = require('../../resource/http/status-resource-http.svc');
 var status_1 = require('./status');
 var StatusSvc = (function (_super) {
     __extends(StatusSvc, _super);

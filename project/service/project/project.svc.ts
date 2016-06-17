@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { ProjectResourceHttpSvc } from './project-resource-http.svc'
+import { ProjectResourceHttpSvc } from '../../resource/http/project-resource-http.svc'
 import { Project } from './project'
 
 
