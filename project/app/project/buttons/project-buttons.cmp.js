@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var project_svc_1 = require('../../../service/project/project.svc');
+var project_1 = require('../../../service/project');
 var ProjectButtonsCmp = (function () {
     function ProjectButtonsCmp(projectSvc) {
         this.projectSvc = projectSvc;
@@ -25,7 +25,7 @@ var ProjectButtonsCmp = (function () {
             selector: 'project-buttons',
             templateUrl: 'project/app/project/buttons/project-buttons.cmp.html'
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc])
+        __metadata('design:paramtypes', [project_1.ProjectSvc])
     ], ProjectButtonsCmp);
     return ProjectButtonsCmp;
 }());

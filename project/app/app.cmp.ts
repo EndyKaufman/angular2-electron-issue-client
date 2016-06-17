@@ -3,12 +3,12 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 import { SemanticUiModal, SEMANTIC_UI_PROVIDERS } from '../ui/semantic-ui'
 
-import { StatusSvc }     from '../service/status/status.svc'
-import { WorkTypeSvc }     from '../service/work-type/work-type.svc'
+import { StatusSvc, STATUS_PROVIDERS }     from '../service/status'
+import { WorkTypeSvc, WORK_TYPE_PROVIDERS }     from '../service/work-type'
 
-import { ProjectSvc} from '../service/project/project.svc'
-import { TaskSvc} from '../service/task/task.svc'
-import { WorkSvc} from '../service/work/work.svc'
+import { ProjectSvc, PROJECT_PROVIDERS} from '../service/project'
+import { TaskSvc, TASK_PROVIDERS} from '../service/task'
+import { WorkSvc, WORK_PROVIDERS} from '../service/work'
 
 import { HeaderLogoCmp }     from './header/logo/header-logo.cmp'
 import { ProjectButtonsCmp } from './project/buttons/project-buttons.cmp'
@@ -22,11 +22,11 @@ import { WorkCmp }     from './work/work.cmp'
   providers: [
     SEMANTIC_UI_PROVIDERS,
     ROUTER_PROVIDERS,     
-    StatusSvc,
-    WorkTypeSvc,   
-    ProjectSvc,
-    TaskSvc,
-    WorkSvc
+    STATUS_PROVIDERS,
+    WORK_TYPE_PROVIDERS,   
+    PROJECT_PROVIDERS,
+    TASK_PROVIDERS,
+    WORK_PROVIDERS
   ]
 })
 export class AppCmp implements OnInit {

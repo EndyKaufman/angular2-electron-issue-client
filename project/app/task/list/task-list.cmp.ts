@@ -2,9 +2,9 @@ import { Component } from '@angular/core'
 
 import {InTaskListQuery} from '../../../interface/in-task-list-query'
 
-import {StatusSvc} from '../../../service/status/status.svc'
-import {TaskSvc} from '../../../service/task/task.svc'
-import {ProjectSvc} from '../../../service/project/project.svc'
+import {StatusSvc} from '../../../service/status'
+import {TaskSvc} from '../../../service/task'
+import {ProjectSvc} from '../../../service/project'
 
 @Component({
   selector: 'task-list',

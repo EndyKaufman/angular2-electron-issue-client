@@ -1,6 +1,6 @@
 import { Component }       from '@angular/core'
 
-import {TaskSvc} from '../../../service/task/task.svc'
+import {TaskSvc} from '../../../service/task'
 
 @Component({
   selector: 'work-header',

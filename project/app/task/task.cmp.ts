@@ -1,6 +1,6 @@
 import { Component }       from '@angular/core'
 
-import { ProjectSvc } from '../../service/project/project.svc'
+import { ProjectSvc } from '../../service/project'
 import { TaskHeaderCmp } from './header/task-header.cmp'
 import { TaskHeaderButtonsCmp } from './header/buttons/task-header-buttons.cmp'
 import { TaskListCmp } from './list/task-list.cmp'

@@ -2,8 +2,7 @@ import { Component, EventEmitter }       from '@angular/core'
 
 import { SemanticUiModal } from '../../../../ui/semantic-ui'
 
-import {Work} from '../../../../service/work/work'
-import {WorkSvc} from '../../../../service/work/work.svc'
+import {WorkSvc, Work} from '../../../../service/work'
 import {WorkInputsCmp} from '../../inputs/work-inputs.cmp'
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component }       from '@angular/core'
 
-import {StatusSvc} from '../../../../service/status/status.svc'
-import {ProjectSvc} from '../../../../service/project/project.svc'
-import {TaskSvc} from '../../../../service/task/task.svc'
+import {StatusSvc} from '../../../../service/status'
+import {ProjectSvc} from '../../../../service/project'
+import {TaskSvc} from '../../../../service/task'
 
 @Component({
   selector: 'task-header-buttons',

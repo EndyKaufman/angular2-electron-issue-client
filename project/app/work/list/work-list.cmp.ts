@@ -2,10 +2,10 @@ import { Component } from '@angular/core'
 
 import { InWorkListQuery } from '../../../interface/in-work-list-query'
 
-import { ProjectSvc } from '../../../service/project/project.svc'
-import { WorkSvc } from '../../../service/work/work.svc'
-import { TaskSvc } from '../../../service/task/task.svc'
-import { WorkTypeSvc } from '../../../service/work-type/work-type.svc'
+import { ProjectSvc } from '../../../service/project'
+import { WorkSvc } from '../../../service/work'
+import { TaskSvc } from '../../../service/task'
+import { WorkTypeSvc } from '../../../service/work-type'
 
 @Component({
   selector: 'work-list',

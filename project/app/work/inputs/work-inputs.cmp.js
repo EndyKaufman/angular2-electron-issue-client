@@ -9,11 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var work_type_svc_1 = require('../../../service/work-type/work-type.svc');
-var project_svc_1 = require('../../../service/project/project.svc');
-var task_svc_1 = require('../../../service/task/task.svc');
-var work_svc_1 = require('../../../service/work/work.svc');
-var work_1 = require('../../../service/work/work');
+var work_type_1 = require('../../../service/work-type');
+var project_1 = require('../../../service/project');
+var task_1 = require('../../../service/task');
+var work_1 = require('../../../service/work');
 var WorkInputsCmp = (function () {
     function WorkInputsCmp(projectSvc, taskSvc, workSvc, workTypeSvc) {
         this.projectSvc = projectSvc;
@@ -41,7 +40,7 @@ var WorkInputsCmp = (function () {
             selector: 'work-inputs',
             templateUrl: 'project/app/work/inputs/work-inputs.cmp.html'
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, work_type_svc_1.WorkTypeSvc])
+        __metadata('design:paramtypes', [project_1.ProjectSvc, task_1.TaskSvc, work_1.WorkSvc, work_type_1.WorkTypeSvc])
     ], WorkInputsCmp);
     return WorkInputsCmp;
 }());

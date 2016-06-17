@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var work_svc_1 = require('../../../service/work/work.svc');
+var work_1 = require('../../../service/work');
 var work_modal_create_cmp_1 = require('./create/work-modal-create.cmp');
 var work_modal_edit_cmp_1 = require('./edit/work-modal-edit.cmp');
 var work_modal_delete_cmp_1 = require('./delete/work-modal-delete.cmp');
@@ -23,7 +23,7 @@ var WorkModalCmp = (function () {
             templateUrl: 'project/app/work/modal/work-modal.cmp.html',
             directives: [work_modal_create_cmp_1.WorkModalCreateCmp, work_modal_edit_cmp_1.WorkModalEditCmp, work_modal_delete_cmp_1.WorkModalDeleteCmp]
         }), 
-        __metadata('design:paramtypes', [work_svc_1.WorkSvc])
+        __metadata('design:paramtypes', [work_1.WorkSvc])
     ], WorkModalCmp);
     return WorkModalCmp;
 }());

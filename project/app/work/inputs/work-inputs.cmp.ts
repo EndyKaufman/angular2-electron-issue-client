@@ -1,11 +1,9 @@
 import { Component, Input, EventEmitter}       from '@angular/core'
 
-import {WorkTypeSvc} from '../../../service/work-type/work-type.svc'
-import {ProjectSvc} from '../../../service/project/project.svc'
-import {TaskSvc} from '../../../service/task/task.svc'
-import {WorkSvc} from '../../../service/work/work.svc'
-
-import {Work} from '../../../service/work/work'
+import {WorkTypeSvc} from '../../../service/work-type'
+import {ProjectSvc} from '../../../service/project'
+import {TaskSvc} from '../../../service/task'
+import {WorkSvc, Work} from '../../../service/work'
 
 @Component({
   selector: 'work-inputs',

@@ -1,6 +1,6 @@
 import { Component }       from '@angular/core'
 
-import {WorkSvc} from '../../../service/work/work.svc'
+import {WorkSvc} from '../../../service/work'
 import {WorkModalCreateCmp} from './create/work-modal-create.cmp'
 import {WorkModalEditCmp} from './edit/work-modal-edit.cmp'
 import {WorkModalDeleteCmp} from './delete/work-modal-delete.cmp'

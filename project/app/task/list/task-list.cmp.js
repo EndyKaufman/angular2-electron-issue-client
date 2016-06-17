@@ -9,9 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var status_svc_1 = require('../../../service/status/status.svc');
-var task_svc_1 = require('../../../service/task/task.svc');
-var project_svc_1 = require('../../../service/project/project.svc');
+var status_1 = require('../../../service/status');
+var task_1 = require('../../../service/task');
+var project_1 = require('../../../service/project');
 var TaskListCmp = (function () {
     function TaskListCmp(taskSvc, projectSvc, statusSvc) {
         var _this = this;
@@ -52,7 +52,7 @@ var TaskListCmp = (function () {
             selector: 'task-list',
             templateUrl: 'project/app/task/list/task-list.cmp.html'
         }), 
-        __metadata('design:paramtypes', [task_svc_1.TaskSvc, project_svc_1.ProjectSvc, status_svc_1.StatusSvc])
+        __metadata('design:paramtypes', [task_1.TaskSvc, project_1.ProjectSvc, status_1.StatusSvc])
     ], TaskListCmp);
     return TaskListCmp;
 }());

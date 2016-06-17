@@ -9,9 +9,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var status_svc_1 = require('../../../../service/status/status.svc');
-var project_svc_1 = require('../../../../service/project/project.svc');
-var task_svc_1 = require('../../../../service/task/task.svc');
+var status_1 = require('../../../../service/status');
+var project_1 = require('../../../../service/project');
+var task_1 = require('../../../../service/task');
 var TaskHeaderButtonsCmp = (function () {
     function TaskHeaderButtonsCmp(projectSvc, statusSvc, taskSvc) {
         this.projectSvc = projectSvc;
@@ -31,7 +31,7 @@ var TaskHeaderButtonsCmp = (function () {
             selector: 'task-header-buttons',
             templateUrl: 'project/app/task/header/buttons/task-header-buttons.cmp.html'
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, status_svc_1.StatusSvc, task_svc_1.TaskSvc])
+        __metadata('design:paramtypes', [project_1.ProjectSvc, status_1.StatusSvc, task_1.TaskSvc])
     ], TaskHeaderButtonsCmp);
     return TaskHeaderButtonsCmp;
 }());

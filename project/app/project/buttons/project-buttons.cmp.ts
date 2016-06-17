@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 
-import {ProjectSvc} from '../../../service/project/project.svc'
+import {ProjectSvc} from '../../../service/project'
 
 @Component({
   selector: 'project-buttons',

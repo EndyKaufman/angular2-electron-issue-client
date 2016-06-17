@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var project_svc_1 = require('../../../service/project/project.svc');
+var project_1 = require('../../../service/project');
 var TaskHeaderCmp = (function () {
     function TaskHeaderCmp(projectSvc) {
         this.projectSvc = projectSvc;
@@ -19,7 +19,7 @@ var TaskHeaderCmp = (function () {
             selector: 'task-header',
             templateUrl: 'project/app/task/header/task-header.cmp.html'
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc])
+        __metadata('design:paramtypes', [project_1.ProjectSvc])
     ], TaskHeaderCmp);
     return TaskHeaderCmp;
 }());

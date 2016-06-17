@@ -1,7 +1,7 @@
 import { Headers, Http } from '@angular/http'
 
 import { ResourceHttpSvc } from '../../class/resource-http.svc'
-import { Project } from '../../service/project/project'
+import { Project } from '../../service/project'
 
 export class ProjectResourceHttpSvc extends ResourceHttpSvc {
     resourceUrl = 'app/project'

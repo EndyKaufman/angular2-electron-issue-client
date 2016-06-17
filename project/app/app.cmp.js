@@ -11,11 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_deprecated_1 = require('@angular/router-deprecated');
 var semantic_ui_1 = require('../ui/semantic-ui');
-var status_svc_1 = require('../service/status/status.svc');
-var work_type_svc_1 = require('../service/work-type/work-type.svc');
-var project_svc_1 = require('../service/project/project.svc');
-var task_svc_1 = require('../service/task/task.svc');
-var work_svc_1 = require('../service/work/work.svc');
+var status_1 = require('../service/status');
+var work_type_1 = require('../service/work-type');
+var project_1 = require('../service/project');
+var task_1 = require('../service/task');
+var work_1 = require('../service/work');
 var header_logo_cmp_1 = require('./header/logo/header-logo.cmp');
 var project_buttons_cmp_1 = require('./project/buttons/project-buttons.cmp');
 var task_cmp_1 = require('./task/task.cmp');
@@ -46,14 +46,14 @@ var AppCmp = (function () {
             providers: [
                 semantic_ui_1.SEMANTIC_UI_PROVIDERS,
                 router_deprecated_1.ROUTER_PROVIDERS,
-                status_svc_1.StatusSvc,
-                work_type_svc_1.WorkTypeSvc,
-                project_svc_1.ProjectSvc,
-                task_svc_1.TaskSvc,
-                work_svc_1.WorkSvc
+                status_1.STATUS_PROVIDERS,
+                work_type_1.WORK_TYPE_PROVIDERS,
+                project_1.PROJECT_PROVIDERS,
+                task_1.TASK_PROVIDERS,
+                work_1.WORK_PROVIDERS
             ]
         }), 
-        __metadata('design:paramtypes', [task_svc_1.TaskSvc, status_svc_1.StatusSvc, work_type_svc_1.WorkTypeSvc])
+        __metadata('design:paramtypes', [task_1.TaskSvc, status_1.StatusSvc, work_type_1.WorkTypeSvc])
     ], AppCmp);
     return AppCmp;
 }());

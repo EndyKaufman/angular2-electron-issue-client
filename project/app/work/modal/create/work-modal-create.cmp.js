@@ -10,9 +10,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var semantic_ui_1 = require('../../../../ui/semantic-ui');
-var work_svc_1 = require('../../../../service/work/work.svc');
-var project_svc_1 = require('../../../../service/project/project.svc');
-var task_svc_1 = require('../../../../service/task/task.svc');
+var work_1 = require('../../../../service/work');
+var project_1 = require('../../../../service/project');
+var task_1 = require('../../../../service/task');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
 var WorkModalCreateCmp = (function () {
     function WorkModalCreateCmp(projectSvc, taskSvc, workSvc, modal) {
@@ -44,7 +44,7 @@ var WorkModalCreateCmp = (function () {
             templateUrl: 'project/app/work/modal/create/work-modal-create.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
-        __metadata('design:paramtypes', [project_svc_1.ProjectSvc, task_svc_1.TaskSvc, work_svc_1.WorkSvc, semantic_ui_1.SemanticUiModal])
+        __metadata('design:paramtypes', [project_1.ProjectSvc, task_1.TaskSvc, work_1.WorkSvc, semantic_ui_1.SemanticUiModal])
     ], WorkModalCreateCmp);
     return WorkModalCreateCmp;
 }());

@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var semantic_ui_1 = require('../../../../ui/semantic-ui');
-var work_svc_1 = require('../../../../service/work/work.svc');
+var work_1 = require('../../../../service/work');
 var work_inputs_cmp_1 = require('../../inputs/work-inputs.cmp');
 var WorkModalEditCmp = (function () {
     function WorkModalEditCmp(workSvc, modal) {
@@ -41,7 +41,7 @@ var WorkModalEditCmp = (function () {
             templateUrl: 'project/app/work/modal/edit/work-modal-edit.cmp.html',
             directives: [work_inputs_cmp_1.WorkInputsCmp]
         }), 
-        __metadata('design:paramtypes', [work_svc_1.WorkSvc, semantic_ui_1.SemanticUiModal])
+        __metadata('design:paramtypes', [work_1.WorkSvc, semantic_ui_1.SemanticUiModal])
     ], WorkModalEditCmp);
     return WorkModalEditCmp;
 }());

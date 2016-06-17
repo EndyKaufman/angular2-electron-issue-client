@@ -2,10 +2,9 @@ import { Component, EventEmitter }       from '@angular/core'
 
 import { SemanticUiModal } from '../../../../ui/semantic-ui'
 
-import {WorkSvc} from '../../../../service/work/work.svc'
-import {Work} from '../../../../service/work/work'
-import {ProjectSvc} from '../../../../service/project/project.svc'
-import {TaskSvc} from '../../../../service/task/task.svc'
+import {WorkSvc, Work} from '../../../../service/work'
+import {ProjectSvc} from '../../../../service/project'
+import {TaskSvc} from '../../../../service/task'
 
 import {WorkInputsCmp} from '../../inputs/work-inputs.cmp'
 

@@ -1,7 +1,7 @@
 import { Headers, Http } from '@angular/http'
 
 import { ResourceHttpSvc } from '../../class/resource-http.svc'
-import { Work } from '../../service/work/work'
+import { Work } from '../../service/work'
 
 export class WorkResourceHttpSvc extends ResourceHttpSvc {
     resourceUrl = 'app/work'
