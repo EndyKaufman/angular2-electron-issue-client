@@ -17,24 +17,23 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../../class/items.svc');
-var status_resource_http_svc_1 = require('../../resource/http/status-resource-http.svc');
+var http_2 = require('../../resource/http');
 var status_1 = require('./status');
 var StatusSvc = (function (_super) {
     __extends(StatusSvc, _super);
-    //resource: StatusResourceHttpSvc
-    function StatusSvc(http) {
+    function StatusSvc(http, resource) {
         _super.call(this, http);
         this.http = http;
+        this.resource = resource;
         this.items = [];
         this.selectedItem = new status_1.Status();
-        this.resource = new status_resource_http_svc_1.StatusResourceHttpSvc(http);
     }
     StatusSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
     StatusSvc = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, http_2.StatusResourceHttpSvc])
     ], StatusSvc);
     return StatusSvc;
 }(items_svc_1.ItemsSvc));

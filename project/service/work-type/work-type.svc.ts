@@ -4,19 +4,17 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { WorkTypeResourceHttpSvc } from '../../resource/http/work-type-resource-http.svc'
+import { WorkTypeResourceHttpSvc } from '../../resource/http'
 import { WorkType } from './work-type'
 
 @Injectable()
 export class WorkTypeSvc extends ItemsSvc {
     items: WorkType[] = []
     selectedItem: WorkType
-    //resource: WorkTypeResourceHttpSvc
 
-    constructor(public http: Http) {
+    constructor(public http: Http, public resource:WorkTypeResourceHttpSvc) {
         super(http)
         this.selectedItem = new WorkType();
-        this.resource = new WorkTypeResourceHttpSvc(http)
     }
 
     getList(query: any): Promise<WorkType[]> {

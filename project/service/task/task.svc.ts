@@ -4,22 +4,20 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { TaskResourceHttpSvc } from '../../resource/http/task-resource-http.svc'
+import { TaskResourceHttpSvc } from '../../resource/http'
 import { Task } from './task'
 
 @Injectable()
 export class TaskSvc extends ItemsSvc {
     items: Task[] = []
     selectedItem: Task
-    //resource: TaskResourceHttpSvc
     checkedsTitle: string
 
     filteredStatus: number[] = []
 
-    constructor(public http: Http) {
+    constructor(public http: Http, public resource:TaskResourceHttpSvc) {
         super(http)
-        this.selectedItem = new Task();
-        this.resource = new TaskResourceHttpSvc(http)
+        this.selectedItem = new Task()
 
         this.itemSelected$.subscribe(item => {
             this.updateCheckedsTitle()

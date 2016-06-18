@@ -17,23 +17,23 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../../class/items.svc');
-var project_resource_http_svc_1 = require('../../resource/http/project-resource-http.svc');
+var http_2 = require('../../resource/http');
 var project_1 = require('./project');
 var work_type_svc_1 = require('../work-type/work-type.svc');
 var task_svc_1 = require('../task/task.svc');
 var ProjectSvc = (function (_super) {
     __extends(ProjectSvc, _super);
-    function ProjectSvc(http, taskSvc, workTypeSvc) {
+    function ProjectSvc(http, taskSvc, workTypeSvc, resource) {
         var _this = this;
         _super.call(this, http);
         this.http = http;
         this.taskSvc = taskSvc;
         this.workTypeSvc = workTypeSvc;
+        this.resource = resource;
         this.items = [];
         this.checkedsWorkTypeIds = [];
         this.checkedsStatusIds = [];
         this.selectedItem = new project_1.Project();
-        this.resource = new project_resource_http_svc_1.ProjectResourceHttpSvc(http);
         this.itemSelected$.subscribe(function (item) {
             _this.checkedsStatusIds = _this.getCheckedsStatusIds();
             _this.checkedsWorkTypeIds = _this.getCheckedsWorkTypeIds();
@@ -84,7 +84,7 @@ var ProjectSvc = (function (_super) {
     };
     ProjectSvc = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http, task_svc_1.TaskSvc, work_type_svc_1.WorkTypeSvc])
+        __metadata('design:paramtypes', [http_1.Http, task_svc_1.TaskSvc, work_type_svc_1.WorkTypeSvc, http_2.ProjectResourceHttpSvc])
     ], ProjectSvc);
     return ProjectSvc;
 }(items_svc_1.ItemsSvc));

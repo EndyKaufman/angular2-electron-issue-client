@@ -1,8 +1,10 @@
 import { Headers, Http } from '@angular/http'
+import { Injectable } from '@angular/core'
 
 import { ResourceHttpSvc } from '../../class/resource-http.svc'
 import { WorkType } from '../../service/work-type'
 
+@Injectable()
 export class WorkTypeResourceHttpSvc extends ResourceHttpSvc {
     resourceUrl = 'app/work_type'
 

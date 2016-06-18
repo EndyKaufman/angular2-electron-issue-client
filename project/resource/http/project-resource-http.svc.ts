@@ -1,8 +1,10 @@
 import { Headers, Http } from '@angular/http'
+import { Injectable } from '@angular/core'
 
 import { ResourceHttpSvc } from '../../class/resource-http.svc'
 import { Project } from '../../service/project'
 
+@Injectable()
 export class ProjectResourceHttpSvc extends ResourceHttpSvc {
     resourceUrl = 'app/project'
 

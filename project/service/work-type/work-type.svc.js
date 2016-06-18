@@ -17,24 +17,23 @@ var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/toPromise');
 var items_svc_1 = require('../../class/items.svc');
-var work_type_resource_http_svc_1 = require('../../resource/http/work-type-resource-http.svc');
+var http_2 = require('../../resource/http');
 var work_type_1 = require('./work-type');
 var WorkTypeSvc = (function (_super) {
     __extends(WorkTypeSvc, _super);
-    //resource: WorkTypeResourceHttpSvc
-    function WorkTypeSvc(http) {
+    function WorkTypeSvc(http, resource) {
         _super.call(this, http);
         this.http = http;
+        this.resource = resource;
         this.items = [];
         this.selectedItem = new work_type_1.WorkType();
-        this.resource = new work_type_resource_http_svc_1.WorkTypeResourceHttpSvc(http);
     }
     WorkTypeSvc.prototype.getList = function (query) {
         return _super.prototype.getList.call(this, query);
     };
     WorkTypeSvc = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
+        __metadata('design:paramtypes', [http_1.Http, http_2.WorkTypeResourceHttpSvc])
     ], WorkTypeSvc);
     return WorkTypeSvc;
 }(items_svc_1.ItemsSvc));

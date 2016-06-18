@@ -4,7 +4,7 @@ import { Http } from '@angular/http'
 import 'rxjs/add/operator/toPromise'
 
 import { ItemsSvc } from '../../class/items.svc'
-import { ProjectResourceHttpSvc } from '../../resource/http/project-resource-http.svc'
+import { ProjectResourceHttpSvc } from '../../resource/http'
 import { Project } from './project'
 
 
@@ -16,15 +16,13 @@ import {TaskSvc} from '../task/task.svc'
 export class ProjectSvc extends ItemsSvc {
     items: Project[] = []
     selectedItem: Project
-    //resource: ProjectResourceHttpSvc
     checkedsTitle: string
     checkedsWorkTypeIds: number[] = []
     checkedsStatusIds: number[] = []
 
-    constructor(public http: Http, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc) {
+    constructor(public http: Http, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc, public resource:ProjectResourceHttpSvc) {
         super(http)
         this.selectedItem = new Project();
-        this.resource = new ProjectResourceHttpSvc(http)
 
         this.itemSelected$.subscribe(item => {
             this.checkedsStatusIds = this.getCheckedsStatusIds()
