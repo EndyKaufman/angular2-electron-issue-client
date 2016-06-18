@@ -1,5 +1,5 @@
 "use strict";
-/// <reference path="../../module/jquery.d.ts" />
+/// <reference path="../jquery/jquery.d.ts" />
 /// <reference path="./semantic-ui-modal.d.ts" />
 require('rxjs/add/operator/toPromise');
 var SemanticUiModal = (function () {

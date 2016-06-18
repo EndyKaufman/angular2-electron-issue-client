@@ -1,5 +1,5 @@
 
-/// <reference path="../../module/jquery.d.ts" />
+/// <reference path="../jquery/jquery.d.ts" />
 interface InSemanticUiModal {
     blurring?: boolean
     detachable: boolean,

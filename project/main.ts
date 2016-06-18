@@ -8,7 +8,7 @@ import { MockSvc }               from './mock/mock.svc'
 import { bootstrap }    from '@angular/platform-browser-dynamic'
 import { HTTP_PROVIDERS } from '@angular/http'
 
-import { AppCmp } from './app/app.cmp'
+import { AppCmp } from './component/app/app.cmp'
 bootstrap(AppCmp, [
     HTTP_PROVIDERS,
     provide(XHRBackend, { useClass: InMemoryBackendService }), // in-mem server

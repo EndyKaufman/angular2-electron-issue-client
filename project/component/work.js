@@ -1,0 +1,20 @@
+"use strict";
+var work_header_cmp_1 = require('./work/header/work-header.cmp');
+var work_header_buttons_cmp_1 = require('./work/header/buttons/work-header-buttons.cmp');
+var work_list_cmp_1 = require('./work/list/work-list.cmp');
+var work_inputs_cmp_1 = require('./work/inputs/work-inputs.cmp');
+var work_cmp_1 = require('./work/work.cmp');
+var work_header_cmp_2 = require('./work/header/work-header.cmp');
+exports.WorkHeaderCmp = work_header_cmp_2.WorkHeaderCmp;
+var work_header_buttons_cmp_2 = require('./work/header/buttons/work-header-buttons.cmp');
+exports.WorkHeaderButtonsCmp = work_header_buttons_cmp_2.WorkHeaderButtonsCmp;
+var work_list_cmp_2 = require('./work/list/work-list.cmp');
+exports.WorkListCmp = work_list_cmp_2.WorkListCmp;
+var work_modal_cmp_1 = require('./work/modal/work-modal.cmp');
+exports.WorkModalCmp = work_modal_cmp_1.WorkModalCmp;
+var work_inputs_cmp_2 = require('./work/inputs/work-inputs.cmp');
+exports.WorkInputsCmp = work_inputs_cmp_2.WorkInputsCmp;
+var work_cmp_2 = require('./work/work.cmp');
+exports.WorkCmp = work_cmp_2.WorkCmp;
+exports.WORK_DIRECTIVES = [work_header_cmp_1.WorkHeaderCmp, work_header_buttons_cmp_1.WorkHeaderButtonsCmp, work_list_cmp_1.WorkListCmp, work_inputs_cmp_1.WorkInputsCmp, work_cmp_1.WorkCmp];
+//# sourceMappingURL=work.js.map

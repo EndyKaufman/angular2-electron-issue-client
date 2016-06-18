@@ -1,4 +1,4 @@
-/// <reference path="../../module/jquery.d.ts" />
+/// <reference path="../jquery/jquery.d.ts" />
 /// <reference path="./semantic-ui-modal.d.ts" />
 import 'rxjs/add/operator/toPromise'
 
