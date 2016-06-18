@@ -1,20 +1,20 @@
-<div class="ui modal">
+<div class="ui modal small">
     <i class="close icon"></i>
     <div class="header">
-        Create new work
+        Delete work
     </div>
     <div class="content">
         <div class="ui form" *ngIf="item">
-            <work-inputs [item]="item"></work-inputs>
+            Are you sure you want to delete work?
         </div>
-    </div>
+    </div>    
     <div class="actions">
         <div class="ui cancel button">
-            Cancel
+            No
         </div>
         <div class="ui ok green right labeled icon button">
-            Create
-            <i class="checkmark icon"></i>
+            Yes
+            <i class="trash icon"></i>
         </div>
     </div>
 </div>
