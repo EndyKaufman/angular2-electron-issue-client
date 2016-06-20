@@ -3,7 +3,7 @@
 
 ## Current progress of project
 
-1. ~~Create simply version of project on Angular2? work with mock data~~
+1. ~~Create simply version of project on Angular2, work with mock data~~
 2. **Add webpack build system**
 3. Create simply electron project and include angular2 builded source in to
 4. Build windows and linux version of standalone applications
