@@ -17,3 +17,13 @@ git clone --recursive https://github.com/EndyKaufman/angular2-electron-isuse-cli
 cd angular2-electron-isuse-client
 npm install
 ```
+
+## Start on dev mode
+```
+npm run start
+```
+
+## Start builded
+```
+npm run lite
+```
