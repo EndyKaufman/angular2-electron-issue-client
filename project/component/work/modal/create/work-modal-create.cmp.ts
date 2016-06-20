@@ -30,6 +30,7 @@ export class WorkModalCreateCmp {
       item.work_type_id = this.workSvc.filteredWorkType[0]
     this.item = item
     this.item.spent_on_for_input = ''
+      
     this.modal.show('work-modal-create').then(action => {
       item.spent_on = this.workSvc.getSpentOnFromInput(this.item.spent_on_for_input)
       this.workSvc.create(this.item)

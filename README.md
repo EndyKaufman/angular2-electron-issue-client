@@ -1,5 +1,5 @@
-# angular2-electron-isuse-client
-  Simple client for isuse trackers (redmine, jira, asana, bitbucket, github)
+# angular2-electron-issue-client
+  Simple client for issue trackers (redmine, jira, asana, bitbucket, github)
 
 ## Current progress of project
 
@@ -9,12 +9,12 @@
 4. Build windows and linux version of standalone applications
 5. Create resource for work with redmine bugtracker
 6. Extend functional of client for work with tasks, projects, status and etc...
-7. Add support github isuse system
+7. Add support github issue system
 
 ## Install
 ```
-git clone --recursive https://github.com/EndyKaufman/angular2-electron-isuse-client.git
-cd angular2-electron-isuse-client
+git clone --recursive https://github.com/EndyKaufman/angular2-electron-issue-client.git
+cd angular2-electron-issue-client
 npm install
 ```
 
