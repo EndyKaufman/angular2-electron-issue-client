@@ -1,0 +1,3 @@
+<div class="ui button {{getStatusButtonColor(status_id)}}" *ngFor="let status_id of projectSvc.checkedsStatusIds" (click)="taskSvc.onFilterStatus(status_id)">
+    {{statusSvc.getItemById(status_id).title}}
+</div>

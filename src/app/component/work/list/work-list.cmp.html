@@ -1,0 +1,47 @@
+<div class="ui middle aligned relaxed divided list">
+    <div class="item" *ngFor="let item of workSvc.items" [class.active]="item === taskSvc.selectedItem">
+        <div class="three column row">
+            <div class="left floated two column">
+                <div class="content">
+                    <a class="ui label mini green" *ngIf="!taskSvc.selectedItem.title">
+                        {{taskSvc.getTitle(taskSvc.getItemById(item.task_id))}}
+                    </a>
+                    <a class="ui label mini basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1"
+                        *ngIf="item.spent_on">
+                        <i class="calendar icon"></i> {{workSvc.getSpentOnAsString(item.spent_on)}}
+                    </a>
+                    <a class="ui label mini basic" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1"
+                        *ngIf="item.hours">
+                        <i class="clock icon"></i> {{item.hours}} h.
+                    </a>
+                    {{item.comment}}
+                </div>
+            </div>
+            <div class="right floated right aligned one column">
+                <div class="ui mini button" (click)="workSvc.onEdit(item)">
+                    <i class="edit icon"></i> Edit
+                </div>
+                <div class="ui left labeled mini button">
+                    <a class="ui basic right pointing label">
+                        Type
+                    </a>
+                    <div class="ui mini button" *ngIf="item.work_type_id">
+                        {{workTypeSvc.getItemById(item.work_type_id).title}}
+                    </div>
+                </div>
+                <div class="ui left labeled mini button">
+                    <a class="ui basic right pointing label" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1" (click)="workSvc.onSelect(item)">
+                        Select
+                    </a>
+                    <div class="ui mini button" [class.blue]="item === workSvc.selectedItem" [class.green]="workSvc.checkedItems.indexOf(item)!=-1" (click)="workSvc.onCheck(item)">
+                        <i class="Checkmark icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ui clearing divider"></div>
+<div class="ui mini button" [class.green]="taskSvc.selectedItem.id" [class.blue]="!taskSvc.selectedItem.id" (click)="workSvc.onCreate()">
+    <i class="plus icon"></i> Create
+</div>
