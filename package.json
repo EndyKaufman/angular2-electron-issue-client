@@ -4,7 +4,9 @@
     "scripts": {
         "start": "webpack-dev-server --inline --progress --port 3000",
         "start:tsc": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-        "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+        "build": "npm run build:prod && npm run build:gh-pages",
+        "build:prod": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+        "build:gh-pages": "rimraf gh-pages && webpack --config config/webpack.gh-pages.js --progress --profile --bail",
         "lite": "lite-server -c config/lite-server.config.json",
         "postinstall": "typings install",
         "tsc": "tsc",
