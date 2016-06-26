@@ -1,7 +1,5 @@
 import { Component } from '@angular/core'
 
-import { ComponentHelper }     from '../../../helpers'
-
 import { InWorkListQuery } from '../../../interface/in-work-list-query'
 
 import { ProjectSvc } from '../../../service/project'
@@ -9,11 +7,10 @@ import { WorkSvc } from '../../../service/work'
 import { TaskSvc } from '../../../service/task'
 import { WorkTypeSvc } from '../../../service/work-type'
 
-@Component(ComponentHelper.getInstance().updateTemplate({
-  moduleId: module.id,
+@Component({
   selector: 'work-list',
-  templateUrl: './work-list.cmp.html'
-},require))
+  template: require('./work-list.cmp.html')
+})
 export class WorkListCmp {
 
   private firstLoad: boolean = true

@@ -1,7 +1,5 @@
 import { Component, EventEmitter }       from '@angular/core'
 
-import { ComponentHelper }     from '../../../../helpers'
-
 import { SemanticUiModal } from '../../../../ui/semantic-ui'
 
 import {WorkSvc, Work} from '../../../../service/work'
@@ -10,12 +8,11 @@ import {TaskSvc} from '../../../../service/task'
 
 import {WorkInputsCmp} from '../../inputs/work-inputs.cmp'
 
-@Component(ComponentHelper.getInstance().updateTemplate({
-  moduleId: module.id,
+@Component({
   selector: 'work-modal-create',
-  templateUrl: './work-modal-create.cmp.html',
+  template: require('./work-modal-create.cmp.html'),
   directives: [WorkInputsCmp]
-},require))
+})
 export class WorkModalCreateCmp {
   private item: Work
   private spent_on_for_input: string

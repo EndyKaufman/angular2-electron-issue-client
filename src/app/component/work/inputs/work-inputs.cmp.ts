@@ -1,15 +1,12 @@
 import { Component, Input, EventEmitter}       from '@angular/core'
 
-import { ComponentHelper }     from '../../../helpers'
-
 import {ProjectSvc} from '../../../service/project'
 import {Work} from '../../../service/work'
 
-@Component(ComponentHelper.getInstance().updateTemplate({
-  moduleId: module.id,
+@Component({
   selector: 'work-inputs',
-  templateUrl: './work-inputs.cmp.html'
-},require))
+  template: require('./work-inputs.cmp.html')
+})
 export class WorkInputsCmp {
   @Input()
   private item:Work

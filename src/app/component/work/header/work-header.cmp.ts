@@ -1,14 +1,11 @@
 import { Component }       from '@angular/core'
 
-import { ComponentHelper }     from '../../../helpers'
-
 import {TaskSvc} from '../../../service/task'
 
-@Component(ComponentHelper.getInstance().updateTemplate({
-  moduleId: module.id,
+@Component({
   selector: 'work-header',
-  templateUrl: './work-header.cmp.html'
-},require))
+  template: require('./work-header.cmp.html')
+})
 export class WorkHeaderCmp {
   constructor(private taskSvc: TaskSvc) { }
 }

@@ -1,17 +1,14 @@
 import { Component }       from '@angular/core'
 
-import { ComponentHelper }     from '../../../../helpers'
-
 import {WorkTypeSvc} from '../../../../service/work-type'
 import {ProjectSvc} from '../../../../service/project'
 import {TaskSvc} from '../../../../service/task'
 import {WorkSvc} from '../../../../service/work'
 
-@Component(ComponentHelper.getInstance().updateTemplate({
-  moduleId: module.id,
+@Component({
   selector: 'work-header-buttons',
-  templateUrl: './work-header-buttons.cmp.html'
-},require))
+  template: require('./work-header-buttons.cmp.html')
+})
 export class WorkHeaderButtonsCmp {
   constructor(private projectSvc: ProjectSvc, private taskSvc: TaskSvc, private workTypeSvc: WorkTypeSvc, private workSvc: WorkSvc) {
   }

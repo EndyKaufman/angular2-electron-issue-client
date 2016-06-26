@@ -1,19 +1,16 @@
 import { Component, EventEmitter }       from '@angular/core'
 
-import { ComponentHelper }     from '../../../../helpers'
-
 import { SemanticUiModal } from '../../../../ui/semantic-ui'
 
 import {WorkSvc, Work} from '../../../../service/work'
 
 import {WorkInputsCmp} from '../../inputs/work-inputs.cmp'
 
-@Component(ComponentHelper.getInstance().updateTemplate({
-  moduleId: module.id,
+@Component({
   selector: 'work-modal-delete',
-  templateUrl: './work-modal-delete.cmp.html',
+  template: require('./work-modal-delete.cmp.html'),
   directives: [WorkInputsCmp]
-},require))
+})
 export class WorkModalDeleteCmp {
   private item:Work
   constructor(private workSvc: WorkSvc, private modal: SemanticUiModal) {
