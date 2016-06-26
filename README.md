@@ -1,6 +1,8 @@
 # angular2-electron-issue-client
   Simple client for issue trackers (redmine, jira, asana, bitbucket, github)
-
+  
+  Demo: https://endykaufman.github.io/angular2-electron-issue-client
+  
 ## Current progress of project
 
 1. ~~Create simply version of project on Angular2, work with mock data~~
