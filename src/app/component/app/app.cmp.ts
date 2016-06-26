@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated'
 
+import { ComponentHelper }     from '../../helpers'
+
 import { SemanticUiModal, SEMANTIC_UI_PROVIDERS } from '../../ui/semantic-ui'
 
 import { StatusSvc, STATUS_PROVIDERS }     from '../../service/status'
@@ -15,9 +17,10 @@ import { ProjectButtonsCmp } from '../project'
 import { TaskCmp }     from '../task'
 import { WorkCmp }     from '../work'
 
-@Component({
+@Component(ComponentHelper.getInstance().updateTemplate({
+  moduleId: module.id,
+  templateUrl: './app.cmp.html',
   selector: 'app',
-  template: require('./app.cmp.html'),
   directives: [HeaderLogoCmp, ProjectButtonsCmp, TaskCmp, WorkCmp, ROUTER_DIRECTIVES],
   providers: [
     SEMANTIC_UI_PROVIDERS,
@@ -28,7 +31,7 @@ import { WorkCmp }     from '../work'
     TASK_PROVIDERS,
     WORK_PROVIDERS
   ]
-})
+},require))
 export class AppCmp implements OnInit {
 
   constructor(private taskSvc: TaskSvc, private statusSvc: StatusSvc, private workTypeSvc: WorkTypeSvc) {

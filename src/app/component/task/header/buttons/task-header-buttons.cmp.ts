@@ -1,13 +1,16 @@
 import { Component }       from '@angular/core'
 
+import { ComponentHelper }     from '../../../../helpers'
+
 import {StatusSvc} from '../../../../service/status'
 import {ProjectSvc} from '../../../../service/project'
 import {TaskSvc} from '../../../../service/task'
 
-@Component({
+@Component(ComponentHelper.getInstance().updateTemplate({
+  moduleId: module.id,
   selector: 'task-header-buttons',
-  template: require('./task-header-buttons.cmp.html')
-})
+  templateUrl: './task-header-buttons.cmp.html'
+},require))
 export class TaskHeaderButtonsCmp {
   constructor(private projectSvc: ProjectSvc, private statusSvc: StatusSvc, private taskSvc: TaskSvc) {
   }

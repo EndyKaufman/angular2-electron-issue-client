@@ -10,10 +10,10 @@ import 'rxjs'
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
 
-require("./semantic/dist/semantic.min.css")
+require("../semantic/dist/semantic.min.css")
 require("./styles.css")
 require("../node_modules/jquery/dist/jquery.min.js")
-require("./semantic/dist/semantic.min.js")
+require("../semantic/dist/semantic.min.js")
 //import "node_modules/core-js/client/shim.min.js"
 //import "node_modules/zone.js/dist/zone.js"
 //import "node_modules/reflect-metadata/Reflect.js"

@@ -1,4 +1,8 @@
 /node_modules
 *.log
 .org*
+index.html
+/src/index.html
 /typings
+/src/*.js
+/src/*.js.map

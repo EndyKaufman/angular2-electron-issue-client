@@ -1,5 +1,5 @@
 // Imports for loading & configuring the in-memory web api
-import { provide }    from '@angular/core'
+import { provide, enableProdMode }    from '@angular/core'
 import { XHRBackend } from '@angular/http'
 
 import { bootstrap }    from '@angular/platform-browser-dynamic'
@@ -10,7 +10,10 @@ import { MockSvc }               from './app/mock/mock.svc'
 
 import { RESOURCE_PROVIDERS} from './app/resource/http'
 
-import { AppCmp } from './app/component/app/app.cmp'
+import { AppCmp } from './app/component/app'
+
+enableProdMode()
+
 bootstrap(AppCmp, [
     HTTP_PROVIDERS,
     provide(XHRBackend, { useClass: InMemoryBackendService }), // in-mem server

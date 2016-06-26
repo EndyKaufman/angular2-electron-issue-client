@@ -1,16 +1,19 @@
 import { Component }       from '@angular/core'
 
+import { ComponentHelper }     from '../../helpers'
+
 import { TaskSvc } from '../../service/task'
 import { WorkHeaderCmp } from './header/work-header.cmp'
 import { WorkHeaderButtonsCmp } from './header/buttons/work-header-buttons.cmp'
 import { WorkListCmp } from './list/work-list.cmp'
 import { WorkModalCmp } from './modal/work-modal.cmp'
 
-@Component({
+@Component(ComponentHelper.getInstance().updateTemplate({
+  moduleId: module.id,
   selector: 'work',
-  template: require('./work.cmp.html'),
+  templateUrl: './work.cmp.html',
   directives: [WorkHeaderCmp, WorkHeaderButtonsCmp, WorkListCmp, WorkModalCmp]
-})
+},require))
 export class WorkCmp {
   constructor(private taskSvc: TaskSvc) {
   }

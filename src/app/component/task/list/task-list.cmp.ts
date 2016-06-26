@@ -1,15 +1,18 @@
 import { Component } from '@angular/core'
 
+import { ComponentHelper }     from '../../../helpers'
+
 import {InTaskListQuery} from '../../../interface/in-task-list-query'
 
 import {StatusSvc} from '../../../service/status'
 import {TaskSvc} from '../../../service/task'
 import {ProjectSvc} from '../../../service/project'
 
-@Component({
+@Component(ComponentHelper.getInstance().updateTemplate({
+  moduleId: module.id,
   selector: 'task-list',
-  template: require('./task-list.cmp.html')
-})
+  templateUrl: './task-list.cmp.html'
+},require))
 export class TaskListCmp {
 
   private firstLoad: boolean = true

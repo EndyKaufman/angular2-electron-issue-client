@@ -1,8 +1,11 @@
 import { Component }       from '@angular/core'
 
-@Component({
+import { ComponentHelper }     from '../../../helpers'
+
+@Component(ComponentHelper.getInstance().updateTemplate({
+  moduleId: module.id,
   selector: 'header-logo',
-  template: require('./header-logo.cmp.html')
-})
+  templateUrl: './header-logo.cmp.html'
+},require))
 export class HeaderLogoCmp {
 }

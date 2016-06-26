@@ -34,8 +34,8 @@ module.exports = {
             loader: 'raw'
         }]
     },
-
     plugins: [
+
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
@@ -47,8 +47,8 @@ module.exports = {
         new webpack.ProvidePlugin({
             'window.jQuery': 'jquery',
             'window.$': 'jquery',
-            $: "jquery",
-            jQuery: "jquery"
+            jQuery: 'jquery',
+            $: 'jquery'
         })
     ]
 };
