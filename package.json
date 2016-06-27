@@ -32,6 +32,9 @@
         "zone.js": "^0.6.12"
     },
     "devDependencies": {
+        "webpack": "^1.13.0",
+        "webpack-dev-server": "^1.14.1",
+        "webpack-merge": "^0.14.0",
         "concurrently": "^2.0.0",
         "css-loader": "^0.23.1",
         "extract-text-webpack-plugin": "^1.0.1",
@@ -47,9 +50,6 @@
         "style-loader": "^0.13.1",
         "ts-loader": "^0.8.1",
         "typescript": "^1.8.10",
-        "typings": "^1.0.4",
-        "webpack": "^1.13.0",
-        "webpack-dev-server": "^1.14.1",
-        "webpack-merge": "^0.14.0"
+        "typings": "^1.0.4"
     }
 }
