@@ -15,7 +15,6 @@
 
 ## Install
 ```
-npm install webpack -g
 git clone --recursive https://github.com/EndyKaufman/angular2-electron-issue-client.git
 cd angular2-electron-issue-client
 npm install
