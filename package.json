@@ -3,12 +3,14 @@
     "version": "0.0.1",
     "scripts": {
         "start": "npm run clear && webpack-dev-server --config config/webpack.dev.js --port 3000 --inline --progress",
+        "start:electron": "npm start --prefix ./electron/dist",
         "build": "npm run clear && rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
         "build:gh-pages": "npm run clear && rimraf gh-pages && webpack --config config/webpack.gh-pages.js --progress --profile --bail",
-        "build:electron": "npm run clear && rimraf electron && webpack --config config/webpack.electron.js --progress --profile --bail",
+        "build:electron": "npm run clear && rimraf electron/dist && cp -fR electron/src electron/dist && webpack --config config/webpack.electron.js --progress --profile --bail",
+        "build:all": "npm run build && npm run build:gh-pages && npm run build:electron",        
         "lite": "lite-server -c config/bs-server.json",
-        "clear": "node clear.src.js",
-        "postinstall": "typings install"
+        "clear": "node config/clear.src.js",
+        "postinstall": "typings install && npm install --prefix ./electron/src"
     },
     "license": "MIT",
     "dependencies": {
