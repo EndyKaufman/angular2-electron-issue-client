@@ -1,28 +1,39 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/electron/electron-quick-start.git"
-  },
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/electron/electron-quick-start/issues"
-  },
-  "homepage": "https://github.com/electron/electron-quick-start#readme",
-  "devDependencies": {
-    "electron-prebuilt": "^1.2.0"
-  }
+    "name": "electron-quick-start",
+    "version": "0.0.1",
+    "description": "Simple client for issue trackers (redmine, jira, asana, bitbucket, github)",
+    "main": "main.js",
+    "build": {
+        "app-bundle-id": "ru.site15.angular2-electron-issue-client",
+        "app-category-type": "angular2-electron-issue-client.demo",
+        "win": {
+            "iconUrl": "(windows-only) https link to icon"
+        }
+    },
+    "scripts": {
+        "start": "electron .",
+        "postinstall": "install-app-deps",
+        "pack": "build --target ../build",
+        "dist": "build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EndyKaufman/angular2-electron-issue-client.git"
+    },
+    "keywords": [
+        "Electron",
+        "quick",
+        "start",
+        "tutorial"
+    ],
+    "author": "EndyKaufman",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/EndyKaufman/angular2-electron-issue-client/issues"
+    },
+    "homepage": "https://github.com/EndyKaufman/angular2-electron-issue-client#readme",
+    "devDependencies": {
+        "electron-builder": "^5.10.1",
+        "electron-prebuilt": "^1.2.0"
+    }
 }

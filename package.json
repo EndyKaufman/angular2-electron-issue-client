@@ -1,6 +1,7 @@
 {
     "name": "angular2-electron-issue-client",
     "version": "0.0.1",
+    "description": "Simple client for issue trackers (redmine, jira, asana, bitbucket, github)",
     "scripts": {
         "start": "npm run clear && webpack-dev-server --config config/webpack.dev.js --port 3000 --inline --progress",
         "start:electron": "npm start --prefix ./electron/dist",
