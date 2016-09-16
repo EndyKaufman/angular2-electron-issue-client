@@ -76,7 +76,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + "5ceebac46e86aa14f97b" + ".chunk.js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + "e60ee8ad2ce3d75a63e0" + ".chunk.js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -100,8 +100,8 @@
 
 	"use strict";
 	__webpack_require__(415);
-	__webpack_require__(661);
-	__webpack_require__(685);
+	__webpack_require__(660);
+	__webpack_require__(701);
 	if (true) {
 	}
 	else {
@@ -554,23 +554,24 @@
 	__webpack_require__(498);
 	__webpack_require__(500);
 	__webpack_require__(502);
+	__webpack_require__(505);
 	__webpack_require__(506);
 	__webpack_require__(507);
 	__webpack_require__(508);
-	__webpack_require__(509);
+	__webpack_require__(510);
 	__webpack_require__(511);
 	__webpack_require__(512);
 	__webpack_require__(513);
 	__webpack_require__(514);
 	__webpack_require__(515);
 	__webpack_require__(516);
-	__webpack_require__(517);
+	__webpack_require__(518);
 	__webpack_require__(519);
 	__webpack_require__(520);
-	__webpack_require__(521);
+	__webpack_require__(522);
 	__webpack_require__(523);
 	__webpack_require__(524);
-	__webpack_require__(525);
+	__webpack_require__(526);
 	__webpack_require__(527);
 	__webpack_require__(528);
 	__webpack_require__(529);
@@ -584,13 +585,13 @@
 	__webpack_require__(537);
 	__webpack_require__(538);
 	__webpack_require__(539);
-	__webpack_require__(540);
+	__webpack_require__(544);
 	__webpack_require__(545);
-	__webpack_require__(546);
+	__webpack_require__(549);
 	__webpack_require__(550);
 	__webpack_require__(551);
 	__webpack_require__(552);
-	__webpack_require__(553);
+	__webpack_require__(554);
 	__webpack_require__(555);
 	__webpack_require__(556);
 	__webpack_require__(557);
@@ -607,36 +608,35 @@
 	__webpack_require__(568);
 	__webpack_require__(569);
 	__webpack_require__(570);
-	__webpack_require__(571);
+	__webpack_require__(572);
 	__webpack_require__(573);
-	__webpack_require__(574);
+	__webpack_require__(579);
 	__webpack_require__(580);
-	__webpack_require__(581);
+	__webpack_require__(582);
 	__webpack_require__(583);
 	__webpack_require__(584);
-	__webpack_require__(585);
+	__webpack_require__(588);
 	__webpack_require__(589);
 	__webpack_require__(590);
 	__webpack_require__(591);
 	__webpack_require__(592);
-	__webpack_require__(593);
+	__webpack_require__(594);
 	__webpack_require__(595);
 	__webpack_require__(596);
 	__webpack_require__(597);
-	__webpack_require__(598);
-	__webpack_require__(601);
+	__webpack_require__(600);
+	__webpack_require__(602);
 	__webpack_require__(603);
 	__webpack_require__(604);
-	__webpack_require__(605);
-	__webpack_require__(607);
-	__webpack_require__(609);
+	__webpack_require__(606);
+	__webpack_require__(608);
+	__webpack_require__(610);
 	__webpack_require__(611);
 	__webpack_require__(612);
-	__webpack_require__(613);
+	__webpack_require__(614);
 	__webpack_require__(615);
 	__webpack_require__(616);
 	__webpack_require__(617);
-	__webpack_require__(618);
 	__webpack_require__(624);
 	__webpack_require__(627);
 	__webpack_require__(628);
@@ -644,6 +644,7 @@
 	__webpack_require__(631);
 	__webpack_require__(634);
 	__webpack_require__(635);
+	__webpack_require__(637);
 	__webpack_require__(638);
 	__webpack_require__(639);
 	__webpack_require__(640);
@@ -662,10 +663,9 @@
 	__webpack_require__(653);
 	__webpack_require__(654);
 	__webpack_require__(655);
-	__webpack_require__(656);
+	__webpack_require__(657);
 	__webpack_require__(658);
 	__webpack_require__(659);
-	__webpack_require__(660);
 	module.exports = __webpack_require__(422);
 
 /***/ },
@@ -1536,6 +1536,7 @@
 	  // Thrash, waste and sodomy: IE GC bug
 	  var iframe = __webpack_require__(428)('iframe')
 	    , i      = enumBugKeys.length
+	    , lt     = '<'
 	    , gt     = '>'
 	    , iframeDocument;
 	  iframe.style.display = 'none';
@@ -1545,7 +1546,7 @@
 	  // html.removeChild(iframe);
 	  iframeDocument = iframe.contentWindow.document;
 	  iframeDocument.open();
-	  iframeDocument.write('<script>document.F=Object</script' + gt);
+	  iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
 	  iframeDocument.close();
 	  createDict = iframeDocument.F;
 	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
@@ -1563,6 +1564,7 @@
 	  } else result = createDict();
 	  return Properties === undefined ? result : dPs(result, Properties);
 	};
+
 
 /***/ },
 /* 460 */
@@ -2277,10 +2279,9 @@
 
 	'use strict';
 	var $export      = __webpack_require__(421)
-	  , anInstance   = __webpack_require__(503)
 	  , toInteger    = __webpack_require__(451)
-	  , aNumberValue = __webpack_require__(504)
-	  , repeat       = __webpack_require__(505)
+	  , aNumberValue = __webpack_require__(503)
+	  , repeat       = __webpack_require__(504)
 	  , $toFixed     = 1..toFixed
 	  , floor        = Math.floor
 	  , data         = [0, 0, 0, 0, 0, 0]
@@ -2392,16 +2393,6 @@
 
 /***/ },
 /* 503 */
-/***/ function(module, exports) {
-
-	module.exports = function(it, Constructor, name, forbiddenField){
-	  if(!(it instanceof Constructor) || (forbiddenField !== undefined && forbiddenField in it)){
-	    throw TypeError(name + ': incorrect invocation!');
-	  } return it;
-	};
-
-/***/ },
-/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var cof = __webpack_require__(447);
@@ -2411,7 +2402,7 @@
 	};
 
 /***/ },
-/* 505 */
+/* 504 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2428,13 +2419,13 @@
 	};
 
 /***/ },
-/* 506 */
+/* 505 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export      = __webpack_require__(421)
 	  , $fails       = __webpack_require__(420)
-	  , aNumberValue = __webpack_require__(504)
+	  , aNumberValue = __webpack_require__(503)
 	  , $toPrecision = 1..toPrecision;
 
 	$export($export.P + $export.F * ($fails(function(){
@@ -2451,7 +2442,7 @@
 	});
 
 /***/ },
-/* 507 */
+/* 506 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.1 Number.EPSILON
@@ -2460,7 +2451,7 @@
 	$export($export.S, 'Number', {EPSILON: Math.pow(2, -52)});
 
 /***/ },
-/* 508 */
+/* 507 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.2 Number.isFinite(number)
@@ -2474,16 +2465,16 @@
 	});
 
 /***/ },
-/* 509 */
+/* 508 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
 	var $export = __webpack_require__(421);
 
-	$export($export.S, 'Number', {isInteger: __webpack_require__(510)});
+	$export($export.S, 'Number', {isInteger: __webpack_require__(509)});
 
 /***/ },
-/* 510 */
+/* 509 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
@@ -2494,7 +2485,7 @@
 	};
 
 /***/ },
-/* 511 */
+/* 510 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.4 Number.isNaN(number)
@@ -2507,12 +2498,12 @@
 	});
 
 /***/ },
-/* 512 */
+/* 511 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.5 Number.isSafeInteger(number)
 	var $export   = __webpack_require__(421)
-	  , isInteger = __webpack_require__(510)
+	  , isInteger = __webpack_require__(509)
 	  , abs       = Math.abs;
 
 	$export($export.S, 'Number', {
@@ -2522,7 +2513,7 @@
 	});
 
 /***/ },
-/* 513 */
+/* 512 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -2531,7 +2522,7 @@
 	$export($export.S, 'Number', {MAX_SAFE_INTEGER: 0x1fffffffffffff});
 
 /***/ },
-/* 514 */
+/* 513 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -2540,7 +2531,7 @@
 	$export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 
 /***/ },
-/* 515 */
+/* 514 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export     = __webpack_require__(421)
@@ -2549,7 +2540,7 @@
 	$export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {parseFloat: $parseFloat});
 
 /***/ },
-/* 516 */
+/* 515 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export   = __webpack_require__(421)
@@ -2558,12 +2549,12 @@
 	$export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
 /***/ },
-/* 517 */
+/* 516 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.3 Math.acosh(x)
 	var $export = __webpack_require__(421)
-	  , log1p   = __webpack_require__(518)
+	  , log1p   = __webpack_require__(517)
 	  , sqrt    = Math.sqrt
 	  , $acosh  = Math.acosh;
 
@@ -2581,7 +2572,7 @@
 	});
 
 /***/ },
-/* 518 */
+/* 517 */
 /***/ function(module, exports) {
 
 	// 20.2.2.20 Math.log1p(x)
@@ -2590,7 +2581,7 @@
 	};
 
 /***/ },
-/* 519 */
+/* 518 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.5 Math.asinh(x)
@@ -2605,7 +2596,7 @@
 	$export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', {asinh: asinh});
 
 /***/ },
-/* 520 */
+/* 519 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.7 Math.atanh(x)
@@ -2620,12 +2611,12 @@
 	});
 
 /***/ },
-/* 521 */
+/* 520 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.9 Math.cbrt(x)
 	var $export = __webpack_require__(421)
-	  , sign    = __webpack_require__(522);
+	  , sign    = __webpack_require__(521);
 
 	$export($export.S, 'Math', {
 	  cbrt: function cbrt(x){
@@ -2634,7 +2625,7 @@
 	});
 
 /***/ },
-/* 522 */
+/* 521 */
 /***/ function(module, exports) {
 
 	// 20.2.2.28 Math.sign(x)
@@ -2643,7 +2634,7 @@
 	};
 
 /***/ },
-/* 523 */
+/* 522 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.11 Math.clz32(x)
@@ -2656,7 +2647,7 @@
 	});
 
 /***/ },
-/* 524 */
+/* 523 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.12 Math.cosh(x)
@@ -2670,17 +2661,17 @@
 	});
 
 /***/ },
-/* 525 */
+/* 524 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.14 Math.expm1(x)
 	var $export = __webpack_require__(421)
-	  , $expm1  = __webpack_require__(526);
+	  , $expm1  = __webpack_require__(525);
 
 	$export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1});
 
 /***/ },
-/* 526 */
+/* 525 */
 /***/ function(module, exports) {
 
 	// 20.2.2.14 Math.expm1(x)
@@ -2695,12 +2686,12 @@
 	} : $expm1;
 
 /***/ },
-/* 527 */
+/* 526 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.16 Math.fround(x)
 	var $export   = __webpack_require__(421)
-	  , sign      = __webpack_require__(522)
+	  , sign      = __webpack_require__(521)
 	  , pow       = Math.pow
 	  , EPSILON   = pow(2, -52)
 	  , EPSILON32 = pow(2, -23)
@@ -2726,7 +2717,7 @@
 	});
 
 /***/ },
-/* 528 */
+/* 527 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -2756,7 +2747,7 @@
 	});
 
 /***/ },
-/* 529 */
+/* 528 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.18 Math.imul(x, y)
@@ -2778,7 +2769,7 @@
 	});
 
 /***/ },
-/* 530 */
+/* 529 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.21 Math.log10(x)
@@ -2791,16 +2782,16 @@
 	});
 
 /***/ },
-/* 531 */
+/* 530 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.20 Math.log1p(x)
 	var $export = __webpack_require__(421);
 
-	$export($export.S, 'Math', {log1p: __webpack_require__(518)});
+	$export($export.S, 'Math', {log1p: __webpack_require__(517)});
 
 /***/ },
-/* 532 */
+/* 531 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.22 Math.log2(x)
@@ -2813,21 +2804,21 @@
 	});
 
 /***/ },
-/* 533 */
+/* 532 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.28 Math.sign(x)
 	var $export = __webpack_require__(421);
 
-	$export($export.S, 'Math', {sign: __webpack_require__(522)});
+	$export($export.S, 'Math', {sign: __webpack_require__(521)});
 
 /***/ },
-/* 534 */
+/* 533 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.30 Math.sinh(x)
 	var $export = __webpack_require__(421)
-	  , expm1   = __webpack_require__(526)
+	  , expm1   = __webpack_require__(525)
 	  , exp     = Math.exp;
 
 	// V8 near Chromium 38 has a problem with very small numbers
@@ -2842,12 +2833,12 @@
 	});
 
 /***/ },
-/* 535 */
+/* 534 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.33 Math.tanh(x)
 	var $export = __webpack_require__(421)
-	  , expm1   = __webpack_require__(526)
+	  , expm1   = __webpack_require__(525)
 	  , exp     = Math.exp;
 
 	$export($export.S, 'Math', {
@@ -2859,7 +2850,7 @@
 	});
 
 /***/ },
-/* 536 */
+/* 535 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.34 Math.trunc(x)
@@ -2872,7 +2863,7 @@
 	});
 
 /***/ },
-/* 537 */
+/* 536 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export        = __webpack_require__(421)
@@ -2900,7 +2891,7 @@
 	});
 
 /***/ },
-/* 538 */
+/* 537 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export   = __webpack_require__(421)
@@ -2923,7 +2914,7 @@
 	});
 
 /***/ },
-/* 539 */
+/* 538 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2935,14 +2926,14 @@
 	});
 
 /***/ },
-/* 540 */
+/* 539 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var $at  = __webpack_require__(541)(true);
+	var $at  = __webpack_require__(540)(true);
 
 	// 21.1.3.27 String.prototype[@@iterator]()
-	__webpack_require__(542)(String, 'String', function(iterated){
+	__webpack_require__(541)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
 	  this._i = 0;                // next index
 	// 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -2957,7 +2948,7 @@
 	});
 
 /***/ },
-/* 541 */
+/* 540 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var toInteger = __webpack_require__(451)
@@ -2979,7 +2970,7 @@
 	};
 
 /***/ },
-/* 542 */
+/* 541 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2988,8 +2979,8 @@
 	  , redefine       = __webpack_require__(431)
 	  , hide           = __webpack_require__(423)
 	  , has            = __webpack_require__(418)
-	  , Iterators      = __webpack_require__(543)
-	  , $iterCreate    = __webpack_require__(544)
+	  , Iterators      = __webpack_require__(542)
+	  , $iterCreate    = __webpack_require__(543)
 	  , setToStringTag = __webpack_require__(437)
 	  , getPrototypeOf = __webpack_require__(472)
 	  , ITERATOR       = __webpack_require__(438)('iterator')
@@ -3054,13 +3045,13 @@
 	};
 
 /***/ },
-/* 543 */
+/* 542 */
 /***/ function(module, exports) {
 
 	module.exports = {};
 
 /***/ },
-/* 544 */
+/* 543 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3078,12 +3069,12 @@
 	};
 
 /***/ },
-/* 545 */
+/* 544 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export = __webpack_require__(421)
-	  , $at     = __webpack_require__(541)(false);
+	  , $at     = __webpack_require__(540)(false);
 	$export($export.P, 'String', {
 	  // 21.1.3.3 String.prototype.codePointAt(pos)
 	  codePointAt: function codePointAt(pos){
@@ -3092,18 +3083,18 @@
 	});
 
 /***/ },
-/* 546 */
+/* 545 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 	'use strict';
 	var $export   = __webpack_require__(421)
 	  , toLength  = __webpack_require__(450)
-	  , context   = __webpack_require__(547)
+	  , context   = __webpack_require__(546)
 	  , ENDS_WITH = 'endsWith'
 	  , $endsWith = ''[ENDS_WITH];
 
-	$export($export.P + $export.F * __webpack_require__(549)(ENDS_WITH), 'String', {
+	$export($export.P + $export.F * __webpack_require__(548)(ENDS_WITH), 'String', {
 	  endsWith: function endsWith(searchString /*, endPosition = @length */){
 	    var that = context(this, searchString, ENDS_WITH)
 	      , endPosition = arguments.length > 1 ? arguments[1] : undefined
@@ -3117,11 +3108,11 @@
 	});
 
 /***/ },
-/* 547 */
+/* 546 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// helper for String#{startsWith, endsWith, includes}
-	var isRegExp = __webpack_require__(548)
+	var isRegExp = __webpack_require__(547)
 	  , defined  = __webpack_require__(448);
 
 	module.exports = function(that, searchString, NAME){
@@ -3130,7 +3121,7 @@
 	};
 
 /***/ },
-/* 548 */
+/* 547 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.8 IsRegExp(argument)
@@ -3143,7 +3134,7 @@
 	};
 
 /***/ },
-/* 549 */
+/* 548 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var MATCH = __webpack_require__(438)('match');
@@ -3160,16 +3151,16 @@
 	};
 
 /***/ },
-/* 550 */
+/* 549 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 21.1.3.7 String.prototype.includes(searchString, position = 0)
 	'use strict';
 	var $export  = __webpack_require__(421)
-	  , context  = __webpack_require__(547)
+	  , context  = __webpack_require__(546)
 	  , INCLUDES = 'includes';
 
-	$export($export.P + $export.F * __webpack_require__(549)(INCLUDES), 'String', {
+	$export($export.P + $export.F * __webpack_require__(548)(INCLUDES), 'String', {
 	  includes: function includes(searchString /*, position = 0 */){
 	    return !!~context(this, searchString, INCLUDES)
 	      .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
@@ -3177,29 +3168,29 @@
 	});
 
 /***/ },
-/* 551 */
+/* 550 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export = __webpack_require__(421);
 
 	$export($export.P, 'String', {
 	  // 21.1.3.13 String.prototype.repeat(count)
-	  repeat: __webpack_require__(505)
+	  repeat: __webpack_require__(504)
 	});
 
 /***/ },
-/* 552 */
+/* 551 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 	'use strict';
 	var $export     = __webpack_require__(421)
 	  , toLength    = __webpack_require__(450)
-	  , context     = __webpack_require__(547)
+	  , context     = __webpack_require__(546)
 	  , STARTS_WITH = 'startsWith'
 	  , $startsWith = ''[STARTS_WITH];
 
-	$export($export.P + $export.F * __webpack_require__(549)(STARTS_WITH), 'String', {
+	$export($export.P + $export.F * __webpack_require__(548)(STARTS_WITH), 'String', {
 	  startsWith: function startsWith(searchString /*, position = 0 */){
 	    var that   = context(this, searchString, STARTS_WITH)
 	      , index  = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length))
@@ -3211,19 +3202,19 @@
 	});
 
 /***/ },
-/* 553 */
+/* 552 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// B.2.3.2 String.prototype.anchor(name)
-	__webpack_require__(554)('anchor', function(createHTML){
+	__webpack_require__(553)('anchor', function(createHTML){
 	  return function anchor(name){
 	    return createHTML(this, 'a', 'name', name);
 	  }
 	});
 
 /***/ },
-/* 554 */
+/* 553 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var $export = __webpack_require__(421)
@@ -3247,14 +3238,26 @@
 	};
 
 /***/ },
-/* 555 */
+/* 554 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// B.2.3.3 String.prototype.big()
-	__webpack_require__(554)('big', function(createHTML){
+	__webpack_require__(553)('big', function(createHTML){
 	  return function big(){
 	    return createHTML(this, 'big', '', '');
+	  }
+	});
+
+/***/ },
+/* 555 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// B.2.3.4 String.prototype.blink()
+	__webpack_require__(553)('blink', function(createHTML){
+	  return function blink(){
+	    return createHTML(this, 'blink', '', '');
 	  }
 	});
 
@@ -3263,10 +3266,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.4 String.prototype.blink()
-	__webpack_require__(554)('blink', function(createHTML){
-	  return function blink(){
-	    return createHTML(this, 'blink', '', '');
+	// B.2.3.5 String.prototype.bold()
+	__webpack_require__(553)('bold', function(createHTML){
+	  return function bold(){
+	    return createHTML(this, 'b', '', '');
 	  }
 	});
 
@@ -3275,10 +3278,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.5 String.prototype.bold()
-	__webpack_require__(554)('bold', function(createHTML){
-	  return function bold(){
-	    return createHTML(this, 'b', '', '');
+	// B.2.3.6 String.prototype.fixed()
+	__webpack_require__(553)('fixed', function(createHTML){
+	  return function fixed(){
+	    return createHTML(this, 'tt', '', '');
 	  }
 	});
 
@@ -3287,10 +3290,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.6 String.prototype.fixed()
-	__webpack_require__(554)('fixed', function(createHTML){
-	  return function fixed(){
-	    return createHTML(this, 'tt', '', '');
+	// B.2.3.7 String.prototype.fontcolor(color)
+	__webpack_require__(553)('fontcolor', function(createHTML){
+	  return function fontcolor(color){
+	    return createHTML(this, 'font', 'color', color);
 	  }
 	});
 
@@ -3299,10 +3302,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.7 String.prototype.fontcolor(color)
-	__webpack_require__(554)('fontcolor', function(createHTML){
-	  return function fontcolor(color){
-	    return createHTML(this, 'font', 'color', color);
+	// B.2.3.8 String.prototype.fontsize(size)
+	__webpack_require__(553)('fontsize', function(createHTML){
+	  return function fontsize(size){
+	    return createHTML(this, 'font', 'size', size);
 	  }
 	});
 
@@ -3311,10 +3314,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.8 String.prototype.fontsize(size)
-	__webpack_require__(554)('fontsize', function(createHTML){
-	  return function fontsize(size){
-	    return createHTML(this, 'font', 'size', size);
+	// B.2.3.9 String.prototype.italics()
+	__webpack_require__(553)('italics', function(createHTML){
+	  return function italics(){
+	    return createHTML(this, 'i', '', '');
 	  }
 	});
 
@@ -3323,10 +3326,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.9 String.prototype.italics()
-	__webpack_require__(554)('italics', function(createHTML){
-	  return function italics(){
-	    return createHTML(this, 'i', '', '');
+	// B.2.3.10 String.prototype.link(url)
+	__webpack_require__(553)('link', function(createHTML){
+	  return function link(url){
+	    return createHTML(this, 'a', 'href', url);
 	  }
 	});
 
@@ -3335,10 +3338,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.10 String.prototype.link(url)
-	__webpack_require__(554)('link', function(createHTML){
-	  return function link(url){
-	    return createHTML(this, 'a', 'href', url);
+	// B.2.3.11 String.prototype.small()
+	__webpack_require__(553)('small', function(createHTML){
+	  return function small(){
+	    return createHTML(this, 'small', '', '');
 	  }
 	});
 
@@ -3347,10 +3350,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.11 String.prototype.small()
-	__webpack_require__(554)('small', function(createHTML){
-	  return function small(){
-	    return createHTML(this, 'small', '', '');
+	// B.2.3.12 String.prototype.strike()
+	__webpack_require__(553)('strike', function(createHTML){
+	  return function strike(){
+	    return createHTML(this, 'strike', '', '');
 	  }
 	});
 
@@ -3359,10 +3362,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.12 String.prototype.strike()
-	__webpack_require__(554)('strike', function(createHTML){
-	  return function strike(){
-	    return createHTML(this, 'strike', '', '');
+	// B.2.3.13 String.prototype.sub()
+	__webpack_require__(553)('sub', function(createHTML){
+	  return function sub(){
+	    return createHTML(this, 'sub', '', '');
 	  }
 	});
 
@@ -3371,27 +3374,15 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	// B.2.3.13 String.prototype.sub()
-	__webpack_require__(554)('sub', function(createHTML){
-	  return function sub(){
-	    return createHTML(this, 'sub', '', '');
-	  }
-	});
-
-/***/ },
-/* 566 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
 	// B.2.3.14 String.prototype.sup()
-	__webpack_require__(554)('sup', function(createHTML){
+	__webpack_require__(553)('sup', function(createHTML){
 	  return function sup(){
 	    return createHTML(this, 'sup', '', '');
 	  }
 	});
 
 /***/ },
-/* 567 */
+/* 566 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.3.3.1 / 15.9.4.4 Date.now()
@@ -3400,7 +3391,7 @@
 	$export($export.S, 'Date', {now: function(){ return new Date().getTime(); }});
 
 /***/ },
-/* 568 */
+/* 567 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3419,7 +3410,7 @@
 	});
 
 /***/ },
-/* 569 */
+/* 568 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3452,7 +3443,7 @@
 	});
 
 /***/ },
-/* 570 */
+/* 569 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var DateProto    = Date.prototype
@@ -3468,16 +3459,16 @@
 	}
 
 /***/ },
-/* 571 */
+/* 570 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var TO_PRIMITIVE = __webpack_require__(438)('toPrimitive')
 	  , proto        = Date.prototype;
 
-	if(!(TO_PRIMITIVE in proto))__webpack_require__(423)(proto, TO_PRIMITIVE, __webpack_require__(572));
+	if(!(TO_PRIMITIVE in proto))__webpack_require__(423)(proto, TO_PRIMITIVE, __webpack_require__(571));
 
 /***/ },
-/* 572 */
+/* 571 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3491,7 +3482,7 @@
 	};
 
 /***/ },
-/* 573 */
+/* 572 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
@@ -3500,20 +3491,20 @@
 	$export($export.S, 'Array', {isArray: __webpack_require__(458)});
 
 /***/ },
-/* 574 */
+/* 573 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx            = __webpack_require__(433)
 	  , $export        = __webpack_require__(421)
 	  , toObject       = __webpack_require__(471)
-	  , call           = __webpack_require__(575)
-	  , isArrayIter    = __webpack_require__(576)
+	  , call           = __webpack_require__(574)
+	  , isArrayIter    = __webpack_require__(575)
 	  , toLength       = __webpack_require__(450)
-	  , createProperty = __webpack_require__(577)
-	  , getIterFn      = __webpack_require__(578);
+	  , createProperty = __webpack_require__(576)
+	  , getIterFn      = __webpack_require__(577);
 
-	$export($export.S + $export.F * !__webpack_require__(579)(function(iter){ Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(578)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -3543,7 +3534,7 @@
 
 
 /***/ },
-/* 575 */
+/* 574 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -3560,11 +3551,11 @@
 	};
 
 /***/ },
-/* 576 */
+/* 575 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
-	var Iterators  = __webpack_require__(543)
+	var Iterators  = __webpack_require__(542)
 	  , ITERATOR   = __webpack_require__(438)('iterator')
 	  , ArrayProto = Array.prototype;
 
@@ -3573,7 +3564,7 @@
 	};
 
 /***/ },
-/* 577 */
+/* 576 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3586,12 +3577,12 @@
 	};
 
 /***/ },
-/* 578 */
+/* 577 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var classof   = __webpack_require__(488)
 	  , ITERATOR  = __webpack_require__(438)('iterator')
-	  , Iterators = __webpack_require__(543);
+	  , Iterators = __webpack_require__(542);
 	module.exports = __webpack_require__(422).getIteratorMethod = function(it){
 	  if(it != undefined)return it[ITERATOR]
 	    || it['@@iterator']
@@ -3599,7 +3590,7 @@
 	};
 
 /***/ },
-/* 579 */
+/* 578 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ITERATOR     = __webpack_require__(438)('iterator')
@@ -3625,12 +3616,12 @@
 	};
 
 /***/ },
-/* 580 */
+/* 579 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export        = __webpack_require__(421)
-	  , createProperty = __webpack_require__(577);
+	  , createProperty = __webpack_require__(576);
 
 	// WebKit Array.of isn't generic
 	$export($export.S + $export.F * __webpack_require__(420)(function(){
@@ -3649,7 +3640,7 @@
 	});
 
 /***/ },
-/* 581 */
+/* 580 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3659,14 +3650,14 @@
 	  , arrayJoin = [].join;
 
 	// fallback for not array-like strings
-	$export($export.P + $export.F * (__webpack_require__(446) != Object || !__webpack_require__(582)(arrayJoin)), 'Array', {
+	$export($export.P + $export.F * (__webpack_require__(446) != Object || !__webpack_require__(581)(arrayJoin)), 'Array', {
 	  join: function join(separator){
 	    return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
 	  }
 	});
 
 /***/ },
-/* 582 */
+/* 581 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var fails = __webpack_require__(420);
@@ -3678,7 +3669,7 @@
 	};
 
 /***/ },
-/* 583 */
+/* 582 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3711,7 +3702,7 @@
 	});
 
 /***/ },
-/* 584 */
+/* 583 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3729,7 +3720,7 @@
 	  // V8 bug
 	  test.sort(null);
 	  // Old WebKit
-	}) || !__webpack_require__(582)($sort)), 'Array', {
+	}) || !__webpack_require__(581)($sort)), 'Array', {
 	  // 22.1.3.25 Array.prototype.sort(comparefn)
 	  sort: function sort(comparefn){
 	    return comparefn === undefined
@@ -3739,13 +3730,13 @@
 	});
 
 /***/ },
-/* 585 */
+/* 584 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export  = __webpack_require__(421)
-	  , $forEach = __webpack_require__(586)(0)
-	  , STRICT   = __webpack_require__(582)([].forEach, true);
+	  , $forEach = __webpack_require__(585)(0)
+	  , STRICT   = __webpack_require__(581)([].forEach, true);
 
 	$export($export.P + $export.F * !STRICT, 'Array', {
 	  // 22.1.3.10 / 15.4.4.18 Array.prototype.forEach(callbackfn [, thisArg])
@@ -3755,7 +3746,7 @@
 	});
 
 /***/ },
-/* 586 */
+/* 585 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 0 -> Array#forEach
@@ -3769,7 +3760,7 @@
 	  , IObject  = __webpack_require__(446)
 	  , toObject = __webpack_require__(471)
 	  , toLength = __webpack_require__(450)
-	  , asc      = __webpack_require__(587);
+	  , asc      = __webpack_require__(586);
 	module.exports = function(TYPE, $create){
 	  var IS_MAP        = TYPE == 1
 	    , IS_FILTER     = TYPE == 2
@@ -3804,18 +3795,18 @@
 	};
 
 /***/ },
-/* 587 */
+/* 586 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-	var speciesConstructor = __webpack_require__(588);
+	var speciesConstructor = __webpack_require__(587);
 
 	module.exports = function(original, length){
 	  return new (speciesConstructor(original))(length);
 	};
 
 /***/ },
-/* 588 */
+/* 587 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(426)
@@ -3836,17 +3827,32 @@
 	};
 
 /***/ },
+/* 588 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $export = __webpack_require__(421)
+	  , $map    = __webpack_require__(585)(1);
+
+	$export($export.P + $export.F * !__webpack_require__(581)([].map, true), 'Array', {
+	  // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
+	  map: function map(callbackfn /* , thisArg */){
+	    return $map(this, callbackfn, arguments[1]);
+	  }
+	});
+
+/***/ },
 /* 589 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export = __webpack_require__(421)
-	  , $map    = __webpack_require__(586)(1);
+	  , $filter = __webpack_require__(585)(2);
 
-	$export($export.P + $export.F * !__webpack_require__(582)([].map, true), 'Array', {
-	  // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
-	  map: function map(callbackfn /* , thisArg */){
-	    return $map(this, callbackfn, arguments[1]);
+	$export($export.P + $export.F * !__webpack_require__(581)([].filter, true), 'Array', {
+	  // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
+	  filter: function filter(callbackfn /* , thisArg */){
+	    return $filter(this, callbackfn, arguments[1]);
 	  }
 	});
 
@@ -3856,12 +3862,12 @@
 
 	'use strict';
 	var $export = __webpack_require__(421)
-	  , $filter = __webpack_require__(586)(2);
+	  , $some   = __webpack_require__(585)(3);
 
-	$export($export.P + $export.F * !__webpack_require__(582)([].filter, true), 'Array', {
-	  // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
-	  filter: function filter(callbackfn /* , thisArg */){
-	    return $filter(this, callbackfn, arguments[1]);
+	$export($export.P + $export.F * !__webpack_require__(581)([].some, true), 'Array', {
+	  // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
+	  some: function some(callbackfn /* , thisArg */){
+	    return $some(this, callbackfn, arguments[1]);
 	  }
 	});
 
@@ -3871,12 +3877,12 @@
 
 	'use strict';
 	var $export = __webpack_require__(421)
-	  , $some   = __webpack_require__(586)(3);
+	  , $every  = __webpack_require__(585)(4);
 
-	$export($export.P + $export.F * !__webpack_require__(582)([].some, true), 'Array', {
-	  // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
-	  some: function some(callbackfn /* , thisArg */){
-	    return $some(this, callbackfn, arguments[1]);
+	$export($export.P + $export.F * !__webpack_require__(581)([].every, true), 'Array', {
+	  // 22.1.3.5 / 15.4.4.16 Array.prototype.every(callbackfn [, thisArg])
+	  every: function every(callbackfn /* , thisArg */){
+	    return $every(this, callbackfn, arguments[1]);
 	  }
 	});
 
@@ -3886,24 +3892,9 @@
 
 	'use strict';
 	var $export = __webpack_require__(421)
-	  , $every  = __webpack_require__(586)(4);
+	  , $reduce = __webpack_require__(593);
 
-	$export($export.P + $export.F * !__webpack_require__(582)([].every, true), 'Array', {
-	  // 22.1.3.5 / 15.4.4.16 Array.prototype.every(callbackfn [, thisArg])
-	  every: function every(callbackfn /* , thisArg */){
-	    return $every(this, callbackfn, arguments[1]);
-	  }
-	});
-
-/***/ },
-/* 593 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	var $export = __webpack_require__(421)
-	  , $reduce = __webpack_require__(594);
-
-	$export($export.P + $export.F * !__webpack_require__(582)([].reduce, true), 'Array', {
+	$export($export.P + $export.F * !__webpack_require__(581)([].reduce, true), 'Array', {
 	  // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
 	  reduce: function reduce(callbackfn /* , initialValue */){
 	    return $reduce(this, callbackfn, arguments.length, arguments[1], false);
@@ -3911,7 +3902,7 @@
 	});
 
 /***/ },
-/* 594 */
+/* 593 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var aFunction = __webpack_require__(434)
@@ -3944,14 +3935,14 @@
 	};
 
 /***/ },
-/* 595 */
+/* 594 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export = __webpack_require__(421)
-	  , $reduce = __webpack_require__(594);
+	  , $reduce = __webpack_require__(593);
 
-	$export($export.P + $export.F * !__webpack_require__(582)([].reduceRight, true), 'Array', {
+	$export($export.P + $export.F * !__webpack_require__(581)([].reduceRight, true), 'Array', {
 	  // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
 	  reduceRight: function reduceRight(callbackfn /* , initialValue */){
 	    return $reduce(this, callbackfn, arguments.length, arguments[1], true);
@@ -3959,7 +3950,7 @@
 	});
 
 /***/ },
-/* 596 */
+/* 595 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3968,7 +3959,7 @@
 	  , $native       = [].indexOf
 	  , NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
-	$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(582)($native)), 'Array', {
+	$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(581)($native)), 'Array', {
 	  // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
 	  indexOf: function indexOf(searchElement /*, fromIndex = 0 */){
 	    return NEGATIVE_ZERO
@@ -3979,7 +3970,7 @@
 	});
 
 /***/ },
-/* 597 */
+/* 596 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -3990,7 +3981,7 @@
 	  , $native       = [].lastIndexOf
 	  , NEGATIVE_ZERO = !!$native && 1 / [1].lastIndexOf(1, -0) < 0;
 
-	$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(582)($native)), 'Array', {
+	$export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(581)($native)), 'Array', {
 	  // 22.1.3.14 / 15.4.4.15 Array.prototype.lastIndexOf(searchElement [, fromIndex])
 	  lastIndexOf: function lastIndexOf(searchElement /*, fromIndex = @[*-1] */){
 	    // convert -0 to +0
@@ -4006,18 +3997,18 @@
 	});
 
 /***/ },
-/* 598 */
+/* 597 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 	var $export = __webpack_require__(421);
 
-	$export($export.P, 'Array', {copyWithin: __webpack_require__(599)});
+	$export($export.P, 'Array', {copyWithin: __webpack_require__(598)});
 
-	__webpack_require__(600)('copyWithin');
+	__webpack_require__(599)('copyWithin');
 
 /***/ },
-/* 599 */
+/* 598 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
@@ -4048,7 +4039,7 @@
 	};
 
 /***/ },
-/* 600 */
+/* 599 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 22.1.3.31 Array.prototype[@@unscopables]
@@ -4060,18 +4051,18 @@
 	};
 
 /***/ },
-/* 601 */
+/* 600 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 	var $export = __webpack_require__(421);
 
-	$export($export.P, 'Array', {fill: __webpack_require__(602)});
+	$export($export.P, 'Array', {fill: __webpack_require__(601)});
 
-	__webpack_require__(600)('fill');
+	__webpack_require__(599)('fill');
 
 /***/ },
-/* 602 */
+/* 601 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
@@ -4091,13 +4082,13 @@
 	};
 
 /***/ },
-/* 603 */
+/* 602 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
 	var $export = __webpack_require__(421)
-	  , $find   = __webpack_require__(586)(5)
+	  , $find   = __webpack_require__(585)(5)
 	  , KEY     = 'find'
 	  , forced  = true;
 	// Shouldn't skip holes
@@ -4107,16 +4098,16 @@
 	    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
 	  }
 	});
-	__webpack_require__(600)(KEY);
+	__webpack_require__(599)(KEY);
 
 /***/ },
-/* 604 */
+/* 603 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
 	var $export = __webpack_require__(421)
-	  , $find   = __webpack_require__(586)(6)
+	  , $find   = __webpack_require__(585)(6)
 	  , KEY     = 'findIndex'
 	  , forced  = true;
 	// Shouldn't skip holes
@@ -4126,16 +4117,16 @@
 	    return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
 	  }
 	});
-	__webpack_require__(600)(KEY);
+	__webpack_require__(599)(KEY);
+
+/***/ },
+/* 604 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(605)('Array');
 
 /***/ },
 /* 605 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(606)('Array');
-
-/***/ },
-/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4153,20 +4144,20 @@
 	};
 
 /***/ },
-/* 607 */
+/* 606 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(600)
-	  , step             = __webpack_require__(608)
-	  , Iterators        = __webpack_require__(543)
+	var addToUnscopables = __webpack_require__(599)
+	  , step             = __webpack_require__(607)
+	  , Iterators        = __webpack_require__(542)
 	  , toIObject        = __webpack_require__(445);
 
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
 	// 22.1.3.30 Array.prototype[@@iterator]()
-	module.exports = __webpack_require__(542)(Array, 'Array', function(iterated, kind){
+	module.exports = __webpack_require__(541)(Array, 'Array', function(iterated, kind){
 	  this._t = toIObject(iterated); // target
 	  this._i = 0;                   // next index
 	  this._k = kind;                // kind
@@ -4192,7 +4183,7 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 608 */
+/* 607 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -4200,15 +4191,15 @@
 	};
 
 /***/ },
-/* 609 */
+/* 608 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global            = __webpack_require__(417)
 	  , inheritIfRequired = __webpack_require__(501)
 	  , dP                = __webpack_require__(424).f
 	  , gOPN              = __webpack_require__(463).f
-	  , isRegExp          = __webpack_require__(548)
-	  , $flags            = __webpack_require__(610)
+	  , isRegExp          = __webpack_require__(547)
+	  , $flags            = __webpack_require__(609)
 	  , $RegExp           = global.RegExp
 	  , Base              = $RegExp
 	  , proto             = $RegExp.prototype
@@ -4245,10 +4236,10 @@
 	  __webpack_require__(431)(global, 'RegExp', $RegExp);
 	}
 
-	__webpack_require__(606)('RegExp');
+	__webpack_require__(605)('RegExp');
 
 /***/ },
-/* 610 */
+/* 609 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4266,13 +4257,13 @@
 	};
 
 /***/ },
-/* 611 */
+/* 610 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(612);
+	__webpack_require__(611);
 	var anObject    = __webpack_require__(425)
-	  , $flags      = __webpack_require__(610)
+	  , $flags      = __webpack_require__(609)
 	  , DESCRIPTORS = __webpack_require__(419)
 	  , TO_STRING   = 'toString'
 	  , $toString   = /./[TO_STRING];
@@ -4296,21 +4287,21 @@
 	}
 
 /***/ },
-/* 612 */
+/* 611 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 21.2.5.3 get RegExp.prototype.flags()
 	if(__webpack_require__(419) && /./g.flags != 'g')__webpack_require__(424).f(RegExp.prototype, 'flags', {
 	  configurable: true,
-	  get: __webpack_require__(610)
+	  get: __webpack_require__(609)
 	});
 
 /***/ },
-/* 613 */
+/* 612 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// @@match logic
-	__webpack_require__(614)('match', 1, function(defined, MATCH, $match){
+	__webpack_require__(613)('match', 1, function(defined, MATCH, $match){
 	  // 21.1.3.11 String.prototype.match(regexp)
 	  return [function match(regexp){
 	    'use strict';
@@ -4321,7 +4312,7 @@
 	});
 
 /***/ },
-/* 614 */
+/* 613 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4354,11 +4345,11 @@
 	};
 
 /***/ },
-/* 615 */
+/* 614 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// @@replace logic
-	__webpack_require__(614)('replace', 2, function(defined, REPLACE, $replace){
+	__webpack_require__(613)('replace', 2, function(defined, REPLACE, $replace){
 	  // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
 	  return [function replace(searchValue, replaceValue){
 	    'use strict';
@@ -4371,11 +4362,11 @@
 	});
 
 /***/ },
-/* 616 */
+/* 615 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// @@search logic
-	__webpack_require__(614)('search', 1, function(defined, SEARCH, $search){
+	__webpack_require__(613)('search', 1, function(defined, SEARCH, $search){
 	  // 21.1.3.15 String.prototype.search(regexp)
 	  return [function search(regexp){
 	    'use strict';
@@ -4386,13 +4377,13 @@
 	});
 
 /***/ },
-/* 617 */
+/* 616 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// @@split logic
-	__webpack_require__(614)('split', 2, function(defined, SPLIT, $split){
+	__webpack_require__(613)('split', 2, function(defined, SPLIT, $split){
 	  'use strict';
-	  var isRegExp   = __webpack_require__(548)
+	  var isRegExp   = __webpack_require__(547)
 	    , _split     = $split
 	    , $push      = [].push
 	    , $SPLIT     = 'split'
@@ -4461,7 +4452,7 @@
 	});
 
 /***/ },
-/* 618 */
+/* 617 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -4471,11 +4462,9 @@
 	  , classof            = __webpack_require__(488)
 	  , $export            = __webpack_require__(421)
 	  , isObject           = __webpack_require__(426)
-	  , anObject           = __webpack_require__(425)
 	  , aFunction          = __webpack_require__(434)
-	  , anInstance         = __webpack_require__(503)
+	  , anInstance         = __webpack_require__(618)
 	  , forOf              = __webpack_require__(619)
-	  , setProto           = __webpack_require__(486).set
 	  , speciesConstructor = __webpack_require__(620)
 	  , task               = __webpack_require__(621).set
 	  , microtask          = __webpack_require__(622)()
@@ -4697,7 +4686,7 @@
 
 	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Promise: $Promise});
 	__webpack_require__(437)($Promise, PROMISE);
-	__webpack_require__(606)(PROMISE);
+	__webpack_require__(605)(PROMISE);
 	Wrapper = __webpack_require__(422)[PROMISE];
 
 	// statics
@@ -4721,7 +4710,7 @@
 	    return capability.promise;
 	  }
 	});
-	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(579)(function(iter){
+	$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(578)(function(iter){
 	  $Promise.all(iter)['catch'](empty);
 	})), PROMISE, {
 	  // 25.4.4.1 Promise.all(iterable)
@@ -4767,15 +4756,25 @@
 	});
 
 /***/ },
+/* 618 */
+/***/ function(module, exports) {
+
+	module.exports = function(it, Constructor, name, forbiddenField){
+	  if(!(it instanceof Constructor) || (forbiddenField !== undefined && forbiddenField in it)){
+	    throw TypeError(name + ': incorrect invocation!');
+	  } return it;
+	};
+
+/***/ },
 /* 619 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ctx         = __webpack_require__(433)
-	  , call        = __webpack_require__(575)
-	  , isArrayIter = __webpack_require__(576)
+	  , call        = __webpack_require__(574)
+	  , isArrayIter = __webpack_require__(575)
 	  , anObject    = __webpack_require__(425)
 	  , toLength    = __webpack_require__(450)
-	  , getIterFn   = __webpack_require__(578)
+	  , getIterFn   = __webpack_require__(577)
 	  , BREAK       = {}
 	  , RETURN      = {};
 	var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -5001,15 +5000,14 @@
 	'use strict';
 	var dP          = __webpack_require__(424).f
 	  , create      = __webpack_require__(459)
-	  , hide        = __webpack_require__(423)
 	  , redefineAll = __webpack_require__(623)
 	  , ctx         = __webpack_require__(433)
-	  , anInstance  = __webpack_require__(503)
+	  , anInstance  = __webpack_require__(618)
 	  , defined     = __webpack_require__(448)
 	  , forOf       = __webpack_require__(619)
-	  , $iterDefine = __webpack_require__(542)
-	  , step        = __webpack_require__(608)
-	  , setSpecies  = __webpack_require__(606)
+	  , $iterDefine = __webpack_require__(541)
+	  , step        = __webpack_require__(607)
+	  , setSpecies  = __webpack_require__(605)
 	  , DESCRIPTORS = __webpack_require__(419)
 	  , fastKey     = __webpack_require__(435).fastKey
 	  , SIZE        = DESCRIPTORS ? '_s' : 'size';
@@ -5153,10 +5151,10 @@
 	  , redefineAll       = __webpack_require__(623)
 	  , meta              = __webpack_require__(435)
 	  , forOf             = __webpack_require__(619)
-	  , anInstance        = __webpack_require__(503)
+	  , anInstance        = __webpack_require__(618)
 	  , isObject          = __webpack_require__(426)
 	  , fails             = __webpack_require__(420)
-	  , $iterDetect       = __webpack_require__(579)
+	  , $iterDetect       = __webpack_require__(578)
 	  , setToStringTag    = __webpack_require__(437)
 	  , inheritIfRequired = __webpack_require__(501);
 
@@ -5254,13 +5252,12 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var each         = __webpack_require__(586)(0)
+	var each         = __webpack_require__(585)(0)
 	  , redefine     = __webpack_require__(431)
 	  , meta         = __webpack_require__(435)
 	  , assign       = __webpack_require__(482)
 	  , weak         = __webpack_require__(629)
 	  , isObject     = __webpack_require__(426)
-	  , has          = __webpack_require__(418)
 	  , getWeak      = meta.getWeak
 	  , isExtensible = Object.isExtensible
 	  , uncaughtFrozenStore = weak.ufstore
@@ -5320,9 +5317,9 @@
 	  , getWeak           = __webpack_require__(435).getWeak
 	  , anObject          = __webpack_require__(425)
 	  , isObject          = __webpack_require__(426)
-	  , anInstance        = __webpack_require__(503)
+	  , anInstance        = __webpack_require__(618)
 	  , forOf             = __webpack_require__(619)
-	  , createArrayMethod = __webpack_require__(586)
+	  , createArrayMethod = __webpack_require__(585)
 	  , $has              = __webpack_require__(418)
 	  , arrayFind         = createArrayMethod(5)
 	  , arrayFindIndex    = createArrayMethod(6)
@@ -5428,7 +5425,6 @@
 	  , toIndex      = __webpack_require__(452)
 	  , toLength     = __webpack_require__(450)
 	  , isObject     = __webpack_require__(426)
-	  , TYPED_ARRAY  = __webpack_require__(438)('typed_array')
 	  , ArrayBuffer  = __webpack_require__(417).ArrayBuffer
 	  , speciesConstructor = __webpack_require__(620)
 	  , $ArrayBuffer = buffer.ArrayBuffer
@@ -5466,7 +5462,7 @@
 	  }
 	});
 
-	__webpack_require__(606)(ARRAY_BUFFER);
+	__webpack_require__(605)(ARRAY_BUFFER);
 
 /***/ },
 /* 632 */
@@ -5511,12 +5507,12 @@
 	  , hide           = __webpack_require__(423)
 	  , redefineAll    = __webpack_require__(623)
 	  , fails          = __webpack_require__(420)
-	  , anInstance     = __webpack_require__(503)
+	  , anInstance     = __webpack_require__(618)
 	  , toInteger      = __webpack_require__(451)
 	  , toLength       = __webpack_require__(450)
 	  , gOPN           = __webpack_require__(463).f
 	  , dP             = __webpack_require__(424).f
-	  , arrayFill      = __webpack_require__(602)
+	  , arrayFill      = __webpack_require__(601)
 	  , setToStringTag = __webpack_require__(437)
 	  , ARRAY_BUFFER   = 'ArrayBuffer'
 	  , DATA_VIEW      = 'DataView'
@@ -5526,13 +5522,11 @@
 	  , $ArrayBuffer   = global[ARRAY_BUFFER]
 	  , $DataView      = global[DATA_VIEW]
 	  , Math           = global.Math
-	  , parseInt       = global.parseInt
 	  , RangeError     = global.RangeError
 	  , Infinity       = global.Infinity
 	  , BaseBuffer     = $ArrayBuffer
 	  , abs            = Math.abs
 	  , pow            = Math.pow
-	  , min            = Math.min
 	  , floor          = Math.floor
 	  , log            = Math.log
 	  , LN2            = Math.LN2
@@ -5811,11 +5805,10 @@
 	    , $typed              = __webpack_require__(632)
 	    , $buffer             = __webpack_require__(633)
 	    , ctx                 = __webpack_require__(433)
-	    , anInstance          = __webpack_require__(503)
+	    , anInstance          = __webpack_require__(618)
 	    , propertyDesc        = __webpack_require__(430)
 	    , hide                = __webpack_require__(423)
 	    , redefineAll         = __webpack_require__(623)
-	    , isInteger           = __webpack_require__(510)
 	    , toInteger           = __webpack_require__(451)
 	    , toLength            = __webpack_require__(450)
 	    , toIndex             = __webpack_require__(452)
@@ -5825,23 +5818,22 @@
 	    , classof             = __webpack_require__(488)
 	    , isObject            = __webpack_require__(426)
 	    , toObject            = __webpack_require__(471)
-	    , isArrayIter         = __webpack_require__(576)
+	    , isArrayIter         = __webpack_require__(575)
 	    , create              = __webpack_require__(459)
 	    , getPrototypeOf      = __webpack_require__(472)
 	    , gOPN                = __webpack_require__(463).f
-	    , isIterable          = __webpack_require__(637)
-	    , getIterFn           = __webpack_require__(578)
+	    , getIterFn           = __webpack_require__(577)
 	    , uid                 = __webpack_require__(432)
 	    , wks                 = __webpack_require__(438)
-	    , createArrayMethod   = __webpack_require__(586)
+	    , createArrayMethod   = __webpack_require__(585)
 	    , createArrayIncludes = __webpack_require__(449)
 	    , speciesConstructor  = __webpack_require__(620)
-	    , ArrayIterators      = __webpack_require__(607)
-	    , Iterators           = __webpack_require__(543)
-	    , $iterDetect         = __webpack_require__(579)
-	    , setSpecies          = __webpack_require__(606)
-	    , arrayFill           = __webpack_require__(602)
-	    , arrayCopyWithin     = __webpack_require__(599)
+	    , ArrayIterators      = __webpack_require__(606)
+	    , Iterators           = __webpack_require__(542)
+	    , $iterDetect         = __webpack_require__(578)
+	    , setSpecies          = __webpack_require__(605)
+	    , arrayFill           = __webpack_require__(601)
+	    , arrayCopyWithin     = __webpack_require__(598)
 	    , $DP                 = __webpack_require__(424)
 	    , $GOPD               = __webpack_require__(464)
 	    , dP                  = $DP.f
@@ -6288,20 +6280,6 @@
 /* 637 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var classof   = __webpack_require__(488)
-	  , ITERATOR  = __webpack_require__(438)('iterator')
-	  , Iterators = __webpack_require__(543);
-	module.exports = __webpack_require__(422).isIterable = function(it){
-	  var O = Object(it);
-	  return O[ITERATOR] !== undefined
-	    || '@@iterator' in O
-	    || Iterators.hasOwnProperty(classof(O));
-	};
-
-/***/ },
-/* 638 */
-/***/ function(module, exports, __webpack_require__) {
-
 	__webpack_require__(636)('Uint8', 1, function(init){
 	  return function Uint8Array(data, byteOffset, length){
 	    return init(this, data, byteOffset, length);
@@ -6309,7 +6287,7 @@
 	});
 
 /***/ },
-/* 639 */
+/* 638 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Uint8', 1, function(init){
@@ -6319,7 +6297,7 @@
 	}, true);
 
 /***/ },
-/* 640 */
+/* 639 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Int16', 2, function(init){
@@ -6329,7 +6307,7 @@
 	});
 
 /***/ },
-/* 641 */
+/* 640 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Uint16', 2, function(init){
@@ -6339,7 +6317,7 @@
 	});
 
 /***/ },
-/* 642 */
+/* 641 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Int32', 4, function(init){
@@ -6349,7 +6327,7 @@
 	});
 
 /***/ },
-/* 643 */
+/* 642 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Uint32', 4, function(init){
@@ -6359,7 +6337,7 @@
 	});
 
 /***/ },
-/* 644 */
+/* 643 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Float32', 4, function(init){
@@ -6369,7 +6347,7 @@
 	});
 
 /***/ },
-/* 645 */
+/* 644 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(636)('Float64', 8, function(init){
@@ -6379,43 +6357,56 @@
 	});
 
 /***/ },
-/* 646 */
+/* 645 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 	var $export   = __webpack_require__(421)
 	  , aFunction = __webpack_require__(434)
 	  , anObject  = __webpack_require__(425)
-	  , _apply    = Function.apply;
-
-	$export($export.S, 'Reflect', {
+	  , rApply    = (__webpack_require__(417).Reflect || {}).apply
+	  , fApply    = Function.apply;
+	// MS Edge argumentsList argument is optional
+	$export($export.S + $export.F * !__webpack_require__(420)(function(){
+	  rApply(function(){});
+	}), 'Reflect', {
 	  apply: function apply(target, thisArgument, argumentsList){
-	    return _apply.call(aFunction(target), thisArgument, anObject(argumentsList));
+	    var T = aFunction(target)
+	      , L = anObject(argumentsList);
+	    return rApply ? rApply(T, thisArgument, L) : fApply.call(T, thisArgument, L);
 	  }
 	});
 
 /***/ },
-/* 647 */
+/* 646 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
-	var $export   = __webpack_require__(421)
-	  , create    = __webpack_require__(459)
-	  , aFunction = __webpack_require__(434)
-	  , anObject  = __webpack_require__(425)
-	  , isObject  = __webpack_require__(426)
-	  , bind      = __webpack_require__(490);
+	var $export    = __webpack_require__(421)
+	  , create     = __webpack_require__(459)
+	  , aFunction  = __webpack_require__(434)
+	  , anObject   = __webpack_require__(425)
+	  , isObject   = __webpack_require__(426)
+	  , fails      = __webpack_require__(420)
+	  , bind       = __webpack_require__(490)
+	  , rConstruct = (__webpack_require__(417).Reflect || {}).construct;
 
-	// MS Edge supports only 2 arguments
+	// MS Edge supports only 2 arguments and argumentsList argument is optional
 	// FF Nightly sets third argument as `new.target`, but does not create `this` from it
-	$export($export.S + $export.F * __webpack_require__(420)(function(){
+	var NEW_TARGET_BUG = fails(function(){
 	  function F(){}
-	  return !(Reflect.construct(function(){}, [], F) instanceof F);
-	}), 'Reflect', {
+	  return !(rConstruct(function(){}, [], F) instanceof F);
+	});
+	var ARGS_BUG = !fails(function(){
+	  rConstruct(function(){});
+	});
+
+	$export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 	  construct: function construct(Target, args /*, newTarget*/){
 	    aFunction(Target);
 	    anObject(args);
 	    var newTarget = arguments.length < 3 ? Target : aFunction(arguments[2]);
+	    if(ARGS_BUG && !NEW_TARGET_BUG)return rConstruct(Target, args, newTarget);
 	    if(Target == newTarget){
 	      // w/o altered newTarget, optimization for 0-4 arguments
 	      switch(args.length){
@@ -6439,7 +6430,7 @@
 	});
 
 /***/ },
-/* 648 */
+/* 647 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -6466,7 +6457,7 @@
 	});
 
 /***/ },
-/* 649 */
+/* 648 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -6482,7 +6473,7 @@
 	});
 
 /***/ },
-/* 650 */
+/* 649 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -6496,7 +6487,7 @@
 	    , key;
 	  for(key in iterated)keys.push(key);
 	};
-	__webpack_require__(544)(Enumerate, 'Object', function(){
+	__webpack_require__(543)(Enumerate, 'Object', function(){
 	  var that = this
 	    , keys = that._k
 	    , key;
@@ -6513,7 +6504,7 @@
 	});
 
 /***/ },
-/* 651 */
+/* 650 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -6539,7 +6530,7 @@
 	$export($export.S, 'Reflect', {get: get});
 
 /***/ },
-/* 652 */
+/* 651 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -6554,7 +6545,7 @@
 	});
 
 /***/ },
-/* 653 */
+/* 652 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.8 Reflect.getPrototypeOf(target)
@@ -6569,7 +6560,7 @@
 	});
 
 /***/ },
-/* 654 */
+/* 653 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.9 Reflect.has(target, propertyKey)
@@ -6582,7 +6573,7 @@
 	});
 
 /***/ },
-/* 655 */
+/* 654 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.10 Reflect.isExtensible(target)
@@ -6598,16 +6589,16 @@
 	});
 
 /***/ },
-/* 656 */
+/* 655 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.11 Reflect.ownKeys(target)
 	var $export = __webpack_require__(421);
 
-	$export($export.S, 'Reflect', {ownKeys: __webpack_require__(657)});
+	$export($export.S, 'Reflect', {ownKeys: __webpack_require__(656)});
 
 /***/ },
-/* 657 */
+/* 656 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all object keys, includes non-enumerable and symbols
@@ -6622,7 +6613,7 @@
 	};
 
 /***/ },
-/* 658 */
+/* 657 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.12 Reflect.preventExtensions(target)
@@ -6643,7 +6634,7 @@
 	});
 
 /***/ },
-/* 659 */
+/* 658 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -6679,7 +6670,7 @@
 	$export($export.S, 'Reflect', {set: set});
 
 /***/ },
-/* 660 */
+/* 659 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 26.1.14 Reflect.setPrototypeOf(target, proto)
@@ -6699,7 +6690,7 @@
 	});
 
 /***/ },
-/* 661 */
+/* 660 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*! *****************************************************************************
@@ -7347,16 +7338,16 @@
 	        }
 	        var set = new _Set();
 	        var keys = [];
-	        for (var _i = 0; _i < ownKeys.length; _i++) {
-	            var key = ownKeys[_i];
+	        for (var _i = 0, ownKeys_1 = ownKeys; _i < ownKeys_1.length; _i++) {
+	            var key = ownKeys_1[_i];
 	            var hasKey = set.has(key);
 	            if (!hasKey) {
 	                set.add(key);
 	                keys.push(key);
 	            }
 	        }
-	        for (var _a = 0; _a < parentKeys.length; _a++) {
-	            var key = parentKeys[_a];
+	        for (var _a = 0, parentKeys_1 = parentKeys; _a < parentKeys_1.length; _a++) {
+	            var key = parentKeys_1[_a];
 	            var hasKey = set.has(key);
 	            if (!hasKey) {
 	                set.add(key);
@@ -7406,7 +7397,7 @@
 	        if (typeof O !== "function" || O === functionPrototype) {
 	            return proto;
 	        }
-	        // TypeScript doesn't set __proto__ in ES5, as it's non-standard. 
+	        // TypeScript doesn't set __proto__ in ES5, as it's non-standard.
 	        // Try to determine the superclass constructor. Compatible implementations
 	        // must either set __proto__ on a subclass constructor to the superclass constructor,
 	        // or ensure each class has a valid `constructor` property on its prototype that
@@ -7418,7 +7409,7 @@
 	        }
 	        // If the super prototype is Object.prototype, null, or undefined, then we cannot determine the heritage.
 	        var prototype = O.prototype;
-	        var prototypeProto = Object.getPrototypeOf(prototype);
+	        var prototypeProto = prototype && Object.getPrototypeOf(prototype);
 	        if (prototypeProto == null || prototypeProto === Object.prototype) {
 	            return proto;
 	        }
@@ -7541,7 +7532,10 @@
 	    function CreateWeakMapPolyfill() {
 	        var UUID_SIZE = 16;
 	        var isNode = typeof global !== "undefined" && Object.prototype.toString.call(global.process) === '[object process]';
-	        var nodeCrypto = isNode && __webpack_require__(662);
+	        var nodeCrypto = isNode && function () { try {
+	            return (void 0, __webpack_require__(661))("crypto");
+	        }
+	        catch (e) { } }();
 	        var hasOwn = Object.prototype.hasOwnProperty;
 	        var keys = {};
 	        var rootKey = CreateUniqueKey();
@@ -7667,2174 +7661,2153 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 662 */
+/* 661 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Buffer) {var rng = __webpack_require__(667)
+	var map = {
+		"./CopyrightNotice.txt": 662,
+		"./Reflect": 660,
+		"./Reflect.js": 660,
+		"./Reflect.ts": 666,
+		"./spec/css/elements.css": 671,
+		"./spec/index-out.html": 675,
+		"./spec/index.html": 676,
+		"./spec/typescript-out.html": 677,
+		"./spec/typescript.html": 678,
+		"./test/harness": 679,
+		"./test/harness.ts": 679,
+		"./test/reflect/reflect-decorate": 680,
+		"./test/reflect/reflect-decorate.ts": 680,
+		"./test/reflect/reflect-definemetadata": 686,
+		"./test/reflect/reflect-definemetadata.ts": 686,
+		"./test/reflect/reflect-deletemetadata": 687,
+		"./test/reflect/reflect-deletemetadata.ts": 687,
+		"./test/reflect/reflect-getmetadata": 688,
+		"./test/reflect/reflect-getmetadata.ts": 688,
+		"./test/reflect/reflect-getmetadatakeys": 689,
+		"./test/reflect/reflect-getmetadatakeys.ts": 689,
+		"./test/reflect/reflect-getownmetadata": 690,
+		"./test/reflect/reflect-getownmetadata.ts": 690,
+		"./test/reflect/reflect-getownmetadatakeys": 691,
+		"./test/reflect/reflect-getownmetadatakeys.ts": 691,
+		"./test/reflect/reflect-hasmetadata": 692,
+		"./test/reflect/reflect-hasmetadata.ts": 692,
+		"./test/reflect/reflect-hasownmetadata": 693,
+		"./test/reflect/reflect-hasownmetadata.ts": 693,
+		"./test/reflect/reflect-metadata": 694,
+		"./test/reflect/reflect-metadata.ts": 694,
+		"./test/run": 695,
+		"./test/run.ts": 695,
+		"./test/spec": 696,
+		"./test/spec.ts": 696
+	};
+	function webpackContext(req) {
+		return __webpack_require__(webpackContextResolve(req));
+	};
+	function webpackContextResolve(req) {
+		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
+	};
+	webpackContext.keys = function webpackContextKeys() {
+		return Object.keys(map);
+	};
+	webpackContext.resolve = webpackContextResolve;
+	module.exports = webpackContext;
+	webpackContext.id = 661;
 
-	function error () {
-	  var m = [].slice.call(arguments).join(' ')
-	  throw new Error([
-	    m,
-	    'we accept pull requests',
-	    'http://github.com/dominictarr/crypto-browserify'
-	    ].join('\n'))
-	}
-
-	exports.createHash = __webpack_require__(669)
-
-	exports.createHmac = __webpack_require__(682)
-
-	exports.randomBytes = function(size, callback) {
-	  if (callback && callback.call) {
-	    try {
-	      callback.call(this, undefined, new Buffer(rng(size)))
-	    } catch (err) { callback(err) }
-	  } else {
-	    return new Buffer(rng(size))
-	  }
-	}
-
-	function each(a, f) {
-	  for(var i in a)
-	    f(a[i], i)
-	}
-
-	exports.getHashes = function () {
-	  return ['sha1', 'sha256', 'sha512', 'md5', 'rmd160']
-	}
-
-	var p = __webpack_require__(683)(exports)
-	exports.pbkdf2 = p.pbkdf2
-	exports.pbkdf2Sync = p.pbkdf2Sync
-
-
-	// the least I can do is make error messages for the rest of the node.js/crypto api.
-	each(['createCredentials'
-	, 'createCipher'
-	, 'createCipheriv'
-	, 'createDecipher'
-	, 'createDecipheriv'
-	, 'createSign'
-	, 'createVerify'
-	, 'createDiffieHellman'
-	], function (name) {
-	  exports[name] = function () {
-	    error('sorry,', name, 'is not implemented yet')
-	  }
-	})
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer))
 
 /***/ },
-/* 663 */
+/* 662 */
+/***/ function(module, exports) {
+
+	/*! *****************************************************************************
+	Copyright (c) Microsoft Corporation. All rights reserved. 
+	Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+	this file except in compliance with the License. You may obtain a copy of the
+	License at http://www.apache.org/licenses/LICENSE-2.0  
+	 
+	THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+	WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE, 
+	MERCHANTABLITY OR NON-INFRINGEMENT. 
+	 
+	See the Apache Version 2.0 License for specific language governing permissions
+	and limitations under the License.
+	***************************************************************************** */
+
+
+
+/***/ },
+/* 663 */,
+/* 664 */,
+/* 665 */,
+/* 666 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Buffer, global) {/*!
+	/* WEBPACK VAR INJECTION */(function(global) {/*! *****************************************************************************
+	Copyright (C) Microsoft. All rights reserved.
+	Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+	this file except in compliance with the License. You may obtain a copy of the
+	License at http://www.apache.org/licenses/LICENSE-2.0
+
+	THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+	KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+	WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+	MERCHANTABLITY OR NON-INFRINGEMENT.
+
+	See the Apache Version 2.0 License for specific language governing permissions
+	and limitations under the License.
+	***************************************************************************** */
+	var Reflect;
+	(function (Reflect) {
+	    "use strict";
+	    // Load global or shim versions of Map, Set, and WeakMap
+	    var functionPrototype = Object.getPrototypeOf(Function);
+	    var _Map = typeof Map === "function" ? Map : CreateMapPolyfill();
+	    var _Set = typeof Set === "function" ? Set : CreateSetPolyfill();
+	    var _WeakMap = typeof WeakMap === "function" ? WeakMap : CreateWeakMapPolyfill();
+	    // [[Metadata]] internal slot
+	    var __Metadata__ = new _WeakMap();
+	    /**
+	      * Applies a set of decorators to a property of a target object.
+	      * @param decorators An array of decorators.
+	      * @param target The target object.
+	      * @param targetKey (Optional) The property key to decorate.
+	      * @param targetDescriptor (Optional) The property descriptor for the target key
+	      * @remarks Decorators are applied in reverse order.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     C = Reflect.decorate(decoratorsArray, C);
+	      *
+	      *     // property (on constructor)
+	      *     Reflect.decorate(decoratorsArray, C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     Reflect.decorate(decoratorsArray, C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     Object.defineProperty(C, "staticMethod",
+	      *         Reflect.decorate(decoratorsArray, C, "staticMethod",
+	      *             Object.getOwnPropertyDescriptor(C, "staticMethod")));
+	      *
+	      *     // method (on prototype)
+	      *     Object.defineProperty(C.prototype, "method",
+	      *         Reflect.decorate(decoratorsArray, C.prototype, "method",
+	      *             Object.getOwnPropertyDescriptor(C.prototype, "method")));
+	      *
+	      */
+	    function decorate(decorators, target, targetKey, targetDescriptor) {
+	        if (!IsUndefined(targetDescriptor)) {
+	            if (!IsArray(decorators)) {
+	                throw new TypeError();
+	            }
+	            else if (!IsObject(target)) {
+	                throw new TypeError();
+	            }
+	            else if (IsUndefined(targetKey)) {
+	                throw new TypeError();
+	            }
+	            else if (!IsObject(targetDescriptor)) {
+	                throw new TypeError();
+	            }
+	            targetKey = ToPropertyKey(targetKey);
+	            return DecoratePropertyWithDescriptor(decorators, target, targetKey, targetDescriptor);
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            if (!IsArray(decorators)) {
+	                throw new TypeError();
+	            }
+	            else if (!IsObject(target)) {
+	                throw new TypeError();
+	            }
+	            targetKey = ToPropertyKey(targetKey);
+	            return DecoratePropertyWithoutDescriptor(decorators, target, targetKey);
+	        }
+	        else {
+	            if (!IsArray(decorators)) {
+	                throw new TypeError();
+	            }
+	            else if (!IsConstructor(target)) {
+	                throw new TypeError();
+	            }
+	            return DecorateConstructor(decorators, target);
+	        }
+	    }
+	    Reflect.decorate = decorate;
+	    /**
+	      * A default metadata decorator factory that can be used on a class, class member, or parameter.
+	      * @param metadataKey The key for the metadata entry.
+	      * @param metadataValue The value for the metadata entry.
+	      * @returns A decorator function.
+	      * @remarks
+	      * If `metadataKey` is already defined for the target and target key, the
+	      * metadataValue for that key will be overwritten.
+	      * @example
+	      *
+	      *     // constructor
+	      *     @Reflect.metadata(key, value)
+	      *     class C {
+	      *     }
+	      *
+	      *     // property (on constructor, TypeScript only)
+	      *     class C {
+	      *         @Reflect.metadata(key, value)
+	      *         static staticProperty;
+	      *     }
+	      *
+	      *     // property (on prototype, TypeScript only)
+	      *     class C {
+	      *         @Reflect.metadata(key, value)
+	      *         property;
+	      *     }
+	      *
+	      *     // method (on constructor)
+	      *     class C {
+	      *         @Reflect.metadata(key, value)
+	      *         static staticMethod() { }
+	      *     }
+	      *
+	      *     // method (on prototype)
+	      *     class C {
+	      *         @Reflect.metadata(key, value)
+	      *         method() { }
+	      *     }
+	      *
+	      */
+	    function metadata(metadataKey, metadataValue) {
+	        function decorator(target, targetKey) {
+	            if (!IsUndefined(targetKey)) {
+	                if (!IsObject(target)) {
+	                    throw new TypeError();
+	                }
+	                targetKey = ToPropertyKey(targetKey);
+	                OrdinaryDefineOwnMetadata(metadataKey, metadataValue, target, targetKey);
+	            }
+	            else {
+	                if (!IsConstructor(target)) {
+	                    throw new TypeError();
+	                }
+	                OrdinaryDefineOwnMetadata(metadataKey, metadataValue, target, /*targetKey*/ undefined);
+	            }
+	        }
+	        return decorator;
+	    }
+	    Reflect.metadata = metadata;
+	    /**
+	      * Define a unique metadata entry on the target.
+	      * @param metadataKey A key used to store and retrieve metadata.
+	      * @param metadataValue A value that contains attached metadata.
+	      * @param target The target object on which to define metadata.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     Reflect.defineMetadata("custom:annotation", options, C);
+	      *
+	      *     // property (on constructor)
+	      *     Reflect.defineMetadata("custom:annotation", options, C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     Reflect.defineMetadata("custom:annotation", options, C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     Reflect.defineMetadata("custom:annotation", options, C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     Reflect.defineMetadata("custom:annotation", options, C.prototype, "method");
+	      *
+	      *     // decorator factory as metadata-producing annotation.
+	      *     function MyAnnotation(options): Decorator {
+	      *         return (target, key?) => Reflect.defineMetadata("custom:annotation", options, target, key);
+	      *     }
+	      *
+	      */
+	    function defineMetadata(metadataKey, metadataValue, target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryDefineOwnMetadata(metadataKey, metadataValue, target, targetKey);
+	    }
+	    Reflect.defineMetadata = defineMetadata;
+	    /**
+	      * Gets a value indicating whether the target object or its prototype chain has the provided metadata key defined.
+	      * @param metadataKey A key used to store and retrieve metadata.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns `true` if the metadata key was defined on the target object or its prototype chain; otherwise, `false`.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.hasMetadata("custom:annotation", C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.hasMetadata("custom:annotation", C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.hasMetadata("custom:annotation", C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.hasMetadata("custom:annotation", C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.hasMetadata("custom:annotation", C.prototype, "method");
+	      *
+	      */
+	    function hasMetadata(metadataKey, target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryHasMetadata(metadataKey, target, targetKey);
+	    }
+	    Reflect.hasMetadata = hasMetadata;
+	    /**
+	      * Gets a value indicating whether the target object has the provided metadata key defined.
+	      * @param metadataKey A key used to store and retrieve metadata.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns `true` if the metadata key was defined on the target object; otherwise, `false`.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.hasOwnMetadata("custom:annotation", C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.hasOwnMetadata("custom:annotation", C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.hasOwnMetadata("custom:annotation", C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.hasOwnMetadata("custom:annotation", C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.hasOwnMetadata("custom:annotation", C.prototype, "method");
+	      *
+	      */
+	    function hasOwnMetadata(metadataKey, target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryHasOwnMetadata(metadataKey, target, targetKey);
+	    }
+	    Reflect.hasOwnMetadata = hasOwnMetadata;
+	    /**
+	      * Gets the metadata value for the provided metadata key on the target object or its prototype chain.
+	      * @param metadataKey A key used to store and retrieve metadata.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns The metadata value for the metadata key if found; otherwise, `undefined`.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.getMetadata("custom:annotation", C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.getMetadata("custom:annotation", C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.getMetadata("custom:annotation", C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.getMetadata("custom:annotation", C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.getMetadata("custom:annotation", C.prototype, "method");
+	      *
+	      */
+	    function getMetadata(metadataKey, target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryGetMetadata(metadataKey, target, targetKey);
+	    }
+	    Reflect.getMetadata = getMetadata;
+	    /**
+	      * Gets the metadata value for the provided metadata key on the target object.
+	      * @param metadataKey A key used to store and retrieve metadata.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns The metadata value for the metadata key if found; otherwise, `undefined`.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.getOwnMetadata("custom:annotation", C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.getOwnMetadata("custom:annotation", C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.getOwnMetadata("custom:annotation", C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.getOwnMetadata("custom:annotation", C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.getOwnMetadata("custom:annotation", C.prototype, "method");
+	      *
+	      */
+	    function getOwnMetadata(metadataKey, target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryGetOwnMetadata(metadataKey, target, targetKey);
+	    }
+	    Reflect.getOwnMetadata = getOwnMetadata;
+	    /**
+	      * Gets the metadata keys defined on the target object or its prototype chain.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns An array of unique metadata keys.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.getMetadataKeys(C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.getMetadataKeys(C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.getMetadataKeys(C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.getMetadataKeys(C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.getMetadataKeys(C.prototype, "method");
+	      *
+	      */
+	    function getMetadataKeys(target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryMetadataKeys(target, targetKey);
+	    }
+	    Reflect.getMetadataKeys = getMetadataKeys;
+	    /**
+	      * Gets the unique metadata keys defined on the target object.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns An array of unique metadata keys.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.getOwnMetadataKeys(C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.getOwnMetadataKeys(C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.getOwnMetadataKeys(C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.getOwnMetadataKeys(C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.getOwnMetadataKeys(C.prototype, "method");
+	      *
+	      */
+	    function getOwnMetadataKeys(target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        return OrdinaryOwnMetadataKeys(target, targetKey);
+	    }
+	    Reflect.getOwnMetadataKeys = getOwnMetadataKeys;
+	    /**
+	      * Deletes the metadata entry from the target object with the provided key.
+	      * @param metadataKey A key used to store and retrieve metadata.
+	      * @param target The target object on which the metadata is defined.
+	      * @param targetKey (Optional) The property key for the target.
+	      * @returns `true` if the metadata entry was found and deleted; otherwise, false.
+	      * @example
+	      *
+	      *     class C {
+	      *         // property declarations are not part of ES6, though they are valid in TypeScript:
+	      *         // static staticProperty;
+	      *         // property;
+	      *
+	      *         constructor(p) { }
+	      *         static staticMethod(p) { }
+	      *         method(p) { }
+	      *     }
+	      *
+	      *     // constructor
+	      *     result = Reflect.deleteMetadata("custom:annotation", C);
+	      *
+	      *     // property (on constructor)
+	      *     result = Reflect.deleteMetadata("custom:annotation", C, "staticProperty");
+	      *
+	      *     // property (on prototype)
+	      *     result = Reflect.deleteMetadata("custom:annotation", C.prototype, "property");
+	      *
+	      *     // method (on constructor)
+	      *     result = Reflect.deleteMetadata("custom:annotation", C, "staticMethod");
+	      *
+	      *     // method (on prototype)
+	      *     result = Reflect.deleteMetadata("custom:annotation", C.prototype, "method");
+	      *
+	      */
+	    function deleteMetadata(metadataKey, target, targetKey) {
+	        if (!IsObject(target)) {
+	            throw new TypeError();
+	        }
+	        else if (!IsUndefined(targetKey)) {
+	            targetKey = ToPropertyKey(targetKey);
+	        }
+	        // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#deletemetadata-metadatakey-p-
+	        var metadataMap = GetOrCreateMetadataMap(target, targetKey, /*create*/ false);
+	        if (IsUndefined(metadataMap)) {
+	            return false;
+	        }
+	        if (!metadataMap.delete(metadataKey)) {
+	            return false;
+	        }
+	        if (metadataMap.size > 0) {
+	            return true;
+	        }
+	        var targetMetadata = __Metadata__.get(target);
+	        targetMetadata.delete(targetKey);
+	        if (targetMetadata.size > 0) {
+	            return true;
+	        }
+	        __Metadata__.delete(target);
+	        return true;
+	    }
+	    Reflect.deleteMetadata = deleteMetadata;
+	    function DecorateConstructor(decorators, target) {
+	        for (var i = decorators.length - 1; i >= 0; --i) {
+	            var decorator = decorators[i];
+	            var decorated = decorator(target);
+	            if (!IsUndefined(decorated)) {
+	                if (!IsConstructor(decorated)) {
+	                    throw new TypeError();
+	                }
+	                target = decorated;
+	            }
+	        }
+	        return target;
+	    }
+	    function DecoratePropertyWithDescriptor(decorators, target, propertyKey, descriptor) {
+	        for (var i = decorators.length - 1; i >= 0; --i) {
+	            var decorator = decorators[i];
+	            var decorated = decorator(target, propertyKey, descriptor);
+	            if (!IsUndefined(decorated)) {
+	                if (!IsObject(decorated)) {
+	                    throw new TypeError();
+	                }
+	                descriptor = decorated;
+	            }
+	        }
+	        return descriptor;
+	    }
+	    function DecoratePropertyWithoutDescriptor(decorators, target, propertyKey) {
+	        for (var i = decorators.length - 1; i >= 0; --i) {
+	            var decorator = decorators[i];
+	            decorator(target, propertyKey);
+	        }
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#getorcreatemetadatamap--o-p-create-
+	    function GetOrCreateMetadataMap(target, targetKey, create) {
+	        var targetMetadata = __Metadata__.get(target);
+	        if (!targetMetadata) {
+	            if (!create) {
+	                return undefined;
+	            }
+	            targetMetadata = new _Map();
+	            __Metadata__.set(target, targetMetadata);
+	        }
+	        var keyMetadata = targetMetadata.get(targetKey);
+	        if (!keyMetadata) {
+	            if (!create) {
+	                return undefined;
+	            }
+	            keyMetadata = new _Map();
+	            targetMetadata.set(targetKey, keyMetadata);
+	        }
+	        return keyMetadata;
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinaryhasmetadata--metadatakey-o-p-
+	    function OrdinaryHasMetadata(MetadataKey, O, P) {
+	        var hasOwn = OrdinaryHasOwnMetadata(MetadataKey, O, P);
+	        if (hasOwn) {
+	            return true;
+	        }
+	        var parent = GetPrototypeOf(O);
+	        if (parent !== null) {
+	            return OrdinaryHasMetadata(MetadataKey, parent, P);
+	        }
+	        return false;
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinaryhasownmetadata--metadatakey-o-p-
+	    function OrdinaryHasOwnMetadata(MetadataKey, O, P) {
+	        var metadataMap = GetOrCreateMetadataMap(O, P, /*create*/ false);
+	        if (metadataMap === undefined) {
+	            return false;
+	        }
+	        return Boolean(metadataMap.has(MetadataKey));
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinarygetmetadata--metadatakey-o-p-
+	    function OrdinaryGetMetadata(MetadataKey, O, P) {
+	        var hasOwn = OrdinaryHasOwnMetadata(MetadataKey, O, P);
+	        if (hasOwn) {
+	            return OrdinaryGetOwnMetadata(MetadataKey, O, P);
+	        }
+	        var parent = GetPrototypeOf(O);
+	        if (parent !== null) {
+	            return OrdinaryGetMetadata(MetadataKey, parent, P);
+	        }
+	        return undefined;
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinarygetownmetadata--metadatakey-o-p-
+	    function OrdinaryGetOwnMetadata(MetadataKey, O, P) {
+	        var metadataMap = GetOrCreateMetadataMap(O, P, /*create*/ false);
+	        if (metadataMap === undefined) {
+	            return undefined;
+	        }
+	        return metadataMap.get(MetadataKey);
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinarydefineownmetadata--metadatakey-metadatavalue-o-p-
+	    function OrdinaryDefineOwnMetadata(MetadataKey, MetadataValue, O, P) {
+	        var metadataMap = GetOrCreateMetadataMap(O, P, /*create*/ true);
+	        metadataMap.set(MetadataKey, MetadataValue);
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinarymetadatakeys--o-p-
+	    function OrdinaryMetadataKeys(O, P) {
+	        var ownKeys = OrdinaryOwnMetadataKeys(O, P);
+	        var parent = GetPrototypeOf(O);
+	        if (parent === null) {
+	            return ownKeys;
+	        }
+	        var parentKeys = OrdinaryMetadataKeys(parent, P);
+	        if (parentKeys.length <= 0) {
+	            return ownKeys;
+	        }
+	        if (ownKeys.length <= 0) {
+	            return parentKeys;
+	        }
+	        var set = new _Set();
+	        var keys = [];
+	        for (var _i = 0, ownKeys_1 = ownKeys; _i < ownKeys_1.length; _i++) {
+	            var key = ownKeys_1[_i];
+	            var hasKey = set.has(key);
+	            if (!hasKey) {
+	                set.add(key);
+	                keys.push(key);
+	            }
+	        }
+	        for (var _a = 0, parentKeys_1 = parentKeys; _a < parentKeys_1.length; _a++) {
+	            var key = parentKeys_1[_a];
+	            var hasKey = set.has(key);
+	            if (!hasKey) {
+	                set.add(key);
+	                keys.push(key);
+	            }
+	        }
+	        return keys;
+	    }
+	    // https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#ordinaryownmetadatakeys--o-p-
+	    function OrdinaryOwnMetadataKeys(target, targetKey) {
+	        var metadataMap = GetOrCreateMetadataMap(target, targetKey, /*create*/ false);
+	        var keys = [];
+	        if (metadataMap) {
+	            metadataMap.forEach(function (_, key) { return keys.push(key); });
+	        }
+	        return keys;
+	    }
+	    // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-undefined-type
+	    function IsUndefined(x) {
+	        return x === undefined;
+	    }
+	    // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isarray
+	    function IsArray(x) {
+	        return Array.isArray(x);
+	    }
+	    // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object-type
+	    function IsObject(x) {
+	        return typeof x === "object" ? x !== null : typeof x === "function";
+	    }
+	    // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-isconstructor
+	    function IsConstructor(x) {
+	        return typeof x === "function";
+	    }
+	    // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-language-types-symbol-type
+	    function IsSymbol(x) {
+	        return typeof x === "symbol";
+	    }
+	    // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-topropertykey
+	    function ToPropertyKey(value) {
+	        if (IsSymbol(value)) {
+	            return value;
+	        }
+	        return String(value);
+	    }
+	    function GetPrototypeOf(O) {
+	        var proto = Object.getPrototypeOf(O);
+	        if (typeof O !== "function" || O === functionPrototype) {
+	            return proto;
+	        }
+	        // TypeScript doesn't set __proto__ in ES5, as it's non-standard.
+	        // Try to determine the superclass constructor. Compatible implementations
+	        // must either set __proto__ on a subclass constructor to the superclass constructor,
+	        // or ensure each class has a valid `constructor` property on its prototype that
+	        // points back to the constructor.
+	        // If this is not the same as Function.[[Prototype]], then this is definately inherited.
+	        // This is the case when in ES6 or when using __proto__ in a compatible browser.
+	        if (proto !== functionPrototype) {
+	            return proto;
+	        }
+	        // If the super prototype is Object.prototype, null, or undefined, then we cannot determine the heritage.
+	        var prototype = O.prototype;
+	        var prototypeProto = prototype && Object.getPrototypeOf(prototype);
+	        if (prototypeProto == null || prototypeProto === Object.prototype) {
+	            return proto;
+	        }
+	        // if the constructor was not a function, then we cannot determine the heritage.
+	        var constructor = prototypeProto.constructor;
+	        if (typeof constructor !== "function") {
+	            return proto;
+	        }
+	        // if we have some kind of self-reference, then we cannot determine the heritage.
+	        if (constructor === O) {
+	            return proto;
+	        }
+	        // we have a pretty good guess at the heritage.
+	        return constructor;
+	    }
+	    // naive Map shim
+	    function CreateMapPolyfill() {
+	        var cacheSentinel = {};
+	        function Map() {
+	            this._keys = [];
+	            this._values = [];
+	            this._cache = cacheSentinel;
+	        }
+	        Map.prototype = {
+	            get size() {
+	                return this._keys.length;
+	            },
+	            has: function (key) {
+	                if (key === this._cache) {
+	                    return true;
+	                }
+	                if (this._find(key) >= 0) {
+	                    this._cache = key;
+	                    return true;
+	                }
+	                return false;
+	            },
+	            get: function (key) {
+	                var index = this._find(key);
+	                if (index >= 0) {
+	                    this._cache = key;
+	                    return this._values[index];
+	                }
+	                return undefined;
+	            },
+	            set: function (key, value) {
+	                this.delete(key);
+	                this._keys.push(key);
+	                this._values.push(value);
+	                this._cache = key;
+	                return this;
+	            },
+	            delete: function (key) {
+	                var index = this._find(key);
+	                if (index >= 0) {
+	                    this._keys.splice(index, 1);
+	                    this._values.splice(index, 1);
+	                    this._cache = cacheSentinel;
+	                    return true;
+	                }
+	                return false;
+	            },
+	            clear: function () {
+	                this._keys.length = 0;
+	                this._values.length = 0;
+	                this._cache = cacheSentinel;
+	            },
+	            forEach: function (callback, thisArg) {
+	                var size = this.size;
+	                for (var i = 0; i < size; ++i) {
+	                    var key = this._keys[i];
+	                    var value = this._values[i];
+	                    this._cache = key;
+	                    callback.call(this, value, key, this);
+	                }
+	            },
+	            _find: function (key) {
+	                var keys = this._keys;
+	                var size = keys.length;
+	                for (var i = 0; i < size; ++i) {
+	                    if (keys[i] === key) {
+	                        return i;
+	                    }
+	                }
+	                return -1;
+	            }
+	        };
+	        return Map;
+	    }
+	    // naive Set shim
+	    function CreateSetPolyfill() {
+	        var cacheSentinel = {};
+	        function Set() {
+	            this._map = new _Map();
+	        }
+	        Set.prototype = {
+	            get size() {
+	                return this._map.length;
+	            },
+	            has: function (value) {
+	                return this._map.has(value);
+	            },
+	            add: function (value) {
+	                this._map.set(value, value);
+	                return this;
+	            },
+	            delete: function (value) {
+	                return this._map.delete(value);
+	            },
+	            clear: function () {
+	                this._map.clear();
+	            },
+	            forEach: function (callback, thisArg) {
+	                this._map.forEach(callback, thisArg);
+	            }
+	        };
+	        return Set;
+	    }
+	    // naive WeakMap shim
+	    function CreateWeakMapPolyfill() {
+	        var UUID_SIZE = 16;
+	        var isNode = typeof global !== "undefined" && Object.prototype.toString.call(global.process) === '[object process]';
+	        var nodeCrypto = isNode && function () { try {
+	            return (void 0, __webpack_require__(661))("crypto");
+	        }
+	        catch (e) { } }();
+	        var hasOwn = Object.prototype.hasOwnProperty;
+	        var keys = {};
+	        var rootKey = CreateUniqueKey();
+	        function WeakMap() {
+	            this._key = CreateUniqueKey();
+	        }
+	        WeakMap.prototype = {
+	            has: function (target) {
+	                var table = GetOrCreateWeakMapTable(target, /*create*/ false);
+	                if (table) {
+	                    return this._key in table;
+	                }
+	                return false;
+	            },
+	            get: function (target) {
+	                var table = GetOrCreateWeakMapTable(target, /*create*/ false);
+	                if (table) {
+	                    return table[this._key];
+	                }
+	                return undefined;
+	            },
+	            set: function (target, value) {
+	                var table = GetOrCreateWeakMapTable(target, /*create*/ true);
+	                table[this._key] = value;
+	                return this;
+	            },
+	            delete: function (target) {
+	                var table = GetOrCreateWeakMapTable(target, /*create*/ false);
+	                if (table && this._key in table) {
+	                    return delete table[this._key];
+	                }
+	                return false;
+	            },
+	            clear: function () {
+	                // NOTE: not a real clear, just makes the previous data unreachable
+	                this._key = CreateUniqueKey();
+	            }
+	        };
+	        function FillRandomBytes(buffer, size) {
+	            for (var i = 0; i < size; ++i) {
+	                buffer[i] = Math.random() * 255 | 0;
+	            }
+	        }
+	        function GenRandomBytes(size) {
+	            if (nodeCrypto) {
+	                var data = nodeCrypto.randomBytes(size);
+	                return data;
+	            }
+	            else if (typeof Uint8Array === "function") {
+	                var data = new Uint8Array(size);
+	                if (typeof crypto !== "undefined") {
+	                    crypto.getRandomValues(data);
+	                }
+	                else if (typeof msCrypto !== "undefined") {
+	                    msCrypto.getRandomValues(data);
+	                }
+	                else {
+	                    FillRandomBytes(data, size);
+	                }
+	                return data;
+	            }
+	            else {
+	                var data = new Array(size);
+	                FillRandomBytes(data, size);
+	                return data;
+	            }
+	        }
+	        function CreateUUID() {
+	            var data = GenRandomBytes(UUID_SIZE);
+	            // mark as random - RFC 4122 § 4.4
+	            data[6] = data[6] & 0x4f | 0x40;
+	            data[8] = data[8] & 0xbf | 0x80;
+	            var result = "";
+	            for (var offset = 0; offset < UUID_SIZE; ++offset) {
+	                var byte = data[offset];
+	                if (offset === 4 || offset === 6 || offset === 8) {
+	                    result += "-";
+	                }
+	                if (byte < 16) {
+	                    result += "0";
+	                }
+	                result += byte.toString(16).toLowerCase();
+	            }
+	            return result;
+	        }
+	        function CreateUniqueKey() {
+	            var key;
+	            do {
+	                key = "@@WeakMap@@" + CreateUUID();
+	            } while (hasOwn.call(keys, key));
+	            keys[key] = true;
+	            return key;
+	        }
+	        function GetOrCreateWeakMapTable(target, create) {
+	            if (!hasOwn.call(target, rootKey)) {
+	                if (!create) {
+	                    return undefined;
+	                }
+	                Object.defineProperty(target, rootKey, { value: Object.create(null) });
+	            }
+	            return target[rootKey];
+	        }
+	        return WeakMap;
+	    }
+	    // hook global Reflect
+	    (function (__global) {
+	        if (typeof __global.Reflect !== "undefined") {
+	            if (__global.Reflect !== Reflect) {
+	                for (var p in Reflect) {
+	                    __global.Reflect[p] = Reflect[p];
+	                }
+	            }
+	        }
+	        else {
+	            __global.Reflect = Reflect;
+	        }
+	    })(typeof window !== "undefined" ? window :
+	        typeof WorkerGlobalScope !== "undefined" ? self :
+	            typeof global !== "undefined" ? global :
+	                Function("return this;")());
+	})(Reflect || (Reflect = {}));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 667 */,
+/* 668 */,
+/* 669 */,
+/* 670 */,
+/* 671 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 672 */,
+/* 673 */
+/***/ function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ },
+/* 674 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function createLinkElement(options) {
+		var linkElement = document.createElement("link");
+		linkElement.rel = "stylesheet";
+		insertStyleElement(options, linkElement);
+		return linkElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else if(obj.sourceMap &&
+			typeof URL === "function" &&
+			typeof URL.createObjectURL === "function" &&
+			typeof URL.revokeObjectURL === "function" &&
+			typeof Blob === "function" &&
+			typeof btoa === "function") {
+			styleElement = createLinkElement(options);
+			update = updateLink.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+				if(styleElement.href)
+					URL.revokeObjectURL(styleElement.href);
+			};
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+
+		if(media) {
+			styleElement.setAttribute("media", media)
+		}
+
+		if(styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+	function updateLink(linkElement, obj) {
+		var css = obj.css;
+		var sourceMap = obj.sourceMap;
+
+		if(sourceMap) {
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		var blob = new Blob([css], { type: "text/css" });
+
+		var oldSrc = linkElement.href;
+
+		linkElement.href = URL.createObjectURL(blob);
+
+		if(oldSrc)
+			URL.revokeObjectURL(oldSrc);
+	}
+
+
+/***/ },
+/* 675 */
+/***/ function(module, exports) {
+
+	module.exports = "<!doctype html>\n<head><meta charset=\"utf8\">\n<title>Decorators</title>\n<link rel=\"stylesheet\" href=\"./css/elements.css\"> \n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css\"> \n</head><body><emu-biblio href=\"./biblio.json\"></emu-biblio> \n\n<h1>Decorators Proposal - ECMAScript</h1>\n<div><h2>Table of Contents</h2><ol class=\"toc\"><li><a href=\"#introduction\"><span class=\"secnum\"></span> Introduction</a></li><li><a href=\"#proposal-terms\"><span class=\"secnum\">1</span> Terms</a><ol class=\"toc\"><li><a href=\"#proposal-terms-decorator\"><span class=\"secnum\">1.1</span> Decorator</a></li><li><a href=\"#proposal-terms-classdecoratorfunction\"><span class=\"secnum\">1.2</span> Class Decorator Function</a></li><li><a href=\"#proposal-terms-propertydecoratorfunction\"><span class=\"secnum\">1.3</span> Property/Method Decorator Function</a></li><li><a href=\"#proposal-terms-decoratorfactory\"><span class=\"secnum\">1.4</span> Decorator Factory</a></li></ol></li><li><a href=\"#proposal-decoratortargets\"><span class=\"secnum\">2</span> Decorator Targets</a></li><li><a href=\"#proposal-decoratoreval\"><span class=\"secnum\">3</span> Decorator Evaluation and Application Order</a></li><li><a href=\"#operations\"><span class=\"secnum\">4</span> Abstract Operations</a><ol class=\"toc\"><li><a href=\"#operations-decoration\"><span class=\"secnum\">4.1</span> Decorator Operations</a><ol class=\"toc\"><li><a href=\"#operations-decoration-decorate\"><span class=\"secnum\">4.1.1</span> Decorate ( Decorators, O, P, desc )</a></li><li><a href=\"#operations-decoration-decorateconstructor\"><span class=\"secnum\">4.1.2</span> DecorateConstructor ( Decorators, F )</a></li><li><a href=\"#operations-decoration-decorateproperty\"><span class=\"secnum\">4.1.3</span> DecorateProperty ( Decorators, O, P, desc )</a></li></ol></li><li><a href=\"#operations-object\"><span class=\"secnum\">4.2</span> Operations on Objects</a><ol class=\"toc\"><li><a href=\"#createlistfromiterator\"><span class=\"secnum\">4.2.1</span> CreateListFromIterator ( iterator [, elementTypes] )</a></li><li><a href=\"#getorcreatemetadatamap\"><span class=\"secnum\">4.2.2</span> GetOrCreateMetadataMap ( O, P, Create )</a></li><li><a href=\"#hasmetadata\"><span class=\"secnum\">4.2.3</span> [[HasMetadata]] ( MetadataKey, P )</a></li><li><a href=\"#ordinaryhasmetadata\"><span class=\"secnum\">4.2.4</span> OrdinaryHasMetadata ( MetadataKey, O, P )</a></li><li><a href=\"#hasownmetadata\"><span class=\"secnum\">4.2.5</span> [[HasOwnMetadata]] ( MetadataKey, P )</a></li><li><a href=\"#ordinaryhasownmetadata\"><span class=\"secnum\">4.2.6</span> OrdinaryHasOwnMetadata ( MetadataKey, O, P )</a></li><li><a href=\"#getmetadata\"><span class=\"secnum\">4.2.7</span> [[GetMetadata]] ( MetadataKey, P )</a></li><li><a href=\"#ordinarygetmetadata\"><span class=\"secnum\">4.2.8</span> OrdinaryGetMetadata ( MetadataKey, O, P )</a></li><li><a href=\"#getownmetadata\"><span class=\"secnum\">4.2.9</span> [[GetOwnMetadata]] ( MetadataKey, P, ParamIndex )</a></li><li><a href=\"#ordinarygetownmetadata\"><span class=\"secnum\">4.2.10</span> OrdinaryGetOwnMetadata ( MetadataKey, O, P )</a></li><li><a href=\"#defineownmetadata\"><span class=\"secnum\">4.2.11</span> [[DefineOwnMetadata]] ( MetadataKey, MetadataValue, P )</a></li><li><a href=\"#ordinarydefineownmetadata\"><span class=\"secnum\">4.2.12</span> OrdinaryDefineOwnMetadata ( MetadataKey, MetadataValue, O, P )</a></li><li><a href=\"#metadatakeys\"><span class=\"secnum\">4.2.13</span> [[MetadataKeys]] ( P )</a></li><li><a href=\"#ordinarymetadatakeys\"><span class=\"secnum\">4.2.14</span> OrdinaryMetadataKeys ( O, P )</a></li><li><a href=\"#ownmetadatakeys\"><span class=\"secnum\">4.2.15</span> [[OwnMetadataKeys]] ( P )</a></li><li><a href=\"#ordinaryownmetadatakeys\"><span class=\"secnum\">4.2.16</span> OrdinaryOwnMetadataKeys ( O, P )</a></li><li><a href=\"#deletemetadata\"><span class=\"secnum\">4.2.17</span> [[DeleteMetadata]]( MetadataKey, P )</a></li></ol></li></ol></li><li><a href=\"#reflection\"><span class=\"secnum\">5</span> Reflection</a><ol class=\"toc\"><li><a href=\"#reflect\"><span class=\"secnum\">5.1</span> The Reflect Object</a><ol class=\"toc\"><li><a href=\"#reflect-metadatadecoratorfunctions\"><span class=\"secnum\">5.1.1</span> Metadata Decorator Functions</a></li><li><a href=\"#reflect-decorate\"><span class=\"secnum\">5.1.2</span> Reflect.decorate ( decorators, target, propertyKey, attributes )</a></li><li><a href=\"#reflect-metadata\"><span class=\"secnum\">5.1.3</span> Reflect.metadata ( metadataKey, metadataValue )</a></li><li><a href=\"#reflect-definemetadata\"><span class=\"secnum\">5.1.4</span> Reflect.defineMetadata ( metadataKey, metadataValue, target, propertyKey )</a></li><li><a href=\"#reflect-hasmetadata\"><span class=\"secnum\">5.1.5</span> Reflect.hasMetadata ( metadataKey, target, propertyKey )</a></li><li><a href=\"#reflect-hasownmetadata\"><span class=\"secnum\">5.1.6</span> Reflect.hasOwnMetadata ( metadataKey, target, propertyKey )</a></li><li><a href=\"#reflect-getmetadata\"><span class=\"secnum\">5.1.7</span> Reflect.getMetadata ( metadataKey, target, propertyKey )</a></li><li><a href=\"#reflect-getownmetadata\"><span class=\"secnum\">5.1.8</span> Reflect.getOwnMetadata ( metadataKey, target, propertyKey )</a></li><li><a href=\"#reflect-getmetadatakeys\"><span class=\"secnum\">5.1.9</span> Reflect.getMetadataKeys ( target, propertyKey )</a></li><li><a href=\"#reflect-getownmetadata\"><span class=\"secnum\">5.1.10</span> Reflect.getOwnMetadataKeys ( target, propertyKey )</a></li><li><a href=\"#reflect-deletemetadata\"><span class=\"secnum\">5.1.11</span> Reflect.deleteMetadata ( metadataKey, target, propertyKey )</a></li></ol></li></ol></li><li><a href=\"#grammar\"><span class=\"secnum\">A</span> Grammar</a><ol class=\"toc\"><li><a href=\"#grammar-expressions\"><span class=\"secnum\">A.1</span> Expressions</a></li><li><a href=\"#functions-and-classes\"><span class=\"secnum\">A.2</span> Functions and Classes</a></li><li><a href=\"#scripts-and-modules\"><span class=\"secnum\">A.3</span> Scripts and Modules</a></li></ol></li></ol></div><emu-intro id=\"introduction\">\n  <h1><span class=\"secnum\"></span>Introduction</h1>\n  <p>Proposal to add Decorators to ECMAScript.</p>\n  <p>For the TypeScript specific proposal, see <a href=\"typescript.html\">http://rbuckton.github.io/reflectdecorators/typescript.html</a></p>\n</emu-intro>\n\n<emu-clause id=\"proposal-terms\">\n  <h1><span class=\"secnum\">1</span>Terms</h1>\n  <emu-clause id=\"proposal-terms-decorator\">\n    <h1><span class=\"secnum\">1.1</span>Decorator</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>decorator</em> is an expression that is evaluated after a class has been defined, that can be used to annotate or modify the class in some fashion. This expression must evaluate to a <code>function</code>, which is executed by the runtime to apply the decoration.</p>\n    <pre><code class=\"javascript hljs\">@decoratorExpression\n<span class=\"hljs-keyword\">class</span> C {\n}\n</code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-classdecoratorfunction\">\n    <h1><span class=\"secnum\">1.2</span>Class Decorator Function</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>class decorator function</em> is a function that accepts a constructor function as its argument, and returns either <code>undefined</code>, the provided constructor function, or a new constructor function. Returning <code>undefined</code> is equivalent to returning the provided constructor function.</p>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-comment\">// A class decorator function</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(target)</span> </span>{  \n <span class=\"hljs-comment\">// modify, annotate, or replace target...</span>\n}\n</code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-propertydecoratorfunction\">\n    <h1><span class=\"secnum\">1.3</span>Property/Method Decorator Function</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>property decorator function</em> is a function that accepts three arguments: The object that owns the property, the key for the property (a <code>string</code> or a <code>symbol</code>), and optionally the property descriptor of the property. The function must return either <code>undefined</code>, the provided property descriptor, or a new property descriptor. Returning <code>undefined</code> is equivalent to returning the provided property descriptor.</p>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-comment\">// A property (or method/accessor) decorator function</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(target, key, descriptor)</span> </span>{\n  <span class=\"hljs-comment\">// annotate the target and key; or modify or replace the descriptor...</span>\n}\n    </code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-decoratorfactory\">\n    <h1><span class=\"secnum\">1.4</span>Decorator Factory</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>decorator factory</em> is a function that can accept any number of arguments, and must return one of the above types of decorator function.</p>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-comment\">// a class decorator factory function</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(x, y)</span> </span>{\n  <span class=\"hljs-comment\">// the class decorator function</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-params\">(target)</span> </span>{\n      <span class=\"hljs-comment\">// modify, annotate, or replace target...</span>\n  }\n}\n</code></pre>\n  </emu-clause>\n</emu-clause>\n<emu-clause id=\"proposal-decoratortargets\">\n  <h1><span class=\"secnum\">2</span>Decorator Targets</h1>\n  <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n  <p>A <em>decorator</em> <strong>can</strong> be legally applied to any of the following:</p>\n  <ul>\n    <li>A class declaration</li>\n    <li>A class property initializer (static or prototype)</li>\n    <li>A class method declaration (static or prototype)</li>\n    <li>A class get or set accessor declaration (static or prototype)</li>\n  </ul>\n  <p>Please note that a <em>decorator</em> currently <strong>cannot</strong> be legally applied to any of the following:</p>\n  <ul>\n    <li>A class constructor - This is to reduce ambiguity between where you can apply a decorator (on the class or on its constructor) and which of the above decorator function forms is called.</li>\n    <li>A function declaration - Decorators on a function declaration would introduce a TDZ (Temporal Dead Zone), which would make the function unreachable until its declaration is executed. This could cause confusion as an undecorated function declaration is hoisted and can be used in a statement preceeding the declaration.</li>\n    <li>A function expression - This is to reduce confusion and maintain parity with disallowing decorators on a function declaration.</li>\n    <li>An arrow function - This is to reduce confusion and maintain parity with disallowing decorators on a function expression.</li>\n  </ul>\n  <p>This list may change in the future.</p>\n</emu-clause>\n<emu-clause id=\"proposal-decoratoreval\">\n  <h1><span class=\"secnum\">3</span>Decorator Evaluation and Application Order</h1>\n  <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n  <p>Decorators are <em>evaluated</em> in the order they appear preceeding their target declaration, to preserve side-effects due to evaluation order. Decorators are <em>applied</em> to their target declaration in reverse order, starting with the decorator closest to the declaration. This behavior is specified to preserve the expected behavior of decorators without a declarative syntax.</p>\n  <pre><code class=\"javascript hljs\">@F\n@G\n<span class=\"hljs-keyword\">class</span> C {   \n}\n</code></pre>\n  <p>For example, the above listing could be approximately written without decorators in the following fashion:</p>\n  <pre><code class=\"javascript hljs\">C = F(G(C))</code></pre>\n  <p>In the above example, the expression <code>F</code> is evaluated first, followed by the expression <code>G</code>. <code>G</code> is then called with the constructor function as its argument, followed by calling <code>F</code> with the result. The actual process of applying decorators is more complex than the above example however, though you may still imperatively apply decorators with a reflection API.</p>\n  <p>If a class declaration has decorators on both the class and any of its members or parameters, the decorators are applied using the following pseudocode:</p>\n  <pre>for each member M of class C\n  if M is an accessor then\n      let accessor = first accessor (get or set, in declaration order) of M\n      let memberDecorators = decorators of accessor\n      for each parameter of accessor\n          let paramDecorators = decorators of parameter           \n          let paramIndex = ordinal index of parameter\n          Reflect.decorate(paramDecorators, accessor, paramIndex)\n      next parameter\n\n      let accessor = second accessor (get or set, in declaration order) of M\n      if accessor then\n          let memberDecorators = memberDecorators + decorators of accessor\n          for each parameter of accessor\n              let paramDecorators = decorators of parameter           \n              let paramIndex = ordinal index of parameter\n              Reflect.decorate(paramDecorators, accessor, paramIndex)\n          next parameter\n      end if\n  else if M is a method\n      let memberDecorators = decorators of M\n      for each parameter of M\n          let paramDecorators = decorators of parameter           \n          let paramIndex = ordinal index of parameter\n          Reflect.decorate(paramDecorators, M, paramIndex)\n      next parameter\n  else\n      let memberDecorators = decorators of M\n  end if\n\n  let name = name of M\n  let target = C.prototype if M is on the prototype; otherwise, C if M is static  \n  Reflect.decorate(memberDecorators, C, name)\nnext member\n\nfor each parameter of C\n  let paramDecorators = decorators of parameter\n  let paramIndex = ordinal index of parameter\n  Reflect.decorate(paramDecorators, C, paramIndex)\nnext parameter\n\nlet classDecorators = decorators of C\nlet C = Reflect.decorate(classDecorators, C)\n  </pre>\n</emu-clause>\n\n<emu-clause id=\"operations\">\n  <h1><span class=\"secnum\">4</span>Abstract Operations</h1>\n  <emu-clause id=\"operations-decoration\">\n    <h1><span class=\"secnum\">4.1</span>Decorator Operations</h1>\n    <emu-clause id=\"operations-decoration-decorate\">\n      <h1><span class=\"secnum\">4.1.1</span>Decorate ( Decorators, O, P, desc )</h1>\n      <p>When the abstract operation Decorate is called with ECMAScript language value <var>Decorators</var>, Object <var>O</var>, property key <var>P</var>, and property descriptor <var>desc</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"Decorate\" id=\"ao-Decorate\"><ol>\n  <li>If <var>P</var> is <emu-val>undefined</emu-val> and <var>desc</var> is <emu-val>undefined</emu-val>, then\n    <ol>\n      <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable\">IsCallable</a>(<var>O</var>) is not <emu-val>true</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li>\n      <li>Return <a href=\"#ao-DecorateConstructor\">DecorateConstructor</a>(<var>Decorators</var>, <var>O</var>).</li>\n    </ol>\n  </li>\n  <li>Else\n    <ol>\n      <li>Return <a href=\"#ao-DecorateProperty\">DecorateProperty</a>(<var>Decorators</var>, <var>O</var>, <var>P</var>, <var>desc</var>).</li>\n    </ol>\n  </li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"operations-decoration-decorateconstructor\">\n      <h1><span class=\"secnum\">4.1.2</span>DecorateConstructor ( Decorators, F )</h1>\n      <p>When the abstract operation DecorateConstructor is called with ECMAScript language value <var>Decorators</var> and Object <var>F</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"DecorateConstructor\" id=\"ao-DecorateConstructor\"><ol>\n  <li>Let <var>result</var> be <var>F</var>.</li>\n  <li>Let <var>iterator</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-getiterator\">GetIterator</a>(<var>Decorators</var>). </li>\n  <li>Let <var>list</var> be <a href=\"#ao-CreateListFromIterator\">CreateListFromIterator</a>(<var>iterator</var>, «Object»).</li>\n  <li>For each <var>decorator</var> in <var>list</var> in reverse order\n    <ol>\n      <li>Let <var>decorated</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-call-f-v-args\">Call</a>(<var>decorator</var>, <emu-val>null</emu-val>, <var>result</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>decorated</var>).</li>\n      <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iscallable\">IsCallable</a>(<var>decorated</var>), then\n        <ol>\n          <li>Set <var>result</var> to be <var>decorated</var>.</li>\n        </ol>\n      </li>\n      <li>Else if <var>decorated</var> is not <emu-val>undefined</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li>\n    </ol>\n  </li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"operations-decoration-decorateproperty\">\n      <h1><span class=\"secnum\">4.1.3</span>DecorateProperty ( Decorators, O, P, desc )</h1>\n      <p>When the abstract operation DecorateProperty is called with ECMAScript language value <var>Decorators</var>, Object <var>O</var>, property key <var>P</var>, and property descriptor <var>desc</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"DecorateProperty\" id=\"ao-DecorateProperty\"><ol>\n  <li>Let <var>result</var> be <var>desc</var>.</li>\n  <li>Let <var>key</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-topropertykey\">ToPropertyKey</a>(<var>P</var>).</li>\n  <li>Let <var>iterator</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-getiterator\">GetIterator</a>(<var>Decorators</var>). </li>\n  <li>Let <var>list</var> be <a href=\"#ao-CreateListFromIterator\">CreateListFromIterator</a>(<var>iterator</var>, «Object»).</li>\n  <li>For each <var>decorator</var> in <var>list</var> in reverse order\n    <ol start=\"6\">\n      <li>Let <var>decorated</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-call-f-v-args\">Call</a>(<var>decorator</var>, <emu-val>null</emu-val>, <var>O</var>, <var>key</var>, <var>result</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>decorated</var>).</li>\n      <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>decorated</var>) is Object, then\n        <ol>\n          <li>Set <var>result</var> to be <var>decorated</var>.</li>\n        </ol>\n      </li>\n      <li>Else if <var>decorated</var> is not <emu-val>undefined</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li>\n    </ol>\n  </li>\n</ol></emu-alg>\n    </emu-clause>\n  </emu-clause>\n  <emu-clause id=\"operations-object\">\n    <h1><span class=\"secnum\">4.2</span>Operations on Objects</h1>  \n    <emu-clause id=\"createlistfromiterator\">\n      <h1><span class=\"secnum\">4.2.1</span>CreateListFromIterator ( iterator [, elementTypes] )</h1>\n      <p>When the abstract operation CreateListFromIterator is called with ECMAScript language value <var>iterator</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"CreateListFromIterator\" id=\"ao-CreateListFromIterator\"><ol>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>iterator</var>).</li>\n  <li>If <var>elementTypes</var> was not passed, let <var>elementTypes</var> be (Undefined, Null, Boolean, String, Symbol, Number, Object).</li>\n  <li>Let <var>list</var> be an empty List.</li>\n  <li>Repeat\n    <ol>\n      <li>Let <var>next</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorstep\">IteratorStep</a>(<var>iterator</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>next</var>).</li>\n      <li>If <var>next</var> is <emu-val>false</emu-val>, return <var>list</var>.</li>\n      <li>Let <var>nextValue</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorvalue\">IteratorValue</a>(<var>next</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>nextValue</var>).</li>\n      <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>nextValue</var>) is not an element of <var>elementTypes</var>, then\n        <ol>\n          <li>Return <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorclose\">IteratorClose</a>(<var>iterator</var>, Completion{[[type]]: throw, [[value]]: a newly created <emu-val>TypeError</emu-val> object, [[target]: empty}).</li>\n        </ol>\n      </li>\n      <li>Append <var>nextValue</var> as the last element of <var>list</var>.</li>\n    </ol>\n  </li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"getorcreatemetadatamap\">\n      <h1><span class=\"secnum\">4.2.2</span>GetOrCreateMetadataMap ( O, P, Create )</h1>\n      <p>When the abstract operation GetOrCreateMetadataMap is called with Object <var>O</var>, property key <var>P</var>, and Boolean <var>Create</var> the following steps are taken:</p>\n      <emu-alg aoid=\"GetOrCreateMetadataMap\" id=\"ao-GetOrCreateMetadataMap\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>metadataMap</var> be <emu-val>undefined</emu-val>.</li>\n  <li>Let <var>succeeded</var> be <emu-val>true</emu-val>.</li>\n  <li>Let <var>targetMetadata</var> be the value of <var>O</var>'s [[Metadata]] internal slot.</li>\n  <li>If <var>targetMetadata</var> is <emu-val>undefined</emu-val>, then\n    <ol>\n      <li>If <var>Create</var> is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li>\n      <li>Set <var>targetMetadata</var> to be a newly created <emu-val>Map</emu-val> object.</li>\n      <li>Set the [[Metadata]] internal slot of <var>O</var> to <var>targetMetadata</var>.</li>\n    </ol>\n  </li>\n  <li>Let <var>metadataMap</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>targetMetadata</var>, <code>\"get\"</code>, <var>P</var>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>metadataMap</var>).</li>\n  <li>If <var>metadataMap</var> is <emu-val>undefined</emu-val>, then\n    <ol>\n      <li>If <var>Create</var> is <emu-val>false</emu-val>, return <emu-val>undefined</emu-val>.</li>\n      <li>Set <var>metadataMap</var> to be a newly created <emu-val>Map</emu-val> object.</li>\n      <li>Let <var>setStatus</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>targetMetadata</var>, <code>\"set\"</code>, <var>P</var>, <var>metadataMap</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>setStatus</var>).</li>\n    </ol>\n  </li>\n  <li>Return <var>metadataMap</var>.</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"hasmetadata\">\n      <h1><span class=\"secnum\">4.2.3</span>[[HasMetadata]] ( MetadataKey, P )</h1>\n      <p>When the [[HasMetadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryHasMetadata\">OrdinaryHasMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinaryhasmetadata\">\n      <h1><span class=\"secnum\">4.2.4</span>OrdinaryHasMetadata ( MetadataKey, O, P )</h1>\n      <p>When the abstract operation OrdinaryHasMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryHasMetadata\" id=\"ao-OrdinaryHasMetadata\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>hasOwn</var> be <a href=\"#ao-OrdinaryHasOwnMetadata\">OrdinaryHasOwnMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n  <li>If <var>hasOwn</var> is <emu-val>true</emu-val>, return <emu-val>true</emu-val>.</li>\n  <li>Let <var>parent</var> be <var>O</var>.[[GetPrototypeOf]]().</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>parent</var>).</li>\n  <li>If <var>parent</var> is not <emu-val>null</emu-val>, then\n    <ol>\n      <li>return <var>parent</var>.[[HasMetadata]](<var>MetadataKey</var>, <var>P</var>).</li>\n    </ol>\n  </li>\n  <li>Return <emu-val>false</emu-val>.</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"hasownmetadata\">\n      <h1><span class=\"secnum\">4.2.5</span>[[HasOwnMetadata]] ( MetadataKey, P )</h1>\n      <p>When the [[HasOwnMetadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryHasOwnMetadata\">OrdinaryHasOwnMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinaryhasownmetadata\">\n      <h1><span class=\"secnum\">4.2.6</span>OrdinaryHasOwnMetadata ( MetadataKey, O, P )</h1>\n      <p>When the abstract operation OrdinaryHasOwnMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryHasOwnMetadata\" id=\"ao-OrdinaryHasOwnMetadata\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>metadataMap</var> be <a href=\"#ao-GetOrCreateMetadataMap\">GetOrCreateMetadataMap</a>(<var>O</var>, <var>P</var>, <emu-val>false</emu-val>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>metadataMap</var>).</li>\n  <li>If <var>metadataMap</var> is <emu-val>undefined</emu-val>, return <emu-val>false</emu-val>.</li>\n  <li>Return <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>metadataMap</var>, <code>\"has\"</code>, <var>MetadataKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"getmetadata\">\n      <h1><span class=\"secnum\">4.2.7</span>[[GetMetadata]] ( MetadataKey, P )</h1>\n      <p>When the [[GetMatadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryGetMetadata\">OrdinaryGetMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinarygetmetadata\">\n      <h1><span class=\"secnum\">4.2.8</span>OrdinaryGetMetadata ( MetadataKey, O, P )</h1>\n      <p>When the abstract operation OrdinaryGetMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryGetMetadata\" id=\"ao-OrdinaryGetMetadata\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>hasOwn</var> be <a href=\"#ao-OrdinaryHasOwnMetadata\">OrdinaryHasOwnMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n  <li>If <var>hasOwn</var> is <emu-val>true</emu-val>, then\n    <ol>\n      <li>return <a href=\"#ao-OrdinaryGetOwnMetadata\">OrdinaryGetOwnMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n    </ol>\n  </li>\n  <li>Let <var>parent</var> be <var>O</var>.[[GetPrototypeOf]]().</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>parent</var>).</li>\n  <li>If <var>parent</var> is not <emu-val>null</emu-val>, then\n    <ol>\n      <li>return <var>parent</var>.[[GetMetadata]](<var>MetadataKey</var>, <var>P</var>).</li>\n    </ol>\n  </li>\n  <li>Return <emu-val>undefined</emu-val>.</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"getownmetadata\">\n      <h1><span class=\"secnum\">4.2.9</span>[[GetOwnMetadata]] ( MetadataKey, P, ParamIndex )</h1>\n      <p>When the [[GetOwnMetadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryGetOwnMetadata\">OrdinaryGetOwnMetadata</a>(<var>MetadataKey</var>, <var>O</var>, <var>P</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinarygetownmetadata\">\n      <h1><span class=\"secnum\">4.2.10</span>OrdinaryGetOwnMetadata ( MetadataKey, O, P )</h1>\n      <p>When the abstract operation OrdinaryGetOwnMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryGetOwnMetadata\" id=\"ao-OrdinaryGetOwnMetadata\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>metadataMap</var> be <a href=\"#ao-GetOrCreateMetadataMap\">GetOrCreateMetadataMap</a>(<var>O</var>, <var>P</var>, <emu-val>false</emu-val>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>metadataMap</var>).</li>\n  <li>If <var>metadataMap</var> is <emu-val>undefined</emu-val>, return <emu-val>undefined</emu-val>.</li>\n  <li>Return <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>metadataMap</var>, <code>\"get\"</code>, <var>MetadataKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"defineownmetadata\">\n      <h1><span class=\"secnum\">4.2.11</span>[[DefineOwnMetadata]] ( MetadataKey, MetadataValue, P )</h1>\n      <p>When the [[DefineOwnMetadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var>, ECMAScript language value <var>MetadataValue</var>, and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryDefineOwnMetadata\">OrdinaryDefineOwnMetadata</a>(<var>MetadataKey</var>, <var>MetadataValue</var>, <var>O</var>, <var>P</var>)</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinarydefineownmetadata\">\n      <h1><span class=\"secnum\">4.2.12</span>OrdinaryDefineOwnMetadata ( MetadataKey, MetadataValue, O, P )</h1>\n      <p>When the abstract operation OrdinaryDefineOwnProperty is called with ECMAScript language value <var>MetadataKey</var>, ECMAScript language value <var>MetadataValue</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryDefineOwnMetadata\" id=\"ao-OrdinaryDefineOwnMetadata\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>metadataMap</var> be <a href=\"#ao-GetOrCreateMetadataMap\">GetOrCreateMetadataMap</a>(<var>O</var>, <var>P</var>, <emu-val>true</emu-val>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>metadataMap</var>).</li>\n  <li>Return <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>metadataMap</var>, <code>\"set\"</code>, <var>MetadataKey</var>, <var>MetadataValue</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"metadatakeys\">\n      <h1><span class=\"secnum\">4.2.13</span>[[MetadataKeys]] ( P )</h1>\n      <p>When the [[MetadataKeys]] internal method of <var>O</var> is called with property key <var>P</var> the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryMetadataKeys\">OrdinaryMetadataKeys</a>(<var>O</var>, <var>P</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinarymetadatakeys\">\n      <h1><span class=\"secnum\">4.2.14</span>OrdinaryMetadataKeys ( O, P )</h1>\n      <p>When the abstract operation OrdinaryMetadataKeys is called with Object <var>O</var> and property key <var>P</var> the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryMetadataKeys\" id=\"ao-OrdinaryMetadataKeys\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>ownKeys</var> be <a href=\"#ao-OrdinaryOwnMetadataKeys\">OrdinaryOwnMetadataKeys</a>(<var>O</var>, <var>P</var>).</li>\n  <li>Let <var>parent</var> = <var>O</var>.[[GetPrototypeOf]]().</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>parent</var>).</li>\n  <li>If <var>parent</var> is <emu-val>null</emu-val>, then return <var>ownKeys</var>.</li>\n  <li>Let <var>parentKeys</var> be <var>O</var>.[[OrdinaryMetadataKeys]](<var>P</var>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>parentKeys</var>).</li>\n  <li>Let <var>ownKeysLen</var> = <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p\">Get</a>(<var>ownKeys</var>, <code>\"length\"</code>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>ownKeysLen</var>).</li>\n  <li>If <var>ownKeysLen</var> is 0, return <var>parentKeys</var>.</li>\n  <li>Let <var>parentKeysLen</var> = <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-get-o-p\">Get</a>(<var>parentKeys</var>, <code>\"length\"</code>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>parentKeysLen</var>).</li>\n  <li>If <var>parentKeysLen</var> is 0, return <var>ownKeys</var>.</li>\n  <li>Let <var>set</var> be a newly created <emu-val>Set</emu-val> object.</li>\n  <li>Let <var>keys</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-arraycreate\">ArrayCreate</a>(0).</li>\n  <li>Let <var>k</var> be 0.</li>\n  <li>For each element <var>key</var> of <var>ownKeys</var>\n    <ol>\n      <li>Let <var>hasKey</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>set</var>, <code>\"has\"</code>, <var>key</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>hasKey</var>).</li>\n      <li>If <var>hasKey</var> is <emu-val>false</emu-val>, then\n        <ol>\n          <li>Let <var>Pk</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring\">ToString</a>(<var>k</var>).</li>\n          <li>Let <var>addStatus</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>set</var>, <code>\"add\"</code>, <var>key</var>).</li>\n          <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>addStatus</var>).</li>\n          <li>Let <var>defineStatus</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createdatapropertyorthrow\">CreateDataPropertyOrThrow</a>(<var>keys</var>, <var>Pk</var>, <var>key</var>).</li>\n          <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>defineStatus</var>).</li>\n          <li>Increase <var>k</var> by 1.</li>\n        </ol>\n      </li>\n    </ol>\n  </li>\n  <li>For each element <var>key</var> of <var>parentKeys</var>\n    <ol>\n      <li>Let <var>hasKey</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>set</var>, <code>\"has\"</code>, <var>key</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>hasKey</var>).</li>\n      <li>If <var>hasKey</var> is <emu-val>false</emu-val>, then\n        <ol>\n          <li>Let <var>Pk</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring\">ToString</a>(<var>k</var>).</li>\n          <li>Let <var>addStatus</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>set</var>, <code>\"add\"</code>, <var>key</var>).</li>\n          <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>addStatus</var>).</li>\n          <li>Let <var>defineStatus</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createdatapropertyorthrow\">CreateDataPropertyOrThrow</a>(<var>keys</var>, <var>Pk</var>, <var>key</var>).</li>\n          <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>defineStatus</var>).</li>\n          <li>Increase <var>k</var> by 1.</li>\n        </ol>\n      </li>\n    </ol>\n  </li>\n  <li>Let <var>setStatus</var> be Set(<var>keys</var>, <code>\"length\"</code>, <var>k</var>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>setStatus</var>).</li>\n  <li>return <var>keys</var>.</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ownmetadatakeys\">\n      <h1><span class=\"secnum\">4.2.15</span>[[OwnMetadataKeys]] ( P )</h1>\n      <p>When the [[OwnMetadataKeys]] internal method of <var>O</var> is called with property key <var>P</var> the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Return <a href=\"#ao-OrdinaryOwnMetadataKeys\">OrdinaryOwnMetadataKeys</a>(<var>O</var>, <var>P</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"ordinaryownmetadatakeys\">\n      <h1><span class=\"secnum\">4.2.16</span>OrdinaryOwnMetadataKeys ( O, P )</h1>\n      <p>When the abstract operation OrdinaryOwnMetadataKeys is called with Object <var>O</var> and property key <var>P</var> the following steps are taken:</p>\n      <emu-alg aoid=\"OrdinaryOwnMetadataKeys\" id=\"ao-OrdinaryOwnMetadataKeys\"><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>keys</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-arraycreate\">ArrayCreate</a>(0).</li>\n  <li>Let <var>metadataMap</var> be <a href=\"#ao-GetOrCreateMetadataMap\">GetOrCreateMetadataMap</a>(<var>O</var>, <var>P</var>, <emu-val>false</emu-val>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>metadataMap</var>).</li>\n  <li>If <var>metadataMap</var> is <emu-val>undefined</emu-val>, return <var>keys</var>.</li>\n  <li>Let <var>keysObj</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>metadataMap</var>, <code>\"keys\"</code>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>keysObj</var>).</li>\n  <li>Let <var>iterator</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-getiterator\">GetIterator</a>(<var>keysObj</var>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>iterator</var>).</li>\n  <li>Let <var>k</var> be 0.</li>\n  <li>Repeat\n    <ol>\n      <li>Let <var>Pk</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tostring\">ToString</a>(k).</li>\n      <li>Let <var>next</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorstep\">IteratorStep</a>(<var>iterator</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>next</var>).</li>\n      <li>If <var>next</var> is <emu-val>false</emu-val>, then\n        <ol>\n          <li>Let <var>setStatus</var> be Set(<var>keys</var>, <code>\"length\"</code>, <var>k</var>, <var>true</var>).</li>\n          <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>setStatus</var>).</li>\n          <li>Return <var>keys</var>.</li>\n        </ol>\n      </li>\n      <li>Let <var>nextValue</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorvalue\">IteratorValue</a>(<var>next</var>).</li>\n      <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>nextValue</var>).</li>\n      <li>Let <var>defineStatus</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-createdatapropertyorthrow\">CreateDataPropertyOrThrow</a>(<var>keys</var>, <var>Pk</var>, <var>nextValue</var>).</li>\n      <li>If <var>defineStatus</var> is an abrupt completion, return <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-iteratorclose\">IteratorClose</a>(<var>iterator</var>, <var>defineStatus</var>).</li>\n      <li>Increase <var>k</var> by 1.</li>\n    </ol>\n  </li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"deletemetadata\">\n      <h1><span class=\"secnum\">4.2.17</span>[[DeleteMetadata]]( MetadataKey, P )</h1>\n      <p>When the [[DeleteMetadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var> the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Assert: <var>P</var> is <emu-val>undefined</emu-val> or <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>P</var>) is <emu-val>true</emu-val>.</li>\n  <li>Let <var>metadataMap</var> be <a href=\"#ao-GetOrCreateMetadataMap\">GetOrCreateMetadataMap</a>(<var>O</var>, <var>P</var>, <emu-val>false</emu-val>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>metadataMap</var>).</li>\n  <li>If <var>metadataMap</var> is <emu-val>undefined</emu-val>, return <emu-val>false</emu-val>.</li>\n  <li>Return <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-invoke\">Invoke</a>(<var>metadataMap</var>, <code>\"delete\"</code>, <var>MetadataKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>  \n  </emu-clause>\n</emu-clause>\n\n<emu-clause id=\"reflection\">\n  <h1><span class=\"secnum\">5</span>Reflection</h1>\n  <emu-clause id=\"reflect\">\n    <h1><span class=\"secnum\">5.1</span>The Reflect Object</h1>\n    <p>This section contains amendments to the Reflect object.</p>\n    <emu-note><span class=\"note\">Note</span>A shim for this API can be found here: <a href=\"https://github.com/rbuckton/ReflectDecorators\">https://github.com/rbuckton/ReflectDecorators</a></emu-note>\n    <emu-clause id=\"reflect-metadatadecoratorfunctions\">\n      <h1><span class=\"secnum\">5.1.1</span>Metadata Decorator Functions</h1>\n      <p>A metadata decorator function is an anonymous built-in function that has [[MetadataKey]] and [[MetadataValue]] internal slots.</p>\n      <p>When a metadata decorator function <var>F</var> is called with arguments <var>target</var> and <var>key</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Assert: <var>F</var> has a [[MetadataKey]] internal slot whose value is an ECMAScript language value, or <emu-val>undefined</emu-val>.</li>\n  <li>Assert: <var>F</var> has a [[MetadataValue]] internal slot whose value is an ECMAScript language value, or <emu-val>undefined</emu-val>.</li>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>If <var>key</var> is not <emu-val>undefined</emu-val> and <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ispropertykey\">IsPropertyKey</a>(<var>key</var>) is <emu-val>false</emu-val>, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>Let <var>metadataKey</var> be the value of <var>F</var>'s [[MetadataKey]] internal slot.</li>\n  <li>Let <var>metadataValue</var> be the value of <var>F</var>'s [[MetadataValue]] internal slot.</li>\n  <li>Return <var>target</var>.[[DefineMetadata]](<var>metadataKey</var>, <var>metadataValue</var>, <var>target</var>, <var>key</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-decorate\">\n      <h1><span class=\"secnum\">5.1.2</span>Reflect.decorate ( decorators, target, propertyKey, attributes )</h1>\n      <p>When the <code>decorator</code> function is called with arguments <var>decorators</var>, <var>target</var>, <var>propertyKey</var>, and <var>attributes</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>decorators</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>Let <var>key</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-topropertykey\">ToPropertyKey</a>(<var>propertyKey</var>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>propertyKey</var>).</li>\n  <li>Let <var>desc</var> be <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-topropertydescriptor\">ToPropertyDescriptor</a>(<var>attributes</var>).</li>\n  <li><a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-returnifabrupt\">ReturnIfAbrupt</a>(<var>desc</var>).</li>\n  <li>Return <a href=\"#ao-Decorate\">Decorate</a>(<var>decorators</var>, <var>target</var>, <var>propertyKey</var>, <var>desc</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-metadata\">\n      <h1><span class=\"secnum\">5.1.3</span>Reflect.metadata ( metadataKey, metadataValue )</h1>\n      <p>When the <code>metadata</code> function is called with arguments <var>metadataKey</var> and <var>metadataValue</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>Let <var>decorator</var> be a new built-in function object as defined in Metadata Decorator Functions.</li>\n  <li>Set the [[MetadataKey]] internal slot of <var>decorator</var> to <var>metadataKey</var>.</li>\n  <li>Set the [[MetadataValue]] internal slot of <var>decorator</var> to <var>metadataValue</var>.</li>\n  <li>return <var>decorator</var>.</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-definemetadata\">\n      <h1><span class=\"secnum\">5.1.4</span>Reflect.defineMetadata ( metadataKey, metadataValue, target, propertyKey )</h1>\n      <p>When the <code>defineMetadata</code> function is called with arguments <var>metadataKey</var>, <var>metadataValue</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[DefineMetadata]](<var>metadataKey</var>, <var>metadataValue</var>, <var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-hasmetadata\">\n      <h1><span class=\"secnum\">5.1.5</span>Reflect.hasMetadata ( metadataKey, target, propertyKey )</h1>\n      <p>When the <code>hasMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[HasMetadata]](<var>metadataKey</var>, <var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-hasownmetadata\">\n      <h1><span class=\"secnum\">5.1.6</span>Reflect.hasOwnMetadata ( metadataKey, target, propertyKey )</h1>\n      <p>When the <code>hasOwnMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[HasOwn]](<var>metadataKey</var>, <var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-getmetadata\">\n      <h1><span class=\"secnum\">5.1.7</span>Reflect.getMetadata ( metadataKey, target, propertyKey )</h1>\n      <p>When the <code>getMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[GetMetadata]](<var>metadataKey</var>, <var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-getownmetadata\">\n      <h1><span class=\"secnum\">5.1.8</span>Reflect.getOwnMetadata ( metadataKey, target, propertyKey )</h1>\n      <p>When the <code>getOwnMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[GetOwnMetadata]](<var>metadataKey</var>, <var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-getmetadatakeys\">\n      <h1><span class=\"secnum\">5.1.9</span>Reflect.getMetadataKeys ( target, propertyKey )</h1>\n      <p>When the <code>getMetadataKeys</code> function is called with arguments <var>target</var> and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[GetMetadataKeys]](<var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-getownmetadata\">\n      <h1><span class=\"secnum\">5.1.10</span>Reflect.getOwnMetadataKeys ( target, propertyKey )</h1>\n      <p>When the <code>getOwnMetadataKeys</code> function is called with arguments <var>target</var> and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[GetOwnMetadataKeys]](<var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n    <emu-clause id=\"reflect-deletemetadata\">\n      <h1><span class=\"secnum\">5.1.11</span>Reflect.deleteMetadata ( metadataKey, target, propertyKey )</h1>\n      <p>When the <code>deleteMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\n      <emu-alg><ol>\n  <li>If <a href=\"https://people.mozilla.org/~jorendorff/es6-draft.html#sec-ecmascript-data-types-and-values\">Type</a>(<var>target</var>) is not Object, throw a <emu-val>TypeError</emu-val> exception.</li>\n  <li>return <var>target</var>.[[DeleteMetadata]](<var>metadataKey</var>, <var>propertyKey</var>).</li>\n</ol></emu-alg>\n    </emu-clause>\n  </emu-clause>\n</emu-clause>\n<emu-annex id=\"grammar\">\n  <h1><span class=\"secnum\">A</span>Grammar</h1>\n  <emu-annex id=\"grammar-expressions\">\n    <h1><span class=\"secnum\">A.1</span>Expressions</h1>\n    <emu-production id=\"grammar-memberexpression\" name=\"MemberExpression\" params=\"Yield, Decorator\">\n      <emu-nt>MemberExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\">PrimaryExpression<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"~Decorator\"><emu-constraints>[~Decorator]</emu-constraints><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression<emu-mods> [In, ?Yield]</emu-mods></emu-nt><emu-t>]</emu-t></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-t>.</emu-t><emu-nt>IdentifierName<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">TemplateLiteral<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">SuperProperty<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt>MetaProperty<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">Arguments<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-superproperty\" name=\"SuperProperty\" params=\"Yield, Decorator\">\n      <emu-nt>SuperProperty<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs constraints=\"~Decorator\"><emu-constraints>[~Decorator]</emu-constraints><emu-t>super</emu-t><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression<emu-mods> [In, ?Yield]</emu-mods></emu-nt><emu-t>]</emu-t></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-newexpression\" name=\"NewExpression\" params=\"Yield, Decorator\">\n      <emu-nt>NewExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">NewExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-callexpression\" name=\"CallExpression\" params=\"Yield, Decorator\">\n      <emu-nt>CallExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">Arguments<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield\">SuperCall<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">Arguments<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"~Decorator\"><emu-constraints>[~Decorator]</emu-constraints><emu-nt params=\"?Yield\">CallExpression<emu-mods> [?Yield]</emu-mods></emu-nt><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression<emu-mods> [In, ?Yield]</emu-mods></emu-nt><emu-t>]</emu-t></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-t>.</emu-t><emu-nt>IdentifierName<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">TemplateLiteral<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>      \n    </emu-production>\n    <emu-production id=\"grammar-lefthandsideexpression\" name=\"LeftHandSideExpression\" params=\"Yield, Decorator\">\n      <emu-nt>LeftHandSideExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?Decorator\">NewExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n  </emu-annex>\n\n  <emu-annex id=\"functions-and-classes\">\n    <h1><span class=\"secnum\">A.2</span>Functions and Classes</h1>\n    <emu-production id=\"grammar-classdeclaration\" name=\"ClassDeclaration\" params=\"Yield, Default\">\n      <emu-nt>ClassDeclaration<emu-mods> [Yield, Default]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>class</emu-t><emu-nt params=\"?Yield\">BindingIdentifier<emu-mods> [?Yield]</emu-mods></emu-nt><emu-nt params=\"?Yield\">ClassTail<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"+Default\"><emu-constraints>[+Default]</emu-constraints><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>class</emu-t><emu-nt params=\"?Yield\">ClassTail<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-classexpression\" name=\"ClassExpression\" params=\"Yield, GeneratorParameter\">\n      <emu-nt>ClassExpression<emu-mods> [Yield, GeneratorParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>class</emu-t><emu-nt params=\"?Yield\" optional=\"\">BindingIdentifier<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-nt params=\"?Yield, ?GeneratorParameter\">ClassTail<emu-mods> [?Yield, ?GeneratorParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-classelement\" name=\"ClassElement\" params=\"Yield\">\n      <emu-nt>ClassElement<emu-mods> [Yield]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-nt params=\"?Yield\">MethodDefinition<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>static</emu-t><emu-nt params=\"?Yield\">MethodDefinition<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>;</emu-t></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-decoratorlist\" name=\"DecoratorList\" params=\"Yield\">\n      <emu-nt>DecoratorList<emu-mods> [Yield]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-nt params=\"?Yield\">Decorator<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-decorator\" name=\"Decorator\" params=\"Yield\">\n      <emu-nt>Decorator<emu-mods> [Yield]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-t>@</emu-t><emu-nt params=\"Decorator, ?Yield\">LeftHandSideExpression<emu-mods> [Decorator, ?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n  </emu-annex>\n\n  <emu-annex id=\"scripts-and-modules\">\n    <h1><span class=\"secnum\">A.3</span>Scripts and Modules</h1>\n    <emu-production id=\"grammar-exportdeclaration\" name=\"ExportDeclaration\">\n      <emu-nt>ExportDeclaration<emu-mods></emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-t>export</emu-t><emu-t>*</emu-t><emu-nt>FromClause<emu-mods></emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-nt>ExportClause<emu-mods></emu-mods></emu-nt><emu-nt>FromClause<emu-mods></emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-nt>ExportClause<emu-mods></emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-nt>VariableStatement<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt>Declaration<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-t>default</emu-t><emu-nt params=\"Default\">HoistableDeclaration<emu-mods> [Default]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-t>default</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt params=\"Default\">ClassDeclaration<emu-mods> [Default]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-t>default</emu-t><emu-gann>[lookahead ∉ { <emu-t>function</emu-t>, <emu-t>class</emu-t>, <emu-t>@</emu-t> }]</emu-gann><emu-nt>AssignmentExpression<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt>DecoratorList<emu-mods></emu-mods></emu-nt><emu-t>export</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt>ClassDeclaration<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt>DecoratorList<emu-mods></emu-mods></emu-nt><emu-t>export</emu-t><emu-t>default</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt params=\"Default\">ClassDeclaration<emu-mods> [Default]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n  </emu-annex>\n</emu-annex></body>";
+
+/***/ },
+/* 676 */
+/***/ function(module, exports) {
+
+	module.exports = "<meta charset=\"utf8\">\r\n<title>Decorators</title>\r\n<link rel=\"stylesheet\" href=\"./css/elements.css\"> \r\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css\"> \r\n<emu-biblio href=\"./biblio.json\"></emu-biblio> \r\n\r\n<h1>Decorators Proposal - ECMAScript</h1>\r\n<emu-intro id=\"introduction\">\r\n  <h1>Introduction</h1>\r\n  <p>Proposal to add Decorators to ECMAScript.</p>\r\n  <p>For the TypeScript specific proposal, see <a href=\"typescript.html\">http://rbuckton.github.io/reflectdecorators/typescript.html</a></p>\r\n</emu-intro>\r\n\r\n<emu-clause id=\"proposal-terms\">\r\n  <h1>Terms</h1>\r\n  <emu-clause id=\"proposal-terms-decorator\">\r\n    <h1>Decorator</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>decorator</em> is an expression that is evaluated after a class has been defined, that can be used to annotate or modify the class in some fashion. This expression must evaluate to a <code>function</code>, which is executed by the runtime to apply the decoration.</p>\r\n    <pre><code class=\"javascript\">@decoratorExpression\r\nclass C {\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-classdecoratorfunction\">\r\n    <h1>Class Decorator Function</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>class decorator function</em> is a function that accepts a constructor function as its argument, and returns either <code>undefined</code>, the provided constructor function, or a new constructor function. Returning <code>undefined</code> is equivalent to returning the provided constructor function.</p>\r\n    <pre><code class=\"javascript\">// A class decorator function\r\nfunction dec(target) {  \r\n // modify, annotate, or replace target...\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-propertydecoratorfunction\">\r\n    <h1>Property/Method Decorator Function</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>property decorator function</em> is a function that accepts three arguments: The object that owns the property, the key for the property (a <code>string</code> or a <code>symbol</code>), and optionally the property descriptor of the property. The function must return either <code>undefined</code>, the provided property descriptor, or a new property descriptor. Returning <code>undefined</code> is equivalent to returning the provided property descriptor.</p>\r\n    <pre><code class=\"javascript\">// A property (or method/accessor) decorator function\r\nfunction dec(target, key, descriptor) {\r\n  // annotate the target and key; or modify or replace the descriptor...\r\n}\r\n    </code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-decoratorfactory\">\r\n    <h1>Decorator Factory</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>decorator factory</em> is a function that can accept any number of arguments, and must return one of the above types of decorator function.</p>\r\n    <pre><code class=\"javascript\">// a class decorator factory function\r\nfunction dec(x, y) {\r\n  // the class decorator function\r\n  return function (target) {\r\n      // modify, annotate, or replace target...\r\n  }\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n</emu-clause>\r\n<emu-clause id=\"proposal-decoratortargets\">\r\n  <h1>Decorator Targets</h1>\r\n  <emu-note>This section is non-normative.</emu-note>\r\n  <p>A <em>decorator</em> <strong>can</strong> be legally applied to any of the following:</p>\r\n  <ul>\r\n    <li>A class declaration</li>\r\n    <li>A class property initializer (static or prototype)</li>\r\n    <li>A class method declaration (static or prototype)</li>\r\n    <li>A class get or set accessor declaration (static or prototype)</li>\r\n  </ul>\r\n  <p>Please note that a <em>decorator</em> currently <strong>cannot</strong> be legally applied to any of the following:</p>\r\n  <ul>\r\n    <li>A class constructor - This is to reduce ambiguity between where you can apply a decorator (on the class or on its constructor) and which of the above decorator function forms is called.</li>\r\n    <li>A function declaration - Decorators on a function declaration would introduce a TDZ (Temporal Dead Zone), which would make the function unreachable until its declaration is executed. This could cause confusion as an undecorated function declaration is hoisted and can be used in a statement preceeding the declaration.</li>\r\n    <li>A function expression - This is to reduce confusion and maintain parity with disallowing decorators on a function declaration.</li>\r\n    <li>An arrow function - This is to reduce confusion and maintain parity with disallowing decorators on a function expression.</li>\r\n  </ul>\r\n  <p>This list may change in the future.</p>\r\n</emu-clause>\r\n<emu-clause id=\"proposal-decoratoreval\">\r\n  <h1>Decorator Evaluation and Application Order</h1>\r\n  <emu-note>This section is non-normative.</emu-note>\r\n  <p>Decorators are <em>evaluated</em> in the order they appear preceeding their target declaration, to preserve side-effects due to evaluation order. Decorators are <em>applied</em> to their target declaration in reverse order, starting with the decorator closest to the declaration. This behavior is specified to preserve the expected behavior of decorators without a declarative syntax.</p>\r\n  <pre><code class=\"javascript\">@F\r\n@G\r\nclass C {   \r\n}\r\n</code></pre>\r\n  <p>For example, the above listing could be approximately written without decorators in the following fashion:</p>\r\n  <pre><code class=\"javascript\">C = F(G(C))</code></pre>\r\n  <p>In the above example, the expression <code>F</code> is evaluated first, followed by the expression <code>G</code>. <code>G</code> is then called with the constructor function as its argument, followed by calling <code>F</code> with the result. The actual process of applying decorators is more complex than the above example however, though you may still imperatively apply decorators with a reflection API.</p>\r\n  <p>If a class declaration has decorators on both the class and any of its members or parameters, the decorators are applied using the following pseudocode:</p>\r\n  <pre>\r\nfor each member M of class C\r\n  if M is an accessor then\r\n      let accessor = first accessor (get or set, in declaration order) of M\r\n      let memberDecorators = decorators of accessor\r\n      for each parameter of accessor\r\n          let paramDecorators = decorators of parameter           \r\n          let paramIndex = ordinal index of parameter\r\n          Reflect.decorate(paramDecorators, accessor, paramIndex)\r\n      next parameter\r\n\r\n      let accessor = second accessor (get or set, in declaration order) of M\r\n      if accessor then\r\n          let memberDecorators = memberDecorators + decorators of accessor\r\n          for each parameter of accessor\r\n              let paramDecorators = decorators of parameter           \r\n              let paramIndex = ordinal index of parameter\r\n              Reflect.decorate(paramDecorators, accessor, paramIndex)\r\n          next parameter\r\n      end if\r\n  else if M is a method\r\n      let memberDecorators = decorators of M\r\n      for each parameter of M\r\n          let paramDecorators = decorators of parameter           \r\n          let paramIndex = ordinal index of parameter\r\n          Reflect.decorate(paramDecorators, M, paramIndex)\r\n      next parameter\r\n  else\r\n      let memberDecorators = decorators of M\r\n  end if\r\n\r\n  let name = name of M\r\n  let target = C.prototype if M is on the prototype; otherwise, C if M is static  \r\n  Reflect.decorate(memberDecorators, C, name)\r\nnext member\r\n\r\nfor each parameter of C\r\n  let paramDecorators = decorators of parameter\r\n  let paramIndex = ordinal index of parameter\r\n  Reflect.decorate(paramDecorators, C, paramIndex)\r\nnext parameter\r\n\r\nlet classDecorators = decorators of C\r\nlet C = Reflect.decorate(classDecorators, C)\r\n  </pre>\r\n</emu-clause>\r\n\r\n<emu-clause id=\"operations\">\r\n  <h1>Abstract Operations</h1>\r\n  <emu-clause id=\"operations-decoration\">\r\n    <h1>Decorator Operations</h1>\r\n    <emu-clause id=\"operations-decoration-decorate\">\r\n      <h1>Decorate ( Decorators, O, P, desc )</h1>\r\n      <p>When the abstract operation Decorate is called with ECMAScript language value <var>Decorators</var>, Object <var>O</var>, property key <var>P</var>, and property descriptor <var>desc</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"Decorate\">\r\n      1. If _P_ is *undefined* and _desc_ is *undefined*, then\r\n        1. If IsCallable(_O_) is not *true*, throw a *TypeError* exception.\r\n        2. Return DecorateConstructor(_Decorators_, _O_).\r\n      2. Else \r\n        1. Return DecorateProperty(_Decorators_, _O_, _P_, _desc_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"operations-decoration-decorateconstructor\">\r\n      <h1>DecorateConstructor ( Decorators, F )</h1>\r\n      <p>When the abstract operation DecorateConstructor is called with ECMAScript language value <var>Decorators</var> and Object <var>F</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"DecorateConstructor\">\r\n      1. Let _result_ be _F_.\r\n      2. Let _iterator_ be GetIterator(_Decorators_).      \r\n      3. Let _list_ be CreateListFromIterator(_iterator_, «Object»).\r\n      4. For each _decorator_ in _list_ in reverse order\r\n        1. Let _decorated_ be Call(_decorator_, *null*, _result_).\r\n        2. ReturnIfAbrupt(_decorated_).\r\n        3. If IsCallable(_decorated_), then\r\n          1. Set _result_ to be _decorated_.\r\n        4. Else if _decorated_ is not *undefined*, throw a *TypeError* exception.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"operations-decoration-decorateproperty\">\r\n      <h1>DecorateProperty ( Decorators, O, P, desc )</h1>\r\n      <p>When the abstract operation DecorateProperty is called with ECMAScript language value <var>Decorators</var>, Object <var>O</var>, property key <var>P</var>, and property descriptor <var>desc</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"DecorateProperty\">\r\n      1. Let _result_ be _desc_.\r\n      2. Let _key_ be ToPropertyKey(_P_).\r\n      3. Let _iterator_ be GetIterator(_Decorators_).      \r\n      4. Let _list_ be CreateListFromIterator(_iterator_, «Object»).\r\n      5. For each _decorator_ in _list_ in reverse order\r\n        6. Let _decorated_ be Call(_decorator_, *null*, _O_, _key_, _result_).\r\n        7. ReturnIfAbrupt(_decorated_).\r\n        8. If Type(_decorated_) is Object, then\r\n          1. Set _result_ to be _decorated_.\r\n        9. Else if _decorated_ is not *undefined*, throw a *TypeError* exception.\r\n      </emu-alg>\r\n    </emu-clause>\r\n  </emu-clause>\r\n  <emu-clause id=\"operations-object\">\r\n    <h1>Operations on Objects</h1>  \r\n    <emu-clause id=\"createlistfromiterator\">\r\n      <h1>CreateListFromIterator ( iterator [, elementTypes] )</h1>\r\n      <p>When the abstract operation CreateListFromIterator is called with ECMAScript language value <var>iterator</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"CreateListFromIterator\">\r\n      1. ReturnIfAbrupt(_iterator_).\r\n      2. If _elementTypes_ was not passed, let _elementTypes_ be (Undefined, Null, Boolean, String, Symbol, Number, Object).\r\n      3. Let _list_ be an empty List.\r\n      4. Repeat\r\n        1. Let _next_ be IteratorStep(_iterator_).\r\n        2. ReturnIfAbrupt(_next_).\r\n        3. If _next_ is *false*, return _list_.\r\n        4. Let _nextValue_ be IteratorValue(_next_).\r\n        5. ReturnIfAbrupt(_nextValue_).\r\n        6. If Type(_nextValue_) is not an element of _elementTypes_, then\r\n          1. Return IteratorClose(_iterator_, Completion{[[type]]: throw, [[value]]: a newly created *TypeError* object, [[target]: empty}).\r\n        7. Append _nextValue_ as the last element of _list_.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"getorcreatemetadatamap\">\r\n      <h1>GetOrCreateMetadataMap ( O, P, Create )</h1>\r\n      <p>When the abstract operation GetOrCreateMetadataMap is called with Object <var>O</var>, property key <var>P</var>, and Boolean <var>Create</var> the following steps are taken:</p>\r\n      <emu-alg aoid=\"GetOrCreateMetadataMap\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _metadataMap_ be *undefined*.\r\n      3. Let _succeeded_ be *true*.\r\n      4. Let _targetMetadata_ be the value of _O_'s [[Metadata]] internal slot.\r\n      5. If _targetMetadata_ is *undefined*, then\r\n        1. If _Create_ is *false*, return *undefined*.\r\n        2. Set _targetMetadata_ to be a newly created *Map* object.\r\n        3. Set the [[Metadata]] internal slot of _O_ to _targetMetadata_.\r\n      6. Let _metadataMap_ be Invoke(_targetMetadata_, \"get\", _P_).\r\n      7. ReturnIfAbrupt(_metadataMap_).\r\n      8. If _metadataMap_ is *undefined*, then\r\n        1. If _Create_ is *false*, return *undefined*.\r\n        2. Set _metadataMap_ to be a newly created *Map* object.\r\n        3. Let _setStatus_ be Invoke(_targetMetadata_, \"set\", _P_, _metadataMap_).\r\n        4. ReturnIfAbrupt(_setStatus_).\r\n      9. Return _metadataMap_.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"hasmetadata\">\r\n      <h1>[[HasMetadata]] ( MetadataKey, P )</h1>\r\n      <p>When the [[HasMetadata]] internal method of _O_ is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryHasMetadata(_MetadataKey_, _O_, _P_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinaryhasmetadata\">\r\n      <h1>OrdinaryHasMetadata ( MetadataKey, O, P )</h1>\r\n      <p>When the abstract operation OrdinaryHasMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryHasMetadata\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _hasOwn_ be OrdinaryHasOwnMetadata(_MetadataKey_, _O_, _P_).\r\n      3. If _hasOwn_ is *true*, return *true*.\r\n      4. Let _parent_ be _O_.[[GetPrototypeOf]]().\r\n      5. ReturnIfAbrupt(_parent_).\r\n      6. If _parent_ is not *null*, then\r\n        1. return <var>parent</var>.[[HasMetadata]](_MetadataKey_, _P_).\r\n      7. Return *false*.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"hasownmetadata\">\r\n      <h1>[[HasOwnMetadata]] ( MetadataKey, P )</h1>\r\n      <p>When the [[HasOwnMetadata]] internal method of _O_ is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryHasOwnMetadata(_MetadataKey_, _O_, _P_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinaryhasownmetadata\">\r\n      <h1>OrdinaryHasOwnMetadata ( MetadataKey, O, P )</h1>\r\n      <p>When the abstract operation OrdinaryHasOwnMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryHasOwnMetadata\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _metadataMap_ be GetOrCreateMetadataMap(_O_, _P_, *false*).\r\n      3. ReturnIfAbrupt(_metadataMap_).\r\n      4. If _metadataMap_ is *undefined*, return *false*.\r\n      5. Return Invoke(_metadataMap_, \"has\", _MetadataKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"getmetadata\">\r\n      <h1>[[GetMetadata]] ( MetadataKey, P )</h1>\r\n      <p>When the [[GetMatadata]] internal method of _O_ is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryGetMetadata(_MetadataKey_, _O_, _P_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinarygetmetadata\">\r\n      <h1>OrdinaryGetMetadata ( MetadataKey, O, P )</h1>\r\n      <p>When the abstract operation OrdinaryGetMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryGetMetadata\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _hasOwn_ be OrdinaryHasOwnMetadata(_MetadataKey_, _O_, _P_).\r\n      3. If _hasOwn_ is *true*, then\r\n        1. return OrdinaryGetOwnMetadata(_MetadataKey_, _O_, _P_).\r\n      4. Let _parent_ be _O_.[[GetPrototypeOf]]().\r\n      5. ReturnIfAbrupt(_parent_).\r\n      6. If _parent_ is not *null*, then\r\n        1. return <var>parent</var>.[[GetMetadata]](_MetadataKey_, _P_).\r\n      7. Return *undefined*.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"getownmetadata\">\r\n      <h1>[[GetOwnMetadata]] ( MetadataKey, P, ParamIndex )</h1>\r\n      <p>When the [[GetOwnMetadata]] internal method of _O_ is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryGetOwnMetadata(_MetadataKey_, _O_, _P_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinarygetownmetadata\">\r\n      <h1>OrdinaryGetOwnMetadata ( MetadataKey, O, P )</h1>\r\n      <p>When the abstract operation OrdinaryGetOwnMetadata is called with ECMAScript language value <var>MetadataKey</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryGetOwnMetadata\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _metadataMap_ be GetOrCreateMetadataMap(_O_, _P_, *false*).\r\n      3. ReturnIfAbrupt(_metadataMap_).\r\n      4. If _metadataMap_ is *undefined*, return *undefined*.\r\n      5. Return Invoke(_metadataMap_, \"get\", _MetadataKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"defineownmetadata\">\r\n      <h1>[[DefineOwnMetadata]] ( MetadataKey, MetadataValue, P )</h1>\r\n      <p>When the [[DefineOwnMetadata]] internal method of _O_ is called with ECMAScript language value <var>MetadataKey</var>, ECMAScript language value <var>MetadataValue</var>, and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryDefineOwnMetadata(_MetadataKey_, _MetadataValue_, _O_, _P_)\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinarydefineownmetadata\">\r\n      <h1>OrdinaryDefineOwnMetadata ( MetadataKey, MetadataValue, O, P )</h1>\r\n      <p>When the abstract operation OrdinaryDefineOwnProperty is called with ECMAScript language value <var>MetadataKey</var>, ECMAScript language value <var>MetadataValue</var>, Object <var>O</var>, and property key <var>P</var>, the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryDefineOwnMetadata\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _metadataMap_ be GetOrCreateMetadataMap(_O_, _P_, *true*).\r\n      3. ReturnIfAbrupt(_metadataMap_).\r\n      4. Return Invoke(_metadataMap_, \"set\", _MetadataKey_, _MetadataValue_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"metadatakeys\">\r\n      <h1>[[MetadataKeys]] ( P )</h1>\r\n      <p>When the [[MetadataKeys]] internal method of <var>O</var> is called with property key <var>P</var> the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryMetadataKeys(_O_, _P_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinarymetadatakeys\">\r\n      <h1>OrdinaryMetadataKeys ( O, P )</h1>\r\n      <p>When the abstract operation OrdinaryMetadataKeys is called with Object <var>O</var> and property key <var>P</var> the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryMetadataKeys\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _ownKeys_ be OrdinaryOwnMetadataKeys(_O_, _P_).\r\n      3. Let _parent_ = _O_.[[GetPrototypeOf]]().\r\n      4. ReturnIfAbrupt(_parent_).\r\n      5. If _parent_ is *null*, then return _ownKeys_.\r\n      6. Let _parentKeys_ be <var>O</var>.[[OrdinaryMetadataKeys]](_P_).\r\n      7. ReturnIfAbrupt(_parentKeys_).\r\n      8. Let _ownKeysLen_ = Get(_ownKeys_, \"length\").\r\n      9. ReturnIfAbrupt(_ownKeysLen_).\r\n      10. If _ownKeysLen_ is 0, return _parentKeys_.\r\n      11. Let _parentKeysLen_ = Get(_parentKeys_, \"length\").\r\n      12. ReturnIfAbrupt(_parentKeysLen_).\r\n      13. If _parentKeysLen_ is 0, return _ownKeys_.\r\n      14. Let _set_ be a newly created *Set* object.\r\n      15. Let _keys_ be ArrayCreate(0).\r\n      16. Let _k_ be 0.\r\n      17. For each element _key_ of _ownKeys_\r\n        1. Let _hasKey_ be Invoke(_set_, \"has\", _key_).\r\n        2. ReturnIfAbrupt(_hasKey_).\r\n        3. If _hasKey_ is *false*, then\r\n          1. Let _Pk_ be ToString(_k_).\r\n          2. Let _addStatus_ be Invoke(_set_, \"add\", _key_).\r\n          3. ReturnIfAbrupt(_addStatus_).\r\n          4. Let _defineStatus_ be CreateDataPropertyOrThrow(_keys_, _Pk_, _key_).\r\n          5. ReturnIfAbrupt(_defineStatus_).\r\n          6. Increase _k_ by 1.\r\n      18. For each element _key_ of _parentKeys_\r\n        1. Let _hasKey_ be Invoke(_set_, \"has\", _key_).\r\n        2. ReturnIfAbrupt(_hasKey_).\r\n        3. If _hasKey_ is *false*, then\r\n          1. Let _Pk_ be ToString(_k_).\r\n          2. Let _addStatus_ be Invoke(_set_, \"add\", _key_).\r\n          3. ReturnIfAbrupt(_addStatus_).\r\n          4. Let _defineStatus_ be CreateDataPropertyOrThrow(_keys_, _Pk_, _key_).\r\n          5. ReturnIfAbrupt(_defineStatus_).\r\n          6. Increase _k_ by 1.\r\n      19. Let _setStatus_ be Set(_keys_, \"length\", _k_).\r\n      20. ReturnIfAbrupt(_setStatus_).\r\n      21. return _keys_.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ownmetadatakeys\">\r\n      <h1>[[OwnMetadataKeys]] ( P )</h1>\r\n      <p>When the [[OwnMetadataKeys]] internal method of <var>O</var> is called with property key <var>P</var> the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Return OrdinaryOwnMetadataKeys(_O_, _P_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"ordinaryownmetadatakeys\">\r\n      <h1>OrdinaryOwnMetadataKeys ( O, P )</h1>\r\n      <p>When the abstract operation OrdinaryOwnMetadataKeys is called with Object <var>O</var> and property key <var>P</var> the following steps are taken:</p>\r\n      <emu-alg aoid=\"OrdinaryOwnMetadataKeys\">\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _keys_ be ArrayCreate(0).\r\n      3. Let _metadataMap_ be GetOrCreateMetadataMap(_O_, _P_, *false*).\r\n      4. ReturnIfAbrupt(_metadataMap_).\r\n      5. If _metadataMap_ is *undefined*, return _keys_.\r\n      6. Let _keysObj_ be Invoke(_metadataMap_, \"keys\").\r\n      7. ReturnIfAbrupt(_keysObj_).\r\n      8. Let _iterator_ be GetIterator(_keysObj_).\r\n      9. ReturnIfAbrupt(_iterator_).\r\n      10. Let _k_ be 0.\r\n      11. Repeat\r\n        1. Let _Pk_ be ToString(k).\r\n        2. Let _next_ be IteratorStep(_iterator_).\r\n        3. ReturnIfAbrupt(_next_).\r\n        4. If _next_ is *false*, then\r\n          1. Let _setStatus_ be Set(_keys_, \"length\", _k_, _true_).\r\n          2. ReturnIfAbrupt(_setStatus_).\r\n          3. Return _keys_.\r\n        5. Let _nextValue_ be IteratorValue(_next_).\r\n        6. ReturnIfAbrupt(_nextValue_).\r\n        7. Let _defineStatus_ be CreateDataPropertyOrThrow(_keys_, _Pk_, _nextValue_).\r\n        8. If _defineStatus_ is an abrupt completion, return IteratorClose(_iterator_, _defineStatus_).\r\n        9. Increase _k_ by 1.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"deletemetadata\">\r\n      <h1>[[DeleteMetadata]]( MetadataKey, P )</h1>\r\n      <p>When the [[DeleteMetadata]] internal method of <var>O</var> is called with ECMAScript language value <var>MetadataKey</var> and property key <var>P</var> the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Assert: _P_ is *undefined* or IsPropertyKey(_P_) is *true*.\r\n      2. Let _metadataMap_ be GetOrCreateMetadataMap(_O_, _P_, *false*).\r\n      3. ReturnIfAbrupt(_metadataMap_).\r\n      4. If _metadataMap_ is *undefined*, return *false*.\r\n      5. Return Invoke(_metadataMap_, \"delete\", _MetadataKey_).\r\n      </emu-alg>\r\n    </emu-clause>  \r\n  </emu-clause>\r\n</emu-clause>\r\n\r\n<emu-clause id=\"reflection\">\r\n  <h1>Reflection</h1>\r\n  <emu-clause id=\"reflect\">\r\n    <h1>The Reflect Object</h1>\r\n    <p>This section contains amendments to the Reflect object.</p>\r\n    <emu-note>A shim for this API can be found here: <a href=\"https://github.com/rbuckton/ReflectDecorators\">https://github.com/rbuckton/ReflectDecorators</a></emu-note>\r\n    <emu-clause id=\"reflect-metadatadecoratorfunctions\">\r\n      <h1>Metadata Decorator Functions</h1>\r\n      <p>A metadata decorator function is an anonymous built-in function that has [[MetadataKey]] and [[MetadataValue]] internal slots.</p>\r\n      <p>When a metadata decorator function <var>F</var> is called with arguments <var>target</var> and <var>key</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Assert: _F_ has a [[MetadataKey]] internal slot whose value is an ECMAScript language value, or *undefined*.\r\n      2. Assert: _F_ has a [[MetadataValue]] internal slot whose value is an ECMAScript language value, or *undefined*.\r\n      3. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      4. If _key_ is not *undefined* and IsPropertyKey(_key_) is *false*, throw a *TypeError* exception.\r\n      5. Let _metadataKey_ be the value of _F_'s [[MetadataKey]] internal slot.\r\n      6. Let _metadataValue_ be the value of _F_'s [[MetadataValue]] internal slot.\r\n      7. Return <var>target</var>.[[DefineMetadata]](_metadataKey_, _metadataValue_, _target_, _key_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-decorate\">\r\n      <h1>Reflect.decorate ( decorators, target, propertyKey, attributes )</h1>\r\n      <p>When the <code>decorator</code> function is called with arguments <var>decorators</var>, <var>target</var>, <var>propertyKey</var>, and <var>attributes</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_decorators_) is not Object, throw a *TypeError* exception.\r\n      2. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      3. Let _key_ be ToPropertyKey(_propertyKey_).\r\n      4. ReturnIfAbrupt(_propertyKey_).\r\n      5. Let _desc_ be ToPropertyDescriptor(_attributes_).\r\n      6. ReturnIfAbrupt(_desc_).\r\n      7. Return Decorate(_decorators_, _target_, _propertyKey_, _desc_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-metadata\">\r\n      <h1>Reflect.metadata ( metadataKey, metadataValue )</h1>\r\n      <p>When the <code>metadata</code> function is called with arguments <var>metadataKey</var> and <var>metadataValue</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. Let _decorator_ be a new built-in function object as defined in Metadata Decorator Functions.\r\n      2. Set the [[MetadataKey]] internal slot of _decorator_ to _metadataKey_.\r\n      3. Set the [[MetadataValue]] internal slot of _decorator_ to _metadataValue_.\r\n      4. return _decorator_.\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-definemetadata\">\r\n      <h1>Reflect.defineMetadata ( metadataKey, metadataValue, target, propertyKey )</h1>\r\n      <p>When the <code>defineMetadata</code> function is called with arguments <var>metadataKey</var>, <var>metadataValue</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[DefineMetadata]](_metadataKey_, _metadataValue_, _propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-hasmetadata\">\r\n      <h1>Reflect.hasMetadata ( metadataKey, target, propertyKey )</h1>\r\n      <p>When the <code>hasMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[HasMetadata]](_metadataKey_, _propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-hasownmetadata\">\r\n      <h1>Reflect.hasOwnMetadata ( metadataKey, target, propertyKey )</h1>\r\n      <p>When the <code>hasOwnMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[HasOwn]](_metadataKey_, _propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-getmetadata\">\r\n      <h1>Reflect.getMetadata ( metadataKey, target, propertyKey )</h1>\r\n      <p>When the <code>getMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[GetMetadata]](_metadataKey_, _propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-getownmetadata\">\r\n      <h1>Reflect.getOwnMetadata ( metadataKey, target, propertyKey )</h1>\r\n      <p>When the <code>getOwnMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[GetOwnMetadata]](_metadataKey_, _propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-getmetadatakeys\">\r\n      <h1>Reflect.getMetadataKeys ( target, propertyKey )</h1>\r\n      <p>When the <code>getMetadataKeys</code> function is called with arguments <var>target</var> and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[GetMetadataKeys]](_propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-getownmetadata\">\r\n      <h1>Reflect.getOwnMetadataKeys ( target, propertyKey )</h1>\r\n      <p>When the <code>getOwnMetadataKeys</code> function is called with arguments <var>target</var> and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[GetOwnMetadataKeys]](_propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n    <emu-clause id=\"reflect-deletemetadata\">\r\n      <h1>Reflect.deleteMetadata ( metadataKey, target, propertyKey )</h1>\r\n      <p>When the <code>deleteMetadata</code> function is called with arguments <var>metadataKey</var>, <var>target</var>, and <var>propertyKey</var>, the following steps are taken:</p>\r\n      <emu-alg>\r\n      1. If Type(_target_) is not Object, throw a *TypeError* exception.\r\n      2. return <var>target</var>.[[DeleteMetadata]](_metadataKey_, _propertyKey_).\r\n      </emu-alg>\r\n    </emu-clause>\r\n  </emu-clause>\r\n</emu-clause>\r\n<emu-annex id=\"grammar\">\r\n  <h1>Grammar</h1>\r\n  <emu-annex id=\"grammar-expressions\">\r\n    <h1>Expressions</h1>\r\n    <emu-production id=\"grammar-memberexpression\" name=\"MemberExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield\">PrimaryExpression</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"~Decorator\"><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression</emu-nt><emu-t>]</emu-t></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-t>.</emu-t><emu-nt>IdentifierName</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-nt params=\"?Yield\">TemplateLiteral</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">SuperProperty</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt>MetaProperty</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-nt params=\"?Yield\">Arguments</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-superproperty\" name=\"SuperProperty\" params=\"Yield, Decorator\">\r\n      <emu-rhs constraints=\"~Decorator\"><emu-t>super</emu-t><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression</emu-nt><emu-t>]</emu-t></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-newexpression\" name=\"NewExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">NewExpression</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-callexpression\" name=\"CallExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt> <emu-nt params=\"?Yield\">Arguments</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield\">SuperCall</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt> <emu-nt params=\"?Yield\">Arguments</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"~Decorator\"><emu-nt params=\"?Yield\">CallExpression</emu-nt> <emu-t>[</emu-t> <emu-nt params=\"In, ?Yield\">Expression</emu-nt> <emu-t>]</emu-t></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt> <emu-t>.</emu-t> <emu-nt>IdentifierName</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt> <emu-nt params=\"?Yield\">TemplateLiteral</emu-nt></emu-rhs>      \r\n    </emu-production>\r\n    <emu-production id=\"grammar-lefthandsideexpression\" name=\"LeftHandSideExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">NewExpression</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt></emu-rhs>\r\n    </emu-production>\r\n  </emu-annex>\r\n\r\n  <emu-annex id=\"functions-and-classes\">\r\n    <h1>Functions and Classes</h1>\r\n    <emu-production id=\"grammar-classdeclaration\" name=\"ClassDeclaration\" params=\"Yield, Default\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>class</emu-t> <emu-nt params=\"?Yield\">BindingIdentifier</emu-nt> <emu-nt params=\"?Yield\">ClassTail</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"+Default\"><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>class</emu-t> <emu-nt params=\"?Yield\">ClassTail</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-classexpression\" name=\"ClassExpression\" params=\"Yield, GeneratorParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>class</emu-t> <emu-nt params=\"?Yield\" optional>BindingIdentifier</emu-nt> <emu-nt params=\"?Yield, ?GeneratorParameter\">ClassTail</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-classelement\" name=\"ClassElement\" params=\"Yield\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-nt params=\"?Yield\">MethodDefinition</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>static</emu-t> <emu-nt params=\"?Yield\">MethodDefinition</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>;</emu-t></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-decoratorlist\" name=\"DecoratorList\" params=\"Yield\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-nt params=\"?Yield\">Decorator</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-decorator\" name=\"Decorator\" params=\"Yield\">\r\n      <emu-rhs><emu-t>@</emu-t> <emu-nt params=\"Decorator, ?Yield\">LeftHandSideExpression</emu-nt></emu-rhs>\r\n    </emu-production>\r\n  </emu-annex>\r\n\r\n  <emu-annex id=\"scripts-and-modules\">\r\n    <h1>Scripts and Modules</h1>\r\n    <emu-production id=\"grammar-exportdeclaration\" name=\"ExportDeclaration\">\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>*</emu-t> <emu-nt>FromClause</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-nt>ExportClause</emu-nt> <emu-nt>FromClause</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-nt>ExportClause</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-nt>VariableStatement</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt>Declaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>default</emu-t> <emu-nt params=\"Default\">HoistableDeclaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>default</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt params=\"Default\">ClassDeclaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>default</emu-t> <emu-gann>lookahead ∉ { <emu-t>function</emu-t>, <emu-t>class</emu-t>, <emu-t>@</emu-t> }</emu-gann> <emu-nt>AssignmentExpression</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt>DecoratorList</emu-nt> <emu-t>export</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt>ClassDeclaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt>DecoratorList</emu-nt> <emu-t>export</emu-t> <emu-t>default</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt params=\"Default\">ClassDeclaration</emu-nt></emu-rhs>\r\n    </emu-production>\r\n  </emu-annex>\r\n</emu-annex>";
+
+/***/ },
+/* 677 */
+/***/ function(module, exports) {
+
+	module.exports = "<!doctype html>\n<head><meta charset=\"utf8\">\n<title>Decorators</title>\n<link rel=\"stylesheet\" href=\"./css/elements.css\"> \n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css\"> \n</head><body><emu-biblio href=\"./biblio.json\"></emu-biblio> \n\n<h1>Decorators Proposal - TypeScript</h1>\n<div><h2>Table of Contents</h2><ol class=\"toc\"><li><a href=\"#introduction\"><span class=\"secnum\"></span> Introduction</a></li><li><a href=\"#proposal-terms\"><span class=\"secnum\">1</span> Terms</a><ol class=\"toc\"><li><a href=\"#proposal-terms-decorator\"><span class=\"secnum\">1.1</span> Decorator</a></li><li><a href=\"#proposal-terms-classdecoratorfunction\"><span class=\"secnum\">1.2</span> Class Decorator Function</a></li><li><a href=\"#proposal-terms-propertydecoratorfunction\"><span class=\"secnum\">1.3</span> Property/Method Decorator Function</a></li><li><a href=\"#proposal-terms-parameterdecoratorfunction\"><span class=\"secnum\">1.4</span> Parameter Decorator Function</a></li><li><a href=\"#proposal-terms-decoratorfactory\"><span class=\"secnum\">1.5</span> Decorator Factory</a></li></ol></li><li><a href=\"#proposal-decoratortargets\"><span class=\"secnum\">2</span> Decorator Targets</a></li><li><a href=\"#proposal-decoratoreval\"><span class=\"secnum\">3</span> Decorator Evaluation and Application Order</a></li><li><a href=\"#reflect\"><span class=\"secnum\">4</span> Reflect API</a></li><li><a href=\"#transpile\"><span class=\"secnum\">5</span> Transformation</a><ol class=\"toc\"><li><a href=\"#transpile-class\"><span class=\"secnum\">5.1</span> Class Declaration</a></li><li><a href=\"#transpile-exportclass\"><span class=\"secnum\">5.2</span> Class Declaration (Exported)</a></li><li><a href=\"#transpile-exportdefaultclass\"><span class=\"secnum\">5.3</span> Class Declaration (Default, Exported)</a></li><li><a href=\"#transpile-classmethod\"><span class=\"secnum\">5.4</span> Class Method Declaration</a></li><li><a href=\"#transpile-classaccessor\"><span class=\"secnum\">5.5</span> Class Accessor Declaration</a></li><li><a href=\"#transpile-classproperty\"><span class=\"secnum\">5.6</span> Class Property Declaration</a></li><li><a href=\"#transpile-classconstructorparameter\"><span class=\"secnum\">5.7</span> Class Constructor Parameter Declaration</a></li><li><a href=\"#transpile-classmethodparameter\"><span class=\"secnum\">5.8</span> Class Method Parameter Declaration</a></li><li><a href=\"#transpile-classaccessorparameter\"><span class=\"secnum\">5.9</span> Class Set Accessor Parameter Declaration</a></li></ol></li><li><a href=\"#grammar\"><span class=\"secnum\">A</span> Grammar</a><ol class=\"toc\"><li><a href=\"#grammar-expressions\"><span class=\"secnum\">A.1</span> Expressions</a></li><li><a href=\"#functions-and-classes\"><span class=\"secnum\">A.2</span> Functions and Classes</a></li><li><a href=\"#scripts-and-modules\"><span class=\"secnum\">A.3</span> Scripts and Modules</a></li></ol></li><li><a href=\"#typescript\"><span class=\"secnum\">B</span> TypeScript</a><ol class=\"toc\"><li><a href=\"#typescript-definitions\"><span class=\"secnum\">B.1</span> TypeScript Definitions</a></li></ol></li></ol></div><emu-intro id=\"introduction\">\n  <h1><span class=\"secnum\"></span>Introduction</h1>\n  <p>Proposal to add Decorators to TypeScript.</p>\n  <p>For the ECMAScript specific proposal, see <a href=\"index.html\">http://rbuckton.github.io/reflectdecorators/index.html</a></p>\n</emu-intro>\n\n<emu-clause id=\"proposal-terms\">\n  <h1><span class=\"secnum\">1</span>Terms</h1>\n  <emu-clause id=\"proposal-terms-decorator\">\n    <h1><span class=\"secnum\">1.1</span>Decorator</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>decorator</em> is an expression that is evaluated after a class has been defined, that can be used to annotate or modify the class in some fashion. This expression must evaluate to a <code>function</code>, which is executed by the runtime to apply the decoration.</p>\n    <pre><code class=\"typescript hljs\">@decoratorExpression\n<span class=\"hljs-keyword\">class</span> C {\n}\n</code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-classdecoratorfunction\">\n    <h1><span class=\"secnum\">1.2</span>Class Decorator Function</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>class decorator function</em> is a function that accepts a constructor function as its argument, and returns either <code>undefined</code>, the provided constructor function, or a new constructor function. Returning <code>undefined</code> is equivalent to returning the provided constructor function.</p>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-comment\">// A class decorator function</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(target)</span> </span>{  \n <span class=\"hljs-comment\">// modify, annotate, or replace target...</span>\n}\n</code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-propertydecoratorfunction\">\n    <h1><span class=\"secnum\">1.3</span>Property/Method Decorator Function</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>property decorator function</em> is a function that accepts three arguments: The object that owns the property, the key for the property (a <code>string</code> or a <code>symbol</code>), and optionally the property descriptor of the property. The function must return either <code>undefined</code>, the provided property descriptor, or a new property descriptor. Returning <code>undefined</code> is equivalent to returning the provided property descriptor.</p>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-comment\">// A property (or method/accessor) decorator function</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(target, key, descriptor)</span> </span>{\n  <span class=\"hljs-comment\">// annotate the target and key; or modify or replace the descriptor...</span>\n}\n    </code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-parameterdecoratorfunction\">\n    <h1><span class=\"secnum\">1.4</span>Parameter Decorator Function</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>parameter decorator function</em> is a function that accepts three arguments: The function that contains the decorated parameter, the property key of the member (or <code>undefined</code> for a parameter of the constructor), and the ordinal index of the parameter. The return value of this decorator is ignored.</p>\n    <pre><code class=\"typescript hljs\">\n<span class=\"hljs-comment\">// A parameter decorator</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(target, paramIndex)</span> </span>{\n    <span class=\"hljs-comment\">// annotate the target and index</span>\n}\n</code></pre>\n  </emu-clause>\n  <emu-clause id=\"proposal-terms-decoratorfactory\">\n    <h1><span class=\"secnum\">1.5</span>Decorator Factory</h1>\n    <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n    <p>A <em>decorator factory</em> is a function that can accept any number of arguments, and must return one of the above types of decorator function.</p>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-comment\">// a class decorator factory function</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dec</span><span class=\"hljs-params\">(x, y)</span> </span>{\n  <span class=\"hljs-comment\">// the class decorator function</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-params\">(target)</span> </span>{\n      <span class=\"hljs-comment\">// modify, annotate, or replace target...</span>\n  }\n}\n</code></pre>\n  </emu-clause>\n</emu-clause>\n<emu-clause id=\"proposal-decoratortargets\">\n  <h1><span class=\"secnum\">2</span>Decorator Targets</h1>\n  <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n  <p>A <em>decorator</em> <strong>can</strong> be legally applied to any of the following:</p>\n  <ul>\n    <li>A class declaration</li>\n    <li>A class property initializer (static or prototype)</li>\n    <li>A class method declaration (static or prototype)</li>\n    <li>A class get or set accessor declaration (static or prototype)</li>\n    <li>A parameter of a class constructor</li>\n    <li>A parameter of a class method (static or prototype)</li>\n    <li>A parameter of a class get or set accessor (static or prototype)</li>\n  </ul>\n  <p>Please note that a <em>decorator</em> currently <strong>cannot</strong> be legally applied to any of the following:</p>\n  <ul>\n    <li>A class constructor - This is to reduce ambiguity between where you can apply a decorator (on the class or on its constructor) and which of the above decorator function forms is called.</li>\n    <li>A function declaration - Decorators on a function declaration would introduce a TDZ (Temporal Dead Zone), which would make the function unreachable until its declaration is executed. This could cause confusion as an undecorated function declaration is hoisted and can be used in a statement preceeding the declaration.</li>\n    <li>A function expression - This is to reduce confusion and maintain parity with disallowing decorators on a function declaration.</li>\n    <li>An arrow function - This is to reduce confusion and maintain parity with disallowing decorators on a function expression.</li>\n  </ul>\n  <p>This list may change in the future.</p>\n</emu-clause>\n<emu-clause id=\"proposal-decoratoreval\">\n  <h1><span class=\"secnum\">3</span>Decorator Evaluation and Application Order</h1>\n  <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n  <p>Decorators are <em>evaluated</em> in the order they appear preceeding their target declaration, to preserve side-effects due to evaluation order. Decorators are <em>applied</em> to their target declaration in reverse order, starting with the decorator closest to the declaration. This behavior is specified to preserve the expected behavior of decorators without a declarative syntax.</p>\n  <pre><code class=\"typescript hljs\">@F\n@G\n<span class=\"hljs-keyword\">class</span> C {   \n}\n</code></pre>\n  <p>For example, the above listing could be approximately written without decorators in the following fashion:</p>\n  <pre><code class=\"typescript hljs\">C = F(G(C))</code></pre>\n  <p>In the above example, the expression <code>F</code> is evaluated first, followed by the expression <code>G</code>. <code>G</code> is then called with the constructor function as its argument, followed by calling <code>F</code> with the result. The actual process of applying decorators is more complex than the above example however, though you may still imperatively apply decorators with a reflection API.</p>\n  <p>If a class declaration has decorators on both the class and any of its members or parameters, the decorators are applied using the following pseudocode:</p>\n  <pre>for each member M of class C\n  if M is an accessor then\n      let accessor = first accessor (get or set, in declaration order) of M\n      let memberDecorators = decorators of accessor\n      for each parameter of accessor\n          let paramDecorators = decorators of parameter           \n          let paramIndex = ordinal index of parameter\n          Reflect.decorate(paramDecorators, accessor, paramIndex)\n      next parameter\n\n      let accessor = second accessor (get or set, in declaration order) of M\n      if accessor then\n          let memberDecorators = memberDecorators + decorators of accessor\n          for each parameter of accessor\n              let paramDecorators = decorators of parameter           \n              let paramIndex = ordinal index of parameter\n              Reflect.decorate(paramDecorators, accessor, paramIndex)\n          next parameter\n      end if\n  else if M is a method\n      let memberDecorators = decorators of M\n      for each parameter of M\n          let paramDecorators = decorators of parameter           \n          let paramIndex = ordinal index of parameter\n          Reflect.decorate(paramDecorators, M, paramIndex)\n      next parameter\n  else\n      let memberDecorators = decorators of M\n  end if\n\n  let name = name of M\n  let target = C.prototype if M is on the prototype; otherwise, C if M is static  \n  Reflect.decorate(memberDecorators, C, name)\nnext member\n\nfor each parameter of C\n  let paramDecorators = decorators of parameter\n  let paramIndex = ordinal index of parameter\n  Reflect.decorate(paramDecorators, C, paramIndex)\nnext parameter\n\nlet classDecorators = decorators of C\nlet C = Reflect.decorate(classDecorators, C)\n  </pre>\n</emu-clause>\n\n<emu-clause id=\"reflect\">\n  <h1><span class=\"secnum\">4</span>Reflect API</h1>\n  <emu-note><span class=\"note\">Note</span>This section is non-normative.</emu-note>\n  <p>In addition to a declarative approach to defining decorators, it is necessary to also include an imperative API capable of applying decorators, as well as defining, reflecting over, and removing decorator metadata from an object, property, or parameter.</p>\n  <p>A shim for this API can be found here: <a href=\"https://github.com/rbuckton/ReflectDecorators\">https://github.com/rbuckton/ReflectDecorators</a></p>\n  <pre><code class=\"typescript hljs\">Reflect.decorate(decorators, target, propertyKey?, descriptor?)</code></pre>  \n</emu-clause>\n\n<emu-clause id=\"transpile\">\n  <h1><span class=\"secnum\">5</span>Transformation</h1>\n  <p>The following are examples of how decorators can be desugared to ES6 (through a transpiler such as TypeScript). These examples levarage an imperative reflection API.</p>\n  <emu-clause id=\"transpile-class\">\n    <h1><span class=\"secnum\">5.1</span>Class Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\">@F(<span class=\"hljs-string\">\"color\"</span>)\n@G\n<span class=\"hljs-keyword\">class</span> C {  \n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">let</span> C = <span class=\"hljs-keyword\">class</span> {\n}\n<span class=\"hljs-built_in\">Object</span>.defineProperty(C, <span class=\"hljs-string\">\"name\"</span>, { value: <span class=\"hljs-string\">\"C\"</span>, configurable: <span class=\"hljs-literal\">true</span> });\nC = __decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C);\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-exportclass\">\n    <h1><span class=\"secnum\">5.2</span>Class Declaration (Exported)</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\">@F(<span class=\"hljs-string\">\"color\"</span>)\n@G\n<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">class</span> C {\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\">export <span class=\"hljs-keyword\">let</span> C = <span class=\"hljs-keyword\">class</span> {\n}\n<span class=\"hljs-built_in\">Object</span>.defineProperty(C, <span class=\"hljs-string\">\"name\"</span>, { value: <span class=\"hljs-string\">\"C\"</span>, configurable: <span class=\"hljs-literal\">true</span> });\nC = __decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C);\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-exportdefaultclass\">\n    <h1><span class=\"secnum\">5.3</span>Class Declaration (Default, Exported)</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\">@F(<span class=\"hljs-string\">\"color\"</span>)\n@G\n<span class=\"hljs-keyword\">export</span> <span class=\"hljs-keyword\">default</span> <span class=\"hljs-keyword\">class</span> C {\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">let</span> C = <span class=\"hljs-keyword\">class</span> {\n}\n<span class=\"hljs-built_in\">Object</span>.defineProperty(C, <span class=\"hljs-string\">\"name\"</span>, { value: <span class=\"hljs-string\">\"C\"</span>, configurable: <span class=\"hljs-literal\">true</span> });\nC = __decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C);\nexport <span class=\"hljs-keyword\">default</span> C;\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-classmethod\">\n    <h1><span class=\"secnum\">5.4</span>Class Method Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    @F(<span class=\"hljs-string\">\"color\"</span>)\n    @G\n    method() { }\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    method() { }\n}\n<span class=\"hljs-built_in\">Object</span>.defineProperty(C.prototype, <span class=\"hljs-string\">\"method\"</span>, \n    __decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C.prototype, <span class=\"hljs-string\">\"method\"</span>, <span class=\"hljs-built_in\">Object</span>.getOwnPropertyDescriptor(C.prototype, <span class=\"hljs-string\">\"method\"</span>)));\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-classaccessor\">\n    <h1><span class=\"secnum\">5.5</span>Class Accessor Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    @F(<span class=\"hljs-string\">\"color\"</span>)\n    @G\n    <span class=\"hljs-keyword\">get</span> accessor() { }\n    <span class=\"hljs-keyword\">set</span> accessor(value) { }\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    get accessor() { }\n    set accessor(value) { }\n}\n<span class=\"hljs-built_in\">Object</span>.defineProperty(C.prototype, <span class=\"hljs-string\">\"accessor\"</span>, \n    __decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C.prototype, <span class=\"hljs-string\">\"accessor\"</span>, <span class=\"hljs-built_in\">Object</span>.getOwnPropertyDescriptor(C.prototype, <span class=\"hljs-string\">\"accessor\"</span>)));\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-classproperty\">\n    <h1><span class=\"secnum\">5.6</span>Class Property Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    @F(<span class=\"hljs-string\">\"color\"</span>)\n    @G\n    property = <span class=\"hljs-number\">1</span>;\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    constructor() {\n        <span class=\"hljs-keyword\">this</span>.property = <span class=\"hljs-number\">1</span>;\n    }\n}\n__decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C.prototype, <span class=\"hljs-string\">\"property\"</span>);\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-classconstructorparameter\">\n    <h1><span class=\"secnum\">5.7</span>Class Constructor Parameter Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    <span class=\"hljs-constructor\"><span class=\"hljs-keyword\">constructor</span>(@F(\"color\") @G p) </span>{ }\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    constructor(p) { }\n}\n__decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C, <span class=\"hljs-keyword\">void</span> <span class=\"hljs-number\">0</span>, <span class=\"hljs-number\">0</span>);\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-classmethodparameter\">\n    <h1><span class=\"secnum\">5.8</span>Class Method Parameter Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    method(@F(<span class=\"hljs-string\">\"color\"</span>) @G p) { }\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    method(p) { }\n}\n__decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C.prototype, <span class=\"hljs-string\">\"method\"</span>, <span class=\"hljs-number\">0</span>);\n    </code></pre>\n  </emu-clause>\n\n  <emu-clause id=\"transpile-classaccessorparameter\">\n    <h1><span class=\"secnum\">5.9</span>Class Set Accessor Parameter Declaration</h1>\n    <h2>Syntax</h2>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    <span class=\"hljs-keyword\">set</span> accessor(@F(<span class=\"hljs-string\">\"color\"</span>) @G p) { }\n}\n    </code></pre>\n    <h2>ES6 Transformation</h2>\n    <pre><code class=\"javascript hljs\"><span class=\"hljs-keyword\">class</span> C {\n    set accessor(p) { }\n}\n__decorate([F(<span class=\"hljs-string\">\"color\"</span>), G], C.prototype, <span class=\"hljs-string\">\"accessor\"</span>, <span class=\"hljs-number\">0</span>);\n    </code></pre>\n  </emu-clause>\n\n</emu-clause>\n\n<emu-annex id=\"grammar\">\n  <h1><span class=\"secnum\">A</span>Grammar</h1>\n  <emu-annex id=\"grammar-expressions\">\n    <h1><span class=\"secnum\">A.1</span>Expressions</h1>\n    <emu-production id=\"grammar-memberexpression\" name=\"MemberExpression\" params=\"Yield, Decorator\">\n      <emu-nt>MemberExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\">PrimaryExpression<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"~Decorator\"><emu-constraints>[~Decorator]</emu-constraints><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression<emu-mods> [In, ?Yield]</emu-mods></emu-nt><emu-t>]</emu-t></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-t>.</emu-t><emu-nt>IdentifierName<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">TemplateLiteral<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">SuperProperty<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt>MetaProperty<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">Arguments<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-superproperty\" name=\"SuperProperty\" params=\"Yield, Decorator\">\n      <emu-nt>SuperProperty<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs constraints=\"~Decorator\"><emu-constraints>[~Decorator]</emu-constraints><emu-t>super</emu-t><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression<emu-mods> [In, ?Yield]</emu-mods></emu-nt><emu-t>]</emu-t></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-newexpression\" name=\"NewExpression\" params=\"Yield, Decorator\">\n      <emu-nt>NewExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">NewExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-callexpression\" name=\"CallExpression\" params=\"Yield, Decorator\">\n      <emu-nt>CallExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">Arguments<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield\">SuperCall<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">Arguments<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"~Decorator\"><emu-constraints>[~Decorator]</emu-constraints><emu-nt params=\"?Yield\">CallExpression<emu-mods> [?Yield]</emu-mods></emu-nt><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression<emu-mods> [In, ?Yield]</emu-mods></emu-nt><emu-t>]</emu-t></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-t>.</emu-t><emu-nt>IdentifierName<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt><emu-nt params=\"?Yield\">TemplateLiteral<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>      \n    </emu-production>\n    <emu-production id=\"grammar-lefthandsideexpression\" name=\"LeftHandSideExpression\" params=\"Yield, Decorator\">\n      <emu-nt>LeftHandSideExpression<emu-mods> [Yield, Decorator]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?Decorator\">NewExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression<emu-mods> [?Yield, ?Decorator]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n  </emu-annex>\n\n  <emu-annex id=\"functions-and-classes\">\n    <h1><span class=\"secnum\">A.2</span>Functions and Classes</h1>\n    <emu-production id=\"grammar-strictformalparameters\" name=\"StrictFormalParameters\" params=\"Yield, GeneratorParameter, ClassParameter\">\n      <emu-nt>StrictFormalParameters<emu-mods> [Yield, GeneratorParameter, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameters<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-formalparameters\" name=\"FormalParameters\" params=\"Yield, GeneratorParameter, ClassParameter\">\n      <emu-nt>FormalParameters<emu-mods> [Yield, GeneratorParameter, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-prose>[empty]</emu-prose></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameterList<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-formalparameterlist\" name=\"FormalParameterList\" params=\"Yield, GeneratorParameter, ClassParameter\">\n      <emu-nt>FormalParameterList<emu-mods> [Yield, GeneratorParameter, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?ClassParameter\">FunctionRestParameter<emu-mods> [?Yield, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalsList<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalsList<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt><emu-t>,</emu-t><emu-nt params=\"?Yield, ?ClassParameter\">FunctionRestParameter<emu-mods> [?Yield, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-formalslist\" name=\"FormalsList\" params=\"Yield, GeneratorParameter, ClassParameter\">\n      <emu-nt>FormalsList<emu-mods> [Yield, GeneratorParameter, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameter<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalsList<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt><emu-t>,</emu-t><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameter<emu-mods> [?Yield, ?GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-functionrestparameter\" name=\"FunctionRestParameter\" params=\"Yield, ClassParameter\">\n      <emu-nt>FunctionRestParameter<emu-mods> [Yield, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\">BindingRestElement<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"+ClassParameter\"><emu-constraints>[+ClassParameter]</emu-constraints><emu-nt>DecoratorList<emu-mods></emu-mods></emu-nt><emu-nt params=\"?Yield\">BindingRestElement<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-formalparameter\" name=\"FormalParameter\" params=\"Yield, GeneratorParameter, ClassParameter\">\n      <emu-nt>FormalParameter<emu-mods> [Yield, GeneratorParameter, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter\">BindingElement<emu-mods> [?Yield, ?GeneratorParameter]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"+ClassParameter\"><emu-constraints>[+ClassParameter]</emu-constraints><emu-nt>DecoratorList<emu-mods></emu-mods></emu-nt><emu-nt params=\"?Yield, ?GeneratorParameter\">BindingElement<emu-mods> [?Yield, ?GeneratorParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-methoddefinition\" name=\"MethodDefinition\" params=\"Yield, ClassParameter\">\n      <emu-nt>MethodDefinition<emu-mods> [Yield, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\">PropertyName<emu-mods> [?Yield]</emu-mods></emu-nt><emu-t>(</emu-t><emu-nt params=\"?ClassParameter\">StrictFormalParameters<emu-mods> [?ClassParameter]</emu-mods></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt>FunctionBody<emu-mods></emu-mods></emu-nt><emu-t>}</emu-t></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield, ?ClassParameter\">GeneratorMethod<emu-mods> [?Yield, ?ClassParameter]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>get</emu-t><emu-nt params=\"?Yield\">PropertyName<emu-mods> [?Yield]</emu-mods></emu-nt><emu-t>(</emu-t><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt>FunctionBody<emu-mods></emu-mods></emu-nt><emu-t>}</emu-t></emu-rhs>\n      <emu-rhs><emu-t>set</emu-t><emu-nt params=\"?Yield\">PropertyName<emu-mods> [?Yield]</emu-mods></emu-nt><emu-t>(</emu-t><emu-nt params=\"?ClassParameter\">PropertySetParameterList<emu-mods> [?ClassParameter]</emu-mods></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt>FunctionBody<emu-mods></emu-mods></emu-nt><emu-t>}</emu-t></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-generatormethod\" name=\"GeneratorMethod\" params=\"Yield, ClassParameter\">\n      <emu-nt>GeneratorMethod<emu-mods> [Yield, ClassParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-t>*</emu-t><emu-nt params=\"?Yield\">PropertyName<emu-mods> [?Yield]</emu-mods></emu-nt><emu-t>(</emu-t><emu-nt params=\"Yield, GeneratorParameter, ?ClassParameter\">StrictFormalParameters<emu-mods> [Yield, GeneratorParameter, ?ClassParameter]</emu-mods></emu-nt><emu-t>)</emu-t><emu-t>{</emu-t><emu-nt>GeneratorBody<emu-mods></emu-mods></emu-nt><emu-t>}</emu-t></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-classdeclaration\" name=\"ClassDeclaration\" params=\"Yield, Default\">\n      <emu-nt>ClassDeclaration<emu-mods> [Yield, Default]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>class</emu-t><emu-nt params=\"?Yield\">BindingIdentifier<emu-mods> [?Yield]</emu-mods></emu-nt><emu-nt params=\"?Yield\">ClassTail<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs constraints=\"+Default\"><emu-constraints>[+Default]</emu-constraints><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>class</emu-t><emu-nt params=\"?Yield\">ClassTail<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-classexpression\" name=\"ClassExpression\" params=\"Yield, GeneratorParameter\">\n      <emu-nt>ClassExpression<emu-mods> [Yield, GeneratorParameter]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>class</emu-t><emu-nt params=\"?Yield\" optional=\"\">BindingIdentifier<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-nt params=\"?Yield, ?GeneratorParameter\">ClassTail<emu-mods> [?Yield, ?GeneratorParameter]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-classelement\" name=\"ClassElement\" params=\"Yield\">\n      <emu-nt>ClassElement<emu-mods> [Yield]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-nt params=\"ClassParameter, ?Yield\">MethodDefinition<emu-mods> [ClassParameter, ?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t>static</emu-t><emu-nt params=\"ClassParameter, ?Yield\">MethodDefinition<emu-mods> [ClassParameter, ?Yield]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-t optional=\"\">static</emu-t><emu-nt>PropertyName<emu-mods></emu-mods></emu-nt><emu-nt params=\"In, ?Yield\" optional=\"\">Initializer<emu-mods> [In, ?Yield] opt</emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>;</emu-t></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-decoratorlist\" name=\"DecoratorList\" params=\"Yield\">\n      <emu-nt>DecoratorList<emu-mods> [Yield]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-nt params=\"?Yield\" optional=\"\">DecoratorList<emu-mods> [?Yield] opt</emu-mods></emu-nt><emu-nt params=\"?Yield\">Decorator<emu-mods> [?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n    <emu-production id=\"grammar-decorator\" name=\"Decorator\" params=\"Yield\">\n      <emu-nt>Decorator<emu-mods> [Yield]</emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-t>@</emu-t><emu-nt params=\"Decorator, ?Yield\">LeftHandSideExpression<emu-mods> [Decorator, ?Yield]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n  </emu-annex>\n\n  <emu-annex id=\"scripts-and-modules\">\n    <h1><span class=\"secnum\">A.3</span>Scripts and Modules</h1>\n    <emu-production id=\"grammar-exportdeclaration\" name=\"ExportDeclaration\">\n      <emu-nt>ExportDeclaration<emu-mods></emu-mods><emu-mods></emu-mods></emu-nt><emu-geq>:</emu-geq><emu-rhs><emu-t>export</emu-t><emu-t>*</emu-t><emu-nt>FromClause<emu-mods></emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-nt>ExportClause<emu-mods></emu-mods></emu-nt><emu-nt>FromClause<emu-mods></emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-nt>ExportClause<emu-mods></emu-mods></emu-nt><emu-t>;</emu-t></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-nt>VariableStatement<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt>Declaration<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-t>default</emu-t><emu-nt params=\"Default\">HoistableDeclaration<emu-mods> [Default]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-t>default</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt params=\"Default\">ClassDeclaration<emu-mods> [Default]</emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-t>export</emu-t><emu-t>default</emu-t><emu-gann>[lookahead ∉ { <emu-t>function</emu-t>, <emu-t>class</emu-t>, <emu-t>@</emu-t> }]</emu-gann><emu-nt>AssignmentExpression<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt>DecoratorList<emu-mods></emu-mods></emu-nt><emu-t>export</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt>ClassDeclaration<emu-mods></emu-mods></emu-nt></emu-rhs>\n      <emu-rhs><emu-nt>DecoratorList<emu-mods></emu-mods></emu-nt><emu-t>export</emu-t><emu-t>default</emu-t><emu-gann>[lookahead ≠ <emu-t>@</emu-t>]</emu-gann><emu-nt params=\"Default\">ClassDeclaration<emu-mods> [Default]</emu-mods></emu-nt></emu-rhs>\n    </emu-production>\n  </emu-annex>\n</emu-annex>\n<emu-annex id=\"typescript\">\n  <h1><span class=\"secnum\">B</span>TypeScript</h1>\n  <emu-annex id=\"typescript-definitions\">\n    <h1><span class=\"secnum\">B.1</span>TypeScript Definitions</h1>\n    <pre><code class=\"typescript hljs\"><span class=\"hljs-interface\"><span class=\"hljs-keyword\">interface</span> TypedPropertyDescriptor&lt;T&gt; </span>{  \n    enumerable?: <span class=\"hljs-built_in\">boolean</span>;  \n    configurable?: <span class=\"hljs-built_in\">boolean</span>;  \n    writable?: <span class=\"hljs-built_in\">boolean</span>;  \n    value?: T;  \n    <span class=\"hljs-keyword\">get</span>?: () =&gt; T;  \n    <span class=\"hljs-keyword\">set</span>?: (value: T) =&gt; <span class=\"hljs-built_in\">void</span>;  \n}  \n\ntype ClassDecorator = <span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">TFunction</span> <span class=\"hljs-attribute\">extends</span> <span class=\"hljs-attribute\">Function</span>&gt;</span>(target: TFunction): TFunction | void;\ntype MethodDecorator = <span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">T</span>&gt;</span>(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">T</span>&gt;</span>): TypedPropertyDescriptor<span class=\"hljs-tag\">&lt;<span class=\"hljs-title\">T</span>&gt;</span> | void;\ntype PropertyDecorator = (target: Object, propertyKey: string | symbol): void;\ntype ParameterDecorator = (target: Object, propertyKey: string | symbol, parameterIndex: number): void;\n</span></code></pre>\n  </emu-annex>  \n</emu-annex></body>";
+
+/***/ },
+/* 678 */
+/***/ function(module, exports) {
+
+	module.exports = "<meta charset=\"utf8\">\r\n<title>Decorators</title>\r\n<link rel=\"stylesheet\" href=\"./css/elements.css\"> \r\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css\"> \r\n<emu-biblio href=\"./biblio.json\"></emu-biblio> \r\n\r\n<h1>Decorators Proposal - TypeScript</h1>\r\n<emu-intro id=\"introduction\">\r\n  <h1>Introduction</h1>\r\n  <p>Proposal to add Decorators to TypeScript.</p>\r\n  <p>For the ECMAScript specific proposal, see <a href=\"index.html\">http://rbuckton.github.io/reflectdecorators/index.html</a></p>\r\n</emu-intro>\r\n\r\n<emu-clause id=\"proposal-terms\">\r\n  <h1>Terms</h1>\r\n  <emu-clause id=\"proposal-terms-decorator\">\r\n    <h1>Decorator</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>decorator</em> is an expression that is evaluated after a class has been defined, that can be used to annotate or modify the class in some fashion. This expression must evaluate to a <code>function</code>, which is executed by the runtime to apply the decoration.</p>\r\n    <pre><code class=\"typescript\">@decoratorExpression\r\nclass C {\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-classdecoratorfunction\">\r\n    <h1>Class Decorator Function</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>class decorator function</em> is a function that accepts a constructor function as its argument, and returns either <code>undefined</code>, the provided constructor function, or a new constructor function. Returning <code>undefined</code> is equivalent to returning the provided constructor function.</p>\r\n    <pre><code class=\"typescript\">// A class decorator function\r\nfunction dec(target) {  \r\n // modify, annotate, or replace target...\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-propertydecoratorfunction\">\r\n    <h1>Property/Method Decorator Function</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>property decorator function</em> is a function that accepts three arguments: The object that owns the property, the key for the property (a <code>string</code> or a <code>symbol</code>), and optionally the property descriptor of the property. The function must return either <code>undefined</code>, the provided property descriptor, or a new property descriptor. Returning <code>undefined</code> is equivalent to returning the provided property descriptor.</p>\r\n    <pre><code class=\"typescript\">// A property (or method/accessor) decorator function\r\nfunction dec(target, key, descriptor) {\r\n  // annotate the target and key; or modify or replace the descriptor...\r\n}\r\n    </code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-parameterdecoratorfunction\">\r\n    <h1>Parameter Decorator Function</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>parameter decorator function</em> is a function that accepts three arguments: The function that contains the decorated parameter, the property key of the member (or <code>undefined</code> for a parameter of the constructor), and the ordinal index of the parameter. The return value of this decorator is ignored.</p>\r\n    <pre><code class=\"typescript\">\r\n// A parameter decorator\r\nfunction dec(target, paramIndex) {\r\n    // annotate the target and index\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n  <emu-clause id=\"proposal-terms-decoratorfactory\">\r\n    <h1>Decorator Factory</h1>\r\n    <emu-note>This section is non-normative.</emu-note>\r\n    <p>A <em>decorator factory</em> is a function that can accept any number of arguments, and must return one of the above types of decorator function.</p>\r\n    <pre><code class=\"typescript\">// a class decorator factory function\r\nfunction dec(x, y) {\r\n  // the class decorator function\r\n  return function (target) {\r\n      // modify, annotate, or replace target...\r\n  }\r\n}\r\n</code></pre>\r\n  </emu-clause>\r\n</emu-clause>\r\n<emu-clause id=\"proposal-decoratortargets\">\r\n  <h1>Decorator Targets</h1>\r\n  <emu-note>This section is non-normative.</emu-note>\r\n  <p>A <em>decorator</em> <strong>can</strong> be legally applied to any of the following:</p>\r\n  <ul>\r\n    <li>A class declaration</li>\r\n    <li>A class property initializer (static or prototype)</li>\r\n    <li>A class method declaration (static or prototype)</li>\r\n    <li>A class get or set accessor declaration (static or prototype)</li>\r\n    <li>A parameter of a class constructor</li>\r\n    <li>A parameter of a class method (static or prototype)</li>\r\n    <li>A parameter of a class get or set accessor (static or prototype)</li>\r\n  </ul>\r\n  <p>Please note that a <em>decorator</em> currently <strong>cannot</strong> be legally applied to any of the following:</p>\r\n  <ul>\r\n    <li>A class constructor - This is to reduce ambiguity between where you can apply a decorator (on the class or on its constructor) and which of the above decorator function forms is called.</li>\r\n    <li>A function declaration - Decorators on a function declaration would introduce a TDZ (Temporal Dead Zone), which would make the function unreachable until its declaration is executed. This could cause confusion as an undecorated function declaration is hoisted and can be used in a statement preceeding the declaration.</li>\r\n    <li>A function expression - This is to reduce confusion and maintain parity with disallowing decorators on a function declaration.</li>\r\n    <li>An arrow function - This is to reduce confusion and maintain parity with disallowing decorators on a function expression.</li>\r\n  </ul>\r\n  <p>This list may change in the future.</p>\r\n</emu-clause>\r\n<emu-clause id=\"proposal-decoratoreval\">\r\n  <h1>Decorator Evaluation and Application Order</h1>\r\n  <emu-note>This section is non-normative.</emu-note>\r\n  <p>Decorators are <em>evaluated</em> in the order they appear preceeding their target declaration, to preserve side-effects due to evaluation order. Decorators are <em>applied</em> to their target declaration in reverse order, starting with the decorator closest to the declaration. This behavior is specified to preserve the expected behavior of decorators without a declarative syntax.</p>\r\n  <pre><code class=\"typescript\">@F\r\n@G\r\nclass C {   \r\n}\r\n</code></pre>\r\n  <p>For example, the above listing could be approximately written without decorators in the following fashion:</p>\r\n  <pre><code class=\"typescript\">C = F(G(C))</code></pre>\r\n  <p>In the above example, the expression <code>F</code> is evaluated first, followed by the expression <code>G</code>. <code>G</code> is then called with the constructor function as its argument, followed by calling <code>F</code> with the result. The actual process of applying decorators is more complex than the above example however, though you may still imperatively apply decorators with a reflection API.</p>\r\n  <p>If a class declaration has decorators on both the class and any of its members or parameters, the decorators are applied using the following pseudocode:</p>\r\n  <pre>\r\nfor each member M of class C\r\n  if M is an accessor then\r\n      let accessor = first accessor (get or set, in declaration order) of M\r\n      let memberDecorators = decorators of accessor\r\n      for each parameter of accessor\r\n          let paramDecorators = decorators of parameter           \r\n          let paramIndex = ordinal index of parameter\r\n          Reflect.decorate(paramDecorators, accessor, paramIndex)\r\n      next parameter\r\n\r\n      let accessor = second accessor (get or set, in declaration order) of M\r\n      if accessor then\r\n          let memberDecorators = memberDecorators + decorators of accessor\r\n          for each parameter of accessor\r\n              let paramDecorators = decorators of parameter           \r\n              let paramIndex = ordinal index of parameter\r\n              Reflect.decorate(paramDecorators, accessor, paramIndex)\r\n          next parameter\r\n      end if\r\n  else if M is a method\r\n      let memberDecorators = decorators of M\r\n      for each parameter of M\r\n          let paramDecorators = decorators of parameter           \r\n          let paramIndex = ordinal index of parameter\r\n          Reflect.decorate(paramDecorators, M, paramIndex)\r\n      next parameter\r\n  else\r\n      let memberDecorators = decorators of M\r\n  end if\r\n\r\n  let name = name of M\r\n  let target = C.prototype if M is on the prototype; otherwise, C if M is static  \r\n  Reflect.decorate(memberDecorators, C, name)\r\nnext member\r\n\r\nfor each parameter of C\r\n  let paramDecorators = decorators of parameter\r\n  let paramIndex = ordinal index of parameter\r\n  Reflect.decorate(paramDecorators, C, paramIndex)\r\nnext parameter\r\n\r\nlet classDecorators = decorators of C\r\nlet C = Reflect.decorate(classDecorators, C)\r\n  </pre>\r\n</emu-clause>\r\n\r\n<emu-clause id=\"reflect\">\r\n  <h1>Reflect API</h1>\r\n  <emu-note>This section is non-normative.</emu-note>\r\n  <p>In addition to a declarative approach to defining decorators, it is necessary to also include an imperative API capable of applying decorators, as well as defining, reflecting over, and removing decorator metadata from an object, property, or parameter.</p>\r\n  <p>A shim for this API can be found here: <a href=\"https://github.com/rbuckton/ReflectDecorators\">https://github.com/rbuckton/ReflectDecorators</a></p>\r\n  <pre><code class=\"typescript\">Reflect.decorate(decorators, target, propertyKey?, descriptor?)</code></pre>  \r\n</emu-clause>\r\n\r\n<emu-clause id=\"transpile\">\r\n  <h1>Transformation</h1>\r\n  <p>The following are examples of how decorators can be desugared to ES6 (through a transpiler such as TypeScript). These examples levarage an imperative reflection API.</p>\r\n  <emu-clause id=\"transpile-class\">\r\n    <h1>Class Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">@F(\"color\")\r\n@G\r\nclass C {  \r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">let C = class {\r\n}\r\nObject.defineProperty(C, \"name\", { value: \"C\", configurable: true });\r\nC = __decorate([F(\"color\"), G], C);\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-exportclass\">\r\n    <h1>Class Declaration (Exported)</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">@F(\"color\")\r\n@G\r\nexport class C {\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">export let C = class {\r\n}\r\nObject.defineProperty(C, \"name\", { value: \"C\", configurable: true });\r\nC = __decorate([F(\"color\"), G], C);\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-exportdefaultclass\">\r\n    <h1>Class Declaration (Default, Exported)</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">@F(\"color\")\r\n@G\r\nexport default class C {\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">let C = class {\r\n}\r\nObject.defineProperty(C, \"name\", { value: \"C\", configurable: true });\r\nC = __decorate([F(\"color\"), G], C);\r\nexport default C;\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-classmethod\">\r\n    <h1>Class Method Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">class C {\r\n    @F(\"color\")\r\n    @G\r\n    method() { }\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">class C {\r\n    method() { }\r\n}\r\nObject.defineProperty(C.prototype, \"method\", \r\n    __decorate([F(\"color\"), G], C.prototype, \"method\", Object.getOwnPropertyDescriptor(C.prototype, \"method\")));\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-classaccessor\">\r\n    <h1>Class Accessor Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">class C {\r\n    @F(\"color\")\r\n    @G\r\n    get accessor() { }\r\n    set accessor(value) { }\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">class C {\r\n    get accessor() { }\r\n    set accessor(value) { }\r\n}\r\nObject.defineProperty(C.prototype, \"accessor\", \r\n    __decorate([F(\"color\"), G], C.prototype, \"accessor\", Object.getOwnPropertyDescriptor(C.prototype, \"accessor\")));\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-classproperty\">\r\n    <h1>Class Property Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">class C {\r\n    @F(\"color\")\r\n    @G\r\n    property = 1;\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">class C {\r\n    constructor() {\r\n        this.property = 1;\r\n    }\r\n}\r\n__decorate([F(\"color\"), G], C.prototype, \"property\");\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-classconstructorparameter\">\r\n    <h1>Class Constructor Parameter Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">class C {\r\n    constructor(@F(\"color\") @G p) { }\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">class C {\r\n    constructor(p) { }\r\n}\r\n__decorate([F(\"color\"), G], C, void 0, 0);\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-classmethodparameter\">\r\n    <h1>Class Method Parameter Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">class C {\r\n    method(@F(\"color\") @G p) { }\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">class C {\r\n    method(p) { }\r\n}\r\n__decorate([F(\"color\"), G], C.prototype, \"method\", 0);\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n  <emu-clause id=\"transpile-classaccessorparameter\">\r\n    <h1>Class Set Accessor Parameter Declaration</h1>\r\n    <h2>Syntax</h2>\r\n    <pre><code class=\"typescript\">class C {\r\n    set accessor(@F(\"color\") @G p) { }\r\n}\r\n    </code></pre>\r\n    <h2>ES6 Transformation</h2>\r\n    <pre><code class=\"javascript\">class C {\r\n    set accessor(p) { }\r\n}\r\n__decorate([F(\"color\"), G], C.prototype, \"accessor\", 0);\r\n    </code></pre>\r\n  </emu-clause>\r\n\r\n</emu-clause>\r\n\r\n<emu-annex id=\"grammar\">\r\n  <h1>Grammar</h1>\r\n  <emu-annex id=\"grammar-expressions\">\r\n    <h1>Expressions</h1>\r\n    <emu-production id=\"grammar-memberexpression\" name=\"MemberExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield\">PrimaryExpression</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"~Decorator\"><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression</emu-nt><emu-t>]</emu-t></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-t>.</emu-t><emu-nt>IdentifierName</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-nt params=\"?Yield\">TemplateLiteral</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">SuperProperty</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt>MetaProperty</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt><emu-nt params=\"?Yield\">Arguments</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-superproperty\" name=\"SuperProperty\" params=\"Yield, Decorator\">\r\n      <emu-rhs constraints=\"~Decorator\"><emu-t>super</emu-t><emu-t>[</emu-t><emu-nt params=\"In, ?Yield\">Expression</emu-nt><emu-t>]</emu-t></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-newexpression\" name=\"NewExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>new</emu-t><emu-nt params=\"?Yield, ?Decorator\">NewExpression</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-callexpression\" name=\"CallExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">MemberExpression</emu-nt> <emu-nt params=\"?Yield\">Arguments</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield\">SuperCall</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt> <emu-nt params=\"?Yield\">Arguments</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"~Decorator\"><emu-nt params=\"?Yield\">CallExpression</emu-nt> <emu-t>[</emu-t> <emu-nt params=\"In, ?Yield\">Expression</emu-nt> <emu-t>]</emu-t></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt> <emu-t>.</emu-t> <emu-nt>IdentifierName</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt> <emu-nt params=\"?Yield\">TemplateLiteral</emu-nt></emu-rhs>      \r\n    </emu-production>\r\n    <emu-production id=\"grammar-lefthandsideexpression\" name=\"LeftHandSideExpression\" params=\"Yield, Decorator\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">NewExpression</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?Decorator\">CallExpression</emu-nt></emu-rhs>\r\n    </emu-production>\r\n  </emu-annex>\r\n\r\n  <emu-annex id=\"functions-and-classes\">\r\n    <h1>Functions and Classes</h1>\r\n    <emu-production id=\"grammar-strictformalparameters\" name=\"StrictFormalParameters\" params=\"Yield, GeneratorParameter, ClassParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameters</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-formalparameters\" name=\"FormalParameters\" params=\"Yield, GeneratorParameter, ClassParameter\">\r\n      <emu-rhs><emu-prose>[empty]</emu-prose></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameterList</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-formalparameterlist\" name=\"FormalParameterList\" params=\"Yield, GeneratorParameter, ClassParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?ClassParameter\">FunctionRestParameter</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalsList</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalsList</emu-nt><emu-t>,</emu-t><emu-nt params=\"?Yield, ?ClassParameter\">FunctionRestParameter</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-formalslist\" name=\"FormalsList\" params=\"Yield, GeneratorParameter, ClassParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameter</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalsList</emu-nt><emu-t>,</emu-t><emu-nt params=\"?Yield, ?GeneratorParameter, ?ClassParameter\">FormalParameter</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-functionrestparameter\" name=\"FunctionRestParameter\" params=\"Yield, ClassParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield\">BindingRestElement</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"+ClassParameter\"><emu-nt>DecoratorList</emu-nt><emu-nt params=\"?Yield\">BindingRestElement</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-formalparameter\" name=\"FormalParameter\" params=\"Yield, GeneratorParameter, ClassParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield, ?GeneratorParameter\">BindingElement</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"+ClassParameter\"><emu-nt>DecoratorList</emu-nt><emu-nt params=\"?Yield, ?GeneratorParameter\">BindingElement</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-methoddefinition\" name=\"MethodDefinition\" params=\"Yield, ClassParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield\">PropertyName</emu-nt> <emu-t>(</emu-t> <emu-nt params=\"?ClassParameter\">StrictFormalParameters</emu-nt> <emu-t>)</emu-t> <emu-t>{</emu-t> <emu-nt>FunctionBody</emu-nt> <emu-t>}</emu-t></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield, ?ClassParameter\">GeneratorMethod</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>get</emu-t><emu-nt params=\"?Yield\">PropertyName</emu-nt> <emu-t>(</emu-t> <emu-t>)</emu-t> <emu-t>{</emu-t> <emu-nt>FunctionBody</emu-nt> <emu-t>}</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>set</emu-t><emu-nt params=\"?Yield\">PropertyName</emu-nt> <emu-t>(</emu-t> <emu-nt params=\"?ClassParameter\">PropertySetParameterList</emu-nt> <emu-t>)</emu-t> <emu-t>{</emu-t> <emu-nt>FunctionBody</emu-nt> <emu-t>}</emu-t></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-generatormethod\" name=\"GeneratorMethod\" params=\"Yield, ClassParameter\">\r\n      <emu-rhs><emu-t>*</emu-t><emu-nt params=\"?Yield\">PropertyName</emu-nt> <emu-t>(</emu-t> <emu-nt params=\"Yield, GeneratorParameter, ?ClassParameter\">StrictFormalParameters</emu-nt> <emu-t>)</emu-t> <emu-t>{</emu-t> <emu-nt>GeneratorBody</emu-nt> <emu-t>}</emu-t></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-classdeclaration\" name=\"ClassDeclaration\" params=\"Yield, Default\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>class</emu-t> <emu-nt params=\"?Yield\">BindingIdentifier</emu-nt> <emu-nt params=\"?Yield\">ClassTail</emu-nt></emu-rhs>\r\n      <emu-rhs constraints=\"+Default\"><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>class</emu-t> <emu-nt params=\"?Yield\">ClassTail</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-classexpression\" name=\"ClassExpression\" params=\"Yield, GeneratorParameter\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>class</emu-t> <emu-nt params=\"?Yield\" optional>BindingIdentifier</emu-nt> <emu-nt params=\"?Yield, ?GeneratorParameter\">ClassTail</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-classelement\" name=\"ClassElement\" params=\"Yield\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-nt params=\"ClassParameter, ?Yield\">MethodDefinition</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t>static</emu-t> <emu-nt params=\"ClassParameter, ?Yield\">MethodDefinition</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-t optional>static</emu-t> <emu-nt>PropertyName</emu-nt> <emu-nt params=\"In, ?Yield\" optional>Initializer</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>;</emu-t></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-decoratorlist\" name=\"DecoratorList\" params=\"Yield\">\r\n      <emu-rhs><emu-nt params=\"?Yield\" optional>DecoratorList</emu-nt> <emu-nt params=\"?Yield\">Decorator</emu-nt></emu-rhs>\r\n    </emu-production>\r\n    <emu-production id=\"grammar-decorator\" name=\"Decorator\" params=\"Yield\">\r\n      <emu-rhs><emu-t>@</emu-t> <emu-nt params=\"Decorator, ?Yield\">LeftHandSideExpression</emu-nt></emu-rhs>\r\n    </emu-production>\r\n  </emu-annex>\r\n\r\n  <emu-annex id=\"scripts-and-modules\">\r\n    <h1>Scripts and Modules</h1>\r\n    <emu-production id=\"grammar-exportdeclaration\" name=\"ExportDeclaration\">\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>*</emu-t> <emu-nt>FromClause</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-nt>ExportClause</emu-nt> <emu-nt>FromClause</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-nt>ExportClause</emu-nt> <emu-t>;</emu-t></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-nt>VariableStatement</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt>Declaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>default</emu-t> <emu-nt params=\"Default\">HoistableDeclaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>default</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt params=\"Default\">ClassDeclaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-t>export</emu-t> <emu-t>default</emu-t> <emu-gann>lookahead ∉ { <emu-t>function</emu-t>, <emu-t>class</emu-t>, <emu-t>@</emu-t> }</emu-gann> <emu-nt>AssignmentExpression</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt>DecoratorList</emu-nt> <emu-t>export</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt>ClassDeclaration</emu-nt></emu-rhs>\r\n      <emu-rhs><emu-nt>DecoratorList</emu-nt> <emu-t>export</emu-t> <emu-t>default</emu-t> <emu-gann>lookahead ≠ <emu-t>@</emu-t></emu-gann> <emu-nt params=\"Default\">ClassDeclaration</emu-nt></emu-rhs>\r\n    </emu-production>\r\n  </emu-annex>\r\n</emu-annex>\r\n<emu-annex id=\"typescript\">\r\n  <h1>TypeScript</h1>\r\n  <emu-annex id=\"typescript-definitions\">\r\n    <h1>TypeScript Definitions</h1>\r\n    <pre><code class=\"typescript\">interface TypedPropertyDescriptor&lt;T&gt; {  \r\n    enumerable?: boolean;  \r\n    configurable?: boolean;  \r\n    writable?: boolean;  \r\n    value?: T;  \r\n    get?: () =&gt; T;  \r\n    set?: (value: T) =&gt; void;  \r\n}  \r\n\r\ntype ClassDecorator = &lt;TFunction extends Function&gt;(target: TFunction): TFunction | void;\r\ntype MethodDecorator = &lt;T&gt;(target: Object, propertyKey: string | symbol, descriptor: TypedPropertyDescriptor&lt;T&gt;): TypedPropertyDescriptor&lt;T&gt; | void;\r\ntype PropertyDecorator = (target: Object, propertyKey: string | symbol): void;\r\ntype ParameterDecorator = (target: Object, propertyKey: string | symbol, parameterIndex: number): void;\r\n</code></pre>\r\n  </emu-annex>  \r\n</emu-annex>";
+
+/***/ },
+/* 679 */
+/***/ function(module, exports) {
+
+	"use strict";
+	function runTests(fixture) {
+	    var results = { passed: [], failed: [] };
+	    for (var testName in fixture) {
+	        var test = fixture[testName];
+	        if (typeof test === "function") {
+	            try {
+	                test();
+	                results.passed.push(testName);
+	            }
+	            catch (e) {
+	                results.failed.push([testName, e]);
+	            }
+	        }
+	    }
+	    return results;
+	}
+	exports.runTests = runTests;
+	function printResults(results) {
+	    for (var _i = 0, _a = results.failed; _i < _a.length; _i++) {
+	        var _b = _a[_i], testName = _b[0], error = _b[1];
+	        var message_1 = "stack" in error ? error.stack : String(error);
+	        console.error(testName + " failed.\n" + message_1);
+	    }
+	    var passedCount = results.passed.length;
+	    var failedCount = results.failed.length;
+	    var totalCount = passedCount + failedCount;
+	    var message = "Run " + (failedCount > 0 ? "failed" : "succeeded") + ": passed: " + passedCount + ", failed: " + failedCount + ", total: " + totalCount + ".";
+	    if (results.failed.length) {
+	        console.error(message);
+	    }
+	    else {
+	        console.log(message);
+	    }
+	}
+	exports.printResults = printResults;
+
+
+/***/ },
+/* 680 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Reflect.decorate ( decorators, target [, propertyKey [, descriptor] ] )
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForFunctionOverload() {
+	    var target = function () { };
+	    assert.throws(function () { return Reflect.decorate(undefined, target, undefined, undefined); }, TypeError);
+	}
+	exports.ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForFunctionOverload = ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForFunctionOverload;
+	function ReflectDecorateThrowsIfTargetArgumentNotFunctionForFunctionOverload() {
+	    var decorators = [];
+	    var target = {};
+	    assert.throws(function () { return Reflect.decorate(decorators, target, undefined, undefined); }, TypeError);
+	}
+	exports.ReflectDecorateThrowsIfTargetArgumentNotFunctionForFunctionOverload = ReflectDecorateThrowsIfTargetArgumentNotFunctionForFunctionOverload;
+	function ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForPropertyOverload() {
+	    var target = {};
+	    var name = "name";
+	    assert.throws(function () { return Reflect.decorate(undefined, target, name, undefined); }, TypeError);
+	}
+	exports.ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForPropertyOverload = ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForPropertyOverload;
+	function ReflectDecorateThrowsIfTargetArgumentNotObjectForPropertyOverload() {
+	    var decorators = [];
+	    var target = 1;
+	    var name = "name";
+	    assert.throws(function () { return Reflect.decorate(decorators, target, name, undefined); }, TypeError);
+	}
+	exports.ReflectDecorateThrowsIfTargetArgumentNotObjectForPropertyOverload = ReflectDecorateThrowsIfTargetArgumentNotObjectForPropertyOverload;
+	function ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForPropertyDescriptorOverload() {
+	    var target = {};
+	    var name = "name";
+	    var descriptor = {};
+	    assert.throws(function () { return Reflect.decorate(undefined, target, name, descriptor); }, TypeError);
+	}
+	exports.ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForPropertyDescriptorOverload = ReflectDecorateThrowsIfDecoratorsArgumentNotArrayForPropertyDescriptorOverload;
+	function ReflectDecorateThrowsIfTargetArgumentNotObjectForPropertyDescriptorOverload() {
+	    var decorators = [];
+	    var target = 1;
+	    var name = "name";
+	    var descriptor = {};
+	    assert.throws(function () { return Reflect.decorate(decorators, target, name, descriptor); }, TypeError);
+	}
+	exports.ReflectDecorateThrowsIfTargetArgumentNotObjectForPropertyDescriptorOverload = ReflectDecorateThrowsIfTargetArgumentNotObjectForPropertyDescriptorOverload;
+	function ReflectDecorateExecutesDecoratorsInReverseOrderForFunctionOverload() {
+	    var order = [];
+	    var decorators = [
+	        function (target) { order.push(0); },
+	        function (target) { order.push(1); }
+	    ];
+	    var target = function () { };
+	    Reflect.decorate(decorators, target);
+	    assert.deepEqual(order, [1, 0]);
+	}
+	exports.ReflectDecorateExecutesDecoratorsInReverseOrderForFunctionOverload = ReflectDecorateExecutesDecoratorsInReverseOrderForFunctionOverload;
+	function ReflectDecorateExecutesDecoratorsInReverseOrderForPropertyOverload() {
+	    var order = [];
+	    var decorators = [
+	        function (target, name) { order.push(0); },
+	        function (target, name) { order.push(1); }
+	    ];
+	    var target = {};
+	    var name = "name";
+	    Reflect.decorate(decorators, target, name, undefined);
+	    assert.deepEqual(order, [1, 0]);
+	}
+	exports.ReflectDecorateExecutesDecoratorsInReverseOrderForPropertyOverload = ReflectDecorateExecutesDecoratorsInReverseOrderForPropertyOverload;
+	function ReflectDecorateExecutesDecoratorsInReverseOrderForPropertyDescriptorOverload() {
+	    var order = [];
+	    var decorators = [
+	        function (target, name) { order.push(0); },
+	        function (target, name) { order.push(1); }
+	    ];
+	    var target = {};
+	    var name = "name";
+	    var descriptor = {};
+	    Reflect.decorate(decorators, target, name, descriptor);
+	    assert.deepEqual(order, [1, 0]);
+	}
+	exports.ReflectDecorateExecutesDecoratorsInReverseOrderForPropertyDescriptorOverload = ReflectDecorateExecutesDecoratorsInReverseOrderForPropertyDescriptorOverload;
+	function ReflectDecoratorPipelineForFunctionOverload() {
+	    var A = function A() { };
+	    var B = function B() { };
+	    var decorators = [
+	        function (target) { return undefined; },
+	        function (target) { return A; },
+	        function (target) { return B; }
+	    ];
+	    var target = function () { };
+	    var result = Reflect.decorate(decorators, target);
+	    assert.strictEqual(result, A);
+	}
+	exports.ReflectDecoratorPipelineForFunctionOverload = ReflectDecoratorPipelineForFunctionOverload;
+	function ReflectDecoratorPipelineForPropertyOverload() {
+	    var A = {};
+	    var B = {};
+	    var decorators = [
+	        function (target, name) { return undefined; },
+	        function (target, name) { return A; },
+	        function (target, name) { return B; }
+	    ];
+	    var target = {};
+	    var result = Reflect.decorate(decorators, target, "name", undefined);
+	    assert.strictEqual(result, undefined);
+	}
+	exports.ReflectDecoratorPipelineForPropertyOverload = ReflectDecoratorPipelineForPropertyOverload;
+	function ReflectDecoratorPipelineForPropertyDescriptorOverload() {
+	    var A = {};
+	    var B = {};
+	    var C = {};
+	    var decorators = [
+	        function (target, name) { return undefined; },
+	        function (target, name) { return A; },
+	        function (target, name) { return B; }
+	    ];
+	    var target = {};
+	    var result = Reflect.decorate(decorators, target, "name", C);
+	    assert.strictEqual(result, A);
+	}
+	exports.ReflectDecoratorPipelineForPropertyDescriptorOverload = ReflectDecoratorPipelineForPropertyDescriptorOverload;
+	function ReflectDecoratorCorrectTargetInPipelineForFunctionOverload() {
+	    var sent = [];
+	    var A = function A() { };
+	    var B = function B() { };
+	    var decorators = [
+	        function (target) { sent.push(target); return undefined; },
+	        function (target) { sent.push(target); return undefined; },
+	        function (target) { sent.push(target); return A; },
+	        function (target) { sent.push(target); return B; }
+	    ];
+	    var target = function () { };
+	    Reflect.decorate(decorators, target);
+	    assert.deepEqual(sent, [target, B, A, A]);
+	}
+	exports.ReflectDecoratorCorrectTargetInPipelineForFunctionOverload = ReflectDecoratorCorrectTargetInPipelineForFunctionOverload;
+	function ReflectDecoratorCorrectTargetInPipelineForPropertyOverload() {
+	    var sent = [];
+	    var decorators = [
+	        function (target, name) { sent.push(target); },
+	        function (target, name) { sent.push(target); },
+	        function (target, name) { sent.push(target); },
+	        function (target, name) { sent.push(target); }
+	    ];
+	    var target = {};
+	    Reflect.decorate(decorators, target, "name");
+	    assert.deepEqual(sent, [target, target, target, target]);
+	}
+	exports.ReflectDecoratorCorrectTargetInPipelineForPropertyOverload = ReflectDecoratorCorrectTargetInPipelineForPropertyOverload;
+	function ReflectDecoratorCorrectNameInPipelineForPropertyOverload() {
+	    var sent = [];
+	    var decorators = [
+	        function (target, name) { sent.push(name); },
+	        function (target, name) { sent.push(name); },
+	        function (target, name) { sent.push(name); },
+	        function (target, name) { sent.push(name); }
+	    ];
+	    var target = {};
+	    Reflect.decorate(decorators, target, "name");
+	    assert.deepEqual(sent, ["name", "name", "name", "name"]);
+	}
+	exports.ReflectDecoratorCorrectNameInPipelineForPropertyOverload = ReflectDecoratorCorrectNameInPipelineForPropertyOverload;
+	function ReflectDecoratorCorrectTargetInPipelineForPropertyDescriptorOverload() {
+	    var sent = [];
+	    var A = {};
+	    var B = {};
+	    var C = {};
+	    var decorators = [
+	        function (target, name) { sent.push(target); return undefined; },
+	        function (target, name) { sent.push(target); return undefined; },
+	        function (target, name) { sent.push(target); return A; },
+	        function (target, name) { sent.push(target); return B; }
+	    ];
+	    var target = {};
+	    Reflect.decorate(decorators, target, "name", C);
+	    assert.deepEqual(sent, [target, target, target, target]);
+	}
+	exports.ReflectDecoratorCorrectTargetInPipelineForPropertyDescriptorOverload = ReflectDecoratorCorrectTargetInPipelineForPropertyDescriptorOverload;
+	function ReflectDecoratorCorrectNameInPipelineForPropertyDescriptorOverload() {
+	    var sent = [];
+	    var A = {};
+	    var B = {};
+	    var C = {};
+	    var decorators = [
+	        function (target, name) { sent.push(name); return undefined; },
+	        function (target, name) { sent.push(name); return undefined; },
+	        function (target, name) { sent.push(name); return A; },
+	        function (target, name) { sent.push(name); return B; }
+	    ];
+	    var target = {};
+	    Reflect.decorate(decorators, target, "name", C);
+	    assert.deepEqual(sent, ["name", "name", "name", "name"]);
+	}
+	exports.ReflectDecoratorCorrectNameInPipelineForPropertyDescriptorOverload = ReflectDecoratorCorrectNameInPipelineForPropertyDescriptorOverload;
+	function ReflectDecoratorCorrectDescriptorInPipelineForPropertyDescriptorOverload() {
+	    var sent = [];
+	    var A = {};
+	    var B = {};
+	    var C = {};
+	    var decorators = [
+	        function (target, name, descriptor) { sent.push(descriptor); return undefined; },
+	        function (target, name, descriptor) { sent.push(descriptor); return undefined; },
+	        function (target, name, descriptor) { sent.push(descriptor); return A; },
+	        function (target, name, descriptor) { sent.push(descriptor); return B; }
+	    ];
+	    var target = {};
+	    Reflect.decorate(decorators, target, "name", C);
+	    assert.deepEqual(sent, [C, B, A, A]);
+	}
+	exports.ReflectDecoratorCorrectDescriptorInPipelineForPropertyDescriptorOverload = ReflectDecoratorCorrectDescriptorInPipelineForPropertyDescriptorOverload;
+
+
+/***/ },
+/* 681 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {'use strict';
+
+	// compare and isBuffer taken from https://github.com/feross/buffer/blob/680e9e5e488f22aac27599a57dc844a6315928dd/index.js
+	// original notice:
+
+	/*!
 	 * The buffer module from node.js, for the browser.
 	 *
 	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
 	 * @license  MIT
 	 */
-	/* eslint-disable no-proto */
-
-	'use strict'
-
-	var base64 = __webpack_require__(664)
-	var ieee754 = __webpack_require__(665)
-	var isArray = __webpack_require__(666)
-
-	exports.Buffer = Buffer
-	exports.SlowBuffer = SlowBuffer
-	exports.INSPECT_MAX_BYTES = 50
-	Buffer.poolSize = 8192 // not used by this implementation
-
-	var rootParent = {}
-
-	/**
-	 * If `Buffer.TYPED_ARRAY_SUPPORT`:
-	 *   === true    Use Uint8Array implementation (fastest)
-	 *   === false   Use Object implementation (most compatible, even IE6)
-	 *
-	 * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
-	 * Opera 11.6+, iOS 4.2+.
-	 *
-	 * Due to various browser bugs, sometimes the Object implementation will be used even
-	 * when the browser supports typed arrays.
-	 *
-	 * Note:
-	 *
-	 *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
-	 *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
-	 *
-	 *   - Safari 5-7 lacks support for changing the `Object.prototype.constructor` property
-	 *     on objects.
-	 *
-	 *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
-	 *
-	 *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
-	 *     incorrect length in some situations.
-
-	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
-	 * get the Object implementation, which is slower but behaves correctly.
-	 */
-	Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
-	  ? global.TYPED_ARRAY_SUPPORT
-	  : typedArraySupport()
-
-	function typedArraySupport () {
-	  function Bar () {}
-	  try {
-	    var arr = new Uint8Array(1)
-	    arr.foo = function () { return 42 }
-	    arr.constructor = Bar
-	    return arr.foo() === 42 && // typed array instances can be augmented
-	        arr.constructor === Bar && // constructor can be set
-	        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
-	        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
-	  } catch (e) {
-	    return false
-	  }
-	}
-
-	function kMaxLength () {
-	  return Buffer.TYPED_ARRAY_SUPPORT
-	    ? 0x7fffffff
-	    : 0x3fffffff
-	}
-
-	/**
-	 * Class: Buffer
-	 * =============
-	 *
-	 * The Buffer constructor returns instances of `Uint8Array` that are augmented
-	 * with function properties for all the node `Buffer` API functions. We use
-	 * `Uint8Array` so that square bracket notation works as expected -- it returns
-	 * a single octet.
-	 *
-	 * By augmenting the instances, we can avoid modifying the `Uint8Array`
-	 * prototype.
-	 */
-	function Buffer (arg) {
-	  if (!(this instanceof Buffer)) {
-	    // Avoid going through an ArgumentsAdaptorTrampoline in the common case.
-	    if (arguments.length > 1) return new Buffer(arg, arguments[1])
-	    return new Buffer(arg)
+	function compare(a, b) {
+	  if (a === b) {
+	    return 0;
 	  }
 
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
-	    this.length = 0
-	    this.parent = undefined
-	  }
+	  var x = a.length;
+	  var y = b.length;
 
-	  // Common case.
-	  if (typeof arg === 'number') {
-	    return fromNumber(this, arg)
-	  }
-
-	  // Slightly less common case.
-	  if (typeof arg === 'string') {
-	    return fromString(this, arg, arguments.length > 1 ? arguments[1] : 'utf8')
-	  }
-
-	  // Unusual.
-	  return fromObject(this, arg)
-	}
-
-	function fromNumber (that, length) {
-	  that = allocate(that, length < 0 ? 0 : checked(length) | 0)
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
-	    for (var i = 0; i < length; i++) {
-	      that[i] = 0
-	    }
-	  }
-	  return that
-	}
-
-	function fromString (that, string, encoding) {
-	  if (typeof encoding !== 'string' || encoding === '') encoding = 'utf8'
-
-	  // Assumption: byteLength() return value is always < kMaxLength.
-	  var length = byteLength(string, encoding) | 0
-	  that = allocate(that, length)
-
-	  that.write(string, encoding)
-	  return that
-	}
-
-	function fromObject (that, object) {
-	  if (Buffer.isBuffer(object)) return fromBuffer(that, object)
-
-	  if (isArray(object)) return fromArray(that, object)
-
-	  if (object == null) {
-	    throw new TypeError('must start with number, buffer, array or string')
-	  }
-
-	  if (typeof ArrayBuffer !== 'undefined') {
-	    if (object.buffer instanceof ArrayBuffer) {
-	      return fromTypedArray(that, object)
-	    }
-	    if (object instanceof ArrayBuffer) {
-	      return fromArrayBuffer(that, object)
+	  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
+	    if (a[i] !== b[i]) {
+	      x = a[i];
+	      y = b[i];
+	      break;
 	    }
 	  }
 
-	  if (object.length) return fromArrayLike(that, object)
-
-	  return fromJsonObject(that, object)
-	}
-
-	function fromBuffer (that, buffer) {
-	  var length = checked(buffer.length) | 0
-	  that = allocate(that, length)
-	  buffer.copy(that, 0, 0, length)
-	  return that
-	}
-
-	function fromArray (that, array) {
-	  var length = checked(array.length) | 0
-	  that = allocate(that, length)
-	  for (var i = 0; i < length; i += 1) {
-	    that[i] = array[i] & 255
+	  if (x < y) {
+	    return -1;
 	  }
-	  return that
-	}
-
-	// Duplicate of fromArray() to keep fromArray() monomorphic.
-	function fromTypedArray (that, array) {
-	  var length = checked(array.length) | 0
-	  that = allocate(that, length)
-	  // Truncating the elements is probably not what people expect from typed
-	  // arrays with BYTES_PER_ELEMENT > 1 but it's compatible with the behavior
-	  // of the old Buffer constructor.
-	  for (var i = 0; i < length; i += 1) {
-	    that[i] = array[i] & 255
+	  if (y < x) {
+	    return 1;
 	  }
-	  return that
+	  return 0;
+	}
+	function isBuffer(b) {
+	  if (global.Buffer && typeof global.Buffer.isBuffer === 'function') {
+	    return global.Buffer.isBuffer(b);
+	  }
+	  return !!(b != null && b._isBuffer);
 	}
 
-	function fromArrayBuffer (that, array) {
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    // Return an augmented `Uint8Array` instance, for best performance
-	    array.byteLength
-	    that = Buffer._augment(new Uint8Array(array))
+	// based on node assert, original notice:
+
+	// http://wiki.commonjs.org/wiki/Unit_Testing/1.0
+	//
+	// THIS IS NOT TESTED NOR LIKELY TO WORK OUTSIDE V8!
+	//
+	// Originally from narwhal.js (http://narwhaljs.org)
+	// Copyright (c) 2009 Thomas Robinson <280north.com>
+	//
+	// Permission is hereby granted, free of charge, to any person obtaining a copy
+	// of this software and associated documentation files (the 'Software'), to
+	// deal in the Software without restriction, including without limitation the
+	// rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+	// sell copies of the Software, and to permit persons to whom the Software is
+	// furnished to do so, subject to the following conditions:
+	//
+	// The above copyright notice and this permission notice shall be included in
+	// all copies or substantial portions of the Software.
+	//
+	// THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	// AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+	// ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+	// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+	var util = __webpack_require__(682);
+	var hasOwn = Object.prototype.hasOwnProperty;
+	var pSlice = Array.prototype.slice;
+	var functionsHaveNames = (function () {
+	  return function foo() {}.name === 'foo';
+	}());
+	function pToString (obj) {
+	  return Object.prototype.toString.call(obj);
+	}
+	function isView(arrbuf) {
+	  if (isBuffer(arrbuf)) {
+	    return false;
+	  }
+	  if (typeof global.ArrayBuffer !== 'function') {
+	    return false;
+	  }
+	  if (typeof ArrayBuffer.isView === 'function') {
+	    return ArrayBuffer.isView(arrbuf);
+	  }
+	  if (!arrbuf) {
+	    return false;
+	  }
+	  if (arrbuf instanceof DataView) {
+	    return true;
+	  }
+	  if (arrbuf.buffer && arrbuf.buffer instanceof ArrayBuffer) {
+	    return true;
+	  }
+	  return false;
+	}
+	// 1. The assert module provides functions that throw
+	// AssertionError's when particular conditions are not met. The
+	// assert module must conform to the following interface.
+
+	var assert = module.exports = ok;
+
+	// 2. The AssertionError is defined in assert.
+	// new assert.AssertionError({ message: message,
+	//                             actual: actual,
+	//                             expected: expected })
+
+	var regex = /\s*function\s+([^\(\s]*)\s*/;
+	// based on https://github.com/ljharb/function.prototype.name/blob/adeeeec8bfcc6068b187d7d9fb3d5bb1d3a30899/implementation.js
+	function getName(func) {
+	  if (!util.isFunction(func)) {
+	    return;
+	  }
+	  if (functionsHaveNames) {
+	    return func.name;
+	  }
+	  var str = func.toString();
+	  var match = str.match(regex);
+	  return match && match[1];
+	}
+	assert.AssertionError = function AssertionError(options) {
+	  this.name = 'AssertionError';
+	  this.actual = options.actual;
+	  this.expected = options.expected;
+	  this.operator = options.operator;
+	  if (options.message) {
+	    this.message = options.message;
+	    this.generatedMessage = false;
 	  } else {
-	    // Fallback: Return an object instance of the Buffer class
-	    that = fromTypedArray(that, new Uint8Array(array))
+	    this.message = getMessage(this);
+	    this.generatedMessage = true;
 	  }
-	  return that
-	}
-
-	function fromArrayLike (that, array) {
-	  var length = checked(array.length) | 0
-	  that = allocate(that, length)
-	  for (var i = 0; i < length; i += 1) {
-	    that[i] = array[i] & 255
-	  }
-	  return that
-	}
-
-	// Deserialize { type: 'Buffer', data: [1,2,3,...] } into a Buffer object.
-	// Returns a zero-length buffer for inputs that don't conform to the spec.
-	function fromJsonObject (that, object) {
-	  var array
-	  var length = 0
-
-	  if (object.type === 'Buffer' && isArray(object.data)) {
-	    array = object.data
-	    length = checked(array.length) | 0
-	  }
-	  that = allocate(that, length)
-
-	  for (var i = 0; i < length; i += 1) {
-	    that[i] = array[i] & 255
-	  }
-	  return that
-	}
-
-	if (Buffer.TYPED_ARRAY_SUPPORT) {
-	  Buffer.prototype.__proto__ = Uint8Array.prototype
-	  Buffer.__proto__ = Uint8Array
-	} else {
-	  // pre-set for values that may exist in the future
-	  Buffer.prototype.length = undefined
-	  Buffer.prototype.parent = undefined
-	}
-
-	function allocate (that, length) {
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    // Return an augmented `Uint8Array` instance, for best performance
-	    that = Buffer._augment(new Uint8Array(length))
-	    that.__proto__ = Buffer.prototype
+	  var stackStartFunction = options.stackStartFunction || fail;
+	  if (Error.captureStackTrace) {
+	    Error.captureStackTrace(this, stackStartFunction);
 	  } else {
-	    // Fallback: Return an object instance of the Buffer class
-	    that.length = length
-	    that._isBuffer = true
-	  }
-
-	  var fromPool = length !== 0 && length <= Buffer.poolSize >>> 1
-	  if (fromPool) that.parent = rootParent
-
-	  return that
-	}
-
-	function checked (length) {
-	  // Note: cannot use `length < kMaxLength` here because that fails when
-	  // length is NaN (which is otherwise coerced to zero.)
-	  if (length >= kMaxLength()) {
-	    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
-	                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
-	  }
-	  return length | 0
-	}
-
-	function SlowBuffer (subject, encoding) {
-	  if (!(this instanceof SlowBuffer)) return new SlowBuffer(subject, encoding)
-
-	  var buf = new Buffer(subject, encoding)
-	  delete buf.parent
-	  return buf
-	}
-
-	Buffer.isBuffer = function isBuffer (b) {
-	  return !!(b != null && b._isBuffer)
-	}
-
-	Buffer.compare = function compare (a, b) {
-	  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
-	    throw new TypeError('Arguments must be Buffers')
-	  }
-
-	  if (a === b) return 0
-
-	  var x = a.length
-	  var y = b.length
-
-	  var i = 0
-	  var len = Math.min(x, y)
-	  while (i < len) {
-	    if (a[i] !== b[i]) break
-
-	    ++i
-	  }
-
-	  if (i !== len) {
-	    x = a[i]
-	    y = b[i]
-	  }
-
-	  if (x < y) return -1
-	  if (y < x) return 1
-	  return 0
-	}
-
-	Buffer.isEncoding = function isEncoding (encoding) {
-	  switch (String(encoding).toLowerCase()) {
-	    case 'hex':
-	    case 'utf8':
-	    case 'utf-8':
-	    case 'ascii':
-	    case 'binary':
-	    case 'base64':
-	    case 'raw':
-	    case 'ucs2':
-	    case 'ucs-2':
-	    case 'utf16le':
-	    case 'utf-16le':
-	      return true
-	    default:
-	      return false
-	  }
-	}
-
-	Buffer.concat = function concat (list, length) {
-	  if (!isArray(list)) throw new TypeError('list argument must be an Array of Buffers.')
-
-	  if (list.length === 0) {
-	    return new Buffer(0)
-	  }
-
-	  var i
-	  if (length === undefined) {
-	    length = 0
-	    for (i = 0; i < list.length; i++) {
-	      length += list[i].length
-	    }
-	  }
-
-	  var buf = new Buffer(length)
-	  var pos = 0
-	  for (i = 0; i < list.length; i++) {
-	    var item = list[i]
-	    item.copy(buf, pos)
-	    pos += item.length
-	  }
-	  return buf
-	}
-
-	function byteLength (string, encoding) {
-	  if (typeof string !== 'string') string = '' + string
-
-	  var len = string.length
-	  if (len === 0) return 0
-
-	  // Use a for loop to avoid recursion
-	  var loweredCase = false
-	  for (;;) {
-	    switch (encoding) {
-	      case 'ascii':
-	      case 'binary':
-	      // Deprecated
-	      case 'raw':
-	      case 'raws':
-	        return len
-	      case 'utf8':
-	      case 'utf-8':
-	        return utf8ToBytes(string).length
-	      case 'ucs2':
-	      case 'ucs-2':
-	      case 'utf16le':
-	      case 'utf-16le':
-	        return len * 2
-	      case 'hex':
-	        return len >>> 1
-	      case 'base64':
-	        return base64ToBytes(string).length
-	      default:
-	        if (loweredCase) return utf8ToBytes(string).length // assume utf8
-	        encoding = ('' + encoding).toLowerCase()
-	        loweredCase = true
-	    }
-	  }
-	}
-	Buffer.byteLength = byteLength
-
-	function slowToString (encoding, start, end) {
-	  var loweredCase = false
-
-	  start = start | 0
-	  end = end === undefined || end === Infinity ? this.length : end | 0
-
-	  if (!encoding) encoding = 'utf8'
-	  if (start < 0) start = 0
-	  if (end > this.length) end = this.length
-	  if (end <= start) return ''
-
-	  while (true) {
-	    switch (encoding) {
-	      case 'hex':
-	        return hexSlice(this, start, end)
-
-	      case 'utf8':
-	      case 'utf-8':
-	        return utf8Slice(this, start, end)
-
-	      case 'ascii':
-	        return asciiSlice(this, start, end)
-
-	      case 'binary':
-	        return binarySlice(this, start, end)
-
-	      case 'base64':
-	        return base64Slice(this, start, end)
-
-	      case 'ucs2':
-	      case 'ucs-2':
-	      case 'utf16le':
-	      case 'utf-16le':
-	        return utf16leSlice(this, start, end)
-
-	      default:
-	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
-	        encoding = (encoding + '').toLowerCase()
-	        loweredCase = true
-	    }
-	  }
-	}
-
-	Buffer.prototype.toString = function toString () {
-	  var length = this.length | 0
-	  if (length === 0) return ''
-	  if (arguments.length === 0) return utf8Slice(this, 0, length)
-	  return slowToString.apply(this, arguments)
-	}
-
-	Buffer.prototype.equals = function equals (b) {
-	  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
-	  if (this === b) return true
-	  return Buffer.compare(this, b) === 0
-	}
-
-	Buffer.prototype.inspect = function inspect () {
-	  var str = ''
-	  var max = exports.INSPECT_MAX_BYTES
-	  if (this.length > 0) {
-	    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
-	    if (this.length > max) str += ' ... '
-	  }
-	  return '<Buffer ' + str + '>'
-	}
-
-	Buffer.prototype.compare = function compare (b) {
-	  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
-	  if (this === b) return 0
-	  return Buffer.compare(this, b)
-	}
-
-	Buffer.prototype.indexOf = function indexOf (val, byteOffset) {
-	  if (byteOffset > 0x7fffffff) byteOffset = 0x7fffffff
-	  else if (byteOffset < -0x80000000) byteOffset = -0x80000000
-	  byteOffset >>= 0
-
-	  if (this.length === 0) return -1
-	  if (byteOffset >= this.length) return -1
-
-	  // Negative offsets start from the end of the buffer
-	  if (byteOffset < 0) byteOffset = Math.max(this.length + byteOffset, 0)
-
-	  if (typeof val === 'string') {
-	    if (val.length === 0) return -1 // special case: looking for empty string always fails
-	    return String.prototype.indexOf.call(this, val, byteOffset)
-	  }
-	  if (Buffer.isBuffer(val)) {
-	    return arrayIndexOf(this, val, byteOffset)
-	  }
-	  if (typeof val === 'number') {
-	    if (Buffer.TYPED_ARRAY_SUPPORT && Uint8Array.prototype.indexOf === 'function') {
-	      return Uint8Array.prototype.indexOf.call(this, val, byteOffset)
-	    }
-	    return arrayIndexOf(this, [ val ], byteOffset)
-	  }
-
-	  function arrayIndexOf (arr, val, byteOffset) {
-	    var foundIndex = -1
-	    for (var i = 0; byteOffset + i < arr.length; i++) {
-	      if (arr[byteOffset + i] === val[foundIndex === -1 ? 0 : i - foundIndex]) {
-	        if (foundIndex === -1) foundIndex = i
-	        if (i - foundIndex + 1 === val.length) return byteOffset + foundIndex
-	      } else {
-	        foundIndex = -1
-	      }
-	    }
-	    return -1
-	  }
-
-	  throw new TypeError('val must be string, number or Buffer')
-	}
-
-	// `get` is deprecated
-	Buffer.prototype.get = function get (offset) {
-	  console.log('.get() is deprecated. Access using array indexes instead.')
-	  return this.readUInt8(offset)
-	}
-
-	// `set` is deprecated
-	Buffer.prototype.set = function set (v, offset) {
-	  console.log('.set() is deprecated. Access using array indexes instead.')
-	  return this.writeUInt8(v, offset)
-	}
-
-	function hexWrite (buf, string, offset, length) {
-	  offset = Number(offset) || 0
-	  var remaining = buf.length - offset
-	  if (!length) {
-	    length = remaining
-	  } else {
-	    length = Number(length)
-	    if (length > remaining) {
-	      length = remaining
-	    }
-	  }
-
-	  // must be an even number of digits
-	  var strLen = string.length
-	  if (strLen % 2 !== 0) throw new Error('Invalid hex string')
-
-	  if (length > strLen / 2) {
-	    length = strLen / 2
-	  }
-	  for (var i = 0; i < length; i++) {
-	    var parsed = parseInt(string.substr(i * 2, 2), 16)
-	    if (isNaN(parsed)) throw new Error('Invalid hex string')
-	    buf[offset + i] = parsed
-	  }
-	  return i
-	}
-
-	function utf8Write (buf, string, offset, length) {
-	  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
-	}
-
-	function asciiWrite (buf, string, offset, length) {
-	  return blitBuffer(asciiToBytes(string), buf, offset, length)
-	}
-
-	function binaryWrite (buf, string, offset, length) {
-	  return asciiWrite(buf, string, offset, length)
-	}
-
-	function base64Write (buf, string, offset, length) {
-	  return blitBuffer(base64ToBytes(string), buf, offset, length)
-	}
-
-	function ucs2Write (buf, string, offset, length) {
-	  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
-	}
-
-	Buffer.prototype.write = function write (string, offset, length, encoding) {
-	  // Buffer#write(string)
-	  if (offset === undefined) {
-	    encoding = 'utf8'
-	    length = this.length
-	    offset = 0
-	  // Buffer#write(string, encoding)
-	  } else if (length === undefined && typeof offset === 'string') {
-	    encoding = offset
-	    length = this.length
-	    offset = 0
-	  // Buffer#write(string, offset[, length][, encoding])
-	  } else if (isFinite(offset)) {
-	    offset = offset | 0
-	    if (isFinite(length)) {
-	      length = length | 0
-	      if (encoding === undefined) encoding = 'utf8'
-	    } else {
-	      encoding = length
-	      length = undefined
-	    }
-	  // legacy write(string, encoding, offset, length) - remove in v0.13
-	  } else {
-	    var swap = encoding
-	    encoding = offset
-	    offset = length | 0
-	    length = swap
-	  }
-
-	  var remaining = this.length - offset
-	  if (length === undefined || length > remaining) length = remaining
-
-	  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
-	    throw new RangeError('attempt to write outside buffer bounds')
-	  }
-
-	  if (!encoding) encoding = 'utf8'
-
-	  var loweredCase = false
-	  for (;;) {
-	    switch (encoding) {
-	      case 'hex':
-	        return hexWrite(this, string, offset, length)
-
-	      case 'utf8':
-	      case 'utf-8':
-	        return utf8Write(this, string, offset, length)
-
-	      case 'ascii':
-	        return asciiWrite(this, string, offset, length)
-
-	      case 'binary':
-	        return binaryWrite(this, string, offset, length)
-
-	      case 'base64':
-	        // Warning: maxLength not taken into account in base64Write
-	        return base64Write(this, string, offset, length)
-
-	      case 'ucs2':
-	      case 'ucs-2':
-	      case 'utf16le':
-	      case 'utf-16le':
-	        return ucs2Write(this, string, offset, length)
-
-	      default:
-	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
-	        encoding = ('' + encoding).toLowerCase()
-	        loweredCase = true
-	    }
-	  }
-	}
-
-	Buffer.prototype.toJSON = function toJSON () {
-	  return {
-	    type: 'Buffer',
-	    data: Array.prototype.slice.call(this._arr || this, 0)
-	  }
-	}
-
-	function base64Slice (buf, start, end) {
-	  if (start === 0 && end === buf.length) {
-	    return base64.fromByteArray(buf)
-	  } else {
-	    return base64.fromByteArray(buf.slice(start, end))
-	  }
-	}
-
-	function utf8Slice (buf, start, end) {
-	  end = Math.min(buf.length, end)
-	  var res = []
-
-	  var i = start
-	  while (i < end) {
-	    var firstByte = buf[i]
-	    var codePoint = null
-	    var bytesPerSequence = (firstByte > 0xEF) ? 4
-	      : (firstByte > 0xDF) ? 3
-	      : (firstByte > 0xBF) ? 2
-	      : 1
-
-	    if (i + bytesPerSequence <= end) {
-	      var secondByte, thirdByte, fourthByte, tempCodePoint
-
-	      switch (bytesPerSequence) {
-	        case 1:
-	          if (firstByte < 0x80) {
-	            codePoint = firstByte
-	          }
-	          break
-	        case 2:
-	          secondByte = buf[i + 1]
-	          if ((secondByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
-	            if (tempCodePoint > 0x7F) {
-	              codePoint = tempCodePoint
-	            }
-	          }
-	          break
-	        case 3:
-	          secondByte = buf[i + 1]
-	          thirdByte = buf[i + 2]
-	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
-	            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
-	              codePoint = tempCodePoint
-	            }
-	          }
-	          break
-	        case 4:
-	          secondByte = buf[i + 1]
-	          thirdByte = buf[i + 2]
-	          fourthByte = buf[i + 3]
-	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
-	            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
-	              codePoint = tempCodePoint
-	            }
-	          }
-	      }
-	    }
-
-	    if (codePoint === null) {
-	      // we did not generate a valid codePoint so insert a
-	      // replacement char (U+FFFD) and advance only 1 byte
-	      codePoint = 0xFFFD
-	      bytesPerSequence = 1
-	    } else if (codePoint > 0xFFFF) {
-	      // encode to utf16 (surrogate pair dance)
-	      codePoint -= 0x10000
-	      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
-	      codePoint = 0xDC00 | codePoint & 0x3FF
-	    }
-
-	    res.push(codePoint)
-	    i += bytesPerSequence
-	  }
-
-	  return decodeCodePointsArray(res)
-	}
-
-	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
-	// the lowest limit is Chrome, with 0x10000 args.
-	// We go 1 magnitude less, for safety
-	var MAX_ARGUMENTS_LENGTH = 0x1000
-
-	function decodeCodePointsArray (codePoints) {
-	  var len = codePoints.length
-	  if (len <= MAX_ARGUMENTS_LENGTH) {
-	    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
-	  }
-
-	  // Decode in chunks to avoid "call stack size exceeded".
-	  var res = ''
-	  var i = 0
-	  while (i < len) {
-	    res += String.fromCharCode.apply(
-	      String,
-	      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
-	    )
-	  }
-	  return res
-	}
-
-	function asciiSlice (buf, start, end) {
-	  var ret = ''
-	  end = Math.min(buf.length, end)
-
-	  for (var i = start; i < end; i++) {
-	    ret += String.fromCharCode(buf[i] & 0x7F)
-	  }
-	  return ret
-	}
-
-	function binarySlice (buf, start, end) {
-	  var ret = ''
-	  end = Math.min(buf.length, end)
-
-	  for (var i = start; i < end; i++) {
-	    ret += String.fromCharCode(buf[i])
-	  }
-	  return ret
-	}
-
-	function hexSlice (buf, start, end) {
-	  var len = buf.length
-
-	  if (!start || start < 0) start = 0
-	  if (!end || end < 0 || end > len) end = len
-
-	  var out = ''
-	  for (var i = start; i < end; i++) {
-	    out += toHex(buf[i])
-	  }
-	  return out
-	}
-
-	function utf16leSlice (buf, start, end) {
-	  var bytes = buf.slice(start, end)
-	  var res = ''
-	  for (var i = 0; i < bytes.length; i += 2) {
-	    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
-	  }
-	  return res
-	}
-
-	Buffer.prototype.slice = function slice (start, end) {
-	  var len = this.length
-	  start = ~~start
-	  end = end === undefined ? len : ~~end
-
-	  if (start < 0) {
-	    start += len
-	    if (start < 0) start = 0
-	  } else if (start > len) {
-	    start = len
-	  }
-
-	  if (end < 0) {
-	    end += len
-	    if (end < 0) end = 0
-	  } else if (end > len) {
-	    end = len
-	  }
-
-	  if (end < start) end = start
-
-	  var newBuf
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    newBuf = Buffer._augment(this.subarray(start, end))
-	  } else {
-	    var sliceLen = end - start
-	    newBuf = new Buffer(sliceLen, undefined)
-	    for (var i = 0; i < sliceLen; i++) {
-	      newBuf[i] = this[i + start]
-	    }
-	  }
-
-	  if (newBuf.length) newBuf.parent = this.parent || this
-
-	  return newBuf
-	}
-
-	/*
-	 * Need to make sure that buffer isn't trying to write out of bounds.
-	 */
-	function checkOffset (offset, ext, length) {
-	  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
-	  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
-	}
-
-	Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkOffset(offset, byteLength, this.length)
-
-	  var val = this[offset]
-	  var mul = 1
-	  var i = 0
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    val += this[offset + i] * mul
-	  }
-
-	  return val
-	}
-
-	Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) {
-	    checkOffset(offset, byteLength, this.length)
-	  }
-
-	  var val = this[offset + --byteLength]
-	  var mul = 1
-	  while (byteLength > 0 && (mul *= 0x100)) {
-	    val += this[offset + --byteLength] * mul
-	  }
-
-	  return val
-	}
-
-	Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 1, this.length)
-	  return this[offset]
-	}
-
-	Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  return this[offset] | (this[offset + 1] << 8)
-	}
-
-	Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  return (this[offset] << 8) | this[offset + 1]
-	}
-
-	Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-
-	  return ((this[offset]) |
-	      (this[offset + 1] << 8) |
-	      (this[offset + 2] << 16)) +
-	      (this[offset + 3] * 0x1000000)
-	}
-
-	Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-
-	  return (this[offset] * 0x1000000) +
-	    ((this[offset + 1] << 16) |
-	    (this[offset + 2] << 8) |
-	    this[offset + 3])
-	}
-
-	Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkOffset(offset, byteLength, this.length)
-
-	  var val = this[offset]
-	  var mul = 1
-	  var i = 0
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    val += this[offset + i] * mul
-	  }
-	  mul *= 0x80
-
-	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
-
-	  return val
-	}
-
-	Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkOffset(offset, byteLength, this.length)
-
-	  var i = byteLength
-	  var mul = 1
-	  var val = this[offset + --i]
-	  while (i > 0 && (mul *= 0x100)) {
-	    val += this[offset + --i] * mul
-	  }
-	  mul *= 0x80
-
-	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
-
-	  return val
-	}
-
-	Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 1, this.length)
-	  if (!(this[offset] & 0x80)) return (this[offset])
-	  return ((0xff - this[offset] + 1) * -1)
-	}
-
-	Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  var val = this[offset] | (this[offset + 1] << 8)
-	  return (val & 0x8000) ? val | 0xFFFF0000 : val
-	}
-
-	Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  var val = this[offset + 1] | (this[offset] << 8)
-	  return (val & 0x8000) ? val | 0xFFFF0000 : val
-	}
-
-	Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-
-	  return (this[offset]) |
-	    (this[offset + 1] << 8) |
-	    (this[offset + 2] << 16) |
-	    (this[offset + 3] << 24)
-	}
-
-	Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-
-	  return (this[offset] << 24) |
-	    (this[offset + 1] << 16) |
-	    (this[offset + 2] << 8) |
-	    (this[offset + 3])
-	}
-
-	Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	  return ieee754.read(this, offset, true, 23, 4)
-	}
-
-	Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	  return ieee754.read(this, offset, false, 23, 4)
-	}
-
-	Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 8, this.length)
-	  return ieee754.read(this, offset, true, 52, 8)
-	}
-
-	Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 8, this.length)
-	  return ieee754.read(this, offset, false, 52, 8)
-	}
-
-	function checkInt (buf, value, offset, ext, max, min) {
-	  if (!Buffer.isBuffer(buf)) throw new TypeError('buffer must be a Buffer instance')
-	  if (value > max || value < min) throw new RangeError('value is out of bounds')
-	  if (offset + ext > buf.length) throw new RangeError('index out of range')
-	}
-
-	Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0)
-
-	  var mul = 1
-	  var i = 0
-	  this[offset] = value & 0xFF
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    this[offset + i] = (value / mul) & 0xFF
-	  }
-
-	  return offset + byteLength
-	}
-
-	Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkInt(this, value, offset, byteLength, Math.pow(2, 8 * byteLength), 0)
-
-	  var i = byteLength - 1
-	  var mul = 1
-	  this[offset + i] = value & 0xFF
-	  while (--i >= 0 && (mul *= 0x100)) {
-	    this[offset + i] = (value / mul) & 0xFF
-	  }
-
-	  return offset + byteLength
-	}
-
-	Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
-	  this[offset] = (value & 0xff)
-	  return offset + 1
-	}
-
-	function objectWriteUInt16 (buf, value, offset, littleEndian) {
-	  if (value < 0) value = 0xffff + value + 1
-	  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; i++) {
-	    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
-	      (littleEndian ? i : 1 - i) * 8
-	  }
-	}
-
-	Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value & 0xff)
-	    this[offset + 1] = (value >>> 8)
-	  } else {
-	    objectWriteUInt16(this, value, offset, true)
-	  }
-	  return offset + 2
-	}
-
-	Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 8)
-	    this[offset + 1] = (value & 0xff)
-	  } else {
-	    objectWriteUInt16(this, value, offset, false)
-	  }
-	  return offset + 2
-	}
-
-	function objectWriteUInt32 (buf, value, offset, littleEndian) {
-	  if (value < 0) value = 0xffffffff + value + 1
-	  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; i++) {
-	    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
-	  }
-	}
-
-	Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset + 3] = (value >>> 24)
-	    this[offset + 2] = (value >>> 16)
-	    this[offset + 1] = (value >>> 8)
-	    this[offset] = (value & 0xff)
-	  } else {
-	    objectWriteUInt32(this, value, offset, true)
-	  }
-	  return offset + 4
-	}
-
-	Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 24)
-	    this[offset + 1] = (value >>> 16)
-	    this[offset + 2] = (value >>> 8)
-	    this[offset + 3] = (value & 0xff)
-	  } else {
-	    objectWriteUInt32(this, value, offset, false)
-	  }
-	  return offset + 4
-	}
-
-	Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) {
-	    var limit = Math.pow(2, 8 * byteLength - 1)
-
-	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
-	  }
-
-	  var i = 0
-	  var mul = 1
-	  var sub = value < 0 ? 1 : 0
-	  this[offset] = value & 0xFF
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
-	  }
-
-	  return offset + byteLength
-	}
-
-	Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) {
-	    var limit = Math.pow(2, 8 * byteLength - 1)
-
-	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
-	  }
-
-	  var i = byteLength - 1
-	  var mul = 1
-	  var sub = value < 0 ? 1 : 0
-	  this[offset + i] = value & 0xFF
-	  while (--i >= 0 && (mul *= 0x100)) {
-	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
-	  }
-
-	  return offset + byteLength
-	}
-
-	Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
-	  if (value < 0) value = 0xff + value + 1
-	  this[offset] = (value & 0xff)
-	  return offset + 1
-	}
-
-	Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value & 0xff)
-	    this[offset + 1] = (value >>> 8)
-	  } else {
-	    objectWriteUInt16(this, value, offset, true)
-	  }
-	  return offset + 2
-	}
-
-	Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 8)
-	    this[offset + 1] = (value & 0xff)
-	  } else {
-	    objectWriteUInt16(this, value, offset, false)
-	  }
-	  return offset + 2
-	}
-
-	Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value & 0xff)
-	    this[offset + 1] = (value >>> 8)
-	    this[offset + 2] = (value >>> 16)
-	    this[offset + 3] = (value >>> 24)
-	  } else {
-	    objectWriteUInt32(this, value, offset, true)
-	  }
-	  return offset + 4
-	}
-
-	Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
-	  if (value < 0) value = 0xffffffff + value + 1
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 24)
-	    this[offset + 1] = (value >>> 16)
-	    this[offset + 2] = (value >>> 8)
-	    this[offset + 3] = (value & 0xff)
-	  } else {
-	    objectWriteUInt32(this, value, offset, false)
-	  }
-	  return offset + 4
-	}
-
-	function checkIEEE754 (buf, value, offset, ext, max, min) {
-	  if (value > max || value < min) throw new RangeError('value is out of bounds')
-	  if (offset + ext > buf.length) throw new RangeError('index out of range')
-	  if (offset < 0) throw new RangeError('index out of range')
-	}
-
-	function writeFloat (buf, value, offset, littleEndian, noAssert) {
-	  if (!noAssert) {
-	    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
-	  }
-	  ieee754.write(buf, value, offset, littleEndian, 23, 4)
-	  return offset + 4
-	}
-
-	Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
-	  return writeFloat(this, value, offset, true, noAssert)
-	}
-
-	Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
-	  return writeFloat(this, value, offset, false, noAssert)
-	}
-
-	function writeDouble (buf, value, offset, littleEndian, noAssert) {
-	  if (!noAssert) {
-	    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
-	  }
-	  ieee754.write(buf, value, offset, littleEndian, 52, 8)
-	  return offset + 8
-	}
-
-	Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
-	  return writeDouble(this, value, offset, true, noAssert)
-	}
-
-	Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
-	  return writeDouble(this, value, offset, false, noAssert)
-	}
-
-	// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
-	Buffer.prototype.copy = function copy (target, targetStart, start, end) {
-	  if (!start) start = 0
-	  if (!end && end !== 0) end = this.length
-	  if (targetStart >= target.length) targetStart = target.length
-	  if (!targetStart) targetStart = 0
-	  if (end > 0 && end < start) end = start
-
-	  // Copy 0 bytes; we're done
-	  if (end === start) return 0
-	  if (target.length === 0 || this.length === 0) return 0
-
-	  // Fatal error conditions
-	  if (targetStart < 0) {
-	    throw new RangeError('targetStart out of bounds')
-	  }
-	  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
-	  if (end < 0) throw new RangeError('sourceEnd out of bounds')
-
-	  // Are we oob?
-	  if (end > this.length) end = this.length
-	  if (target.length - targetStart < end - start) {
-	    end = target.length - targetStart + start
-	  }
-
-	  var len = end - start
-	  var i
-
-	  if (this === target && start < targetStart && targetStart < end) {
-	    // descending copy from end
-	    for (i = len - 1; i >= 0; i--) {
-	      target[i + targetStart] = this[i + start]
-	    }
-	  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
-	    // ascending copy from start
-	    for (i = 0; i < len; i++) {
-	      target[i + targetStart] = this[i + start]
-	    }
-	  } else {
-	    target._set(this.subarray(start, start + len), targetStart)
-	  }
-
-	  return len
-	}
-
-	// fill(value, start=0, end=buffer.length)
-	Buffer.prototype.fill = function fill (value, start, end) {
-	  if (!value) value = 0
-	  if (!start) start = 0
-	  if (!end) end = this.length
-
-	  if (end < start) throw new RangeError('end < start')
-
-	  // Fill 0 bytes; we're done
-	  if (end === start) return
-	  if (this.length === 0) return
-
-	  if (start < 0 || start >= this.length) throw new RangeError('start out of bounds')
-	  if (end < 0 || end > this.length) throw new RangeError('end out of bounds')
-
-	  var i
-	  if (typeof value === 'number') {
-	    for (i = start; i < end; i++) {
-	      this[i] = value
-	    }
-	  } else {
-	    var bytes = utf8ToBytes(value.toString())
-	    var len = bytes.length
-	    for (i = start; i < end; i++) {
-	      this[i] = bytes[i % len]
-	    }
-	  }
-
-	  return this
-	}
-
-	/**
-	 * Creates a new `ArrayBuffer` with the *copied* memory of the buffer instance.
-	 * Added in Node 0.12. Only available in browsers that support ArrayBuffer.
-	 */
-	Buffer.prototype.toArrayBuffer = function toArrayBuffer () {
-	  if (typeof Uint8Array !== 'undefined') {
-	    if (Buffer.TYPED_ARRAY_SUPPORT) {
-	      return (new Buffer(this)).buffer
-	    } else {
-	      var buf = new Uint8Array(this.length)
-	      for (var i = 0, len = buf.length; i < len; i += 1) {
-	        buf[i] = this[i]
-	      }
-	      return buf.buffer
-	    }
-	  } else {
-	    throw new TypeError('Buffer.toArrayBuffer not supported in this browser')
-	  }
-	}
-
-	// HELPER FUNCTIONS
-	// ================
-
-	var BP = Buffer.prototype
-
-	/**
-	 * Augment a Uint8Array *instance* (not the Uint8Array class!) with Buffer methods
-	 */
-	Buffer._augment = function _augment (arr) {
-	  arr.constructor = Buffer
-	  arr._isBuffer = true
-
-	  // save reference to original Uint8Array set method before overwriting
-	  arr._set = arr.set
-
-	  // deprecated
-	  arr.get = BP.get
-	  arr.set = BP.set
-
-	  arr.write = BP.write
-	  arr.toString = BP.toString
-	  arr.toLocaleString = BP.toString
-	  arr.toJSON = BP.toJSON
-	  arr.equals = BP.equals
-	  arr.compare = BP.compare
-	  arr.indexOf = BP.indexOf
-	  arr.copy = BP.copy
-	  arr.slice = BP.slice
-	  arr.readUIntLE = BP.readUIntLE
-	  arr.readUIntBE = BP.readUIntBE
-	  arr.readUInt8 = BP.readUInt8
-	  arr.readUInt16LE = BP.readUInt16LE
-	  arr.readUInt16BE = BP.readUInt16BE
-	  arr.readUInt32LE = BP.readUInt32LE
-	  arr.readUInt32BE = BP.readUInt32BE
-	  arr.readIntLE = BP.readIntLE
-	  arr.readIntBE = BP.readIntBE
-	  arr.readInt8 = BP.readInt8
-	  arr.readInt16LE = BP.readInt16LE
-	  arr.readInt16BE = BP.readInt16BE
-	  arr.readInt32LE = BP.readInt32LE
-	  arr.readInt32BE = BP.readInt32BE
-	  arr.readFloatLE = BP.readFloatLE
-	  arr.readFloatBE = BP.readFloatBE
-	  arr.readDoubleLE = BP.readDoubleLE
-	  arr.readDoubleBE = BP.readDoubleBE
-	  arr.writeUInt8 = BP.writeUInt8
-	  arr.writeUIntLE = BP.writeUIntLE
-	  arr.writeUIntBE = BP.writeUIntBE
-	  arr.writeUInt16LE = BP.writeUInt16LE
-	  arr.writeUInt16BE = BP.writeUInt16BE
-	  arr.writeUInt32LE = BP.writeUInt32LE
-	  arr.writeUInt32BE = BP.writeUInt32BE
-	  arr.writeIntLE = BP.writeIntLE
-	  arr.writeIntBE = BP.writeIntBE
-	  arr.writeInt8 = BP.writeInt8
-	  arr.writeInt16LE = BP.writeInt16LE
-	  arr.writeInt16BE = BP.writeInt16BE
-	  arr.writeInt32LE = BP.writeInt32LE
-	  arr.writeInt32BE = BP.writeInt32BE
-	  arr.writeFloatLE = BP.writeFloatLE
-	  arr.writeFloatBE = BP.writeFloatBE
-	  arr.writeDoubleLE = BP.writeDoubleLE
-	  arr.writeDoubleBE = BP.writeDoubleBE
-	  arr.fill = BP.fill
-	  arr.inspect = BP.inspect
-	  arr.toArrayBuffer = BP.toArrayBuffer
-
-	  return arr
-	}
-
-	var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
-
-	function base64clean (str) {
-	  // Node strips out invalid characters like \n and \t from the string, base64-js does not
-	  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
-	  // Node converts strings with length < 2 to ''
-	  if (str.length < 2) return ''
-	  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
-	  while (str.length % 4 !== 0) {
-	    str = str + '='
-	  }
-	  return str
-	}
-
-	function stringtrim (str) {
-	  if (str.trim) return str.trim()
-	  return str.replace(/^\s+|\s+$/g, '')
-	}
-
-	function toHex (n) {
-	  if (n < 16) return '0' + n.toString(16)
-	  return n.toString(16)
-	}
-
-	function utf8ToBytes (string, units) {
-	  units = units || Infinity
-	  var codePoint
-	  var length = string.length
-	  var leadSurrogate = null
-	  var bytes = []
-
-	  for (var i = 0; i < length; i++) {
-	    codePoint = string.charCodeAt(i)
-
-	    // is surrogate component
-	    if (codePoint > 0xD7FF && codePoint < 0xE000) {
-	      // last char was a lead
-	      if (!leadSurrogate) {
-	        // no lead yet
-	        if (codePoint > 0xDBFF) {
-	          // unexpected trail
-	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	          continue
-	        } else if (i + 1 === length) {
-	          // unpaired lead
-	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	          continue
-	        }
-
-	        // valid lead
-	        leadSurrogate = codePoint
-
-	        continue
+	    // non v8 browsers so we can have a stacktrace
+	    var err = new Error();
+	    if (err.stack) {
+	      var out = err.stack;
+
+	      // try to strip useless frames
+	      var fn_name = getName(stackStartFunction);
+	      var idx = out.indexOf('\n' + fn_name);
+	      if (idx >= 0) {
+	        // once we have located the function frame
+	        // we need to strip out everything before it (and its line)
+	        var next_line = out.indexOf('\n', idx + 1);
+	        out = out.substring(next_line + 1);
 	      }
 
-	      // 2 leads in a row
-	      if (codePoint < 0xDC00) {
-	        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	        leadSurrogate = codePoint
-	        continue
-	      }
-
-	      // valid surrogate pair
-	      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
-	    } else if (leadSurrogate) {
-	      // valid bmp char, but last char was a lead
-	      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	    }
-
-	    leadSurrogate = null
-
-	    // encode utf8
-	    if (codePoint < 0x80) {
-	      if ((units -= 1) < 0) break
-	      bytes.push(codePoint)
-	    } else if (codePoint < 0x800) {
-	      if ((units -= 2) < 0) break
-	      bytes.push(
-	        codePoint >> 0x6 | 0xC0,
-	        codePoint & 0x3F | 0x80
-	      )
-	    } else if (codePoint < 0x10000) {
-	      if ((units -= 3) < 0) break
-	      bytes.push(
-	        codePoint >> 0xC | 0xE0,
-	        codePoint >> 0x6 & 0x3F | 0x80,
-	        codePoint & 0x3F | 0x80
-	      )
-	    } else if (codePoint < 0x110000) {
-	      if ((units -= 4) < 0) break
-	      bytes.push(
-	        codePoint >> 0x12 | 0xF0,
-	        codePoint >> 0xC & 0x3F | 0x80,
-	        codePoint >> 0x6 & 0x3F | 0x80,
-	        codePoint & 0x3F | 0x80
-	      )
-	    } else {
-	      throw new Error('Invalid code point')
+	      this.stack = out;
 	    }
 	  }
-
-	  return bytes
-	}
-
-	function asciiToBytes (str) {
-	  var byteArray = []
-	  for (var i = 0; i < str.length; i++) {
-	    // Node's code seems to be doing this and not & 0x7F..
-	    byteArray.push(str.charCodeAt(i) & 0xFF)
-	  }
-	  return byteArray
-	}
-
-	function utf16leToBytes (str, units) {
-	  var c, hi, lo
-	  var byteArray = []
-	  for (var i = 0; i < str.length; i++) {
-	    if ((units -= 2) < 0) break
-
-	    c = str.charCodeAt(i)
-	    hi = c >> 8
-	    lo = c % 256
-	    byteArray.push(lo)
-	    byteArray.push(hi)
-	  }
-
-	  return byteArray
-	}
-
-	function base64ToBytes (str) {
-	  return base64.toByteArray(base64clean(str))
-	}
-
-	function blitBuffer (src, dst, offset, length) {
-	  for (var i = 0; i < length; i++) {
-	    if ((i + offset >= dst.length) || (i >= src.length)) break
-	    dst[i + offset] = src[i]
-	  }
-	  return i
-	}
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer, (function() { return this; }())))
-
-/***/ },
-/* 664 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
-
-	;(function (exports) {
-		'use strict';
-
-	  var Arr = (typeof Uint8Array !== 'undefined')
-	    ? Uint8Array
-	    : Array
-
-		var PLUS   = '+'.charCodeAt(0)
-		var SLASH  = '/'.charCodeAt(0)
-		var NUMBER = '0'.charCodeAt(0)
-		var LOWER  = 'a'.charCodeAt(0)
-		var UPPER  = 'A'.charCodeAt(0)
-		var PLUS_URL_SAFE = '-'.charCodeAt(0)
-		var SLASH_URL_SAFE = '_'.charCodeAt(0)
-
-		function decode (elt) {
-			var code = elt.charCodeAt(0)
-			if (code === PLUS ||
-			    code === PLUS_URL_SAFE)
-				return 62 // '+'
-			if (code === SLASH ||
-			    code === SLASH_URL_SAFE)
-				return 63 // '/'
-			if (code < NUMBER)
-				return -1 //no match
-			if (code < NUMBER + 10)
-				return code - NUMBER + 26 + 26
-			if (code < UPPER + 26)
-				return code - UPPER
-			if (code < LOWER + 26)
-				return code - LOWER + 26
-		}
-
-		function b64ToByteArray (b64) {
-			var i, j, l, tmp, placeHolders, arr
-
-			if (b64.length % 4 > 0) {
-				throw new Error('Invalid string. Length must be a multiple of 4')
-			}
-
-			// the number of equal signs (place holders)
-			// if there are two placeholders, than the two characters before it
-			// represent one byte
-			// if there is only one, then the three characters before it represent 2 bytes
-			// this is just a cheap hack to not do indexOf twice
-			var len = b64.length
-			placeHolders = '=' === b64.charAt(len - 2) ? 2 : '=' === b64.charAt(len - 1) ? 1 : 0
-
-			// base64 is 4/3 + up to two characters of the original data
-			arr = new Arr(b64.length * 3 / 4 - placeHolders)
-
-			// if there are placeholders, only get up to the last complete 4 chars
-			l = placeHolders > 0 ? b64.length - 4 : b64.length
-
-			var L = 0
-
-			function push (v) {
-				arr[L++] = v
-			}
-
-			for (i = 0, j = 0; i < l; i += 4, j += 3) {
-				tmp = (decode(b64.charAt(i)) << 18) | (decode(b64.charAt(i + 1)) << 12) | (decode(b64.charAt(i + 2)) << 6) | decode(b64.charAt(i + 3))
-				push((tmp & 0xFF0000) >> 16)
-				push((tmp & 0xFF00) >> 8)
-				push(tmp & 0xFF)
-			}
-
-			if (placeHolders === 2) {
-				tmp = (decode(b64.charAt(i)) << 2) | (decode(b64.charAt(i + 1)) >> 4)
-				push(tmp & 0xFF)
-			} else if (placeHolders === 1) {
-				tmp = (decode(b64.charAt(i)) << 10) | (decode(b64.charAt(i + 1)) << 4) | (decode(b64.charAt(i + 2)) >> 2)
-				push((tmp >> 8) & 0xFF)
-				push(tmp & 0xFF)
-			}
-
-			return arr
-		}
-
-		function uint8ToBase64 (uint8) {
-			var i,
-				extraBytes = uint8.length % 3, // if we have 1 byte left, pad 2 bytes
-				output = "",
-				temp, length
-
-			function encode (num) {
-				return lookup.charAt(num)
-			}
-
-			function tripletToBase64 (num) {
-				return encode(num >> 18 & 0x3F) + encode(num >> 12 & 0x3F) + encode(num >> 6 & 0x3F) + encode(num & 0x3F)
-			}
-
-			// go through the array every three bytes, we'll deal with trailing stuff later
-			for (i = 0, length = uint8.length - extraBytes; i < length; i += 3) {
-				temp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
-				output += tripletToBase64(temp)
-			}
-
-			// pad the end with zeros, but make sure to not forget the extra bytes
-			switch (extraBytes) {
-				case 1:
-					temp = uint8[uint8.length - 1]
-					output += encode(temp >> 2)
-					output += encode((temp << 4) & 0x3F)
-					output += '=='
-					break
-				case 2:
-					temp = (uint8[uint8.length - 2] << 8) + (uint8[uint8.length - 1])
-					output += encode(temp >> 10)
-					output += encode((temp >> 4) & 0x3F)
-					output += encode((temp << 2) & 0x3F)
-					output += '='
-					break
-			}
-
-			return output
-		}
-
-		exports.toByteArray = b64ToByteArray
-		exports.fromByteArray = uint8ToBase64
-	}( false ? (this.base64js = {}) : exports))
-
-
-/***/ },
-/* 665 */
-/***/ function(module, exports) {
-
-	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
-	  var e, m
-	  var eLen = nBytes * 8 - mLen - 1
-	  var eMax = (1 << eLen) - 1
-	  var eBias = eMax >> 1
-	  var nBits = -7
-	  var i = isLE ? (nBytes - 1) : 0
-	  var d = isLE ? -1 : 1
-	  var s = buffer[offset + i]
-
-	  i += d
-
-	  e = s & ((1 << (-nBits)) - 1)
-	  s >>= (-nBits)
-	  nBits += eLen
-	  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-
-	  m = e & ((1 << (-nBits)) - 1)
-	  e >>= (-nBits)
-	  nBits += mLen
-	  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-
-	  if (e === 0) {
-	    e = 1 - eBias
-	  } else if (e === eMax) {
-	    return m ? NaN : ((s ? -1 : 1) * Infinity)
-	  } else {
-	    m = m + Math.pow(2, mLen)
-	    e = e - eBias
-	  }
-	  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
-	}
-
-	exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
-	  var e, m, c
-	  var eLen = nBytes * 8 - mLen - 1
-	  var eMax = (1 << eLen) - 1
-	  var eBias = eMax >> 1
-	  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
-	  var i = isLE ? 0 : (nBytes - 1)
-	  var d = isLE ? 1 : -1
-	  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
-
-	  value = Math.abs(value)
-
-	  if (isNaN(value) || value === Infinity) {
-	    m = isNaN(value) ? 1 : 0
-	    e = eMax
-	  } else {
-	    e = Math.floor(Math.log(value) / Math.LN2)
-	    if (value * (c = Math.pow(2, -e)) < 1) {
-	      e--
-	      c *= 2
-	    }
-	    if (e + eBias >= 1) {
-	      value += rt / c
-	    } else {
-	      value += rt * Math.pow(2, 1 - eBias)
-	    }
-	    if (value * c >= 2) {
-	      e++
-	      c /= 2
-	    }
-
-	    if (e + eBias >= eMax) {
-	      m = 0
-	      e = eMax
-	    } else if (e + eBias >= 1) {
-	      m = (value * c - 1) * Math.pow(2, mLen)
-	      e = e + eBias
-	    } else {
-	      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
-	      e = 0
-	    }
-	  }
-
-	  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
-
-	  e = (e << mLen) | m
-	  eLen += mLen
-	  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
-
-	  buffer[offset + i - d] |= s * 128
-	}
-
-
-/***/ },
-/* 666 */
-/***/ function(module, exports) {
-
-	var toString = {}.toString;
-
-	module.exports = Array.isArray || function (arr) {
-	  return toString.call(arr) == '[object Array]';
 	};
 
+	// assert.AssertionError instanceof Error
+	util.inherits(assert.AssertionError, Error);
 
-/***/ },
-/* 667 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global, Buffer) {(function() {
-	  var g = ('undefined' === typeof window ? global : window) || {}
-	  _crypto = (
-	    g.crypto || g.msCrypto || __webpack_require__(668)
-	  )
-	  module.exports = function(size) {
-	    // Modern Browsers
-	    if(_crypto.getRandomValues) {
-	      var bytes = new Buffer(size); //in browserify, this is an extended Uint8Array
-	      /* This will not work in older browsers.
-	       * See https://developer.mozilla.org/en-US/docs/Web/API/window.crypto.getRandomValues
-	       */
-	    
-	      _crypto.getRandomValues(bytes);
-	      return bytes;
-	    }
-	    else if (_crypto.randomBytes) {
-	      return _crypto.randomBytes(size)
-	    }
-	    else
-	      throw new Error(
-	        'secure random number generation not supported by this browser\n'+
-	        'use chrome, FireFox or Internet Explorer 11'
-	      )
+	function truncate(s, n) {
+	  if (typeof s === 'string') {
+	    return s.length < n ? s : s.slice(0, n);
+	  } else {
+	    return s;
 	  }
-	}())
+	}
+	function inspect(something) {
+	  if (functionsHaveNames || !util.isFunction(something)) {
+	    return util.inspect(something);
+	  }
+	  var rawname = getName(something);
+	  var name = rawname ? ': ' + rawname : '';
+	  return '[Function' +  name + ']';
+	}
+	function getMessage(self) {
+	  return truncate(inspect(self.actual), 128) + ' ' +
+	         self.operator + ' ' +
+	         truncate(inspect(self.expected), 128);
+	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(663).Buffer))
+	// At present only the three keys mentioned above are used and
+	// understood by the spec. Implementations or sub modules can pass
+	// other keys to the AssertionError's constructor - they will be
+	// ignored.
 
-/***/ },
-/* 668 */
-/***/ function(module, exports) {
+	// 3. All of the following functions must throw an AssertionError
+	// when a corresponding condition is not met, with a message that
+	// may be undefined if not provided.  All assertion methods provide
+	// both the actual and expected values to the assertion error for
+	// display purposes.
 
-	/* (ignored) */
+	function fail(actual, expected, message, operator, stackStartFunction) {
+	  throw new assert.AssertionError({
+	    message: message,
+	    actual: actual,
+	    expected: expected,
+	    operator: operator,
+	    stackStartFunction: stackStartFunction
+	  });
+	}
 
-/***/ },
-/* 669 */
-/***/ function(module, exports, __webpack_require__) {
+	// EXTENSION! allows for well behaved errors defined elsewhere.
+	assert.fail = fail;
 
-	/* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(670)
+	// 4. Pure assertion tests whether a value is truthy, as determined
+	// by !!guard.
+	// assert.ok(guard, message_opt);
+	// This statement is equivalent to assert.equal(true, !!guard,
+	// message_opt);. To test strictly for the value true, use
+	// assert.strictEqual(true, guard, message_opt);.
 
-	var md5 = toConstructor(__webpack_require__(679))
-	var rmd160 = toConstructor(__webpack_require__(681))
+	function ok(value, message) {
+	  if (!value) fail(value, true, message, '==', assert.ok);
+	}
+	assert.ok = ok;
 
-	function toConstructor (fn) {
-	  return function () {
-	    var buffers = []
-	    var m= {
-	      update: function (data, enc) {
-	        if(!Buffer.isBuffer(data)) data = new Buffer(data, enc)
-	        buffers.push(data)
-	        return this
-	      },
-	      digest: function (enc) {
-	        var buf = Buffer.concat(buffers)
-	        var r = fn(buf)
-	        buffers = null
-	        return enc ? r.toString(enc) : r
+	// 5. The equality assertion tests shallow, coercive equality with
+	// ==.
+	// assert.equal(actual, expected, message_opt);
+
+	assert.equal = function equal(actual, expected, message) {
+	  if (actual != expected) fail(actual, expected, message, '==', assert.equal);
+	};
+
+	// 6. The non-equality assertion tests for whether two objects are not equal
+	// with != assert.notEqual(actual, expected, message_opt);
+
+	assert.notEqual = function notEqual(actual, expected, message) {
+	  if (actual == expected) {
+	    fail(actual, expected, message, '!=', assert.notEqual);
+	  }
+	};
+
+	// 7. The equivalence assertion tests a deep equality relation.
+	// assert.deepEqual(actual, expected, message_opt);
+
+	assert.deepEqual = function deepEqual(actual, expected, message) {
+	  if (!_deepEqual(actual, expected, false)) {
+	    fail(actual, expected, message, 'deepEqual', assert.deepEqual);
+	  }
+	};
+
+	assert.deepStrictEqual = function deepStrictEqual(actual, expected, message) {
+	  if (!_deepEqual(actual, expected, true)) {
+	    fail(actual, expected, message, 'deepStrictEqual', assert.deepStrictEqual);
+	  }
+	};
+
+	function _deepEqual(actual, expected, strict, memos) {
+	  // 7.1. All identical values are equivalent, as determined by ===.
+	  if (actual === expected) {
+	    return true;
+	  } else if (isBuffer(actual) && isBuffer(expected)) {
+	    return compare(actual, expected) === 0;
+
+	  // 7.2. If the expected value is a Date object, the actual value is
+	  // equivalent if it is also a Date object that refers to the same time.
+	  } else if (util.isDate(actual) && util.isDate(expected)) {
+	    return actual.getTime() === expected.getTime();
+
+	  // 7.3 If the expected value is a RegExp object, the actual value is
+	  // equivalent if it is also a RegExp object with the same source and
+	  // properties (`global`, `multiline`, `lastIndex`, `ignoreCase`).
+	  } else if (util.isRegExp(actual) && util.isRegExp(expected)) {
+	    return actual.source === expected.source &&
+	           actual.global === expected.global &&
+	           actual.multiline === expected.multiline &&
+	           actual.lastIndex === expected.lastIndex &&
+	           actual.ignoreCase === expected.ignoreCase;
+
+	  // 7.4. Other pairs that do not both pass typeof value == 'object',
+	  // equivalence is determined by ==.
+	  } else if ((actual === null || typeof actual !== 'object') &&
+	             (expected === null || typeof expected !== 'object')) {
+	    return strict ? actual === expected : actual == expected;
+
+	  // If both values are instances of typed arrays, wrap their underlying
+	  // ArrayBuffers in a Buffer each to increase performance
+	  // This optimization requires the arrays to have the same type as checked by
+	  // Object.prototype.toString (aka pToString). Never perform binary
+	  // comparisons for Float*Arrays, though, since e.g. +0 === -0 but their
+	  // bit patterns are not identical.
+	  } else if (isView(actual) && isView(expected) &&
+	             pToString(actual) === pToString(expected) &&
+	             !(actual instanceof Float32Array ||
+	               actual instanceof Float64Array)) {
+	    return compare(new Uint8Array(actual.buffer),
+	                   new Uint8Array(expected.buffer)) === 0;
+
+	  // 7.5 For all other Object pairs, including Array objects, equivalence is
+	  // determined by having the same number of owned properties (as verified
+	  // with Object.prototype.hasOwnProperty.call), the same set of keys
+	  // (although not necessarily the same order), equivalent values for every
+	  // corresponding key, and an identical 'prototype' property. Note: this
+	  // accounts for both named and indexed properties on Arrays.
+	  } else if (isBuffer(actual) !== isBuffer(expected)) {
+	    return false;
+	  } else {
+	    memos = memos || {actual: [], expected: []};
+
+	    var actualIndex = memos.actual.indexOf(actual);
+	    if (actualIndex !== -1) {
+	      if (actualIndex === memos.expected.indexOf(expected)) {
+	        return true;
 	      }
 	    }
-	    return m
+
+	    memos.actual.push(actual);
+	    memos.expected.push(expected);
+
+	    return objEquiv(actual, expected, strict, memos);
 	  }
 	}
 
-	module.exports = function (alg) {
-	  if('md5' === alg) return new md5()
-	  if('rmd160' === alg) return new rmd160()
-	  return createHash(alg)
+	function isArguments(object) {
+	  return Object.prototype.toString.call(object) == '[object Arguments]';
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer))
+	function objEquiv(a, b, strict, actualVisitedObjects) {
+	  if (a === null || a === undefined || b === null || b === undefined)
+	    return false;
+	  // if one is a primitive, the other must be same
+	  if (util.isPrimitive(a) || util.isPrimitive(b))
+	    return a === b;
+	  if (strict && Object.getPrototypeOf(a) !== Object.getPrototypeOf(b))
+	    return false;
+	  var aIsArgs = isArguments(a);
+	  var bIsArgs = isArguments(b);
+	  if ((aIsArgs && !bIsArgs) || (!aIsArgs && bIsArgs))
+	    return false;
+	  if (aIsArgs) {
+	    a = pSlice.call(a);
+	    b = pSlice.call(b);
+	    return _deepEqual(a, b, strict);
+	  }
+	  var ka = objectKeys(a);
+	  var kb = objectKeys(b);
+	  var key, i;
+	  // having the same number of owned properties (keys incorporates
+	  // hasOwnProperty)
+	  if (ka.length !== kb.length)
+	    return false;
+	  //the same set of keys (although not necessarily the same order),
+	  ka.sort();
+	  kb.sort();
+	  //~~~cheap key test
+	  for (i = ka.length - 1; i >= 0; i--) {
+	    if (ka[i] !== kb[i])
+	      return false;
+	  }
+	  //equivalent values for every corresponding key, and
+	  //~~~possibly expensive deep test
+	  for (i = ka.length - 1; i >= 0; i--) {
+	    key = ka[i];
+	    if (!_deepEqual(a[key], b[key], strict, actualVisitedObjects))
+	      return false;
+	  }
+	  return true;
+	}
+
+	// 8. The non-equivalence assertion tests for any deep inequality.
+	// assert.notDeepEqual(actual, expected, message_opt);
+
+	assert.notDeepEqual = function notDeepEqual(actual, expected, message) {
+	  if (_deepEqual(actual, expected, false)) {
+	    fail(actual, expected, message, 'notDeepEqual', assert.notDeepEqual);
+	  }
+	};
+
+	assert.notDeepStrictEqual = notDeepStrictEqual;
+	function notDeepStrictEqual(actual, expected, message) {
+	  if (_deepEqual(actual, expected, true)) {
+	    fail(actual, expected, message, 'notDeepStrictEqual', notDeepStrictEqual);
+	  }
+	}
+
+
+	// 9. The strict equality assertion tests strict equality, as determined by ===.
+	// assert.strictEqual(actual, expected, message_opt);
+
+	assert.strictEqual = function strictEqual(actual, expected, message) {
+	  if (actual !== expected) {
+	    fail(actual, expected, message, '===', assert.strictEqual);
+	  }
+	};
+
+	// 10. The strict non-equality assertion tests for strict inequality, as
+	// determined by !==.  assert.notStrictEqual(actual, expected, message_opt);
+
+	assert.notStrictEqual = function notStrictEqual(actual, expected, message) {
+	  if (actual === expected) {
+	    fail(actual, expected, message, '!==', assert.notStrictEqual);
+	  }
+	};
+
+	function expectedException(actual, expected) {
+	  if (!actual || !expected) {
+	    return false;
+	  }
+
+	  if (Object.prototype.toString.call(expected) == '[object RegExp]') {
+	    return expected.test(actual);
+	  }
+
+	  try {
+	    if (actual instanceof expected) {
+	      return true;
+	    }
+	  } catch (e) {
+	    // Ignore.  The instanceof check doesn't work for arrow functions.
+	  }
+
+	  if (Error.isPrototypeOf(expected)) {
+	    return false;
+	  }
+
+	  return expected.call({}, actual) === true;
+	}
+
+	function _tryBlock(block) {
+	  var error;
+	  try {
+	    block();
+	  } catch (e) {
+	    error = e;
+	  }
+	  return error;
+	}
+
+	function _throws(shouldThrow, block, expected, message) {
+	  var actual;
+
+	  if (typeof block !== 'function') {
+	    throw new TypeError('"block" argument must be a function');
+	  }
+
+	  if (typeof expected === 'string') {
+	    message = expected;
+	    expected = null;
+	  }
+
+	  actual = _tryBlock(block);
+
+	  message = (expected && expected.name ? ' (' + expected.name + ').' : '.') +
+	            (message ? ' ' + message : '.');
+
+	  if (shouldThrow && !actual) {
+	    fail(actual, expected, 'Missing expected exception' + message);
+	  }
+
+	  var userProvidedMessage = typeof message === 'string';
+	  var isUnwantedException = !shouldThrow && util.isError(actual);
+	  var isUnexpectedException = !shouldThrow && actual && !expected;
+
+	  if ((isUnwantedException &&
+	      userProvidedMessage &&
+	      expectedException(actual, expected)) ||
+	      isUnexpectedException) {
+	    fail(actual, expected, 'Got unwanted exception' + message);
+	  }
+
+	  if ((shouldThrow && actual && expected &&
+	      !expectedException(actual, expected)) || (!shouldThrow && actual)) {
+	    throw actual;
+	  }
+	}
+
+	// 11. Expected to throw an error:
+	// assert.throws(block, Error_opt, message_opt);
+
+	assert.throws = function(block, /*optional*/error, /*optional*/message) {
+	  _throws(true, block, error, message);
+	};
+
+	// EXTENSION! This is annoying to write outside this module.
+	assert.doesNotThrow = function(block, /*optional*/error, /*optional*/message) {
+	  _throws(false, block, error, message);
+	};
+
+	assert.ifError = function(err) { if (err) throw err; };
+
+	var objectKeys = Object.keys || function (obj) {
+	  var keys = [];
+	  for (var key in obj) {
+	    if (hasOwn.call(obj, key)) keys.push(key);
+	  }
+	  return keys;
+	};
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 670 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var exports = module.exports = function (alg) {
-	  var Alg = exports[alg]
-	  if(!Alg) throw new Error(alg + ' is not supported (we accept pull requests)')
-	  return new Alg()
-	}
-
-	var Buffer = __webpack_require__(663).Buffer
-	var Hash   = __webpack_require__(671)(Buffer)
-
-	exports.sha1 = __webpack_require__(672)(Buffer, Hash)
-	exports.sha256 = __webpack_require__(677)(Buffer, Hash)
-	exports.sha512 = __webpack_require__(678)(Buffer, Hash)
-
-
-/***/ },
-/* 671 */
-/***/ function(module, exports) {
-
-	module.exports = function (Buffer) {
-
-	  //prototype class for hash functions
-	  function Hash (blockSize, finalSize) {
-	    this._block = new Buffer(blockSize) //new Uint32Array(blockSize/4)
-	    this._finalSize = finalSize
-	    this._blockSize = blockSize
-	    this._len = 0
-	    this._s = 0
-	  }
-
-	  Hash.prototype.init = function () {
-	    this._s = 0
-	    this._len = 0
-	  }
-
-	  Hash.prototype.update = function (data, enc) {
-	    if ("string" === typeof data) {
-	      enc = enc || "utf8"
-	      data = new Buffer(data, enc)
-	    }
-
-	    var l = this._len += data.length
-	    var s = this._s = (this._s || 0)
-	    var f = 0
-	    var buffer = this._block
-
-	    while (s < l) {
-	      var t = Math.min(data.length, f + this._blockSize - (s % this._blockSize))
-	      var ch = (t - f)
-
-	      for (var i = 0; i < ch; i++) {
-	        buffer[(s % this._blockSize) + i] = data[i + f]
-	      }
-
-	      s += ch
-	      f += ch
-
-	      if ((s % this._blockSize) === 0) {
-	        this._update(buffer)
-	      }
-	    }
-	    this._s = s
-
-	    return this
-	  }
-
-	  Hash.prototype.digest = function (enc) {
-	    // Suppose the length of the message M, in bits, is l
-	    var l = this._len * 8
-
-	    // Append the bit 1 to the end of the message
-	    this._block[this._len % this._blockSize] = 0x80
-
-	    // and then k zero bits, where k is the smallest non-negative solution to the equation (l + 1 + k) === finalSize mod blockSize
-	    this._block.fill(0, this._len % this._blockSize + 1)
-
-	    if (l % (this._blockSize * 8) >= this._finalSize * 8) {
-	      this._update(this._block)
-	      this._block.fill(0)
-	    }
-
-	    // to this append the block which is equal to the number l written in binary
-	    // TODO: handle case where l is > Math.pow(2, 29)
-	    this._block.writeInt32BE(l, this._blockSize - 4)
-
-	    var hash = this._update(this._block) || this._hash()
-
-	    return enc ? hash.toString(enc) : hash
-	  }
-
-	  Hash.prototype._update = function () {
-	    throw new Error('_update must be implemented by subclass')
-	  }
-
-	  return Hash
-	}
-
-
-/***/ },
-/* 672 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-	 * A JavaScript implementation of the Secure Hash Algorithm, SHA-1, as defined
-	 * in FIPS PUB 180-1
-	 * Version 2.1a Copyright Paul Johnston 2000 - 2002.
-	 * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
-	 * Distributed under the BSD License
-	 * See http://pajhome.org.uk/crypt/md5 for details.
-	 */
-
-	var inherits = __webpack_require__(673).inherits
-
-	module.exports = function (Buffer, Hash) {
-
-	  var A = 0|0
-	  var B = 4|0
-	  var C = 8|0
-	  var D = 12|0
-	  var E = 16|0
-
-	  var W = new (typeof Int32Array === 'undefined' ? Array : Int32Array)(80)
-
-	  var POOL = []
-
-	  function Sha1 () {
-	    if(POOL.length)
-	      return POOL.pop().init()
-
-	    if(!(this instanceof Sha1)) return new Sha1()
-	    this._w = W
-	    Hash.call(this, 16*4, 14*4)
-
-	    this._h = null
-	    this.init()
-	  }
-
-	  inherits(Sha1, Hash)
-
-	  Sha1.prototype.init = function () {
-	    this._a = 0x67452301
-	    this._b = 0xefcdab89
-	    this._c = 0x98badcfe
-	    this._d = 0x10325476
-	    this._e = 0xc3d2e1f0
-
-	    Hash.prototype.init.call(this)
-	    return this
-	  }
-
-	  Sha1.prototype._POOL = POOL
-	  Sha1.prototype._update = function (X) {
-
-	    var a, b, c, d, e, _a, _b, _c, _d, _e
-
-	    a = _a = this._a
-	    b = _b = this._b
-	    c = _c = this._c
-	    d = _d = this._d
-	    e = _e = this._e
-
-	    var w = this._w
-
-	    for(var j = 0; j < 80; j++) {
-	      var W = w[j] = j < 16 ? X.readInt32BE(j*4)
-	        : rol(w[j - 3] ^ w[j -  8] ^ w[j - 14] ^ w[j - 16], 1)
-
-	      var t = add(
-	        add(rol(a, 5), sha1_ft(j, b, c, d)),
-	        add(add(e, W), sha1_kt(j))
-	      )
-
-	      e = d
-	      d = c
-	      c = rol(b, 30)
-	      b = a
-	      a = t
-	    }
-
-	    this._a = add(a, _a)
-	    this._b = add(b, _b)
-	    this._c = add(c, _c)
-	    this._d = add(d, _d)
-	    this._e = add(e, _e)
-	  }
-
-	  Sha1.prototype._hash = function () {
-	    if(POOL.length < 100) POOL.push(this)
-	    var H = new Buffer(20)
-	    //console.log(this._a|0, this._b|0, this._c|0, this._d|0, this._e|0)
-	    H.writeInt32BE(this._a|0, A)
-	    H.writeInt32BE(this._b|0, B)
-	    H.writeInt32BE(this._c|0, C)
-	    H.writeInt32BE(this._d|0, D)
-	    H.writeInt32BE(this._e|0, E)
-	    return H
-	  }
-
-	  /*
-	   * Perform the appropriate triplet combination function for the current
-	   * iteration
-	   */
-	  function sha1_ft(t, b, c, d) {
-	    if(t < 20) return (b & c) | ((~b) & d);
-	    if(t < 40) return b ^ c ^ d;
-	    if(t < 60) return (b & c) | (b & d) | (c & d);
-	    return b ^ c ^ d;
-	  }
-
-	  /*
-	   * Determine the appropriate additive constant for the current iteration
-	   */
-	  function sha1_kt(t) {
-	    return (t < 20) ?  1518500249 : (t < 40) ?  1859775393 :
-	           (t < 60) ? -1894007588 : -899497514;
-	  }
-
-	  /*
-	   * Add integers, wrapping at 2^32. This uses 16-bit operations internally
-	   * to work around bugs in some JS interpreters.
-	   * //dominictarr: this is 10 years old, so maybe this can be dropped?)
-	   *
-	   */
-	  function add(x, y) {
-	    return (x + y ) | 0
-	  //lets see how this goes on testling.
-	  //  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
-	  //  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
-	  //  return (msw << 16) | (lsw & 0xFFFF);
-	  }
-
-	  /*
-	   * Bitwise rotate a 32-bit number to the left.
-	   */
-	  function rol(num, cnt) {
-	    return (num << cnt) | (num >>> (32 - cnt));
-	  }
-
-	  return Sha1
-	}
-
-
-/***/ },
-/* 673 */
+/* 682 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -10362,7 +10335,7 @@
 	}
 	exports.isPrimitive = isPrimitive;
 
-	exports.isBuffer = __webpack_require__(675);
+	exports.isBuffer = __webpack_require__(684);
 
 	function objectToString(o) {
 	  return Object.prototype.toString.call(o);
@@ -10406,7 +10379,7 @@
 	 *     prototype.
 	 * @param {function} superCtor Constructor function to inherit prototype from.
 	 */
-	exports.inherits = __webpack_require__(676);
+	exports.inherits = __webpack_require__(685);
 
 	exports._extend = function(origin, add) {
 	  // Don't do anything if add isn't an object
@@ -10424,14 +10397,13 @@
 	  return Object.prototype.hasOwnProperty.call(obj, prop);
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(674)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(683)))
 
 /***/ },
-/* 674 */
+/* 683 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
-
 	var process = module.exports = {};
 
 	// cached from whatever global is present so that test runners that stub it
@@ -10443,21 +10415,63 @@
 	var cachedClearTimeout;
 
 	(function () {
-	  try {
-	    cachedSetTimeout = setTimeout;
-	  } catch (e) {
-	    cachedSetTimeout = function () {
-	      throw new Error('setTimeout is not defined');
+	    try {
+	        cachedSetTimeout = setTimeout;
+	    } catch (e) {
+	        cachedSetTimeout = function () {
+	            throw new Error('setTimeout is not defined');
+	        }
 	    }
-	  }
-	  try {
-	    cachedClearTimeout = clearTimeout;
-	  } catch (e) {
-	    cachedClearTimeout = function () {
-	      throw new Error('clearTimeout is not defined');
+	    try {
+	        cachedClearTimeout = clearTimeout;
+	    } catch (e) {
+	        cachedClearTimeout = function () {
+	            throw new Error('clearTimeout is not defined');
+	        }
 	    }
-	  }
 	} ())
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch(e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch(e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+
+
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e){
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e){
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+
+
+
+	}
 	var queue = [];
 	var draining = false;
 	var currentQueue;
@@ -10482,7 +10496,7 @@
 	    if (draining) {
 	        return;
 	    }
-	    var timeout = cachedSetTimeout(cleanUpNextTick);
+	    var timeout = runTimeout(cleanUpNextTick);
 	    draining = true;
 
 	    var len = queue.length;
@@ -10499,7 +10513,7 @@
 	    }
 	    currentQueue = null;
 	    draining = false;
-	    cachedClearTimeout(timeout);
+	    runClearTimeout(timeout);
 	}
 
 	process.nextTick = function (fun) {
@@ -10511,7 +10525,7 @@
 	    }
 	    queue.push(new Item(fun, args));
 	    if (queue.length === 1 && !draining) {
-	        cachedSetTimeout(drainQueue, 0);
+	        runTimeout(drainQueue);
 	    }
 	};
 
@@ -10552,7 +10566,7 @@
 
 
 /***/ },
-/* 675 */
+/* 684 */
 /***/ function(module, exports) {
 
 	module.exports = function isBuffer(arg) {
@@ -10563,7 +10577,7 @@
 	}
 
 /***/ },
-/* 676 */
+/* 685 */
 /***/ function(module, exports) {
 
 	if (typeof Object.create === 'function') {
@@ -10592,983 +10606,567 @@
 
 
 /***/ },
-/* 677 */
+/* 686 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	/**
-	 * A JavaScript implementation of the Secure Hash Algorithm, SHA-256, as defined
-	 * in FIPS 180-2
-	 * Version 2.2-beta Copyright Angel Marin, Paul Johnston 2000 - 2009.
-	 * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
-	 *
-	 */
-
-	var inherits = __webpack_require__(673).inherits
-
-	module.exports = function (Buffer, Hash) {
-
-	  var K = [
-	      0x428A2F98, 0x71374491, 0xB5C0FBCF, 0xE9B5DBA5,
-	      0x3956C25B, 0x59F111F1, 0x923F82A4, 0xAB1C5ED5,
-	      0xD807AA98, 0x12835B01, 0x243185BE, 0x550C7DC3,
-	      0x72BE5D74, 0x80DEB1FE, 0x9BDC06A7, 0xC19BF174,
-	      0xE49B69C1, 0xEFBE4786, 0x0FC19DC6, 0x240CA1CC,
-	      0x2DE92C6F, 0x4A7484AA, 0x5CB0A9DC, 0x76F988DA,
-	      0x983E5152, 0xA831C66D, 0xB00327C8, 0xBF597FC7,
-	      0xC6E00BF3, 0xD5A79147, 0x06CA6351, 0x14292967,
-	      0x27B70A85, 0x2E1B2138, 0x4D2C6DFC, 0x53380D13,
-	      0x650A7354, 0x766A0ABB, 0x81C2C92E, 0x92722C85,
-	      0xA2BFE8A1, 0xA81A664B, 0xC24B8B70, 0xC76C51A3,
-	      0xD192E819, 0xD6990624, 0xF40E3585, 0x106AA070,
-	      0x19A4C116, 0x1E376C08, 0x2748774C, 0x34B0BCB5,
-	      0x391C0CB3, 0x4ED8AA4A, 0x5B9CCA4F, 0x682E6FF3,
-	      0x748F82EE, 0x78A5636F, 0x84C87814, 0x8CC70208,
-	      0x90BEFFFA, 0xA4506CEB, 0xBEF9A3F7, 0xC67178F2
-	    ]
-
-	  var W = new Array(64)
-
-	  function Sha256() {
-	    this.init()
-
-	    this._w = W //new Array(64)
-
-	    Hash.call(this, 16*4, 14*4)
-	  }
-
-	  inherits(Sha256, Hash)
-
-	  Sha256.prototype.init = function () {
-
-	    this._a = 0x6a09e667|0
-	    this._b = 0xbb67ae85|0
-	    this._c = 0x3c6ef372|0
-	    this._d = 0xa54ff53a|0
-	    this._e = 0x510e527f|0
-	    this._f = 0x9b05688c|0
-	    this._g = 0x1f83d9ab|0
-	    this._h = 0x5be0cd19|0
-
-	    this._len = this._s = 0
-
-	    return this
-	  }
-
-	  function S (X, n) {
-	    return (X >>> n) | (X << (32 - n));
-	  }
-
-	  function R (X, n) {
-	    return (X >>> n);
-	  }
-
-	  function Ch (x, y, z) {
-	    return ((x & y) ^ ((~x) & z));
-	  }
-
-	  function Maj (x, y, z) {
-	    return ((x & y) ^ (x & z) ^ (y & z));
-	  }
-
-	  function Sigma0256 (x) {
-	    return (S(x, 2) ^ S(x, 13) ^ S(x, 22));
-	  }
-
-	  function Sigma1256 (x) {
-	    return (S(x, 6) ^ S(x, 11) ^ S(x, 25));
-	  }
-
-	  function Gamma0256 (x) {
-	    return (S(x, 7) ^ S(x, 18) ^ R(x, 3));
-	  }
-
-	  function Gamma1256 (x) {
-	    return (S(x, 17) ^ S(x, 19) ^ R(x, 10));
-	  }
-
-	  Sha256.prototype._update = function(M) {
-
-	    var W = this._w
-	    var a, b, c, d, e, f, g, h
-	    var T1, T2
-
-	    a = this._a | 0
-	    b = this._b | 0
-	    c = this._c | 0
-	    d = this._d | 0
-	    e = this._e | 0
-	    f = this._f | 0
-	    g = this._g | 0
-	    h = this._h | 0
-
-	    for (var j = 0; j < 64; j++) {
-	      var w = W[j] = j < 16
-	        ? M.readInt32BE(j * 4)
-	        : Gamma1256(W[j - 2]) + W[j - 7] + Gamma0256(W[j - 15]) + W[j - 16]
-
-	      T1 = h + Sigma1256(e) + Ch(e, f, g) + K[j] + w
-
-	      T2 = Sigma0256(a) + Maj(a, b, c);
-	      h = g; g = f; f = e; e = d + T1; d = c; c = b; b = a; a = T1 + T2;
-	    }
-
-	    this._a = (a + this._a) | 0
-	    this._b = (b + this._b) | 0
-	    this._c = (c + this._c) | 0
-	    this._d = (d + this._d) | 0
-	    this._e = (e + this._e) | 0
-	    this._f = (f + this._f) | 0
-	    this._g = (g + this._g) | 0
-	    this._h = (h + this._h) | 0
-
-	  };
-
-	  Sha256.prototype._hash = function () {
-	    var H = new Buffer(32)
-
-	    H.writeInt32BE(this._a,  0)
-	    H.writeInt32BE(this._b,  4)
-	    H.writeInt32BE(this._c,  8)
-	    H.writeInt32BE(this._d, 12)
-	    H.writeInt32BE(this._e, 16)
-	    H.writeInt32BE(this._f, 20)
-	    H.writeInt32BE(this._g, 24)
-	    H.writeInt32BE(this._h, 28)
-
-	    return H
-	  }
-
-	  return Sha256
-
+	// Reflect.defineMetadata ( metadataKey, metadataValue, target, propertyKey )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectdefinemetadata--metadatakey-metadatavalue-target-propertykey-    
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectDefineMetadataInvalidTarget() {
+	    assert.throws(function () { return Reflect.defineMetadata("key", "value", undefined, undefined); }, TypeError);
 	}
+	exports.ReflectDefineMetadataInvalidTarget = ReflectDefineMetadataInvalidTarget;
+	function ReflectDefineMetadataValidTargetWithoutTargetKey() {
+	    assert.doesNotThrow(function () { return Reflect.defineMetadata("key", "value", {}, undefined); });
+	}
+	exports.ReflectDefineMetadataValidTargetWithoutTargetKey = ReflectDefineMetadataValidTargetWithoutTargetKey;
+	function ReflectDefineMetadataValidTargetWithTargetKey() {
+	    assert.doesNotThrow(function () { return Reflect.defineMetadata("key", "value", {}, "name"); });
+	}
+	exports.ReflectDefineMetadataValidTargetWithTargetKey = ReflectDefineMetadataValidTargetWithTargetKey;
 
 
 /***/ },
-/* 678 */
+/* 687 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var inherits = __webpack_require__(673).inherits
-
-	module.exports = function (Buffer, Hash) {
-	  var K = [
-	    0x428a2f98, 0xd728ae22, 0x71374491, 0x23ef65cd,
-	    0xb5c0fbcf, 0xec4d3b2f, 0xe9b5dba5, 0x8189dbbc,
-	    0x3956c25b, 0xf348b538, 0x59f111f1, 0xb605d019,
-	    0x923f82a4, 0xaf194f9b, 0xab1c5ed5, 0xda6d8118,
-	    0xd807aa98, 0xa3030242, 0x12835b01, 0x45706fbe,
-	    0x243185be, 0x4ee4b28c, 0x550c7dc3, 0xd5ffb4e2,
-	    0x72be5d74, 0xf27b896f, 0x80deb1fe, 0x3b1696b1,
-	    0x9bdc06a7, 0x25c71235, 0xc19bf174, 0xcf692694,
-	    0xe49b69c1, 0x9ef14ad2, 0xefbe4786, 0x384f25e3,
-	    0x0fc19dc6, 0x8b8cd5b5, 0x240ca1cc, 0x77ac9c65,
-	    0x2de92c6f, 0x592b0275, 0x4a7484aa, 0x6ea6e483,
-	    0x5cb0a9dc, 0xbd41fbd4, 0x76f988da, 0x831153b5,
-	    0x983e5152, 0xee66dfab, 0xa831c66d, 0x2db43210,
-	    0xb00327c8, 0x98fb213f, 0xbf597fc7, 0xbeef0ee4,
-	    0xc6e00bf3, 0x3da88fc2, 0xd5a79147, 0x930aa725,
-	    0x06ca6351, 0xe003826f, 0x14292967, 0x0a0e6e70,
-	    0x27b70a85, 0x46d22ffc, 0x2e1b2138, 0x5c26c926,
-	    0x4d2c6dfc, 0x5ac42aed, 0x53380d13, 0x9d95b3df,
-	    0x650a7354, 0x8baf63de, 0x766a0abb, 0x3c77b2a8,
-	    0x81c2c92e, 0x47edaee6, 0x92722c85, 0x1482353b,
-	    0xa2bfe8a1, 0x4cf10364, 0xa81a664b, 0xbc423001,
-	    0xc24b8b70, 0xd0f89791, 0xc76c51a3, 0x0654be30,
-	    0xd192e819, 0xd6ef5218, 0xd6990624, 0x5565a910,
-	    0xf40e3585, 0x5771202a, 0x106aa070, 0x32bbd1b8,
-	    0x19a4c116, 0xb8d2d0c8, 0x1e376c08, 0x5141ab53,
-	    0x2748774c, 0xdf8eeb99, 0x34b0bcb5, 0xe19b48a8,
-	    0x391c0cb3, 0xc5c95a63, 0x4ed8aa4a, 0xe3418acb,
-	    0x5b9cca4f, 0x7763e373, 0x682e6ff3, 0xd6b2b8a3,
-	    0x748f82ee, 0x5defb2fc, 0x78a5636f, 0x43172f60,
-	    0x84c87814, 0xa1f0ab72, 0x8cc70208, 0x1a6439ec,
-	    0x90befffa, 0x23631e28, 0xa4506ceb, 0xde82bde9,
-	    0xbef9a3f7, 0xb2c67915, 0xc67178f2, 0xe372532b,
-	    0xca273ece, 0xea26619c, 0xd186b8c7, 0x21c0c207,
-	    0xeada7dd6, 0xcde0eb1e, 0xf57d4f7f, 0xee6ed178,
-	    0x06f067aa, 0x72176fba, 0x0a637dc5, 0xa2c898a6,
-	    0x113f9804, 0xbef90dae, 0x1b710b35, 0x131c471b,
-	    0x28db77f5, 0x23047d84, 0x32caab7b, 0x40c72493,
-	    0x3c9ebe0a, 0x15c9bebc, 0x431d67c4, 0x9c100d4c,
-	    0x4cc5d4be, 0xcb3e42b6, 0x597f299c, 0xfc657e2a,
-	    0x5fcb6fab, 0x3ad6faec, 0x6c44198c, 0x4a475817
-	  ]
-
-	  var W = new Array(160)
-
-	  function Sha512() {
-	    this.init()
-	    this._w = W
-
-	    Hash.call(this, 128, 112)
-	  }
-
-	  inherits(Sha512, Hash)
-
-	  Sha512.prototype.init = function () {
-
-	    this._a = 0x6a09e667|0
-	    this._b = 0xbb67ae85|0
-	    this._c = 0x3c6ef372|0
-	    this._d = 0xa54ff53a|0
-	    this._e = 0x510e527f|0
-	    this._f = 0x9b05688c|0
-	    this._g = 0x1f83d9ab|0
-	    this._h = 0x5be0cd19|0
-
-	    this._al = 0xf3bcc908|0
-	    this._bl = 0x84caa73b|0
-	    this._cl = 0xfe94f82b|0
-	    this._dl = 0x5f1d36f1|0
-	    this._el = 0xade682d1|0
-	    this._fl = 0x2b3e6c1f|0
-	    this._gl = 0xfb41bd6b|0
-	    this._hl = 0x137e2179|0
-
-	    this._len = this._s = 0
-
-	    return this
-	  }
-
-	  function S (X, Xl, n) {
-	    return (X >>> n) | (Xl << (32 - n))
-	  }
-
-	  function Ch (x, y, z) {
-	    return ((x & y) ^ ((~x) & z));
-	  }
-
-	  function Maj (x, y, z) {
-	    return ((x & y) ^ (x & z) ^ (y & z));
-	  }
-
-	  Sha512.prototype._update = function(M) {
-
-	    var W = this._w
-	    var a, b, c, d, e, f, g, h
-	    var al, bl, cl, dl, el, fl, gl, hl
-
-	    a = this._a | 0
-	    b = this._b | 0
-	    c = this._c | 0
-	    d = this._d | 0
-	    e = this._e | 0
-	    f = this._f | 0
-	    g = this._g | 0
-	    h = this._h | 0
-
-	    al = this._al | 0
-	    bl = this._bl | 0
-	    cl = this._cl | 0
-	    dl = this._dl | 0
-	    el = this._el | 0
-	    fl = this._fl | 0
-	    gl = this._gl | 0
-	    hl = this._hl | 0
-
-	    for (var i = 0; i < 80; i++) {
-	      var j = i * 2
-
-	      var Wi, Wil
-
-	      if (i < 16) {
-	        Wi = W[j] = M.readInt32BE(j * 4)
-	        Wil = W[j + 1] = M.readInt32BE(j * 4 + 4)
-
-	      } else {
-	        var x  = W[j - 15*2]
-	        var xl = W[j - 15*2 + 1]
-	        var gamma0  = S(x, xl, 1) ^ S(x, xl, 8) ^ (x >>> 7)
-	        var gamma0l = S(xl, x, 1) ^ S(xl, x, 8) ^ S(xl, x, 7)
-
-	        x  = W[j - 2*2]
-	        xl = W[j - 2*2 + 1]
-	        var gamma1  = S(x, xl, 19) ^ S(xl, x, 29) ^ (x >>> 6)
-	        var gamma1l = S(xl, x, 19) ^ S(x, xl, 29) ^ S(xl, x, 6)
-
-	        // W[i] = gamma0 + W[i - 7] + gamma1 + W[i - 16]
-	        var Wi7  = W[j - 7*2]
-	        var Wi7l = W[j - 7*2 + 1]
-
-	        var Wi16  = W[j - 16*2]
-	        var Wi16l = W[j - 16*2 + 1]
-
-	        Wil = gamma0l + Wi7l
-	        Wi  = gamma0  + Wi7 + ((Wil >>> 0) < (gamma0l >>> 0) ? 1 : 0)
-	        Wil = Wil + gamma1l
-	        Wi  = Wi  + gamma1  + ((Wil >>> 0) < (gamma1l >>> 0) ? 1 : 0)
-	        Wil = Wil + Wi16l
-	        Wi  = Wi  + Wi16 + ((Wil >>> 0) < (Wi16l >>> 0) ? 1 : 0)
-
-	        W[j] = Wi
-	        W[j + 1] = Wil
-	      }
-
-	      var maj = Maj(a, b, c)
-	      var majl = Maj(al, bl, cl)
-
-	      var sigma0h = S(a, al, 28) ^ S(al, a, 2) ^ S(al, a, 7)
-	      var sigma0l = S(al, a, 28) ^ S(a, al, 2) ^ S(a, al, 7)
-	      var sigma1h = S(e, el, 14) ^ S(e, el, 18) ^ S(el, e, 9)
-	      var sigma1l = S(el, e, 14) ^ S(el, e, 18) ^ S(e, el, 9)
-
-	      // t1 = h + sigma1 + ch + K[i] + W[i]
-	      var Ki = K[j]
-	      var Kil = K[j + 1]
-
-	      var ch = Ch(e, f, g)
-	      var chl = Ch(el, fl, gl)
-
-	      var t1l = hl + sigma1l
-	      var t1 = h + sigma1h + ((t1l >>> 0) < (hl >>> 0) ? 1 : 0)
-	      t1l = t1l + chl
-	      t1 = t1 + ch + ((t1l >>> 0) < (chl >>> 0) ? 1 : 0)
-	      t1l = t1l + Kil
-	      t1 = t1 + Ki + ((t1l >>> 0) < (Kil >>> 0) ? 1 : 0)
-	      t1l = t1l + Wil
-	      t1 = t1 + Wi + ((t1l >>> 0) < (Wil >>> 0) ? 1 : 0)
-
-	      // t2 = sigma0 + maj
-	      var t2l = sigma0l + majl
-	      var t2 = sigma0h + maj + ((t2l >>> 0) < (sigma0l >>> 0) ? 1 : 0)
-
-	      h  = g
-	      hl = gl
-	      g  = f
-	      gl = fl
-	      f  = e
-	      fl = el
-	      el = (dl + t1l) | 0
-	      e  = (d + t1 + ((el >>> 0) < (dl >>> 0) ? 1 : 0)) | 0
-	      d  = c
-	      dl = cl
-	      c  = b
-	      cl = bl
-	      b  = a
-	      bl = al
-	      al = (t1l + t2l) | 0
-	      a  = (t1 + t2 + ((al >>> 0) < (t1l >>> 0) ? 1 : 0)) | 0
-	    }
-
-	    this._al = (this._al + al) | 0
-	    this._bl = (this._bl + bl) | 0
-	    this._cl = (this._cl + cl) | 0
-	    this._dl = (this._dl + dl) | 0
-	    this._el = (this._el + el) | 0
-	    this._fl = (this._fl + fl) | 0
-	    this._gl = (this._gl + gl) | 0
-	    this._hl = (this._hl + hl) | 0
-
-	    this._a = (this._a + a + ((this._al >>> 0) < (al >>> 0) ? 1 : 0)) | 0
-	    this._b = (this._b + b + ((this._bl >>> 0) < (bl >>> 0) ? 1 : 0)) | 0
-	    this._c = (this._c + c + ((this._cl >>> 0) < (cl >>> 0) ? 1 : 0)) | 0
-	    this._d = (this._d + d + ((this._dl >>> 0) < (dl >>> 0) ? 1 : 0)) | 0
-	    this._e = (this._e + e + ((this._el >>> 0) < (el >>> 0) ? 1 : 0)) | 0
-	    this._f = (this._f + f + ((this._fl >>> 0) < (fl >>> 0) ? 1 : 0)) | 0
-	    this._g = (this._g + g + ((this._gl >>> 0) < (gl >>> 0) ? 1 : 0)) | 0
-	    this._h = (this._h + h + ((this._hl >>> 0) < (hl >>> 0) ? 1 : 0)) | 0
-	  }
-
-	  Sha512.prototype._hash = function () {
-	    var H = new Buffer(64)
-
-	    function writeInt64BE(h, l, offset) {
-	      H.writeInt32BE(h, offset)
-	      H.writeInt32BE(l, offset + 4)
-	    }
-
-	    writeInt64BE(this._a, this._al, 0)
-	    writeInt64BE(this._b, this._bl, 8)
-	    writeInt64BE(this._c, this._cl, 16)
-	    writeInt64BE(this._d, this._dl, 24)
-	    writeInt64BE(this._e, this._el, 32)
-	    writeInt64BE(this._f, this._fl, 40)
-	    writeInt64BE(this._g, this._gl, 48)
-	    writeInt64BE(this._h, this._hl, 56)
-
-	    return H
-	  }
-
-	  return Sha512
-
+	// Reflect.deleteMetadata ( metadataKey, target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectdeletemetadata--metadatakey-target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectDeleteMetadataInvalidTarget() {
+	    assert.throws(function () { return Reflect.deleteMetadata("key", undefined, undefined); }, TypeError);
 	}
+	exports.ReflectDeleteMetadataInvalidTarget = ReflectDeleteMetadataInvalidTarget;
+	function ReflectDeleteMetadataWhenNotDefinedWithoutTargetKey() {
+	    var obj = {};
+	    var result = Reflect.deleteMetadata("key", obj, undefined);
+	    assert.equal(result, false);
+	}
+	exports.ReflectDeleteMetadataWhenNotDefinedWithoutTargetKey = ReflectDeleteMetadataWhenNotDefinedWithoutTargetKey;
+	function ReflectDeleteMetadataWhenDefinedWithoutTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.deleteMetadata("key", obj, undefined);
+	    assert.equal(result, true);
+	}
+	exports.ReflectDeleteMetadataWhenDefinedWithoutTargetKey = ReflectDeleteMetadataWhenDefinedWithoutTargetKey;
+	function ReflectDeleteMetadataWhenDefinedOnPrototypeWithoutTargetKey() {
+	    var prototype = {};
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var obj = Object.create(prototype);
+	    var result = Reflect.deleteMetadata("key", obj, undefined);
+	    assert.equal(result, false);
+	}
+	exports.ReflectDeleteMetadataWhenDefinedOnPrototypeWithoutTargetKey = ReflectDeleteMetadataWhenDefinedOnPrototypeWithoutTargetKey;
+	function ReflectHasOwnMetadataAfterDeleteMetadata() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    Reflect.deleteMetadata("key", obj, undefined);
+	    var result = Reflect.hasOwnMetadata("key", obj, undefined);
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasOwnMetadataAfterDeleteMetadata = ReflectHasOwnMetadataAfterDeleteMetadata;
 
 
 /***/ },
-/* 679 */
+/* 688 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/*
-	 * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
-	 * Digest Algorithm, as defined in RFC 1321.
-	 * Version 2.1 Copyright (C) Paul Johnston 1999 - 2002.
-	 * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
-	 * Distributed under the BSD License
-	 * See http://pajhome.org.uk/crypt/md5 for more info.
-	 */
-
-	var helpers = __webpack_require__(680);
-
-	/*
-	 * Calculate the MD5 of an array of little-endian words, and a bit length
-	 */
-	function core_md5(x, len)
-	{
-	  /* append padding */
-	  x[len >> 5] |= 0x80 << ((len) % 32);
-	  x[(((len + 64) >>> 9) << 4) + 14] = len;
-
-	  var a =  1732584193;
-	  var b = -271733879;
-	  var c = -1732584194;
-	  var d =  271733878;
-
-	  for(var i = 0; i < x.length; i += 16)
-	  {
-	    var olda = a;
-	    var oldb = b;
-	    var oldc = c;
-	    var oldd = d;
-
-	    a = md5_ff(a, b, c, d, x[i+ 0], 7 , -680876936);
-	    d = md5_ff(d, a, b, c, x[i+ 1], 12, -389564586);
-	    c = md5_ff(c, d, a, b, x[i+ 2], 17,  606105819);
-	    b = md5_ff(b, c, d, a, x[i+ 3], 22, -1044525330);
-	    a = md5_ff(a, b, c, d, x[i+ 4], 7 , -176418897);
-	    d = md5_ff(d, a, b, c, x[i+ 5], 12,  1200080426);
-	    c = md5_ff(c, d, a, b, x[i+ 6], 17, -1473231341);
-	    b = md5_ff(b, c, d, a, x[i+ 7], 22, -45705983);
-	    a = md5_ff(a, b, c, d, x[i+ 8], 7 ,  1770035416);
-	    d = md5_ff(d, a, b, c, x[i+ 9], 12, -1958414417);
-	    c = md5_ff(c, d, a, b, x[i+10], 17, -42063);
-	    b = md5_ff(b, c, d, a, x[i+11], 22, -1990404162);
-	    a = md5_ff(a, b, c, d, x[i+12], 7 ,  1804603682);
-	    d = md5_ff(d, a, b, c, x[i+13], 12, -40341101);
-	    c = md5_ff(c, d, a, b, x[i+14], 17, -1502002290);
-	    b = md5_ff(b, c, d, a, x[i+15], 22,  1236535329);
-
-	    a = md5_gg(a, b, c, d, x[i+ 1], 5 , -165796510);
-	    d = md5_gg(d, a, b, c, x[i+ 6], 9 , -1069501632);
-	    c = md5_gg(c, d, a, b, x[i+11], 14,  643717713);
-	    b = md5_gg(b, c, d, a, x[i+ 0], 20, -373897302);
-	    a = md5_gg(a, b, c, d, x[i+ 5], 5 , -701558691);
-	    d = md5_gg(d, a, b, c, x[i+10], 9 ,  38016083);
-	    c = md5_gg(c, d, a, b, x[i+15], 14, -660478335);
-	    b = md5_gg(b, c, d, a, x[i+ 4], 20, -405537848);
-	    a = md5_gg(a, b, c, d, x[i+ 9], 5 ,  568446438);
-	    d = md5_gg(d, a, b, c, x[i+14], 9 , -1019803690);
-	    c = md5_gg(c, d, a, b, x[i+ 3], 14, -187363961);
-	    b = md5_gg(b, c, d, a, x[i+ 8], 20,  1163531501);
-	    a = md5_gg(a, b, c, d, x[i+13], 5 , -1444681467);
-	    d = md5_gg(d, a, b, c, x[i+ 2], 9 , -51403784);
-	    c = md5_gg(c, d, a, b, x[i+ 7], 14,  1735328473);
-	    b = md5_gg(b, c, d, a, x[i+12], 20, -1926607734);
-
-	    a = md5_hh(a, b, c, d, x[i+ 5], 4 , -378558);
-	    d = md5_hh(d, a, b, c, x[i+ 8], 11, -2022574463);
-	    c = md5_hh(c, d, a, b, x[i+11], 16,  1839030562);
-	    b = md5_hh(b, c, d, a, x[i+14], 23, -35309556);
-	    a = md5_hh(a, b, c, d, x[i+ 1], 4 , -1530992060);
-	    d = md5_hh(d, a, b, c, x[i+ 4], 11,  1272893353);
-	    c = md5_hh(c, d, a, b, x[i+ 7], 16, -155497632);
-	    b = md5_hh(b, c, d, a, x[i+10], 23, -1094730640);
-	    a = md5_hh(a, b, c, d, x[i+13], 4 ,  681279174);
-	    d = md5_hh(d, a, b, c, x[i+ 0], 11, -358537222);
-	    c = md5_hh(c, d, a, b, x[i+ 3], 16, -722521979);
-	    b = md5_hh(b, c, d, a, x[i+ 6], 23,  76029189);
-	    a = md5_hh(a, b, c, d, x[i+ 9], 4 , -640364487);
-	    d = md5_hh(d, a, b, c, x[i+12], 11, -421815835);
-	    c = md5_hh(c, d, a, b, x[i+15], 16,  530742520);
-	    b = md5_hh(b, c, d, a, x[i+ 2], 23, -995338651);
-
-	    a = md5_ii(a, b, c, d, x[i+ 0], 6 , -198630844);
-	    d = md5_ii(d, a, b, c, x[i+ 7], 10,  1126891415);
-	    c = md5_ii(c, d, a, b, x[i+14], 15, -1416354905);
-	    b = md5_ii(b, c, d, a, x[i+ 5], 21, -57434055);
-	    a = md5_ii(a, b, c, d, x[i+12], 6 ,  1700485571);
-	    d = md5_ii(d, a, b, c, x[i+ 3], 10, -1894986606);
-	    c = md5_ii(c, d, a, b, x[i+10], 15, -1051523);
-	    b = md5_ii(b, c, d, a, x[i+ 1], 21, -2054922799);
-	    a = md5_ii(a, b, c, d, x[i+ 8], 6 ,  1873313359);
-	    d = md5_ii(d, a, b, c, x[i+15], 10, -30611744);
-	    c = md5_ii(c, d, a, b, x[i+ 6], 15, -1560198380);
-	    b = md5_ii(b, c, d, a, x[i+13], 21,  1309151649);
-	    a = md5_ii(a, b, c, d, x[i+ 4], 6 , -145523070);
-	    d = md5_ii(d, a, b, c, x[i+11], 10, -1120210379);
-	    c = md5_ii(c, d, a, b, x[i+ 2], 15,  718787259);
-	    b = md5_ii(b, c, d, a, x[i+ 9], 21, -343485551);
-
-	    a = safe_add(a, olda);
-	    b = safe_add(b, oldb);
-	    c = safe_add(c, oldc);
-	    d = safe_add(d, oldd);
-	  }
-	  return Array(a, b, c, d);
-
+	// Reflect.getMetadata ( metadataKey, target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectgetmetadata--metadatakey-target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectGetMetadataInvalidTarget() {
+	    assert.throws(function () { return Reflect.getMetadata("key", undefined, undefined); }, TypeError);
 	}
-
-	/*
-	 * These functions implement the four basic operations the algorithm uses.
-	 */
-	function md5_cmn(q, a, b, x, s, t)
-	{
-	  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s),b);
+	exports.ReflectGetMetadataInvalidTarget = ReflectGetMetadataInvalidTarget;
+	function ReflectGetMetadataWithoutTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getMetadata("key", obj, undefined);
+	    assert.equal(result, undefined);
 	}
-	function md5_ff(a, b, c, d, x, s, t)
-	{
-	  return md5_cmn((b & c) | ((~b) & d), a, b, x, s, t);
+	exports.ReflectGetMetadataWithoutTargetKeyWhenNotDefined = ReflectGetMetadataWithoutTargetKeyWhenNotDefined;
+	function ReflectGetMetadataWithoutTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.getMetadata("key", obj, undefined);
+	    assert.equal(result, "value");
 	}
-	function md5_gg(a, b, c, d, x, s, t)
-	{
-	  return md5_cmn((b & d) | (c & (~d)), a, b, x, s, t);
+	exports.ReflectGetMetadataWithoutTargetKeyWhenDefined = ReflectGetMetadataWithoutTargetKeyWhenDefined;
+	function ReflectGetMetadataWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var result = Reflect.getMetadata("key", obj, undefined);
+	    assert.equal(result, "value");
 	}
-	function md5_hh(a, b, c, d, x, s, t)
-	{
-	  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
+	exports.ReflectGetMetadataWithoutTargetKeyWhenDefinedOnPrototype = ReflectGetMetadataWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetMetadataWithTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getMetadata("key", obj, "name");
+	    assert.equal(result, undefined);
 	}
-	function md5_ii(a, b, c, d, x, s, t)
-	{
-	  return md5_cmn(c ^ (b | (~d)), a, b, x, s, t);
+	exports.ReflectGetMetadataWithTargetKeyWhenNotDefined = ReflectGetMetadataWithTargetKeyWhenNotDefined;
+	function ReflectGetMetadataWithTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, "name");
+	    var result = Reflect.getMetadata("key", obj, "name");
+	    assert.equal(result, "value");
 	}
-
-	/*
-	 * Add integers, wrapping at 2^32. This uses 16-bit operations internally
-	 * to work around bugs in some JS interpreters.
-	 */
-	function safe_add(x, y)
-	{
-	  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
-	  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
-	  return (msw << 16) | (lsw & 0xFFFF);
+	exports.ReflectGetMetadataWithTargetKeyWhenDefined = ReflectGetMetadataWithTargetKeyWhenDefined;
+	function ReflectGetMetadataWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, "name");
+	    var result = Reflect.getMetadata("key", obj, "name");
+	    assert.equal(result, "value");
 	}
-
-	/*
-	 * Bitwise rotate a 32-bit number to the left.
-	 */
-	function bit_rol(num, cnt)
-	{
-	  return (num << cnt) | (num >>> (32 - cnt));
-	}
-
-	module.exports = function md5(buf) {
-	  return helpers.hash(buf, core_md5, 16);
-	};
+	exports.ReflectGetMetadataWithTargetKeyWhenDefinedOnPrototype = ReflectGetMetadataWithTargetKeyWhenDefinedOnPrototype;
 
 
 /***/ },
-/* 680 */
+/* 689 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Buffer) {var intSize = 4;
-	var zeroBuffer = new Buffer(intSize); zeroBuffer.fill(0);
-	var chrsz = 8;
-
-	function toArray(buf, bigEndian) {
-	  if ((buf.length % intSize) !== 0) {
-	    var len = buf.length + (intSize - (buf.length % intSize));
-	    buf = Buffer.concat([buf, zeroBuffer], len);
-	  }
-
-	  var arr = [];
-	  var fn = bigEndian ? buf.readInt32BE : buf.readInt32LE;
-	  for (var i = 0; i < buf.length; i += intSize) {
-	    arr.push(fn.call(buf, i));
-	  }
-	  return arr;
+	// Reflect.getMetadataKeys ( target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectgetmetadatakeys--target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectGetMetadataKeysInvalidTarget() {
+	    // 1. If Type(target) is not Object, throw a TypeError exception.
+	    assert.throws(function () { return Reflect.getMetadataKeys(undefined, undefined); }, TypeError);
 	}
-
-	function toBuffer(arr, size, bigEndian) {
-	  var buf = new Buffer(size);
-	  var fn = bigEndian ? buf.writeInt32BE : buf.writeInt32LE;
-	  for (var i = 0; i < arr.length; i++) {
-	    fn.call(buf, arr[i], i * 4, true);
-	  }
-	  return buf;
+	exports.ReflectGetMetadataKeysInvalidTarget = ReflectGetMetadataKeysInvalidTarget;
+	function ReflectGetMetadataKeysWithoutTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, []);
 	}
-
-	function hash(buf, fn, hashSize, bigEndian) {
-	  if (!Buffer.isBuffer(buf)) buf = new Buffer(buf);
-	  var arr = fn(toArray(buf, bigEndian), buf.length * chrsz);
-	  return toBuffer(arr, hashSize, bigEndian);
+	exports.ReflectGetMetadataKeysWithoutTargetKeyWhenNotDefined = ReflectGetMetadataKeysWithoutTargetKeyWhenNotDefined;
+	function ReflectGetMetadataKeysWithoutTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.getMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key"]);
 	}
-
-	module.exports = { hash: hash };
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer))
-
-/***/ },
-/* 681 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(Buffer) {
-	module.exports = ripemd160
-
-
-
-	/*
-	CryptoJS v3.1.2
-	code.google.com/p/crypto-js
-	(c) 2009-2013 by Jeff Mott. All rights reserved.
-	code.google.com/p/crypto-js/wiki/License
-	*/
-	/** @preserve
-	(c) 2012 by Cédric Mesnil. All rights reserved.
-
-	Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
-
-	    - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-	    - Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-
-	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-	*/
-
-	// Constants table
-	var zl = [
-	    0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15,
-	    7,  4, 13,  1, 10,  6, 15,  3, 12,  0,  9,  5,  2, 14, 11,  8,
-	    3, 10, 14,  4,  9, 15,  8,  1,  2,  7,  0,  6, 13, 11,  5, 12,
-	    1,  9, 11, 10,  0,  8, 12,  4, 13,  3,  7, 15, 14,  5,  6,  2,
-	    4,  0,  5,  9,  7, 12,  2, 10, 14,  1,  3,  8, 11,  6, 15, 13];
-	var zr = [
-	    5, 14,  7,  0,  9,  2, 11,  4, 13,  6, 15,  8,  1, 10,  3, 12,
-	    6, 11,  3,  7,  0, 13,  5, 10, 14, 15,  8, 12,  4,  9,  1,  2,
-	    15,  5,  1,  3,  7, 14,  6,  9, 11,  8, 12,  2, 10,  0,  4, 13,
-	    8,  6,  4,  1,  3, 11, 15,  0,  5, 12,  2, 13,  9,  7, 10, 14,
-	    12, 15, 10,  4,  1,  5,  8,  7,  6,  2, 13, 14,  0,  3,  9, 11];
-	var sl = [
-	     11, 14, 15, 12,  5,  8,  7,  9, 11, 13, 14, 15,  6,  7,  9,  8,
-	    7, 6,   8, 13, 11,  9,  7, 15,  7, 12, 15,  9, 11,  7, 13, 12,
-	    11, 13,  6,  7, 14,  9, 13, 15, 14,  8, 13,  6,  5, 12,  7,  5,
-	      11, 12, 14, 15, 14, 15,  9,  8,  9, 14,  5,  6,  8,  6,  5, 12,
-	    9, 15,  5, 11,  6,  8, 13, 12,  5, 12, 13, 14, 11,  8,  5,  6 ];
-	var sr = [
-	    8,  9,  9, 11, 13, 15, 15,  5,  7,  7,  8, 11, 14, 14, 12,  6,
-	    9, 13, 15,  7, 12,  8,  9, 11,  7,  7, 12,  7,  6, 15, 13, 11,
-	    9,  7, 15, 11,  8,  6,  6, 14, 12, 13,  5, 14, 13, 13,  7,  5,
-	    15,  5,  8, 11, 14, 14,  6, 14,  6,  9, 12,  9, 12,  5, 15,  8,
-	    8,  5, 12,  9, 12,  5, 14,  6,  8, 13,  6,  5, 15, 13, 11, 11 ];
-
-	var hl =  [ 0x00000000, 0x5A827999, 0x6ED9EBA1, 0x8F1BBCDC, 0xA953FD4E];
-	var hr =  [ 0x50A28BE6, 0x5C4DD124, 0x6D703EF3, 0x7A6D76E9, 0x00000000];
-
-	var bytesToWords = function (bytes) {
-	  var words = [];
-	  for (var i = 0, b = 0; i < bytes.length; i++, b += 8) {
-	    words[b >>> 5] |= bytes[i] << (24 - b % 32);
-	  }
-	  return words;
-	};
-
-	var wordsToBytes = function (words) {
-	  var bytes = [];
-	  for (var b = 0; b < words.length * 32; b += 8) {
-	    bytes.push((words[b >>> 5] >>> (24 - b % 32)) & 0xFF);
-	  }
-	  return bytes;
-	};
-
-	var processBlock = function (H, M, offset) {
-
-	  // Swap endian
-	  for (var i = 0; i < 16; i++) {
-	    var offset_i = offset + i;
-	    var M_offset_i = M[offset_i];
-
-	    // Swap
-	    M[offset_i] = (
-	        (((M_offset_i << 8)  | (M_offset_i >>> 24)) & 0x00ff00ff) |
-	        (((M_offset_i << 24) | (M_offset_i >>> 8))  & 0xff00ff00)
-	    );
-	  }
-
-	  // Working variables
-	  var al, bl, cl, dl, el;
-	  var ar, br, cr, dr, er;
-
-	  ar = al = H[0];
-	  br = bl = H[1];
-	  cr = cl = H[2];
-	  dr = dl = H[3];
-	  er = el = H[4];
-	  // Computation
-	  var t;
-	  for (var i = 0; i < 80; i += 1) {
-	    t = (al +  M[offset+zl[i]])|0;
-	    if (i<16){
-	        t +=  f1(bl,cl,dl) + hl[0];
-	    } else if (i<32) {
-	        t +=  f2(bl,cl,dl) + hl[1];
-	    } else if (i<48) {
-	        t +=  f3(bl,cl,dl) + hl[2];
-	    } else if (i<64) {
-	        t +=  f4(bl,cl,dl) + hl[3];
-	    } else {// if (i<80) {
-	        t +=  f5(bl,cl,dl) + hl[4];
-	    }
-	    t = t|0;
-	    t =  rotl(t,sl[i]);
-	    t = (t+el)|0;
-	    al = el;
-	    el = dl;
-	    dl = rotl(cl, 10);
-	    cl = bl;
-	    bl = t;
-
-	    t = (ar + M[offset+zr[i]])|0;
-	    if (i<16){
-	        t +=  f5(br,cr,dr) + hr[0];
-	    } else if (i<32) {
-	        t +=  f4(br,cr,dr) + hr[1];
-	    } else if (i<48) {
-	        t +=  f3(br,cr,dr) + hr[2];
-	    } else if (i<64) {
-	        t +=  f2(br,cr,dr) + hr[3];
-	    } else {// if (i<80) {
-	        t +=  f1(br,cr,dr) + hr[4];
-	    }
-	    t = t|0;
-	    t =  rotl(t,sr[i]) ;
-	    t = (t+er)|0;
-	    ar = er;
-	    er = dr;
-	    dr = rotl(cr, 10);
-	    cr = br;
-	    br = t;
-	  }
-	  // Intermediate hash value
-	  t    = (H[1] + cl + dr)|0;
-	  H[1] = (H[2] + dl + er)|0;
-	  H[2] = (H[3] + el + ar)|0;
-	  H[3] = (H[4] + al + br)|0;
-	  H[4] = (H[0] + bl + cr)|0;
-	  H[0] =  t;
-	};
-
-	function f1(x, y, z) {
-	  return ((x) ^ (y) ^ (z));
+	exports.ReflectGetMetadataKeysWithoutTargetKeyWhenDefined = ReflectGetMetadataKeysWithoutTargetKeyWhenDefined;
+	function ReflectGetMetadataKeysWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var result = Reflect.getMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key"]);
 	}
-
-	function f2(x, y, z) {
-	  return (((x)&(y)) | ((~x)&(z)));
+	exports.ReflectGetMetadataKeysWithoutTargetKeyWhenDefinedOnPrototype = ReflectGetMetadataKeysWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetMetadataKeysOrderWithoutTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    Reflect.defineMetadata("key0", "value", obj, undefined);
+	    var result = Reflect.getMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key1", "key0"]);
 	}
-
-	function f3(x, y, z) {
-	  return (((x) | (~(y))) ^ (z));
+	exports.ReflectGetMetadataKeysOrderWithoutTargetKey = ReflectGetMetadataKeysOrderWithoutTargetKey;
+	function ReflectGetMetadataKeysOrderAfterRedefineWithoutTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    Reflect.defineMetadata("key0", "value", obj, undefined);
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    var result = Reflect.getMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key1", "key0"]);
 	}
-
-	function f4(x, y, z) {
-	  return (((x) & (z)) | ((y)&(~(z))));
+	exports.ReflectGetMetadataKeysOrderAfterRedefineWithoutTargetKey = ReflectGetMetadataKeysOrderAfterRedefineWithoutTargetKey;
+	function ReflectGetMetadataKeysOrderWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    Reflect.defineMetadata("key2", "value", prototype, undefined);
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    Reflect.defineMetadata("key0", "value", obj, undefined);
+	    var result = Reflect.getMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key1", "key0", "key2"]);
 	}
-
-	function f5(x, y, z) {
-	  return ((x) ^ ((y) |(~(z))));
+	exports.ReflectGetMetadataKeysOrderWithoutTargetKeyWhenDefinedOnPrototype = ReflectGetMetadataKeysOrderWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetMetadataKeysWithTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getMetadataKeys(obj, "name");
+	    assert.deepEqual(result, []);
 	}
-
-	function rotl(x,n) {
-	  return (x<<n) | (x>>>(32-n));
+	exports.ReflectGetMetadataKeysWithTargetKeyWhenNotDefined = ReflectGetMetadataKeysWithTargetKeyWhenNotDefined;
+	function ReflectGetMetadataKeysWithTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, "name");
+	    var result = Reflect.getMetadataKeys(obj, "name");
+	    assert.deepEqual(result, ["key"]);
 	}
-
-	function ripemd160(message) {
-	  var H = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0];
-
-	  if (typeof message == 'string')
-	    message = new Buffer(message, 'utf8');
-
-	  var m = bytesToWords(message);
-
-	  var nBitsLeft = message.length * 8;
-	  var nBitsTotal = message.length * 8;
-
-	  // Add padding
-	  m[nBitsLeft >>> 5] |= 0x80 << (24 - nBitsLeft % 32);
-	  m[(((nBitsLeft + 64) >>> 9) << 4) + 14] = (
-	      (((nBitsTotal << 8)  | (nBitsTotal >>> 24)) & 0x00ff00ff) |
-	      (((nBitsTotal << 24) | (nBitsTotal >>> 8))  & 0xff00ff00)
-	  );
-
-	  for (var i=0 ; i<m.length; i += 16) {
-	    processBlock(H, m, i);
-	  }
-
-	  // Swap endian
-	  for (var i = 0; i < 5; i++) {
-	      // Shortcut
-	    var H_i = H[i];
-
-	    // Swap
-	    H[i] = (((H_i << 8)  | (H_i >>> 24)) & 0x00ff00ff) |
-	          (((H_i << 24) | (H_i >>> 8))  & 0xff00ff00);
-	  }
-
-	  var digestbytes = wordsToBytes(H);
-	  return new Buffer(digestbytes);
+	exports.ReflectGetMetadataKeysWithTargetKeyWhenDefined = ReflectGetMetadataKeysWithTargetKeyWhenDefined;
+	function ReflectGetMetadataKeysWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, "name");
+	    var result = Reflect.getMetadataKeys(obj, "name");
+	    assert.deepEqual(result, ["key"]);
 	}
-
-
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer))
-
-/***/ },
-/* 682 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(Buffer) {var createHash = __webpack_require__(669)
-
-	var zeroBuffer = new Buffer(128)
-	zeroBuffer.fill(0)
-
-	module.exports = Hmac
-
-	function Hmac (alg, key) {
-	  if(!(this instanceof Hmac)) return new Hmac(alg, key)
-	  this._opad = opad
-	  this._alg = alg
-
-	  var blocksize = (alg === 'sha512') ? 128 : 64
-
-	  key = this._key = !Buffer.isBuffer(key) ? new Buffer(key) : key
-
-	  if(key.length > blocksize) {
-	    key = createHash(alg).update(key).digest()
-	  } else if(key.length < blocksize) {
-	    key = Buffer.concat([key, zeroBuffer], blocksize)
-	  }
-
-	  var ipad = this._ipad = new Buffer(blocksize)
-	  var opad = this._opad = new Buffer(blocksize)
-
-	  for(var i = 0; i < blocksize; i++) {
-	    ipad[i] = key[i] ^ 0x36
-	    opad[i] = key[i] ^ 0x5C
-	  }
-
-	  this._hash = createHash(alg).update(ipad)
+	exports.ReflectGetMetadataKeysWithTargetKeyWhenDefinedOnPrototype = ReflectGetMetadataKeysWithTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetMetadataKeysOrderAfterRedefineWithTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key1", "value", obj, "name");
+	    Reflect.defineMetadata("key0", "value", obj, "name");
+	    Reflect.defineMetadata("key1", "value", obj, "name");
+	    var result = Reflect.getMetadataKeys(obj, "name");
+	    assert.deepEqual(result, ["key1", "key0"]);
 	}
-
-	Hmac.prototype.update = function (data, enc) {
-	  this._hash.update(data, enc)
-	  return this
+	exports.ReflectGetMetadataKeysOrderAfterRedefineWithTargetKey = ReflectGetMetadataKeysOrderAfterRedefineWithTargetKey;
+	function ReflectGetMetadataKeysOrderWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    Reflect.defineMetadata("key2", "value", prototype, "name");
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key1", "value", obj, "name");
+	    Reflect.defineMetadata("key0", "value", obj, "name");
+	    var result = Reflect.getMetadataKeys(obj, "name");
+	    assert.deepEqual(result, ["key1", "key0", "key2"]);
 	}
-
-	Hmac.prototype.digest = function (enc) {
-	  var h = this._hash.digest()
-	  return createHash(this._alg).update(this._opad).update(h).digest(enc)
-	}
-
-
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer))
-
-/***/ },
-/* 683 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var pbkdf2Export = __webpack_require__(684)
-
-	module.exports = function (crypto, exports) {
-	  exports = exports || {}
-
-	  var exported = pbkdf2Export(crypto)
-
-	  exports.pbkdf2 = exported.pbkdf2
-	  exports.pbkdf2Sync = exported.pbkdf2Sync
-
-	  return exports
-	}
+	exports.ReflectGetMetadataKeysOrderWithTargetKeyWhenDefinedOnPrototype = ReflectGetMetadataKeysOrderWithTargetKeyWhenDefinedOnPrototype;
 
 
 /***/ },
-/* 684 */
+/* 690 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(Buffer) {module.exports = function(crypto) {
-	  function pbkdf2(password, salt, iterations, keylen, digest, callback) {
-	    if ('function' === typeof digest) {
-	      callback = digest
-	      digest = undefined
-	    }
-
-	    if ('function' !== typeof callback)
-	      throw new Error('No callback provided to pbkdf2')
-
-	    setTimeout(function() {
-	      var result
-
-	      try {
-	        result = pbkdf2Sync(password, salt, iterations, keylen, digest)
-	      } catch (e) {
-	        return callback(e)
-	      }
-
-	      callback(undefined, result)
-	    })
-	  }
-
-	  function pbkdf2Sync(password, salt, iterations, keylen, digest) {
-	    if ('number' !== typeof iterations)
-	      throw new TypeError('Iterations not a number')
-
-	    if (iterations < 0)
-	      throw new TypeError('Bad iterations')
-
-	    if ('number' !== typeof keylen)
-	      throw new TypeError('Key length not a number')
-
-	    if (keylen < 0)
-	      throw new TypeError('Bad key length')
-
-	    digest = digest || 'sha1'
-
-	    if (!Buffer.isBuffer(password)) password = new Buffer(password)
-	    if (!Buffer.isBuffer(salt)) salt = new Buffer(salt)
-
-	    var hLen, l = 1, r, T
-	    var DK = new Buffer(keylen)
-	    var block1 = new Buffer(salt.length + 4)
-	    salt.copy(block1, 0, 0, salt.length)
-
-	    for (var i = 1; i <= l; i++) {
-	      block1.writeUInt32BE(i, salt.length)
-
-	      var U = crypto.createHmac(digest, password).update(block1).digest()
-
-	      if (!hLen) {
-	        hLen = U.length
-	        T = new Buffer(hLen)
-	        l = Math.ceil(keylen / hLen)
-	        r = keylen - (l - 1) * hLen
-
-	        if (keylen > (Math.pow(2, 32) - 1) * hLen)
-	          throw new TypeError('keylen exceeds maximum length')
-	      }
-
-	      U.copy(T, 0, 0, hLen)
-
-	      for (var j = 1; j < iterations; j++) {
-	        U = crypto.createHmac(digest, password).update(U).digest()
-
-	        for (var k = 0; k < hLen; k++) {
-	          T[k] ^= U[k]
-	        }
-	      }
-
-	      var destPos = (i - 1) * hLen
-	      var len = (i == l ? r : hLen)
-	      T.copy(DK, destPos, 0, len)
-	    }
-
-	    return DK
-	  }
-
-	  return {
-	    pbkdf2: pbkdf2,
-	    pbkdf2Sync: pbkdf2Sync
-	  }
+	// Reflect.getOwnMetadata ( metadataKey, target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectgetownmetadata--metadatakey-target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectGetOwnMetadataInvalidTarget() {
+	    assert.throws(function () { return Reflect.getOwnMetadata("key", undefined, undefined); }, TypeError);
 	}
+	exports.ReflectGetOwnMetadataInvalidTarget = ReflectGetOwnMetadataInvalidTarget;
+	function ReflectGetOwnMetadataWithoutTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getOwnMetadata("key", obj, undefined);
+	    assert.equal(result, undefined);
+	}
+	exports.ReflectGetOwnMetadataWithoutTargetKeyWhenNotDefined = ReflectGetOwnMetadataWithoutTargetKeyWhenNotDefined;
+	function ReflectGetOwnMetadataWithoutTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.getOwnMetadata("key", obj, undefined);
+	    assert.equal(result, "value");
+	}
+	exports.ReflectGetOwnMetadataWithoutTargetKeyWhenDefined = ReflectGetOwnMetadataWithoutTargetKeyWhenDefined;
+	function ReflectGetOwnMetadataWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var result = Reflect.getOwnMetadata("key", obj, undefined);
+	    assert.equal(result, undefined);
+	}
+	exports.ReflectGetOwnMetadataWithoutTargetKeyWhenDefinedOnPrototype = ReflectGetOwnMetadataWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetOwnMetadataWithTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getOwnMetadata("key", obj, "name");
+	    assert.equal(result, undefined);
+	}
+	exports.ReflectGetOwnMetadataWithTargetKeyWhenNotDefined = ReflectGetOwnMetadataWithTargetKeyWhenNotDefined;
+	function ReflectGetOwnMetadataWithTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, "name");
+	    var result = Reflect.getOwnMetadata("key", obj, "name");
+	    assert.equal(result, "value");
+	}
+	exports.ReflectGetOwnMetadataWithTargetKeyWhenDefined = ReflectGetOwnMetadataWithTargetKeyWhenDefined;
+	function ReflectGetOwnMetadataWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, "name");
+	    var result = Reflect.getOwnMetadata("key", obj, "name");
+	    assert.equal(result, undefined);
+	}
+	exports.ReflectGetOwnMetadataWithTargetKeyWhenDefinedOnPrototype = ReflectGetOwnMetadataWithTargetKeyWhenDefinedOnPrototype;
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(663).Buffer))
 
 /***/ },
-/* 685 */
+/* 691 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Reflect.getOwnMetadataKeysKeys ( target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectgetownmetadatakeyskeys--target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectGetOwnMetadataKeysKeysInvalidTarget() {
+	    // 1. If Type(target) is not Object, throw a TypeError exception.
+	    assert.throws(function () { return Reflect.getOwnMetadataKeys(undefined, undefined); }, TypeError);
+	}
+	exports.ReflectGetOwnMetadataKeysKeysInvalidTarget = ReflectGetOwnMetadataKeysKeysInvalidTarget;
+	function ReflectGetOwnMetadataKeysWithoutTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getOwnMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, []);
+	}
+	exports.ReflectGetOwnMetadataKeysWithoutTargetKeyWhenNotDefined = ReflectGetOwnMetadataKeysWithoutTargetKeyWhenNotDefined;
+	function ReflectGetOwnMetadataKeysWithoutTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.getOwnMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key"]);
+	}
+	exports.ReflectGetOwnMetadataKeysWithoutTargetKeyWhenDefined = ReflectGetOwnMetadataKeysWithoutTargetKeyWhenDefined;
+	function ReflectGetOwnMetadataKeysWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var result = Reflect.getOwnMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, []);
+	}
+	exports.ReflectGetOwnMetadataKeysWithoutTargetKeyWhenDefinedOnPrototype = ReflectGetOwnMetadataKeysWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetOwnMetadataKeysOrderWithoutTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    Reflect.defineMetadata("key0", "value", obj, undefined);
+	    var result = Reflect.getOwnMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key1", "key0"]);
+	}
+	exports.ReflectGetOwnMetadataKeysOrderWithoutTargetKey = ReflectGetOwnMetadataKeysOrderWithoutTargetKey;
+	function ReflectGetOwnMetadataKeysOrderAfterRedefineWithoutTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    Reflect.defineMetadata("key0", "value", obj, undefined);
+	    Reflect.defineMetadata("key1", "value", obj, undefined);
+	    var result = Reflect.getOwnMetadataKeys(obj, undefined);
+	    assert.deepEqual(result, ["key1", "key0"]);
+	}
+	exports.ReflectGetOwnMetadataKeysOrderAfterRedefineWithoutTargetKey = ReflectGetOwnMetadataKeysOrderAfterRedefineWithoutTargetKey;
+	function ReflectGetOwnMetadataKeysWithTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.getOwnMetadataKeys(obj, "name");
+	    assert.deepEqual(result, []);
+	}
+	exports.ReflectGetOwnMetadataKeysWithTargetKeyWhenNotDefined = ReflectGetOwnMetadataKeysWithTargetKeyWhenNotDefined;
+	function ReflectGetOwnMetadataKeysWithTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, "name");
+	    var result = Reflect.getOwnMetadataKeys(obj, "name");
+	    assert.deepEqual(result, ["key"]);
+	}
+	exports.ReflectGetOwnMetadataKeysWithTargetKeyWhenDefined = ReflectGetOwnMetadataKeysWithTargetKeyWhenDefined;
+	function ReflectGetOwnMetadataKeysWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, "name");
+	    var result = Reflect.getOwnMetadataKeys(obj, "name");
+	    assert.deepEqual(result, []);
+	}
+	exports.ReflectGetOwnMetadataKeysWithTargetKeyWhenDefinedOnPrototype = ReflectGetOwnMetadataKeysWithTargetKeyWhenDefinedOnPrototype;
+	function ReflectGetOwnMetadataKeysOrderAfterRedefineWithTargetKey() {
+	    var obj = {};
+	    Reflect.defineMetadata("key1", "value", obj, "name");
+	    Reflect.defineMetadata("key0", "value", obj, "name");
+	    Reflect.defineMetadata("key1", "value", obj, "name");
+	    var result = Reflect.getOwnMetadataKeys(obj, "name");
+	    assert.deepEqual(result, ["key1", "key0"]);
+	}
+	exports.ReflectGetOwnMetadataKeysOrderAfterRedefineWithTargetKey = ReflectGetOwnMetadataKeysOrderAfterRedefineWithTargetKey;
+
+
+/***/ },
+/* 692 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Reflect.hasMetadata ( metadataKey, target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflecthasmetadata--metadatakey-target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectHasMetadataInvalidTarget() {
+	    assert.throws(function () { return Reflect.hasMetadata("key", undefined, undefined); }, TypeError);
+	}
+	exports.ReflectHasMetadataInvalidTarget = ReflectHasMetadataInvalidTarget;
+	function ReflectHasMetadataWithoutTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.hasMetadata("key", obj, undefined);
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasMetadataWithoutTargetKeyWhenNotDefined = ReflectHasMetadataWithoutTargetKeyWhenNotDefined;
+	function ReflectHasMetadataWithoutTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.hasMetadata("key", obj, undefined);
+	    assert.equal(result, true);
+	}
+	exports.ReflectHasMetadataWithoutTargetKeyWhenDefined = ReflectHasMetadataWithoutTargetKeyWhenDefined;
+	function ReflectHasMetadataWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var result = Reflect.hasMetadata("key", obj, undefined);
+	    assert.equal(result, true);
+	}
+	exports.ReflectHasMetadataWithoutTargetKeyWhenDefinedOnPrototype = ReflectHasMetadataWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectHasMetadataWithTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.hasMetadata("key", obj, "name");
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasMetadataWithTargetKeyWhenNotDefined = ReflectHasMetadataWithTargetKeyWhenNotDefined;
+	function ReflectHasMetadataWithTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, "name");
+	    var result = Reflect.hasMetadata("key", obj, "name");
+	    assert.equal(result, true);
+	}
+	exports.ReflectHasMetadataWithTargetKeyWhenDefined = ReflectHasMetadataWithTargetKeyWhenDefined;
+	function ReflectHasMetadataWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, "name");
+	    var result = Reflect.hasMetadata("key", obj, "name");
+	    assert.equal(result, true);
+	}
+	exports.ReflectHasMetadataWithTargetKeyWhenDefinedOnPrototype = ReflectHasMetadataWithTargetKeyWhenDefinedOnPrototype;
+
+
+/***/ },
+/* 693 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Reflect.hasOwnMetadata ( metadataKey, target [, propertyKey] )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflecthasownmetadata--metadatakey-target--propertykey-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectHasOwnMetadataInvalidTarget() {
+	    assert.throws(function () { return Reflect.hasOwnMetadata("key", undefined, undefined); }, TypeError);
+	}
+	exports.ReflectHasOwnMetadataInvalidTarget = ReflectHasOwnMetadataInvalidTarget;
+	function ReflectHasOwnMetadataWithoutTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.hasOwnMetadata("key", obj, undefined);
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasOwnMetadataWithoutTargetKeyWhenNotDefined = ReflectHasOwnMetadataWithoutTargetKeyWhenNotDefined;
+	function ReflectHasOwnMetadataWithoutTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, undefined);
+	    var result = Reflect.hasOwnMetadata("key", obj, undefined);
+	    assert.equal(result, true);
+	}
+	exports.ReflectHasOwnMetadataWithoutTargetKeyWhenDefined = ReflectHasOwnMetadataWithoutTargetKeyWhenDefined;
+	function ReflectHasOwnMetadataWithoutTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, undefined);
+	    var result = Reflect.hasOwnMetadata("key", obj, undefined);
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasOwnMetadataWithoutTargetKeyWhenDefinedOnPrototype = ReflectHasOwnMetadataWithoutTargetKeyWhenDefinedOnPrototype;
+	function ReflectHasOwnMetadataWithTargetKeyWhenNotDefined() {
+	    var obj = {};
+	    var result = Reflect.hasOwnMetadata("key", obj, "name");
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasOwnMetadataWithTargetKeyWhenNotDefined = ReflectHasOwnMetadataWithTargetKeyWhenNotDefined;
+	function ReflectHasOwnMetadataWithTargetKeyWhenDefined() {
+	    var obj = {};
+	    Reflect.defineMetadata("key", "value", obj, "name");
+	    var result = Reflect.hasOwnMetadata("key", obj, "name");
+	    assert.equal(result, true);
+	}
+	exports.ReflectHasOwnMetadataWithTargetKeyWhenDefined = ReflectHasOwnMetadataWithTargetKeyWhenDefined;
+	function ReflectHasOwnMetadataWithTargetKeyWhenDefinedOnPrototype() {
+	    var prototype = {};
+	    var obj = Object.create(prototype);
+	    Reflect.defineMetadata("key", "value", prototype, "name");
+	    var result = Reflect.hasOwnMetadata("key", obj, "name");
+	    assert.equal(result, false);
+	}
+	exports.ReflectHasOwnMetadataWithTargetKeyWhenDefinedOnPrototype = ReflectHasOwnMetadataWithTargetKeyWhenDefinedOnPrototype;
+
+
+/***/ },
+/* 694 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Reflect.metadata ( metadataKey, metadataValue )
+	// - https://github.com/jonathandturner/decorators/blob/master/specs/metadata.md#reflectmetadata--metadatakey-metadatavalue-
+	"use strict";
+	__webpack_require__(660);
+	var assert = __webpack_require__(681);
+	function ReflectMetadataReturnsDecoratorFunction() {
+	    var result = Reflect.metadata("key", "value");
+	    assert.equal(typeof result, "function");
+	}
+	exports.ReflectMetadataReturnsDecoratorFunction = ReflectMetadataReturnsDecoratorFunction;
+	function ReflectMetadataDecoratorThrowsWithInvalidTargetWithTargetKey() {
+	    var decorator = Reflect.metadata("key", "value");
+	    assert.throws(function () { return decorator(undefined, "name"); }, TypeError);
+	}
+	exports.ReflectMetadataDecoratorThrowsWithInvalidTargetWithTargetKey = ReflectMetadataDecoratorThrowsWithInvalidTargetWithTargetKey;
+	function ReflectMetadataDecoratorThrowsWithInvalidTargetWithoutTargetKey() {
+	    var decorator = Reflect.metadata("key", "value");
+	    assert.throws(function () { return decorator({}, undefined); }, TypeError);
+	}
+	exports.ReflectMetadataDecoratorThrowsWithInvalidTargetWithoutTargetKey = ReflectMetadataDecoratorThrowsWithInvalidTargetWithoutTargetKey;
+	function ReflectMetadataDecoratorSetsMetadataOnTargetWithoutTargetKey() {
+	    var decorator = Reflect.metadata("key", "value");
+	    var target = function () { };
+	    decorator(target);
+	    var result = Reflect.hasOwnMetadata("key", target, undefined);
+	    assert.equal(result, true);
+	}
+	exports.ReflectMetadataDecoratorSetsMetadataOnTargetWithoutTargetKey = ReflectMetadataDecoratorSetsMetadataOnTargetWithoutTargetKey;
+	function ReflectMetadataDecoratorSetsMetadataOnTargetWithTargetKey() {
+	    var decorator = Reflect.metadata("key", "value");
+	    var target = {};
+	    decorator(target, "name");
+	    var result = Reflect.hasOwnMetadata("key", target, "name");
+	    assert.equal(result, true);
+	}
+	exports.ReflectMetadataDecoratorSetsMetadataOnTargetWithTargetKey = ReflectMetadataDecoratorSetsMetadataOnTargetWithTargetKey;
+
+
+/***/ },
+/* 695 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var harness_1 = __webpack_require__(679);
+	var spec = __webpack_require__(696);
+	var results = harness_1.runTests(spec);
+	harness_1.printResults(results);
+
+
+/***/ },
+/* 696 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	function __export(m) {
+	    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+	}
+	__export(__webpack_require__(680));
+	__export(__webpack_require__(694));
+	__export(__webpack_require__(686));
+	__export(__webpack_require__(693));
+	__export(__webpack_require__(692));
+	__export(__webpack_require__(690));
+	__export(__webpack_require__(688));
+	__export(__webpack_require__(691));
+	__export(__webpack_require__(689));
+	__export(__webpack_require__(687));
+
+
+/***/ },
+/* 697 */,
+/* 698 */,
+/* 699 */,
+/* 700 */,
+/* 701 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/******/ (function(modules) { // webpackBootstrap
@@ -12886,7 +12484,7 @@
 
 	/***/ }
 	/******/ ]);
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(674)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(683)))
 
 /***/ }
 /******/ ]);

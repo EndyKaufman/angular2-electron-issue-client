@@ -7,11 +7,14 @@
         "start:electron": "npm start --prefix ./electron/dist",
         "build": "npm run clear && rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
         "build:gh-pages": "npm run clear && rimraf gh-pages && webpack --config config/webpack.gh-pages.js --progress --profile --bail",
-        "build:electron": "npm run clear && rimraf electron/dist && cp -fR electron/src electron/dist && webpack --config config/webpack.electron.js --progress --profile --bail",
+		"build:electron-install": "npm run clear && rimraf electron/dist && cp -fR electron/src electron/dist && npm install --prefix ./electron/dist",
+        "build:electron": "npm run clear && cp -fR electron/src electron/dist && webpack --config config/webpack.electron.js --progress --profile --bail",
+		"build:electron-pack-win": "npm run pack-win --prefix ./electron/dist",
+		"build:electron-win": "npm run build:electron && npm run build:electron-pack-win",
         "build:all": "npm run build && npm run build:gh-pages && npm run build:electron",        
         "lite": "lite-server -c config/bs-server.json",
         "clear": "node config/clear.src.js",
-        "postinstall": "typings install && npm install --prefix ./electron/src"
+        "postinstall": "typings install"
     },
     "license": "MIT",
     "dependencies": {

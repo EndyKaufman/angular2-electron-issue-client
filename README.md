@@ -17,6 +17,8 @@
 ```
 git clone --recursive https://github.com/EndyKaufman/angular2-electron-issue-client.git
 cd angular2-electron-issue-client
+npm install -g gulp karma-cli npm-check-updates bower protractor selenium-webdriver node-gyp
+npm rebuild
 npm install
 ```
 
