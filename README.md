@@ -1,4 +1,6 @@
 # angular2-electron-issue-client
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/EndyKaufman/angular2-electron-issue-client.svg)](https://greenkeeper.io/)
   Simple client for issue trackers (redmine, jira, asana, bitbucket, github)
   
   Demo: https://endykaufman.github.io/angular2-electron-issue-client
